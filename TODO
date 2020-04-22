@@ -1,0 +1,7 @@
+List of items todo
+
+* Drawing the map will connect two nodes with an edge that hasn't been 
+  visted yet...both of them should go to ? nodes since the player 
+  doesn't know they're attached
+
+

@@ -1,0 +1,259 @@
+
+individual_0_4:
+  cp:
+    weight: 30
+    data:
+      - count: 5d6
+        unit: CP
+  sp:
+    weight: 30
+    data:
+      - count: 4d6
+        unit: SP
+  ep:
+    weight: 10
+    data:
+      - count: 3d6
+        unit: EP
+  gp:
+    weight: 25
+    data:
+      - count: 3d6
+        unit: GP
+  pp:
+    weight: 5
+    data:
+      - count: 1d6
+        unit: PP
+
+individual_5_10:
+  30:
+    weight: 30
+    data:
+      - count: 4d6 x 100
+        unit: CP
+      - count: 1d6 x 10
+        unit: EP
+  60:
+    weight: 30
+    data:
+      - count: 6d6x10
+        unit: SP
+      - count: 2d6x10
+        unit: GP
+  70:
+    weight: 10
+    data:
+      - count: 1d6x100
+        unit: EP
+      - count: 2d6x10
+        unit: GP
+  95:
+    weight: 25
+    data:
+      - count: 4d6x10
+        unit: GP
+  100:
+    weight: 5
+    data:
+      - count: 2d6x10
+        unit: GP
+      - count: 3d6
+        unit: PP
+
+
+HOARD_COINS:
+  LEVEL_0_4:
+    - count: 6d6x100
+      unit: CP
+    - count: 3d6x100
+      unit: SP
+    - count: 2d6x10
+      unit: GP
+  LEVEL_5_10:
+    - count: 2d6x100
+      units: CP
+    - count: 2d6x1000
+      units: SP
+    - count: 6d6x100
+      units: GP
+    - count: 3d6x10
+      units: PP
+
+HOARD_0_4:
+  6:
+    weight: 6
+    data: []
+  16:
+    weight: 10
+    data:
+      - count: 2d6
+        unit: GEM_10
+  26:
+    weight: 10
+    data:
+      - count: 2d4
+        unit: GEM_25
+  36:
+    weight: 10
+    data:
+      - count: 2d6
+        unit: GEM_50
+  44:
+    weight: 8
+    data:
+      - count: 2d6
+        unit: GEM_50
+      - count: 1d6
+        unit: MAGIC_A
+        
+  52:
+    weight: 8
+    data:
+      - count: 2d4
+        unit: ART_25
+      - count: 1d6
+        unit: MAGIC_A
+  60:
+    weight: 8
+    data:
+      - count: 2d6
+        unit: GEM_50
+      - count: 1d6
+        unit: MAGIC_A
+  65:
+    weight: 5
+    data:
+      - count: 2d6
+        unit: GEM_10
+      - count: 1d6
+        unit: MAGIC_B
+  70:
+    weight: 5
+    data:
+      - count: 2d4
+        unit: ART_25
+      - count: 1d6
+        unit: MAGIC_B
+  75:
+    weight: 5
+    data:
+      - count: 2d6
+        unit: GEM_50
+      - count: 1d6
+        unit: MAGIC_B
+  78:
+    weight: 3
+    data:
+      - count: 2d6
+        unit: GEM_10
+      - count: 1d6
+        unit: MAGIC_C
+  80:
+    weight: 3
+    data:
+      - count: 2d4
+        unit: ART_25
+      - count: 1d6
+        unit: MAGIC_C
+  85:
+    weight: 5
+    data:
+      - count: 2d6
+        unit: GEM_25
+      - count: 1d6
+        unit: MAGIC_C
+  92:
+    weight: 7
+    data:
+      - count: 2d4
+        unit: ART_25
+      - count: 1d6
+        unit: MAGIC_F
+  97:
+    weight: 5
+    data:
+      - count: 2d6
+        unit: GEM_50
+      - count: 1d6
+        unit: MAGIC_F
+  99:
+    weight: 2
+    data:
+      - count: 2d4
+        unit: ART_25
+      - count: 1d6
+        unit: MAGIC_G
+  100:
+    weight: 1
+    data:
+      - count: 2d6
+        unit: GEM_50
+      - count: 1d6
+        unit: MAGIC_G
+
+
+
+#
+# Things which can appear as treasure..
+#
+GEM_10:
+  - Azurite (opaque mottled deep blue) (10GP)
+  - Banded agate (translucent striped brown, blue, white, or red) (10GP)
+  - Blue quartz (transparent pale blue) (10GP)
+  - Eye agate (translucent circles of gray, white, brown, blue, or green) (10GP)
+  - Hematite (opaque gray-black) (10GP)
+  - Lapis lazuli (opaque light and dark blue with yellow flecks) (10GP)
+  - Malachite (opaque striated light and dark green) (10GP)
+  - Moss agate (translucent pink or yellow-white with mossy gray or green markings) (10GP)
+  - Obsidian (opaque black) (10GP)
+  - Rhodochrosite (opaque light pink) (10GP)
+  - Tiger eye (translucent brown with golden center) (10GP)
+  - Turquoise (opaque light blue-green) (10GP)
+
+GEM_50:
+  - Bloodstone (opaque dark gray with red flecks) (50GP)
+  - Carnelian (opaque orange to red-brown) (50GP)
+  - Chalcedony (opaque white) (50GP)
+  - Chrysoprase (translucent green) (50GP)
+  - Citrine (transparent pale yellow-brown) (50GP)
+  - Jasper (opaque blue, black, or brown) (50GP)
+  - Moonstone (translucent white with pale blue glow) (50GP)
+  - Onyx (opaque bands of black and white, or pure black or white) (50GP)
+  - Quartz (transparent white, smoky gray, or yellow) (50GP)
+  - Sardonyx (opaque bands of red and white) (50GP)
+  - Star rose quartz (translucent rosy stone with white star-shaped center) (50GP)
+  - Zircon (transparent pale blue-green) (50GP)
+
+GEM_500:
+  - Alexandrite (transparent dark green) (500GP)
+  - Aquamarine (transparent pale blue-green) (500GP)
+  - Black pearl (opaque pure black) (500GP)
+  - Blue spinel (transparent deep blue) (500GP)
+  - Peridot (transparent rich olive green) (500GP)
+  - Topaz (transparent golden yellow) (500GP)
+
+ART_25:
+  - Silver ewer (25GP)
+  - Carved bone statuette (25GP)
+  - Small gold bracelet (25GP)
+  - Cloth-of-gold vestments (25GP)
+  - Black velvet mask stitched with silver thread (25GP)
+  - Copper chalice with silver filigree (25GP)
+  - Pair of engraved bone dice (25GP)
+  - Small mirror set in a painted wooden frame (25GP)
+  - Embroidered silk handkerchief (25GP)
+  - Gold locket with a painted portrait inside (25GP)
+
+ART_250:
+  - Gold ring set with bloodstones (25GP)
+  - Carved ivory statuette (25GP)
+  - Large gold bracelet (25GP)
+  - Silver necklace with a gemstone pendant (25GP)
+  - Bronze crown (25GP)
+  - Silk robe with gold embroidery (25GP)
+  - Large well-made tapestry (25GP)
+  - Brass mug with jade inlay (25GP)
+  - Box of turquoise animal figurines (25GP)
+  - Gold bird cage with electrum filigree (25GP)
+

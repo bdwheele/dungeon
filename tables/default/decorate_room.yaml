@@ -1,0 +1,418 @@
+kind:
+  antechamber:
+    data:
+      contents: []
+      description:
+      - The room appears to be a antechamber
+      flags: []
+    weight: 1
+  armory:
+    data:
+      contents: []
+      description:
+      - The room appears to be a armory
+      flags: []
+    weight: 2
+  audience_chamber:
+    data:
+      contents: []
+      description:
+      - The room appears to be a audience chamber
+      flags: []
+    weight: 1
+  aviary:
+    data:
+      contents: []
+      description:
+      - The room appears to be a aviary
+      flags: []
+    weight: 1
+  banquet_room:
+    data:
+      contents: []
+      description:
+      - The room appears to be a banquet room
+      flags: []
+    weight: 2
+  barracks:
+    data:
+      contents: []
+      description:
+      - The room appears to be a barracks
+      flags: []
+    weight: 3
+  bedroom:
+    data:
+      contents: []
+      description:
+      - The room appears to be a bedroom
+      flags: []
+    weight: 1
+  bestiary:
+    data:
+      contents: []
+      description:
+      - The room appears to be a bestiary
+      flags: []
+    weight: 1
+  cell:
+    data:
+      contents: []
+      description:
+      - The room appears to be a cell
+      flags: []
+    weight: 3
+  chapel:
+    data:
+      contents: []
+      description:
+      - The room appears to be a chapel
+      flags: []
+    weight: 1
+  cistern:
+    data:
+      contents: []
+      description:
+      - The room appears to be a cistern
+      flags: []
+    weight: 2
+  classroom:
+    data:
+      contents: []
+      description:
+      - The room appears to be a classroom
+      flags: []
+    weight: 1
+  closet:
+    data:
+      contents: []
+      description:
+      - The room appears to be a closet
+      flags: []
+    weight: 1
+  conjuring_room:
+    data:
+      contents: []
+      description:
+      - The room appears to be a conjuring room
+      flags: []
+    weight: 2
+  court:
+    data:
+      contents: []
+      description:
+      - The room appears to be a court
+      flags: []
+    weight: 2
+  crypt:
+    data:
+      contents: []
+      description:
+      - The room appears to be a crypt
+      flags: []
+    weight: 3
+  dining_room:
+    data:
+      contents: []
+      description:
+      - The room appears to be a dining room
+      flags: []
+    weight: 2
+  divination_room:
+    data:
+      contents: []
+      description:
+      - The room appears to be a divination room
+      flags: []
+    weight: 2
+  dormitory:
+    data:
+      contents: []
+      description:
+      - The room appears to be a dormitory
+      flags: []
+    weight: 1
+  dressing_room:
+    data:
+      contents: []
+      description:
+      - The room appears to be a dressing room
+      flags: []
+    weight: 1
+  entry_room:
+    data:
+      contents: []
+      description:
+      - The room appears to be a entry room
+      flags: []
+    weight: 1
+  exercise_room:
+    data:
+      contents: []
+      description:
+      - The room appears to be a exercise room
+      flags: []
+    weight: 2
+  gallery:
+    data:
+      contents: []
+      description:
+      - The room appears to be a gallery
+      flags: []
+    weight: 2
+  game_room:
+    data:
+      contents: []
+      description:
+      - The room appears to be a game room
+      flags: []
+    weight: 2
+  guard_room:
+    data:
+      contents: []
+      description:
+      - The room appears to be a guard room
+      flags: []
+    weight: 2
+  kennel:
+    data:
+      contents: []
+      description:
+      - The room appears to be a kennel
+      flags: []
+    weight: 1
+  kitchen:
+    data:
+      contents: []
+      description:
+      - The room appears to be a kitchen
+      flags: []
+    weight: 2
+  laboratory:
+    data:
+      contents: []
+      description:
+      - The room appears to be a laboratory
+      flags: []
+    weight: 2
+  latrine:
+    data:
+      contents: []
+      description:
+      - The room appears to be a latrine
+      flags: []
+    weight: 1
+  library:
+    data:
+      contents: []
+      description:
+      - The room appears to be a library
+      flags: []
+    weight: 3
+  lounge:
+    data:
+      contents: []
+      description:
+      - The room appears to be a lounge
+      flags: []
+    weight: 2
+  meditation_chamber:
+    data:
+      contents: []
+      description:
+      - The room appears to be a meditation chamber
+      flags: []
+    weight: 1
+  office:
+    data:
+      contents: []
+      description:
+      - The room appears to be a office
+      flags: []
+    weight: 1
+  pantry:
+    data:
+      contents: []
+      description:
+      - The room appears to be a pantry
+      flags: []
+    weight: 2
+  reception_room:
+    data:
+      contents: []
+      description:
+      - The room appears to be a reception room
+      flags: []
+    weight: 2
+  salon:
+    data:
+      contents: []
+      description:
+      - The room appears to be a salon
+      flags: []
+    weight: 1
+  shrine:
+    data:
+      contents: []
+      description:
+      - The room appears to be a shrine
+      flags: []
+    weight: 2
+  sitting_room:
+    data:
+      contents: []
+      description:
+      - The room appears to be a sitting room
+      flags: []
+    weight: 2
+  smithy:
+    data:
+      contents: []
+      description:
+      - The room appears to be a smithy
+      flags: []
+    weight: 2
+  storage:
+    data:
+      contents: []
+      description:
+      - The room appears to be a storage
+      flags: []
+    weight: 2
+  study:
+    data:
+      contents: []
+      description:
+      - The room appears to be a study
+      flags: []
+    weight: 2
+  temple:
+    data:
+      contents: []
+      description:
+      - The room appears to be a temple
+      flags: []
+    weight: 2
+  torture_chamber:
+    data:
+      contents: []
+      description:
+      - The room appears to be a torture chamber
+      flags: []
+    weight: 1
+  trophy_room:
+    data:
+      contents: []
+      description:
+      - The room appears to be a trophy room
+      flags: []
+    weight: 2
+  vault:
+    data:
+      contents: []
+      description:
+      - The room appears to be a vault
+      flags: []
+    weight: 2
+
+# the shape of the room
+shape:
+  rectangle: 30
+  square: 24
+  irregular: 1
+  circle: 1
+  octagon: 3
+  star: 1
+  cross: 1
+
+# relative sizes for rooms with different number of exits
+size_1:
+  tiny: 50
+  small: 100
+  medium: 50
+  large: 5
+  huge: 1
+
+size_2:
+  tiny: 50
+  small: 100
+  medium: 75
+  large: 5
+  huge: 1
+
+size_3:
+  tiny: 50
+  small: 100
+  medium: 100
+  large: 50
+  huge: 1
+
+size_4:
+  tiny: 1
+  small: 50
+  medium: 100
+  large: 100
+  huge: 1
+
+# describe the 'state' of the room
+state:
+  rubble: 
+    weight: 3
+    data:
+      state: The ceiling is partially collapsed
+      flags: []
+  ashes:
+    weight: 2
+    data:
+      state: The contents are mostly burned
+      flags: []
+  campsite:
+    weight: 2
+    data:
+      state: This room was recently used as a campsite
+      flags: []
+  water:
+    weight: 2
+    data:
+      state: There is a pool of water and the original contents are water damaged
+      flags:
+      - WATER
+  wrecked:
+    weight: 10
+    data:
+      state: The furnishings have been heavily damaged, but many are still here
+      flags: []
+  bare:
+    weight: 10
+    data:
+      state: The original furnishings have been removed
+      flags: []
+  original:
+    weight: 1
+    data:
+      state: "The room is in good condition"
+      flags: []
+
+# the pool of water in a wet room
+water:
+  potable:
+    weight: 30
+    data:
+      description: The water is drinkable
+  muddy:
+    weight: 15
+    data:
+      description: The water is muddy
+  hairy:
+    weight: 2
+    data:
+      description: The water is thick with animal hair
+  frozen:
+    weight: 2
+    data:
+      description: The water is frozen
+  urine:
+    weight: 1
+    data:
+      description: On closer inspection, the water is actually urine
+  

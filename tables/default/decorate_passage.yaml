@@ -1,0 +1,57 @@
+---
+# describe the different passage types
+type:
+  normal:
+    weight: 50
+    data:
+      description:
+        - A normal opening
+      flags: []
+  normal_dripping:
+    weight: 1
+    data:
+      description:
+        - A normal opening
+      flags: [DRIPPING]
+  arch:
+    weight: 20
+    data:
+      description:
+        - The opening is an archway
+      flags: []
+  arch_drip:
+    weight: 1
+    data:
+      description:
+        - The opening is an archway
+      flags: [DRIPPING]
+  door_missing:
+    weight: 15
+    data:
+      description:
+        - The door which was here is now missing
+      flags: []
+  portcullis:
+    weight: 1
+    data:
+      description:
+        - The opening is a portcullis that's permanantly open
+      flags: []
+  curtains:
+    weight: 5
+    data:
+      description:
+        - The opening is partially concealed by curtains
+      flags: []
+  curtains_mold:
+    weight: 1
+    data:
+      description:
+        - The opening is partially concealed by curtains
+      flags: [MOLD]        
+  hole:
+    weight: 3
+    data:
+      description:
+        - The opening is a rough hole through which you can barely pass
+      flags: []

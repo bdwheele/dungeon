@@ -1,0 +1,12172 @@
+manuals:
+  mm: Monster Manual
+  mtf: Mordenkainen's Tome of Foes
+  tob: Tome of Beasts
+  vgm: Volo's Guide to Monsters
+monsters:
+- alignment: nn
+  cr: '1'
+  environment:
+  - any
+  flags: []
+  name: Broodiken
+  page: 45
+  size: tiny
+  source: tob
+  type: construct
+- alignment: ce
+  cr: '1'
+  environment:
+  - any
+  flags: []
+  name: Emerald Eye
+  page: 175
+  size: tiny
+  source: tob
+  type: construct
+- alignment: cn
+  cr: '1'
+  environment:
+  - any
+  flags: []
+  name: Eonic Drifter
+  page: 177
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: nn
+  cr: '1'
+  environment:
+  - any
+  flags: []
+  name: Rime Worm Grub
+  page: 327
+  size: medium
+  source: tob
+  type: elemental
+- alignment: le
+  cr: '1'
+  environment:
+  - any
+  flags: []
+  name: Skeleton, Sharkjaw
+  page: 350
+  size: large
+  source: tob
+  type: undead
+- alignment: nn
+  cr: '2'
+  environment:
+  - any
+  flags: []
+  name: Ant, Giant
+  page: 23
+  size: large
+  source: tob
+  type: beast
+- alignment: ce
+  cr: '2'
+  environment:
+  - any
+  flags: []
+  name: Anubian
+  page: 24
+  size: medium
+  source: tob
+  type: elemental
+- alignment: ne
+  cr: '2'
+  environment:
+  - any
+  flags: []
+  name: Beli
+  page: 35
+  size: small
+  source: tob
+  type: fey
+- alignment: nn
+  cr: '2'
+  environment:
+  - any
+  flags: []
+  name: Eala
+  page: 163
+  size: small
+  source: tob
+  type: monstrosity
+- alignment: ne
+  cr: '2'
+  environment:
+  - any
+  flags: []
+  name: Firegeist
+  page: 202
+  size: small
+  source: tob
+  type: elemental
+- alignment: ne
+  cr: '2'
+  environment:
+  - any
+  flags: []
+  name: Folk of Leng
+  page: 204
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: ce
+  cr: '2'
+  environment:
+  - any
+  flags: []
+  name: Myling
+  page: 301
+  size: small
+  source: tob
+  type: undead
+- alignment: ne
+  cr: '2'
+  environment:
+  - any
+  flags: []
+  name: Noctiny
+  page: 308
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: nn
+  cr: '2'
+  environment:
+  - any
+  flags: []
+  name: Shadhavar
+  page: 344
+  size: large
+  source: tob
+  type: monstrosity
+- alignment: ln
+  cr: '2'
+  environment:
+  - any
+  flags: []
+  name: Uraeus
+  page: 392
+  size: tiny
+  source: tob
+  type: celestial
+- alignment: ce
+  cr: '2'
+  environment:
+  - any
+  flags: []
+  name: Vile Barber
+  page: 401
+  size: small
+  source: tob
+  type: fey
+- alignment: nn
+  cr: '3'
+  environment:
+  - any
+  flags: []
+  name: Clockwork Beetle Swarm
+  page: 61
+  size: large
+  source: tob
+  type: construct
+- alignment: cg
+  cr: '3'
+  environment:
+  - any
+  flags: []
+  name: Elvish Veteran Archer
+  page: 422
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: cn
+  cr: '3'
+  environment:
+  - any
+  flags: []
+  name: Elvish Veteran Archer
+  page: 422
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: nn
+  cr: '3'
+  environment:
+  - any
+  flags: []
+  name: Imy-Ut Ushabti
+  page: 256
+  size: medium
+  source: tob
+  type: monstrosity
+- alignment: nn
+  cr: '3'
+  environment:
+  - any
+  flags: []
+  name: Mindrot Thrall
+  page: 290
+  size: medium
+  source: tob
+  type: plant
+- alignment: nn
+  cr: '3'
+  environment:
+  - any
+  flags: []
+  name: Monolith Footman
+  page: 295
+  size: large
+  source: tob
+  type: construct
+- alignment: cn
+  cr: '3'
+  environment:
+  - any
+  flags: []
+  name: Spire Walker
+  page: 367
+  size: tiny
+  source: tob
+  type: fey
+- alignment: le
+  cr: '3'
+  environment:
+  - any
+  flags: []
+  name: Thursir Giant
+  page: 227
+  size: large
+  source: tob
+  type: giant
+- alignment: ne
+  cr: '3'
+  environment:
+  - any
+  flags: []
+  name: Thursir Giant
+  page: 227
+  size: large
+  source: tob
+  type: giant
+- alignment: ce
+  cr: '3'
+  environment:
+  - any
+  flags: []
+  name: Wolf Reaver Dwarf
+  page: 426
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: cg
+  cr: '3'
+  environment:
+  - any
+  flags: []
+  name: Wolf Reaver Dwarf
+  page: 426
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: cn
+  cr: '3'
+  environment:
+  - any
+  flags: []
+  name: Wolf Reaver Dwarf
+  page: 426
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: nn
+  cr: '4'
+  environment:
+  - any
+  flags: []
+  name: Ant Queen, Giant
+  page: 23
+  size: large
+  source: tob
+  type: beast
+- alignment: ce
+  cr: '4'
+  environment:
+  - any
+  flags:
+  - npc
+  name: Bandit Lord
+  page: 418
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: cg
+  cr: '4'
+  environment:
+  - any
+  flags:
+  - npc
+  name: Bandit Lord
+  page: 418
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: cn
+  cr: '4'
+  environment:
+  - any
+  flags:
+  - npc
+  name: Bandit Lord
+  page: 418
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: ne
+  cr: '4'
+  environment:
+  - any
+  flags:
+  - ncp
+  name: Bandit Lord
+  page: 418
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: ng
+  cr: '4'
+  environment:
+  - any
+  flags:
+  - npc
+  name: Bandit Lord
+  page: 418
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: nn
+  cr: '4'
+  environment:
+  - any
+  flags:
+  - npc
+  name: Bandit Lord
+  page: 418
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: nn
+  cr: '4'
+  environment:
+  - any
+  flags: []
+  name: Carrion Beetle
+  page: 52
+  size: large
+  source: tob
+  type: beast
+- alignment: ng
+  cr: '4'
+  environment:
+  - any
+  flags: []
+  name: Firebird
+  page: 201
+  size: small
+  source: tob
+  type: celestial
+- alignment: ne
+  cr: '4'
+  environment:
+  - any
+  flags: []
+  name: Lich Hound
+  page: 274
+  size: medium
+  source: tob
+  type: undead
+- alignment: cn
+  cr: '4'
+  environment:
+  - any
+  flags: []
+  name: Ostinato
+  page: 312
+  size: medium
+  source: tob
+  type: abberation
+- alignment: cn
+  cr: '4'
+  environment:
+  - any
+  flags: []
+  name: Ratatosk
+  page: 319
+  size: tiny
+  source: tob
+  type: celestial
+- alignment: nn
+  cr: '4'
+  environment:
+  - any
+  flags: []
+  name: Trollkin Reaver
+  page: 390
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: le
+  cr: '4'
+  environment:
+  - any
+  flags: []
+  name: Vaettir
+  page: 395
+  size: medium
+  source: tob
+  type: undead
+- alignment: ce
+  cr: '4'
+  environment:
+  - any
+  flags: []
+  name: Zimwi
+  page: 415
+  size: medium
+  source: tob
+  type: giant
+- alignment: lg
+  cr: '5'
+  environment:
+  - any
+  flags: []
+  name: Angel, Fidele
+  page: 21
+  size: medium
+  source: tob
+  type: celestial
+- alignment: ne
+  cr: '5'
+  environment:
+  - any
+  flags: []
+  name: Aridni
+  page: 26
+  size: small
+  source: tob
+  type: fey
+- alignment: le
+  cr: '5'
+  environment:
+  - any
+  flags: []
+  name: Black Knight Commander
+  page: 418
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: ne
+  cr: '5'
+  environment:
+  - any
+  flags: []
+  name: Bouda
+  page: 44
+  size: medium
+  source: tob
+  type: fiend
+- alignment: le
+  cr: '5'
+  environment:
+  - any
+  flags: []
+  name: Clockwork Abomination
+  page: 59
+  size: large
+  source: tob
+  type: fiend
+- alignment: le
+  cr: '5'
+  environment:
+  - any
+  flags: []
+  name: Fellforged
+  page: 182
+  size: medium
+  source: tob
+  type: construct
+- alignment: cn
+  cr: '5'
+  environment:
+  - any
+  flags: []
+  name: Hulking Whelp
+  page: 252
+  size: huge
+  source: tob
+  type: fey
+- alignment: ne
+  cr: '5'
+  environment:
+  - any
+  flags: []
+  name: Mi-Go
+  page: 287
+  size: medium
+  source: tob
+  type: plant
+- alignment: ne
+  cr: '5'
+  environment:
+  - any
+  flags: []
+  name: Ooze, Corrupting
+  page: 311
+  size: large
+  source: tob
+  type: ooze
+- alignment: cn
+  cr: '5'
+  environment:
+  - any
+  flags: []
+  name: Rift Swine
+  page: 326
+  size: large
+  source: tob
+  type: abberation
+- alignment: cn
+  cr: '5'
+  environment:
+  - any
+  flags: []
+  name: Sandman
+  page: 333
+  size: medium
+  source: tob
+  type: celestial
+- alignment: ce
+  cr: '5'
+  environment:
+  - any
+  flags: []
+  name: Spawn of Akyishigal
+  page: 83
+  size: medium
+  source: tob
+  type: fiend
+- alignment: cg
+  cr: '5'
+  environment:
+  - any
+  flags: []
+  name: Temple Dog
+  page: 378
+  size: medium
+  source: tob
+  type: celestial
+- alignment: lg
+  cr: '5'
+  environment:
+  - any
+  flags: []
+  name: Temple Dog
+  page: 378
+  size: medium
+  source: tob
+  type: celestial
+- alignment: ng
+  cr: '5'
+  environment:
+  - any
+  flags: []
+  name: Temple Dog
+  page: 378
+  size: medium
+  source: tob
+  type: celestial
+- alignment: ce
+  cr: '5'
+  environment:
+  - any
+  flags: []
+  name: Wormhearted Suffragan
+  page: 410
+  size: medium
+  source: tob
+  type: undead
+- alignment: ce
+  cr: '6'
+  environment:
+  - any
+  flags: []
+  name: Demon, Apau Perape
+  page: 75
+  size: large
+  source: tob
+  type: fiend
+- alignment: nn
+  cr: '6'
+  environment:
+  - any
+  flags: []
+  name: Fate Eater
+  page: 180
+  size: medium
+  source: tob
+  type: abberation
+- alignment: ce
+  cr: '6'
+  environment:
+  - any
+  flags: []
+  name: Fext
+  page: 183
+  size: medium
+  source: tob
+  type: undead
+- alignment: cg
+  cr: '6'
+  environment:
+  - any
+  flags: []
+  name: Fext
+  page: 183
+  size: medium
+  source: tob
+  type: undead
+- alignment: cn
+  cr: '6'
+  environment:
+  - any
+  flags: []
+  name: Fext
+  page: 183
+  size: medium
+  source: tob
+  type: undead
+- alignment: le
+  cr: '6'
+  environment:
+  - any
+  flags: []
+  name: Fext
+  page: 183
+  size: medium
+  source: tob
+  type: undead
+- alignment: lg
+  cr: '6'
+  environment:
+  - any
+  flags: []
+  name: Fext
+  page: 183
+  size: medium
+  source: tob
+  type: undead
+- alignment: ln
+  cr: '6'
+  environment:
+  - any
+  flags: []
+  name: Fext
+  page: 183
+  size: medium
+  source: tob
+  type: undead
+- alignment: ne
+  cr: '6'
+  environment:
+  - any
+  flags: []
+  name: Fext
+  page: 183
+  size: medium
+  source: tob
+  type: undead
+- alignment: ng
+  cr: '6'
+  environment:
+  - any
+  flags: []
+  name: Fext
+  page: 183
+  size: medium
+  source: tob
+  type: undead
+- alignment: nn
+  cr: '6'
+  environment:
+  - any
+  flags: []
+  name: Fext
+  page: 183
+  size: medium
+  source: tob
+  type: undead
+- alignment: ln
+  cr: '6'
+  environment:
+  - any
+  flags: []
+  name: Gearforged Templar
+  page: 210
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: le
+  cr: '6'
+  environment:
+  - any
+  flags: []
+  name: Ghost Knight
+  page: 423
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: le
+  cr: '6'
+  environment:
+  - any
+  flags: []
+  name: Ice Maiden
+  page: 254
+  size: medium
+  source: tob
+  type: fey
+- alignment: ne
+  cr: '6'
+  environment:
+  - any
+  flags: []
+  name: Malphas
+  page: 283
+  size: medium
+  source: tob
+  type: fey
+- alignment: cn
+  cr: '6'
+  environment:
+  - any
+  flags: []
+  name: Mirror Hag
+  page: 243
+  size: medium
+  source: tob
+  type: fey
+- alignment: ne
+  cr: '6'
+  environment:
+  - any
+  flags: []
+  name: Nichny
+  page: 303
+  size: medium
+  source: tob
+  type: fey
+- alignment: nn
+  cr: '6'
+  environment:
+  - any
+  flags: []
+  name: Rime Worm, Adult
+  page: 327
+  size: large
+  source: tob
+  type: elemental
+- alignment: ne
+  cr: '6'
+  environment:
+  - any
+  flags: []
+  name: Rotting Wind
+  page: 330
+  size: large
+  source: tob
+  type: undead
+- alignment: ne
+  cr: '6'
+  environment:
+  - any
+  flags: []
+  name: Spectral Guardian
+  page: 358
+  size: medium
+  source: tob
+  type: undead
+- alignment: ne
+  cr: '7'
+  environment:
+  - any
+  flags: []
+  name: Deathwisp
+  page: 72
+  size: medium
+  source: tob
+  type: undead
+- alignment: ce
+  cr: '7'
+  environment:
+  - any
+  flags: []
+  name: Demon, Psoglav
+  page: 79
+  size: large
+  source: tob
+  type: fiend
+- alignment: le
+  cr: '7'
+  environment:
+  - any
+  flags: []
+  name: Devil, Gilded
+  page: 106
+  size: medium
+  source: tob
+  type: fiend
+- alignment: ce
+  cr: '7'
+  environment:
+  - any
+  flags: []
+  name: Dissimortuum
+  page: 119
+  size: medium
+  source: tob
+  type: undead
+- alignment: ce
+  cr: '7'
+  environment:
+  - any
+  flags: []
+  name: Dwarven Ringmage
+  page: 420
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: cg
+  cr: '7'
+  environment:
+  - any
+  flags: []
+  name: Dwarven Ringmage
+  page: 420
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: cn
+  cr: '7'
+  environment:
+  - any
+  flags: []
+  name: Dwarven Ringmage
+  page: 420
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: le
+  cr: '7'
+  environment:
+  - any
+  flags: []
+  name: Dwarven Ringmage
+  page: 420
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: lg
+  cr: '7'
+  environment:
+  - any
+  flags: []
+  name: Dwarven Ringmage
+  page: 420
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: ln
+  cr: '7'
+  environment:
+  - any
+  flags: []
+  name: Dwarven Ringmage
+  page: 420
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: ne
+  cr: '7'
+  environment:
+  - any
+  flags: []
+  name: Dwarven Ringmage
+  page: 420
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: ng
+  cr: '7'
+  environment:
+  - any
+  flags: []
+  name: Dwarven Ringmage
+  page: 420
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: nn
+  cr: '7'
+  environment:
+  - any
+  flags: []
+  name: Dwarven Ringmage
+  page: 420
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: ne
+  cr: '7'
+  environment:
+  - any
+  flags: []
+  name: Herald of Darkness
+  page: 249
+  size: large
+  source: tob
+  type: fiend
+- alignment: ne
+  cr: '7'
+  environment:
+  - any
+  flags: []
+  name: Red Hag
+  page: 244
+  size: medium
+  source: tob
+  type: fey
+- alignment: ce
+  cr: '7'
+  environment:
+  - any
+  flags: []
+  name: Risen Reaver
+  page: 328
+  size: large
+  source: tob
+  type: undead
+- alignment: ne
+  cr: '7'
+  environment:
+  - any
+  flags: []
+  name: Soul Eater
+  page: 356
+  size: medium
+  source: tob
+  type: fiend
+- alignment: cn
+  cr: '7'
+  environment:
+  - any
+  flags: []
+  name: Spark
+  page: 357
+  size: tiny
+  source: tob
+  type: elemental
+- alignment: ce
+  cr: '7'
+  environment:
+  - any
+  flags: []
+  name: Vampire, Umbral
+  page: 397
+  size: medium
+  source: tob
+  type: fiend
+- alignment: ce
+  cr: '8'
+  environment:
+  - any
+  flags: []
+  name: Ala
+  page: 13
+  size: medium
+  source: tob
+  type: fey
+- alignment: ne
+  cr: '8'
+  environment:
+  - any
+  flags: []
+  name: Angel, Chained
+  page: 20
+  size: medium
+  source: tob
+  type: celestial
+- alignment: ce
+  cr: '8'
+  environment:
+  - any
+  flags: []
+  name: Bone Collective
+  page: 39
+  size: small
+  source: tob
+  type: undead
+- alignment: nn
+  cr: '8'
+  environment:
+  - any
+  flags: []
+  name: Chronalmental
+  page: 57
+  size: large
+  source: tob
+  type: elemental
+- alignment: ce
+  cr: '8'
+  environment:
+  - any
+  flags: []
+  name: Demon, Kishi
+  page: 77
+  size: medium
+  source: tob
+  type: fiend
+- alignment: le
+  cr: '8'
+  environment:
+  - any
+  flags: []
+  name: Devil, Lunar
+  page: 110
+  size: large
+  source: tob
+  type: fiend
+- alignment: ln
+  cr: '8'
+  environment:
+  - any
+  flags: []
+  name: Emerald Order Cult Leader
+  page: 421
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: ce
+  cr: '8'
+  environment:
+  - any
+  flags: []
+  name: Emerald Order Cult Leader
+  page: 421
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: le
+  cr: '8'
+  environment:
+  - any
+  flags: []
+  name: Emerald Order Cult Leader
+  page: 421
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: ne
+  cr: '8'
+  environment:
+  - any
+  flags: []
+  name: Emerald Order Cult Leader
+  page: 421
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: nn
+  cr: '8'
+  environment:
+  - any
+  flags: []
+  name: Feyward Tree
+  page: 200
+  size: huge
+  source: tob
+  type: construct
+- alignment: nn
+  cr: '8'
+  environment:
+  - any
+  flags: []
+  name: Liosalfar
+  page: 277
+  size: large
+  source: tob
+  type: elemental
+- alignment: nn
+  cr: '8'
+  environment:
+  - any
+  flags: []
+  name: Monolith Champion
+  page: 294
+  size: large
+  source: tob
+  type: construct
+- alignment: ne
+  cr: '8'
+  environment:
+  - any
+  flags: []
+  name: Qwyllion
+  page: 316
+  size: medium
+  source: tob
+  type: fey
+- alignment: ne
+  cr: '8'
+  environment:
+  - any
+  flags: []
+  name: Tophet
+  page: 383
+  size: huge
+  source: tob
+  type: construct
+- alignment: ne
+  cr: '8'
+  environment:
+  - any
+  flags: []
+  name: Xhkarsh
+  page: 412
+  size: large
+  source: tob
+  type: abberation
+- alignment: ce
+  cr: '9'
+  environment:
+  - any
+  flags: []
+  name: Demon, Malakbel
+  page: 78
+  size: medium
+  source: tob
+  type: fiend
+- alignment: ce
+  cr: '9'
+  environment:
+  - any
+  flags: []
+  name: Devilbound Gnomish Prince
+  page: 420
+  size: small
+  source: tob
+  type: humanoid
+- alignment: le
+  cr: '9'
+  environment:
+  - any
+  flags: []
+  name: Devilbound Gnomish Prince
+  page: 420
+  size: small
+  source: tob
+  type: humanoid
+- alignment: ne
+  cr: '9'
+  environment:
+  - any
+  flags: []
+  name: Devilbound Gnomish Prince
+  page: 420
+  size: small
+  source: tob
+  type: humanoid
+- alignment: ne
+  cr: '9'
+  environment:
+  - any
+  flags: []
+  name: Eater of Dust
+  page: 164
+  size: medium
+  source: tob
+  type: abberation
+- alignment: ce
+  cr: '9'
+  environment:
+  - any
+  flags: []
+  name: Genie, Al-Aeshma
+  page: 211
+  size: large
+  source: tob
+  type: elemental
+- alignment: nn
+  cr: '9'
+  environment:
+  - any
+  flags: []
+  name: Skeleton, Vine Troll
+  page: 351
+  size: large
+  source: tob
+  type: plant
+- alignment: ln
+  cr: '10'
+  environment:
+  - any
+  flags: []
+  name: Algorith
+  page: 14
+  size: medium
+  source: tob
+  type: celestial
+- alignment: ce
+  cr: '10'
+  environment:
+  - any
+  flags: []
+  name: Bone Swarm
+  page: 41
+  size: large
+  source: tob
+  type: undead
+- alignment: ce
+  cr: '10'
+  environment:
+  - any
+  flags: []
+  name: Demon, Rubezahl
+  page: 80
+  size: medium
+  source: tob
+  type: fiend
+- alignment: le
+  cr: '10'
+  environment:
+  - any
+  flags: []
+  name: Devil, Automata
+  page: 102
+  size: large
+  source: tob
+  type: fiend
+- alignment: cg
+  cr: '10'
+  environment:
+  - any
+  flags: []
+  name: Hundun
+  page: 253
+  size: large
+  source: tob
+  type: celestial
+- alignment: cn
+  cr: '10'
+  environment:
+  - any
+  flags: []
+  name: Theullai
+  page: 379
+  size: huge
+  source: tob
+  type: elemental
+- alignment: ne
+  cr: '11'
+  environment:
+  - any
+  flags: []
+  name: Abominable Beauty
+  page: 11
+  size: medium
+  source: tob
+  type: elemental
+- alignment: ce
+  cr: '11'
+  environment:
+  - any
+  flags: []
+  name: Blood Hag
+  page: 242
+  size: medium
+  source: tob
+  type: fey
+- alignment: lg
+  cr: '11'
+  environment:
+  - any
+  flags: []
+  name: Buraq
+  page: 48
+  size: medium
+  source: tob
+  type: celestial
+- alignment: ne
+  cr: '11'
+  environment:
+  - any
+  flags: []
+  name: Corpse Mound
+  page: 69
+  size: huge
+  source: tob
+  type: undead
+- alignment: ce
+  cr: '11'
+  environment:
+  - any
+  flags: []
+  name: Demon, Berstuc
+  page: 76
+  size: large
+  source: tob
+  type: fiend
+- alignment: le
+  cr: '11'
+  environment:
+  - any
+  flags: []
+  name: Dullahan
+  page: 161
+  size: large
+  source: tob
+  type: fey
+- alignment: nn
+  cr: '11'
+  environment:
+  - any
+  flags: []
+  name: Eye Golem
+  page: 233
+  size: large
+  source: tob
+  type: construct
+- alignment: ce
+  cr: '11'
+  environment:
+  - any
+  flags: []
+  name: Grim Jester
+  page: 240
+  size: medium
+  source: tob
+  type: undead
+- alignment: le
+  cr: '11'
+  environment:
+  - any
+  flags: []
+  name: Naina
+  page: 302
+  size: large
+  source: tob
+  type: dragon
+- alignment: nn
+  cr: '11'
+  environment:
+  - any
+  flags: []
+  name: Valkyrie
+  page: 396
+  size: medium
+  source: tob
+  type: celestial
+- alignment: ce
+  cr: '11'
+  environment:
+  - any
+  flags: []
+  name: Voidling
+  page: 404
+  size: large
+  source: tob
+  type: abberation
+- alignment: ce
+  cr: '12'
+  environment:
+  - any
+  flags: []
+  name: Aboleth, Nihileth
+  page: 8
+  size: large
+  source: tob
+  type: undead
+- alignment: ng
+  cr: '12'
+  environment:
+  - any
+  flags: []
+  name: Ancient Titan
+  page: 380
+  size: gargantuan
+  source: tob
+  type: celestial
+- alignment: le
+  cr: '12'
+  environment:
+  - any
+  flags: []
+  name: Devil, Chort
+  page: 104
+  size: medium
+  source: tob
+  type: fiend
+- alignment: ce
+  cr: '12'
+  environment:
+  - any
+  flags: []
+  name: Flutterflesh
+  page: 203
+  size: large
+  source: tob
+  type: undead
+- alignment: ne
+  cr: '12'
+  environment:
+  - any
+  flags: []
+  name: Herald of Blood
+  page: 248
+  size: huge
+  source: tob
+  type: fiend
+- alignment: nn
+  cr: '12'
+  environment:
+  - any
+  flags: []
+  name: Hoard Golem
+  page: 234
+  size: huge
+  source: tob
+  type: construct
+- alignment: ce
+  cr: '12'
+  environment:
+  - any
+  flags: []
+  name: Mavka
+  page: 286
+  size: medium
+  source: tob
+  type: undead
+- alignment: nn
+  cr: '12'
+  environment:
+  - any
+  flags: []
+  name: Skein Witch
+  page: 349
+  size: medium
+  source: tob
+  type: celestial
+- alignment: ce
+  cr: '12'
+  environment:
+  - any
+  flags: []
+  name: Son of Fenris
+  page: 355
+  size: huge
+  source: tob
+  type: monstrosity
+- alignment: ln
+  cr: '13'
+  environment:
+  - any
+  flags: []
+  name: Haugbui
+  page: 247
+  size: medium
+  source: tob
+  type: undead
+- alignment: ne
+  cr: '13'
+  environment:
+  - any
+  flags: []
+  name: Mask Wight
+  page: 285
+  size: medium
+  source: tob
+  type: undead
+- alignment: nn
+  cr: '13'
+  environment:
+  - any
+  flags: []
+  name: Steam Golem
+  page: 237
+  size: large
+  source: tob
+  type: construct
+- alignment: le
+  cr: '14'
+  environment:
+  - any
+  flags: []
+  name: Devil, Orobas
+  page: 111
+  size: large
+  source: tob
+  type: fiend
+- alignment: nn
+  cr: '14'
+  environment:
+  - any
+  flags: []
+  name: Smaragdine Golem
+  page: 236
+  size: large
+  source: tob
+  type: construct
+- alignment: nn
+  cr: '15'
+  environment:
+  - any
+  flags: []
+  name: Andrenjinyi
+  page: 17
+  size: gargantuan
+  source: tob
+  type: celestial
+- alignment: cn
+  cr: '15'
+  environment:
+  - any
+  flags: []
+  name: Slow Storm
+  page: 353
+  size: huge
+  source: tob
+  type: elemental
+- alignment: ce
+  cr: '15'
+  environment:
+  - any
+  flags: []
+  name: Star-Spawn of Cthulhu
+  page: 368
+  size: large
+  source: tob
+  type: fiend
+- alignment: ce
+  cr: '17'
+  environment:
+  - any
+  flags: []
+  name: Boreas
+  page: 42
+  size: medium
+  source: tob
+  type: elemental
+- alignment: nn
+  cr: '17'
+  environment:
+  - any
+  flags: []
+  name: Elemental Locus
+  page: 169
+  size: gargantuan
+  source: tob
+  type: elemental
+- alignment: ne
+  cr: '17'
+  environment:
+  - any
+  flags: []
+  name: Koschei
+  page: 266
+  size: medium
+  source: tob
+  type: fiend
+- alignment: cn
+  cr: '19'
+  environment:
+  - any
+  flags: []
+  name: Shoggoth
+  page: 347
+  size: huge
+  source: tob
+  type: abberation
+- alignment: ne
+  cr: 1/2
+  environment:
+  - any
+  flags: []
+  name: Bucca
+  page: 46
+  size: tiny
+  source: tob
+  type: fey
+- alignment: nn
+  cr: 1/2
+  environment:
+  - any
+  flags: []
+  name: Clockwork Beetle
+  page: 60
+  size: tiny
+  source: tob
+  type: construct
+- alignment: nn
+  cr: 1/2
+  environment:
+  - any
+  flags: []
+  name: Empty Cloak
+  page: 176
+  size: medium
+  source: tob
+  type: construct
+- alignment: ne
+  cr: 1/2
+  environment:
+  - any
+  flags: []
+  name: Skin Bat
+  page: 87
+  size: small
+  source: tob
+  type: fiend
+- alignment: nn
+  cr: 1/4
+  environment:
+  - any
+  flags: []
+  name: Azza Gremlin
+  page: 28
+  size: small
+  source: tob
+  type: fey
+- alignment: ne
+  cr: 1/4
+  environment:
+  - any
+  flags: []
+  name: Kalke
+  page: 259
+  size: small
+  source: tob
+  type: fiend
+- alignment: nn
+  cr: 1/4
+  environment:
+  - any
+  flags: []
+  name: Spider, Red-Banded Line
+  page: 363
+  size: tiny
+  source: tob
+  type: beast
+- alignment: nn
+  cr: 1/4
+  environment:
+  - any
+  flags: []
+  name: Witchlight
+  page: 409
+  size: tiny
+  source: tob
+  type: construct
+- alignment: nn
+  cr: 1/4
+  environment:
+  - any
+  flags: []
+  name: Xanka
+  page: 411
+  size: small
+  source: tob
+  type: construct
+- alignment: nn
+  cr: 1/8
+  environment:
+  - any
+  flags: []
+  name: Cikavak
+  page: 58
+  size: tiny
+  source: tob
+  type: beast
+- alignment: ne
+  cr: 1/8
+  environment:
+  - any
+  flags: []
+  name: Shroud
+  page: 348
+  size: medium
+  source: tob
+  type: undead
+- alignment: nn
+  cr: '1'
+  environment:
+  - aquatic
+  flags: []
+  name: Gerridae
+  page: 212
+  size: large
+  source: tob
+  type: fey
+- alignment: nn
+  cr: '2'
+  environment:
+  - aquatic
+  flags: []
+  name: Eel Hound
+  page: 166
+  size: medium
+  source: tob
+  type: fey
+- alignment: nn
+  cr: '3'
+  environment:
+  - aquatic
+  flags: []
+  name: Mahoru
+  page: 281
+  size: large
+  source: tob
+  type: monstrosity
+- alignment: nn
+  cr: '4'
+  environment:
+  - aquatic
+  flags: []
+  name: Water Leaper
+  page: 406
+  size: large
+  source: tob
+  type: monstrosity
+- alignment: nn
+  cr: '4'
+  environment:
+  - aquatic
+  flags: []
+  name: Wharfling Swarm
+  page: 407
+  size: large
+  source: tob
+  type: beast
+- alignment: ne
+  cr: '5'
+  environment:
+  - aquatic
+  flags: []
+  name: Drowned Maiden
+  page: 159
+  size: medium
+  source: tob
+  type: undead
+- alignment: ce
+  cr: '5'
+  environment:
+  - aquatic
+  flags: []
+  name: Lorelei
+  page: 279
+  size: medium
+  source: tob
+  type: fey
+- alignment: ln
+  cr: '5'
+  environment:
+  - aquatic
+  flags: []
+  name: Subek
+  page: 371
+  size: large
+  source: tob
+  type: humanoid
+- alignment: ce
+  cr: '6'
+  environment:
+  - aquatic
+  flags: []
+  name: Rusalka
+  page: 331
+  size: medium
+  source: tob
+  type: undead
+- alignment: ne
+  cr: '7'
+  environment:
+  - aquatic
+  flags: []
+  name: Drake, Coral
+  page: 150
+  size: medium
+  source: tob
+  type: dragon
+- alignment: ce
+  cr: '7'
+  environment:
+  - aquatic
+  flags: []
+  name: Troll, Lake
+  page: 389
+  size: large
+  source: tob
+  type: giant
+- alignment: ce
+  cr: '8'
+  environment:
+  - aquatic
+  flags: []
+  name: Deep One Archimandrite
+  page: 74
+  size: large
+  source: tob
+  type: humanoid
+- alignment: ne
+  cr: '9'
+  environment:
+  - aquatic
+  flags: []
+  name: Krake Spawn
+  page: 269
+  size: huge
+  source: tob
+  type: monstrosity
+- alignment: cn
+  cr: '14'
+  environment:
+  - aquatic
+  flags: []
+  name: Isonade
+  page: 257
+  size: gargantuan
+  source: tob
+  type: monstrosity
+- alignment: ne
+  cr: '16'
+  environment:
+  - aquatic
+  flags: []
+  name: Adult Sea Dragon
+  page: 135
+  size: huge
+  source: tob
+  type: dragon
+- alignment: ne
+  cr: '22'
+  environment:
+  - aquatic
+  flags: []
+  name: Ancient Sea Dragon
+  page: 135
+  size: gargantuan
+  source: tob
+  type: dragon
+- alignment: nn
+  cr: 1/2
+  environment:
+  - aquatic
+  flags: []
+  name: Bone Crab
+  page: 40
+  size: small
+  source: tob
+  type: beast
+- alignment: ce
+  cr: 1/2
+  environment:
+  - aquatic
+  flags: []
+  name: Morphoi
+  page: 297
+  size: medium
+  source: tob
+  type: plant
+- alignment: ce
+  cr: 1/2
+  environment:
+  - aquatic
+  flags: []
+  name: Rum Gremlin
+  page: 239
+  size: tiny
+  source: tob
+  type: fey
+- alignment: nn
+  cr: 1/4
+  environment:
+  - aquatic
+  flags: []
+  name: Garroter Crab
+  page: 208
+  size: tiny
+  source: tob
+  type: beast
+- alignment: nn
+  cr: 1/8
+  environment:
+  - aquatic
+  flags: []
+  name: Wharfling
+  page: 407
+  size: tiny
+  source: tob
+  type: beast
+- alignment: nn
+  cr: '10'
+  environment:
+  - aquatic
+  - desert
+  flags: []
+  name: Salt Golem
+  page: 235
+  size: large
+  source: tob
+  type: construct
+- alignment: nn
+  cr: '1'
+  environment:
+  - aquatic
+  - marsh
+  flags: []
+  name: Glass Gator
+  page: 228
+  size: large
+  source: tob
+  type: beast
+- alignment: nn
+  cr: '3'
+  environment:
+  - aquatic
+  - marsh
+  - plains
+  flags: []
+  name: Dinosaur, Mbielu
+  page: 114
+  size: huge
+  source: tob
+  type: beast
+- alignment: ne
+  cr: '9'
+  environment:
+  - aquatic
+  - mountain
+  flags: []
+  name: Young Sea Dragon
+  page: 136
+  size: large
+  source: tob
+  type: dragon
+- alignment: nn
+  cr: '12'
+  environment:
+  - aquatic
+  - underdark
+  flags: []
+  name: Dragon Eel
+  page: 146
+  size: huge
+  source: tob
+  type: dragon
+- alignment: ne
+  cr: '3'
+  environment:
+  - arctic
+  flags: []
+  name: Winter Wolf
+  page: 340
+  size: large
+  source: mm
+  type: monstrosity
+- alignment: ce
+  cr: '3'
+  environment:
+  - arctic
+  flags: []
+  name: Yeti
+  page: 305
+  size: large
+  source: mm
+  type: monstrosity
+- alignment: nn
+  cr: '5'
+  environment:
+  - arctic
+  flags: []
+  name: Young Remorhaz
+  page: 258
+  size: large
+  source: mm
+  type: monstrosity
+- alignment: nn
+  cr: '6'
+  environment:
+  - arctic
+  flags: []
+  name: Mammoth
+  page: 332
+  size: huge
+  source: mm
+  type: beast
+- alignment: ce
+  cr: '6'
+  environment:
+  - arctic
+  flags: []
+  name: Young White Dragon
+  page: 101
+  size: large
+  source: mm
+  type: dragon
+- alignment: ce
+  cr: '7'
+  environment:
+  - arctic
+  flags: []
+  name: Bheur Hag
+  page: 160
+  size: medium
+  source: vgm
+  type: fey
+- alignment: ce
+  cr: '9'
+  environment:
+  - arctic
+  flags: []
+  name: Abominable Yeti
+  page: 306
+  size: huge
+  source: mm
+  type: monstrosity
+- alignment: nn
+  cr: '9'
+  environment:
+  - arctic
+  flags: []
+  name: Frost Salamander
+  page: 223
+  size: huge
+  source: mtf
+  type: elemental
+- alignment: nn
+  cr: '11'
+  environment:
+  - arctic
+  flags: []
+  name: Remorhaz
+  page: 258
+  size: huge
+  source: mm
+  type: monstrosity
+- alignment: ce
+  cr: '13'
+  environment:
+  - arctic
+  flags: []
+  name: Adult White Dragon
+  page: 101
+  size: huge
+  source: mm
+  type: dragon
+- alignment: ce
+  cr: '20'
+  environment:
+  - arctic
+  flags: []
+  name: Ancient White Dragon
+  page: 100
+  size: gargantuan
+  source: mm
+  type: dragon
+- alignment: ne
+  cr: 1/2
+  environment:
+  - arctic
+  flags: []
+  name: Ice Mephit
+  page: 215
+  size: small
+  source: mm
+  type: elemental
+- alignment: ce
+  cr: '12'
+  environment:
+  - arctic
+  - coastal
+  flags: []
+  name: Frost Giant Everlasting One
+  page: 148
+  size: huge
+  source: vgm
+  type: giant
+- alignment: nn
+  cr: '0'
+  environment:
+  - arctic
+  - forest
+  flags: []
+  name: Owl
+  page: 333
+  size: tiny
+  source: mm
+  type: beast
+- alignment: nn
+  cr: '1'
+  environment:
+  - arctic
+  - hill
+  - forest
+  flags: []
+  name: Brown Bear
+  page: 319
+  size: large
+  source: mm
+  type: beast
+- alignment: ce
+  cr: '1'
+  environment:
+  - arctic
+  - hill
+  - grassland
+  - forest
+  flags: []
+  name: Gnoll Flesh Gnawer
+  page: 154
+  size: medium
+  source: vgm
+  type: humanoid
+- alignment: ce
+  cr: 1/4
+  environment:
+  - arctic
+  - hill
+  - grassland
+  - forest
+  flags: []
+  name: Gnoll Witherling
+  page: 155
+  size: medium
+  source: vgm
+  type: undead
+- alignment: nn
+  cr: '2'
+  environment:
+  - arctic
+  - hill
+  - mountain
+  - coastal
+  - grassland
+  flags: []
+  name: Griffon
+  page: 174
+  size: large
+  source: mm
+  type: monstrosity
+- alignment: nn
+  cr: '2'
+  environment:
+  - arctic
+  - mountain
+  flags: []
+  name: Saber-toothed Tiger
+  page: 336
+  size: large
+  source: mm
+  type: beast
+- alignment: ne
+  cr: '8'
+  environment:
+  - arctic
+  - mountain
+  flags: []
+  name: Frost Giant
+  page: 155
+  size: huge
+  source: mm
+  type: giant
+- alignment: cg
+  cr: '16'
+  environment:
+  - arctic
+  - mountain
+  - desert
+  - coastal
+  - underwater
+  flags: []
+  name: Storm Giant Quintessent
+  page: 151
+  size: huge
+  source: vgm
+  type: giant
+- alignment: ce
+  cr: '2'
+  environment:
+  - arctic
+  - mountain
+  - desert
+  - hill
+  - underdark
+  - swamp
+  - coastal
+  - grassland
+  - forest
+  flags: []
+  name: Ogre
+  page: 237
+  size: large
+  source: mm
+  type: giant
+- alignment: nn
+  cr: '23'
+  environment:
+  - arctic
+  - mountain
+  - hill
+  - grassland
+  - coastal
+  flags: []
+  name: Elder Tempest
+  page: 200
+  size: gargantuan
+  source: mtf
+  type: elemental
+- alignment: nn
+  cr: '2'
+  environment:
+  - arctic
+  - underdark
+  flags: []
+  name: Polar Bear
+  page: 334
+  size: large
+  source: mm
+  type: beast
+- alignment: ce
+  cr: '2'
+  environment:
+  - arctic
+  - underdark
+  - hill
+  - swamp
+  - mountain
+  - grassland
+  - forest
+  flags: []
+  name: Orc Eye of Gruumsh
+  page: 247
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: ne
+  cr: '7'
+  environment:
+  - arctic
+  - urban
+  - swamp
+  - mountain
+  - underdark
+  - desert
+  - forest
+  flags: []
+  name: Lost Sorrowsworn
+  page: 233
+  size: medium
+  source: mtf
+  type: monstrosity
+- alignment: ne
+  cr: '4'
+  environment:
+  - badlands
+  flags: []
+  name: Dorreq
+  page: 124
+  size: medium
+  source: tob
+  type: abberation
+- alignment: ne
+  cr: '7'
+  environment:
+  - badlands
+  flags: []
+  name: Chelicerae
+  page: 54
+  size: large
+  source: tob
+  type: abberation
+- alignment: ne
+  cr: '3'
+  environment:
+  - badlands
+  - desert
+  flags: []
+  name: Mirager
+  page: 291
+  size: medium
+  source: tob
+  type: fey
+- alignment: ne
+  cr: '4'
+  environment:
+  - badlands
+  - desert
+  flags: []
+  name: Accursed Defiler
+  page: 12
+  size: medium
+  source: tob
+  type: undead
+- alignment: nn
+  cr: '11'
+  environment:
+  - badlands
+  - desert
+  flags: []
+  name: Vesiculosa
+  page: 399
+  size: gargantuan
+  source: tob
+  type: plant
+- alignment: nn
+  cr: '4'
+  environment:
+  - badlands
+  - desert
+  - underdark
+  flags: []
+  name: Skitterhaunt
+  page: 352
+  size: large
+  source: tob
+  type: ooze
+- alignment: ne
+  cr: 1/4
+  environment:
+  - badlands
+  - desert
+  - underdark
+  flags: []
+  name: Dust Goblin
+  page: 232
+  size: small
+  source: tob
+  type: humanoid
+- alignment: ce
+  cr: '4'
+  environment:
+  - badlands
+  - forest
+  flags: []
+  name: Forest Marauder
+  page: 205
+  size: large
+  source: tob
+  type: giant
+- alignment: ne
+  cr: '9'
+  environment:
+  - badlands
+  - forest
+  flags: []
+  name: Spider, Ghostwalk
+  page: 361
+  size: large
+  source: tob
+  type: monstrosity
+- alignment: ce
+  cr: '3'
+  environment:
+  - badlands
+  - forest
+  - hill
+  flags: []
+  name: Goat-Man
+  page: 231
+  size: medium
+  source: tob
+  type: monstrosity
+- alignment: ne
+  cr: '4'
+  environment:
+  - badlands
+  - forest
+  - plains
+  flags: []
+  name: Mngwa
+  page: 293
+  size: medium
+  source: tob
+  type: abberation
+- alignment: ce
+  cr: '7'
+  environment:
+  - badlands
+  - forest
+  - underdark
+  flags: []
+  name: Shadow Beast
+  page: 345
+  size: medium
+  source: tob
+  type: fey
+- alignment: ce
+  cr: '6'
+  environment:
+  - badlands
+  - hill
+  - underdark
+  flags: []
+  name: Ogre Chieftain, Corrupted
+  page: 423
+  size: large
+  source: tob
+  type: giant
+- alignment: cn
+  cr: '14'
+  environment:
+  - badlands
+  - mountain
+  flags: []
+  name: Adult Void Dragon
+  page: 139
+  size: huge
+  source: tob
+  type: dragon
+- alignment: cn
+  cr: '24'
+  environment:
+  - badlands
+  - mountain
+  flags: []
+  name: Ancient Void Dragon
+  page: 138
+  size: gargantuan
+  source: tob
+  type: dragon
+- alignment: ne
+  cr: '6'
+  environment:
+  - badlands
+  - underdark
+  flags: []
+  name: Mamura
+  page: 284
+  size: small
+  source: tob
+  type: fey
+- alignment: nn
+  cr: '0'
+  environment:
+  - coastal
+  flags: []
+  name: Crab
+  page: 320
+  size: tiny
+  source: mm
+  type: beast
+- alignment: ln
+  cr: '2'
+  environment:
+  - coastal
+  flags: []
+  name: Tortle Druid
+  page: 242
+  size: medium
+  source: mtf
+  type: humanoid
+- alignment: ne
+  cr: '3'
+  environment:
+  - coastal
+  flags: []
+  name: Merrenoloth
+  page: 250
+  size: medium
+  source: mtf
+  type: fiend
+- alignment: lg
+  cr: '8'
+  environment:
+  - coastal
+  flags: []
+  name: Young Bronze Dragon
+  page: 108
+  size: large
+  source: mm
+  type: dragon
+- alignment: cg
+  cr: '11'
+  environment:
+  - coastal
+  flags: []
+  name: Djinni
+  page: 144
+  size: large
+  source: mm
+  type: elemental
+- alignment: cg
+  cr: '13'
+  environment:
+  - coastal
+  flags: []
+  name: Storm Giant
+  page: 156
+  size: huge
+  source: mm
+  type: giant
+- alignment: lg
+  cr: '15'
+  environment:
+  - coastal
+  flags: []
+  name: Adult Bronze Dragon
+  page: 108
+  size: huge
+  source: mm
+  type: dragon
+- alignment: lg
+  cr: '22'
+  environment:
+  - coastal
+  flags: []
+  name: Ancient Bronze Dragon
+  page: 107
+  size: gargantuan
+  source: mm
+  type: dragon
+- alignment: lg
+  cr: 1/4
+  environment:
+  - coastal
+  flags: []
+  name: Tortle
+  page: 242
+  size: medium
+  source: mtf
+  type: humanoid
+- alignment: nn
+  cr: 1/8
+  environment:
+  - coastal
+  flags: []
+  name: Giant Crab
+  page: 324
+  size: medium
+  source: mm
+  type: beast
+- alignment: le
+  cr: '9'
+  environment:
+  - coastal
+  - desert
+  flags: []
+  name: Young Blue Dragon
+  page: 91
+  size: large
+  source: mm
+  type: dragon
+- alignment: ne
+  cr: '17'
+  environment:
+  - coastal
+  - desert
+  - forest
+  - urban
+  - underdark
+  - swamp
+  flags: []
+  name: Nagpa
+  page: 215
+  size: medium
+  source: mtf
+  type: humanoid
+- alignment: lg
+  cr: '12'
+  environment:
+  - coastal
+  - desert
+  - grassland
+  - mountain
+  flags: []
+  name: Ki-rin
+  page: 163
+  size: huge
+  source: vgm
+  type: celestial
+- alignment: cn
+  cr: 1/2
+  environment:
+  - coastal
+  - forest
+  - urban
+  - underdark
+  - swamp
+  flags: []
+  name: Skulk
+  page: 227
+  size: medium
+  source: mtf
+  type: humanoid
+- alignment: nn
+  cr: 1/4
+  environment:
+  - coastal
+  - grassland
+  - jungle
+  - mountain
+  flags: []
+  name: Pteranodon
+  page: 80
+  size: medium
+  source: mm
+  type: beast
+- alignment: nn
+  cr: 1/4
+  environment:
+  - coastal
+  - swamp
+  flags: []
+  name: Dimetrodon
+  page: 139
+  size: medium
+  source: vgm
+  type: beast
+- alignment: nn
+  cr: '2'
+  environment:
+  - coastal
+  - underwater
+  flags: []
+  name: Plesiosaurus
+  page: 80
+  size: large
+  source: mm
+  type: beast
+- alignment: le
+  cr: '2'
+  environment:
+  - coastal
+  - underwater
+  flags: []
+  name: Sahuagin Priestess
+  page: 264
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: ce
+  cr: '2'
+  environment:
+  - coastal
+  - underwater
+  flags: []
+  name: Sea Hag
+  page: 179
+  size: medium
+  source: mm
+  type: fey
+- alignment: cn
+  cr: '11'
+  environment:
+  - coastal
+  - underwater
+  flags: []
+  name: Marid
+  page: 146
+  size: large
+  source: mm
+  type: elemental
+- alignment: ce
+  cr: '12'
+  environment:
+  - coastal
+  - underwater
+  flags: []
+  name: Morkoth (in lair)
+  page: 178
+  size: medium
+  source: vgm
+  type: aberration
+- alignment: nn
+  cr: '20'
+  environment:
+  - coastal
+  - underwater
+  flags: []
+  name: Leviathan
+  page: 198
+  size: gargantuan
+  source: mtf
+  type: elemental
+- alignment: le
+  cr: 1/2
+  environment:
+  - coastal
+  - underwater
+  flags: []
+  name: Sahuagin
+  page: 263
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: nn
+  cr: 1/8
+  environment:
+  - coastal
+  - underwater
+  flags: []
+  name: Dolphin
+  page: 208
+  size: medium
+  source: vgm
+  type: beast
+- alignment: nn
+  cr: '0'
+  environment:
+  - desert
+  flags: []
+  name: Scorpion
+  page: 337
+  size: tiny
+  source: mm
+  type: beast
+- alignment: ne
+  cr: '1'
+  environment:
+  - desert
+  flags: []
+  name: Death Dog
+  page: 321
+  size: medium
+  source: mm
+  type: monstrosity
+- alignment: ne
+  cr: '2'
+  environment:
+  - desert
+  flags: []
+  name: Berbalang
+  page: 120
+  size: medium
+  source: mtf
+  type: aberration
+- alignment: ne
+  cr: '2'
+  environment:
+  - desert
+  flags: []
+  name: Gray Thirster
+  page: 238
+  size: medium
+  source: tob
+  type: undead
+- alignment: nn
+  cr: '3'
+  environment:
+  - desert
+  flags: []
+  name: Cactid
+  page: 50
+  size: large
+  source: tob
+  type: plant
+- alignment: le
+  cr: '3'
+  environment:
+  - desert
+  flags: []
+  name: Mummy
+  page: 228
+  size: medium
+  source: mm
+  type: undead
+- alignment: cn
+  cr: '4'
+  environment:
+  - desert
+  flags: []
+  name: Dau
+  page: 70
+  size: small
+  source: tob
+  type: fey
+- alignment: ce
+  cr: '4'
+  environment:
+  - desert
+  flags: []
+  name: Edimmu
+  page: 165
+  size: medium
+  source: tob
+  type: undead
+- alignment: ce
+  cr: '4'
+  environment:
+  - desert
+  flags: []
+  name: Lamia
+  page: 201
+  size: large
+  source: mm
+  type: monstrosity
+- alignment: nn
+  cr: '4'
+  environment:
+  - desert
+  flags: []
+  name: Manabane Scarab Swarm
+  page: 374
+  size: medium
+  source: tob
+  type: beast
+- alignment: nn
+  cr: '5'
+  environment:
+  - desert
+  flags: []
+  name: Fire Elemental
+  page: 125
+  size: large
+  source: mm
+  type: elemental
+- alignment: ce
+  cr: '5'
+  environment:
+  - desert
+  flags: []
+  name: Sand Hag
+  page: 245
+  size: medium
+  source: tob
+  type: fey
+- alignment: ne
+  cr: '5'
+  environment:
+  - desert
+  flags: []
+  name: Tlincalli
+  page: 193
+  size: large
+  source: vgm
+  type: monstrosity
+- alignment: le
+  cr: '6'
+  environment:
+  - desert
+  flags: []
+  name: Devil, Salt
+  page: 113
+  size: medium
+  source: tob
+  type: fiend
+- alignment: le
+  cr: '6'
+  environment:
+  - desert
+  flags: []
+  name: Medusa
+  page: 214
+  size: medium
+  source: mm
+  type: monstrosity
+- alignment: ne
+  cr: '6'
+  environment:
+  - desert
+  flags: []
+  name: Sand Silhouette
+  page: 332
+  size: medium
+  source: tob
+  type: undead
+- alignment: nn
+  cr: '6'
+  environment:
+  - desert
+  flags: []
+  name: Sandwyrm
+  page: 334
+  size: large
+  source: tob
+  type: dragon
+- alignment: cg
+  cr: '6'
+  environment:
+  - desert
+  flags: []
+  name: Young Brass Dragon
+  page: 105
+  size: large
+  source: mm
+  type: dragon
+- alignment: nn
+  cr: '9'
+  environment:
+  - desert
+  flags: []
+  name: Desert Giant
+  page: 222
+  size: huge
+  source: tob
+  type: giant
+- alignment: le
+  cr: '11'
+  environment:
+  - desert
+  flags: []
+  name: Efreeti
+  page: 145
+  size: large
+  source: mm
+  type: elemental
+- alignment: ln
+  cr: '11'
+  environment:
+  - desert
+  flags: []
+  name: Gynosphinx
+  page: 282
+  size: large
+  source: mm
+  type: monstrosity
+- alignment: cg
+  cr: '13'
+  environment:
+  - desert
+  flags: []
+  name: Adult Brass Dragon
+  page: 105
+  size: huge
+  source: mm
+  type: dragon
+- alignment: le
+  cr: '15'
+  environment:
+  - desert
+  flags: []
+  name: Mummy Lord
+  page: 229
+  size: medium
+  source: mm
+  type: undead
+- alignment: le
+  cr: '17'
+  environment:
+  - desert
+  flags: []
+  name: Adult Blue Dracolich
+  page: 84
+  size: huge
+  source: mm
+  type: undead
+- alignment: ln
+  cr: '17'
+  environment:
+  - desert
+  flags: []
+  name: Androsphinx
+  page: 281
+  size: large
+  source: mm
+  type: monstrosity
+- alignment: cg
+  cr: '20'
+  environment:
+  - desert
+  flags: []
+  name: Ancient Brass Dragon
+  page: 104
+  size: gargantuan
+  source: mm
+  type: dragon
+- alignment: ne
+  cr: 1/2
+  environment:
+  - desert
+  flags: []
+  name: Dust Mephit
+  page: 215
+  size: small
+  source: mm
+  type: elemental
+- alignment: nn
+  cr: 1/2
+  environment:
+  - desert
+  flags: []
+  name: Scorpion Cultist
+  page: 425
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: nn
+  cr: 1/8
+  environment:
+  - desert
+  flags: []
+  name: Camel
+  page: 320
+  size: large
+  source: mm
+  type: beast
+- alignment: ce
+  cr: '20'
+  environment:
+  - desert
+  - arctic
+  - underdark
+  - swamp
+  flags: []
+  name: Nightwalker
+  page: 216
+  size: huge
+  source: mtf
+  type: undead
+- alignment: le
+  cr: '16'
+  environment:
+  - desert
+  - coastal
+  flags: []
+  name: Adult Blue Dragon
+  page: 91
+  size: huge
+  source: mm
+  type: dragon
+- alignment: le
+  cr: '23'
+  environment:
+  - desert
+  - coastal
+  flags: []
+  name: Ancient Blue Dragon
+  page: 90
+  size: gargantuan
+  source: mm
+  type: dragon
+- alignment: nn
+  cr: '1'
+  environment:
+  - desert
+  - coastal
+  - forest
+  - swamp
+  - underdark
+  flags: []
+  name: Giant Toad
+  page: 329
+  size: large
+  source: mm
+  type: beast
+- alignment: cn
+  cr: '4'
+  environment:
+  - desert
+  - forest
+  flags: []
+  name: Domovoi
+  page: 122
+  size: medium
+  source: tob
+  type: fey
+- alignment: nn
+  cr: '3'
+  environment:
+  - desert
+  - forest
+  - plains
+  - underdark
+  flags: []
+  name: Night Scorpion
+  page: 340
+  size: large
+  source: tob
+  type: beast
+- alignment: nn
+  cr: '3'
+  environment:
+  - desert
+  - forest
+  - plains
+  - underdark
+  flags: []
+  name: Stygian Fat-Tailed Scorpion
+  page: 340
+  size: tiny
+  source: tob
+  type: beast
+- alignment: le
+  cr: '14'
+  environment:
+  - desert
+  - forest
+  - underdark
+  flags: []
+  name: Retriever
+  page: 222
+  size: large
+  source: mtf
+  type: construct
+- alignment: ne
+  cr: '5'
+  environment:
+  - desert
+  - forest
+  - urban
+  flags: []
+  name: Owl Harpy
+  page: 246
+  size: medium
+  source: tob
+  type: monstrosity
+- alignment: nn
+  cr: '1'
+  environment:
+  - desert
+  - forest
+  - urban
+  - swamp
+  - underdark
+  flags: []
+  name: Giant Spider
+  page: 328
+  size: large
+  source: mm
+  type: beast
+- alignment: nn
+  cr: '0'
+  environment:
+  - desert
+  - grassland
+  flags: []
+  name: Jackal
+  page: 331
+  size: small
+  source: mm
+  type: beast
+- alignment: ce
+  cr: '3'
+  environment:
+  - desert
+  - grassland
+  flags: []
+  name: Leucrotta
+  page: 169
+  size: large
+  source: vgm
+  type: monstrosity
+- alignment: ce
+  cr: 1/2
+  environment:
+  - desert
+  - grassland
+  flags: []
+  name: Jackalwere
+  page: 193
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: nn
+  cr: '1'
+  environment:
+  - desert
+  - grassland
+  - forest
+  - hill
+  flags: []
+  name: Giant Hyena
+  page: 326
+  size: large
+  source: mm
+  type: beast
+- alignment: ce
+  cr: 1/2
+  environment:
+  - desert
+  - grassland
+  - forest
+  - hill
+  flags: []
+  name: Gnoll
+  page: 163
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: le
+  cr: '6'
+  environment:
+  - desert
+  - grassland
+  - forest
+  - hill
+  - underdark
+  flags: []
+  name: Hobgoblin Warlord
+  page: 187
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: ce
+  cr: '8'
+  environment:
+  - desert
+  - grassland
+  - hill
+  - underdark
+  flags: []
+  name: Howler
+  page: 210
+  size: large
+  source: mtf
+  type: fiend
+- alignment: nn
+  cr: '1'
+  environment:
+  - desert
+  - grassland
+  - mountain
+  - hill
+  flags: []
+  name: Lion
+  page: 331
+  size: large
+  source: mm
+  type: beast
+- alignment: le
+  cr: '2'
+  environment:
+  - desert
+  - hill
+  - plains
+  flags: []
+  name: Tosculi Warrior
+  page: 386
+  size: small
+  source: tob
+  type: monstrosity
+- alignment: le
+  cr: '5'
+  environment:
+  - desert
+  - hill
+  - plains
+  flags: []
+  name: Tosculi Elite Bow Raider
+  page: 386
+  size: medium
+  source: tob
+  type: monstrosity
+- alignment: le
+  cr: '12'
+  environment:
+  - desert
+  - hill
+  - plains
+  flags: []
+  name: Tosculi Hive Queen
+  page: 385
+  size: large
+  source: tob
+  type: monstrosity
+- alignment: le
+  cr: 1/2
+  environment:
+  - desert
+  - hill
+  - plains
+  flags: []
+  name: Tosculi Drone
+  page: 386
+  size: small
+  source: tob
+  type: monstrosity
+- alignment: nn
+  cr: '9'
+  environment:
+  - desert
+  - marsh
+  flags: []
+  name: Oozasis
+  page: 310
+  size: gargantuan
+  source: tob
+  type: ooze
+- alignment: ne
+  cr: '10'
+  environment:
+  - desert
+  - marsh
+  - underdark
+  flags: []
+  name: Sathaq Worm
+  page: 337
+  size: huge
+  source: tob
+  type: elemental
+- alignment: ne
+  cr: '1'
+  environment:
+  - desert
+  - mountain
+  - hill
+  - underdark
+  flags: []
+  name: Firenewt Warlock of Imix
+  page: 143
+  size: medium
+  source: vgm
+  type: humanoid
+- alignment: nn
+  cr: 1/8
+  environment:
+  - desert
+  - mountain
+  - underdark
+  flags: []
+  name: Young Kruthik
+  page: 211
+  size: small
+  source: mtf
+  type: monstrosity
+- alignment: le
+  cr: 1/8
+  environment:
+  - desert
+  - mountain
+  - urban
+  - arctic
+  - forest
+  - coastal
+  - swamp
+  - underdark
+  - hill
+  flags: []
+  name: Kobold
+  page: 195
+  size: small
+  source: mm
+  type: humanoid
+- alignment: ce
+  cr: '3'
+  environment:
+  - desert
+  - plains
+  flags: []
+  name: Gnoll Havoc Runner
+  page: 230
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: nn
+  cr: '7'
+  environment:
+  - desert
+  - plains
+  flags: []
+  name: Spider, Sand
+  page: 364
+  size: large
+  source: tob
+  type: beast
+- alignment: nn
+  cr: '8'
+  environment:
+  - desert
+  - plains
+  flags: []
+  name: Dune Mimic
+  page: 162
+  size: huge
+  source: tob
+  type: monstrosity
+- alignment: nn
+  cr: 1/2
+  environment:
+  - desert
+  - plains
+  flags: []
+  name: War Ostrich
+  page: 307
+  size: large
+  source: tob
+  type: beast
+- alignment: nn
+  cr: '9'
+  environment:
+  - desert
+  - plains
+  - underdark
+  flags: []
+  name: Horakh
+  page: 250
+  size: medium
+  source: tob
+  type: monstrosity
+- alignment: ne
+  cr: '14'
+  environment:
+  - desert
+  - plains
+  - underdark
+  flags: []
+  name: Sphinx, Gypsosphinx
+  page: 359
+  size: large
+  source: tob
+  type: monstrosity
+- alignment: le
+  cr: '15'
+  environment:
+  - desert
+  - swamp
+  - underdark
+  flags: []
+  name: Skull Lord
+  page: 230
+  size: medium
+  source: mtf
+  type: undead
+- alignment: le
+  cr: '3'
+  environment:
+  - desert
+  - underdark
+  flags: []
+  name: Mummy, Venomous
+  page: 299
+  size: medium
+  source: tob
+  type: undead
+- alignment: ne
+  cr: '12'
+  environment:
+  - desert
+  - underdark
+  flags: []
+  name: Oinoloth
+  page: 251
+  size: medium
+  source: mtf
+  type: fiend
+- alignment: nn
+  cr: '5'
+  environment:
+  - desert
+  - underdark
+  - mountain
+  flags: []
+  name: Kruthik Hive Lord
+  page: 212
+  size: large
+  source: mtf
+  type: monstrosity
+- alignment: nn
+  cr: 1/4
+  environment:
+  - desert
+  - underwater
+  - forest
+  - jungle
+  - swamp
+  flags: []
+  name: Constrictor Snake
+  page: 320
+  size: large
+  source: mm
+  type: beast
+- alignment: nn
+  cr: '2'
+  environment:
+  - desert
+  - underwater
+  - forest
+  - jungle
+  - underdark
+  - swamp
+  flags: []
+  name: Giant Constrictor Snake
+  page: 324
+  size: huge
+  source: mm
+  type: beast
+- alignment: ce
+  cr: '4'
+  environment:
+  - desert
+  - urban
+  flags: []
+  name: Dybbuk
+  page: 132
+  size: medium
+  source: mtf
+  type: fiend
+- alignment: nn
+  cr: '7'
+  environment:
+  - desert
+  - urban
+  flags: []
+  name: Possessed Pillar
+  page: 314
+  size: large
+  source: tob
+  type: construct
+- alignment: ce
+  cr: '12'
+  environment:
+  - desert
+  - urban
+  - arctic
+  flags: []
+  name: Boneclaw
+  page: 121
+  size: large
+  source: mtf
+  type: undead
+- alignment: le
+  cr: '12'
+  environment:
+  - desert
+  - urban
+  - mountain
+  flags: []
+  name: Githyanki Kith'rak
+  page: 205
+  size: medium
+  source: mtf
+  type: humanoid
+- alignment: nn
+  cr: 1/8
+  environment:
+  - desert
+  - urban
+  - mountain
+  - grassland
+  - coastal
+  - jungle
+  - forest
+  - swamp
+  - hill
+  - underdark
+  flags: []
+  name: Stirge
+  page: 284
+  size: tiny
+  source: mm
+  type: beast
+- alignment: nn
+  cr: '0'
+  environment:
+  - forest
+  flags: []
+  name: Awakened Shrub
+  page: 317
+  size: small
+  source: mm
+  type: plant
+- alignment: nn
+  cr: '0'
+  environment:
+  - forest
+  flags: []
+  name: Badger
+  page: 318
+  size: tiny
+  source: mm
+  type: beast
+- alignment: ne
+  cr: '1'
+  environment:
+  - forest
+  flags: []
+  name: Child of the Briar
+  page: 56
+  size: tiny
+  source: tob
+  type: plant
+- alignment: ce
+  cr: '1'
+  environment:
+  - forest
+  flags: []
+  name: Drake, Crimson
+  page: 151
+  size: tiny
+  source: tob
+  type: dragon
+- alignment: nn
+  cr: '1'
+  environment:
+  - forest
+  flags: []
+  name: Dryad
+  page: 121
+  size: medium
+  source: mm
+  type: fey
+- alignment: le
+  cr: '1'
+  environment:
+  - forest
+  flags: []
+  name: Grung Wildling
+  page: 157
+  size: small
+  source: vgm
+  type: humanoid
+- alignment: cn
+  cr: '1'
+  environment:
+  - forest
+  flags: []
+  name: Leshy
+  page: 272
+  size: medium
+  source: tob
+  type: monstrosity
+- alignment: ce
+  cr: '1'
+  environment:
+  - forest
+  flags: []
+  name: Quickling
+  page: 187
+  size: tiny
+  source: vgm
+  type: fey
+- alignment: cg
+  cr: '1'
+  environment:
+  - forest
+  flags: []
+  name: Young Faerie Dragon
+  page: 133
+  size: tiny
+  source: mm
+  type: dragon
+- alignment: cg
+  cr: '2'
+  environment:
+  - forest
+  flags: []
+  name: Adult Faerie Dragon
+  page: 133
+  size: tiny
+  source: mm
+  type: dragon
+- alignment: nn
+  cr: '2'
+  environment:
+  - forest
+  flags: []
+  name: Awakened Tree
+  page: 317
+  size: huge
+  source: mm
+  type: plant
+- alignment: ce
+  cr: '2'
+  environment:
+  - forest
+  flags: []
+  name: Behtu
+  page: 34
+  size: small
+  source: tob
+  type: humanoid
+- alignment: ne
+  cr: '2'
+  environment:
+  - forest
+  flags: []
+  name: Ettercap
+  page: 131
+  size: medium
+  source: mm
+  type: monstrosity
+- alignment: le
+  cr: '2'
+  environment:
+  - forest
+  flags: []
+  name: Grung Elite Warrior
+  page: 157
+  size: small
+  source: vgm
+  type: humanoid
+- alignment: ln
+  cr: '2'
+  environment:
+  - forest
+  flags: []
+  name: Tendril Puppet
+  page: 403
+  size: medium
+  source: tob
+  type: plant
+- alignment: ne
+  cr: '3'
+  environment:
+  - forest
+  flags: []
+  name: Arboreal Grappler
+  page: 25
+  size: medium
+  source: tob
+  type: abberation
+- alignment: cg
+  cr: '3'
+  environment:
+  - forest
+  flags: []
+  name: Bearfolk
+  page: 33
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: le
+  cr: '3'
+  environment:
+  - forest
+  flags: []
+  name: Displacer Beast
+  page: 81
+  size: large
+  source: mm
+  type: monstrosity
+- alignment: c
+  cr: '3'
+  environment:
+  - forest
+  flags: []
+  name: Dryad, Duskthorn
+  page: 160
+  size: medium
+  source: tob
+  type: fey
+- alignment: ne
+  cr: '3'
+  environment:
+  - forest
+  flags: []
+  name: Jaculus
+  page: 258
+  size: small
+  source: tob
+  type: dragon
+- alignment: nn
+  cr: '3'
+  environment:
+  - forest
+  flags: []
+  name: Millitaur
+  page: 288
+  size: large
+  source: tob
+  type: monstrosity
+- alignment: nn
+  cr: '3'
+  environment:
+  - forest
+  flags: []
+  name: Owlbear
+  page: 249
+  size: large
+  source: mm
+  type: monstrosity
+- alignment: cn
+  cr: '3'
+  environment:
+  - forest
+  flags: []
+  name: Pombero
+  page: 313
+  size: medium
+  source: tob
+  type: fey
+- alignment: nn
+  cr: '3'
+  environment:
+  - forest
+  flags: []
+  name: "Spider, J\u2019ba Fofi"
+  page: 362
+  size: large
+  source: tob
+  type: beast
+- alignment: nn
+  cr: '4'
+  environment:
+  - forest
+  flags: []
+  name: Lemurfolk Greyfur
+  page: 271
+  size: small
+  source: tob
+  type: humanoid
+- alignment: ce
+  cr: '4'
+  environment:
+  - forest
+  flags: []
+  name: Sap Demon
+  page: 335
+  size: small
+  source: tob
+  type: ooze
+- alignment: ce
+  cr: '5'
+  environment:
+  - forest
+  flags: []
+  name: Asanbosam
+  page: 27
+  size: large
+  source: tob
+  type: abberation
+- alignment: nn
+  cr: '5'
+  environment:
+  - forest
+  flags: []
+  name: Ravenala
+  page: 321
+  size: large
+  source: tob
+  type: plant
+- alignment: lg
+  cr: '5'
+  environment:
+  - forest
+  flags: []
+  name: Unicorn
+  page: 294
+  size: large
+  source: mm
+  type: celestial
+- alignment: ln
+  cr: '5'
+  environment:
+  - forest
+  flags: []
+  name: Vila
+  page: 400
+  size: medium
+  source: tob
+  type: fey
+- alignment: ln
+  cr: '5'
+  environment:
+  - forest
+  flags: []
+  name: Wood Woad
+  page: 198
+  size: medium
+  source: vgm
+  type: plant
+- alignment: ne
+  cr: '6'
+  environment:
+  - forest
+  flags: []
+  name: Angatra
+  page: 19
+  size: medium
+  source: tob
+  type: undead
+- alignment: ce
+  cr: '6'
+  environment:
+  - forest
+  flags: []
+  name: Likho
+  page: 275
+  size: medium
+  source: tob
+  type: monstrosity
+- alignment: nn
+  cr: '6'
+  environment:
+  - forest
+  flags: []
+  name: Treant, Weeping
+  page: 388
+  size: huge
+  source: tob
+  type: plant
+- alignment: nn
+  cr: '6'
+  environment:
+  - forest
+  flags: []
+  name: White Ape
+  page: 408
+  size: large
+  source: tob
+  type: monstrosity
+- alignment: ce
+  cr: '7'
+  environment:
+  - forest
+  flags: []
+  name: Drake, Elder Shadow
+  page: 153
+  size: large
+  source: tob
+  type: dragon
+- alignment: cn
+  cr: '7'
+  environment:
+  - forest
+  flags: []
+  name: Korred
+  page: 168
+  size: small
+  source: vgm
+  type: fey
+- alignment: ln
+  cr: '7'
+  environment:
+  - forest
+  flags: []
+  name: Vine Lord
+  page: 402
+  size: medium
+  source: tob
+  type: plant
+- alignment: le
+  cr: '8'
+  environment:
+  - forest
+  flags: []
+  name: Young Green Dragon
+  page: 94
+  size: large
+  source: mm
+  type: dragon
+- alignment: cg
+  cr: '9'
+  environment:
+  - forest
+  flags: []
+  name: Treant
+  page: 289
+  size: huge
+  source: mm
+  type: plant
+- alignment: cn
+  cr: '10'
+  environment:
+  - forest
+  flags: []
+  name: Autumn Eladrin
+  page: 195
+  size: medium
+  source: mtf
+  type: fey
+- alignment: nn
+  cr: '12'
+  environment:
+  - forest
+  flags: []
+  name: Titanoboa
+  page: 382
+  size: gargantuan
+  source: tob
+  type: beast
+- alignment: ce
+  cr: '14'
+  environment:
+  - forest
+  flags: []
+  name: Zmey
+  page: 416
+  size: huge
+  source: tob
+  type: dragon
+- alignment: le
+  cr: '15'
+  environment:
+  - forest
+  flags: []
+  name: Adult Green Dragon
+  page: 94
+  size: huge
+  source: mm
+  type: dragon
+- alignment: le
+  cr: '22'
+  environment:
+  - forest
+  flags: []
+  name: Ancient Green Dragon
+  page: 93
+  size: gargantuan
+  source: mm
+  type: dragon
+- alignment: cn
+  cr: 1/2
+  environment:
+  - forest
+  flags: []
+  name: Alseid
+  page: 15
+  size: medium
+  source: tob
+  type: monstrosity
+- alignment: nn
+  cr: 1/2
+  environment:
+  - forest
+  flags: []
+  name: Black Bear
+  page: 318
+  size: medium
+  source: mm
+  type: beast
+- alignment: ln
+  cr: 1/2
+  environment:
+  - forest
+  flags: []
+  name: Lantern Dragonette
+  page: 270
+  size: tiny
+  source: tob
+  type: dragon
+- alignment: cn
+  cr: 1/2
+  environment:
+  - forest
+  flags: []
+  name: Satyr
+  page: 267
+  size: medium
+  source: mm
+  type: fey
+- alignment: ne
+  cr: 1/2
+  environment:
+  - forest
+  flags: []
+  name: Vine Blight
+  page: 32
+  size: medium
+  source: mm
+  type: plant
+- alignment: lg
+  cr: 1/4
+  environment:
+  - forest
+  flags: []
+  name: Blink Dog
+  page: 318
+  size: medium
+  source: mm
+  type: fey
+- alignment: nn
+  cr: 1/4
+  environment:
+  - forest
+  flags: []
+  name: Giant Badger
+  page: 323
+  size: medium
+  source: mm
+  type: beast
+- alignment: ne
+  cr: 1/4
+  environment:
+  - forest
+  flags: []
+  name: Needle Blight
+  page: 32
+  size: medium
+  source: mm
+  type: plant
+- alignment: ng
+  cr: 1/4
+  environment:
+  - forest
+  flags: []
+  name: Pixie
+  page: 253
+  size: tiny
+  source: mm
+  type: fey
+- alignment: ng
+  cr: 1/4
+  environment:
+  - forest
+  flags: []
+  name: Sprite
+  page: 283
+  size: tiny
+  source: mm
+  type: fey
+- alignment: ne
+  cr: 1/8
+  environment:
+  - forest
+  flags: []
+  name: Twig Blight
+  page: 32
+  size: small
+  source: mm
+  type: plant
+- alignment: cn
+  cr: '10'
+  environment:
+  - forest
+  - arctic
+  flags: []
+  name: Winter Eladrin
+  page: 197
+  size: medium
+  source: mtf
+  type: fey
+- alignment: ce
+  cr: '4'
+  environment:
+  - forest
+  - coastal
+  flags: []
+  name: Banshee
+  page: 23
+  size: medium
+  source: mm
+  type: undead
+- alignment: ce
+  cr: '1'
+  environment:
+  - forest
+  - coastal
+  - mountain
+  - hill
+  flags: []
+  name: Harpy
+  page: 181
+  size: medium
+  source: mm
+  type: monstrosity
+- alignment: ce
+  cr: '11'
+  environment:
+  - forest
+  - coastal
+  - underdark
+  - swamp
+  flags: []
+  name: Spirit Troll
+  page: 244
+  size: large
+  source: mtf
+  type: giant
+- alignment: lg
+  cr: '10'
+  environment:
+  - forest
+  - desert
+  flags: []
+  name: Guardian Naga
+  page: 234
+  size: large
+  source: mm
+  type: monstrosity
+- alignment: cn
+  cr: '10'
+  environment:
+  - forest
+  - desert
+  flags: []
+  name: Summer Eladrin
+  page: 196
+  size: medium
+  source: mtf
+  type: fey
+- alignment: ng
+  cr: 1/4
+  environment:
+  - forest
+  - desert
+  - coastal
+  - mountain
+  - hill
+  - urban
+  flags: []
+  name: Pseudodragon
+  page: 254
+  size: tiny
+  source: mm
+  type: dragon
+- alignment: nn
+  cr: '0'
+  environment:
+  - forest
+  - desert
+  - grassland
+  - urban
+  flags: []
+  name: Cat
+  page: 320
+  size: tiny
+  source: mm
+  type: beast
+- alignment: ce
+  cr: '1'
+  environment:
+  - forest
+  - desert
+  - mountain
+  - underdark
+  - hill
+  - arctic
+  - urban
+  flags: []
+  name: Half-ogre
+  page: 238
+  size: large
+  source: mm
+  type: giant
+- alignment: cg
+  cr: '1'
+  environment:
+  - forest
+  - desert
+  - mountain
+  - underdark
+  - hill
+  - arctic
+  - urban
+  flags: []
+  name: Half-ogre
+  page: 238
+  size: large
+  source: mm
+  type: giant
+- alignment: cn
+  cr: '1'
+  environment:
+  - forest
+  - desert
+  - mountain
+  - underdark
+  - hill
+  - arctic
+  - urban
+  flags: []
+  name: Half-ogre
+  page: 238
+  size: large
+  source: mm
+  type: giant
+- alignment: nn
+  cr: '2'
+  environment:
+  - forest
+  - desert
+  - swamp
+  - mountain
+  - underdark
+  - arctic
+  - urban
+  flags: []
+  name: Guard Drake
+  page: 158
+  size: medium
+  source: vgm
+  type: dragon
+- alignment: ce
+  cr: '9'
+  environment:
+  - forest
+  - desert
+  - underdark
+  - swamp
+  flags: []
+  name: Rot Troll
+  page: 244
+  size: large
+  source: mtf
+  type: giant
+- alignment: nn
+  cr: '0'
+  environment:
+  - forest
+  - grassland
+  flags: []
+  name: Deer
+  page: 321
+  size: medium
+  source: mm
+  type: beast
+- alignment: nn
+  cr: '1'
+  environment:
+  - forest
+  - grassland
+  flags: []
+  name: Tiger
+  page: 339
+  size: large
+  source: mm
+  type: beast
+- alignment: cn
+  cr: '10'
+  environment:
+  - forest
+  - grassland
+  flags: []
+  name: Spring Eladrin
+  page: 196
+  size: medium
+  source: mtf
+  type: fey
+- alignment: nn
+  cr: '22'
+  environment:
+  - forest
+  - grassland
+  - desert
+  - hill
+  - underdark
+  - mountain
+  flags: []
+  name: Zaratan
+  page: 201
+  size: gargantuan
+  source: mtf
+  type: elemental
+- alignment: le
+  cr: '4'
+  environment:
+  - forest
+  - grassland
+  - hill
+  flags: []
+  name: Hobgoblin Devastator
+  page: 161
+  size: medium
+  source: vgm
+  type: humanoid
+- alignment: nn
+  cr: '5'
+  environment:
+  - forest
+  - grassland
+  - hill
+  flags: []
+  name: Gorgon
+  page: 171
+  size: large
+  source: mm
+  type: monstrosity
+- alignment: nn
+  cr: 1/4
+  environment:
+  - forest
+  - grassland
+  - hill
+  flags: []
+  name: Elk
+  page: 322
+  size: large
+  source: mm
+  type: beast
+- alignment: nn
+  cr: '2'
+  environment:
+  - forest
+  - grassland
+  - hill
+  - mountain
+  flags: []
+  name: Giant Elk
+  page: 325
+  size: huge
+  source: mm
+  type: beast
+- alignment: nn
+  cr: '5'
+  environment:
+  - forest
+  - grassland
+  - hill
+  - mountain
+  flags: []
+  name: Oaken Bolter
+  page: 126
+  size: medium
+  source: mtf
+  type: construct
+- alignment: ne
+  cr: '1'
+  environment:
+  - forest
+  - grassland
+  - hill
+  - underdark
+  flags: []
+  name: Goblin Boss
+  page: 166
+  size: small
+  source: mm
+  type: humanoid
+- alignment: ce
+  cr: '2'
+  environment:
+  - forest
+  - grassland
+  - hill
+  - underdark
+  - mountain
+  flags: []
+  name: Orc Hand of Yurtrus
+  page: 184
+  size: medium
+  source: vgm
+  type: humanoid
+- alignment: nn
+  cr: '1'
+  environment:
+  - forest
+  - grassland
+  - mountain
+  - hill
+  flags: []
+  name: Bronze Scout
+  page: 125
+  size: medium
+  source: mtf
+  type: construct
+- alignment: nn
+  cr: '4'
+  environment:
+  - forest
+  - grassland
+  - mountain
+  - hill
+  flags: []
+  name: Iron Cobra
+  page: 125
+  size: medium
+  source: mtf
+  type: construct
+- alignment: ce
+  cr: '1'
+  environment:
+  - forest
+  - grassland
+  - underdark
+  flags: []
+  name: Bugbear
+  page: 33
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: nn
+  cr: '1'
+  environment:
+  - forest
+  - hill
+  flags: []
+  name: Dire Wolf
+  page: 321
+  size: large
+  source: mm
+  type: beast
+- alignment: cn
+  cr: '1'
+  environment:
+  - forest
+  - hill
+  flags: []
+  name: Wampus Cat
+  page: 405
+  size: medium
+  source: tob
+  type: monstrosity
+- alignment: ne
+  cr: '5'
+  environment:
+  - forest
+  - hill
+  flags: []
+  name: Lindwurm
+  page: 276
+  size: large
+  source: tob
+  type: dragon
+- alignment: cn
+  cr: '12'
+  environment:
+  - forest
+  - hill
+  flags: []
+  name: Gray Render
+  page: 209
+  size: large
+  source: mtf
+  type: monstrosity
+- alignment: nn
+  cr: '1'
+  environment:
+  - forest
+  - hill
+  - mountain
+  flags: []
+  name: Dogmole
+  page: 120
+  size: medium
+  source: tob
+  type: beast
+- alignment: nn
+  cr: '11'
+  environment:
+  - forest
+  - hill
+  - mountain
+  flags: []
+  name: Ychen Bannog
+  page: 413
+  size: gargantuan
+  source: tob
+  type: beast
+- alignment: nn
+  cr: '1'
+  environment:
+  - forest
+  - hill
+  - plains
+  flags: []
+  name: Erina Defender
+  page: 178
+  size: small
+  source: tob
+  type: humanoid
+- alignment: nn
+  cr: 1/4
+  environment:
+  - forest
+  - hill
+  - plains
+  flags: []
+  name: Erina Scrounger
+  page: 178
+  size: small
+  source: tob
+  type: humanoid
+- alignment: ce
+  cr: '1'
+  environment:
+  - forest
+  - hill
+  - underdark
+  flags: []
+  name: Nilbog
+  page: 182
+  size: small
+  source: vgm
+  type: humanoid
+- alignment: nn
+  cr: '5'
+  environment:
+  - forest
+  - hill
+  - urban
+  flags: []
+  name: Ravenfolk Doom Croaker
+  page: 322
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: nn
+  cr: 1/2
+  environment:
+  - forest
+  - hill
+  - urban
+  flags: []
+  name: Ravenfolk Scout
+  page: 322
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: nn
+  cr: '7'
+  environment:
+  - forest
+  - jungle
+  flags: []
+  name: Giant Ape
+  page: 323
+  size: huge
+  source: mm
+  type: beast
+- alignment: nn
+  cr: '5'
+  environment:
+  - forest
+  - jungle
+  - grassland
+  flags: []
+  name: Brontosaurus
+  page: 139
+  size: gargantuan
+  source: vgm
+  type: beast
+- alignment: nn
+  cr: 1/4
+  environment:
+  - forest
+  - jungle
+  - grassland
+  flags: []
+  name: Velociraptor
+  page: 140
+  size: tiny
+  source: vgm
+  type: beast
+- alignment: nn
+  cr: 1/8
+  environment:
+  - forest
+  - jungle
+  - grassland
+  - desert
+  - urban
+  flags: []
+  name: Flying Snake
+  page: 322
+  size: tiny
+  source: mm
+  type: beast
+- alignment: ne
+  cr: '4'
+  environment:
+  - forest
+  - jungle
+  - grassland
+  - hill
+  flags: []
+  name: Wereboar
+  page: 209
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: nn
+  cr: '3'
+  environment:
+  - forest
+  - jungle
+  - underdark
+  - swamp
+  flags: []
+  name: Flail Snail
+  page: 144
+  size: large
+  source: vgm
+  type: elemental
+- alignment: cn
+  cr: '3'
+  environment:
+  - forest
+  - marsh
+  flags: []
+  name: Bagiennik
+  page: 31
+  size: medium
+  source: tob
+  type: abberation
+- alignment: ne
+  cr: '9'
+  environment:
+  - forest
+  - marsh
+  flags: []
+  name: Bukavac
+  page: 47
+  size: large
+  source: tob
+  type: monstrosity
+- alignment: nn
+  cr: '13'
+  environment:
+  - forest
+  - marsh
+  flags: []
+  name: Dinosaur, Spinosaurus
+  page: 116
+  size: gargantuan
+  source: tob
+  type: beast
+- alignment: nn
+  cr: 1/4
+  environment:
+  - forest
+  - marsh
+  flags: []
+  name: Suturefly
+  page: 372
+  size: tiny
+  source: tob
+  type: beast
+- alignment: cn
+  cr: '1'
+  environment:
+  - forest
+  - marsh
+  - underdark
+  flags: []
+  name: Moss Lurker
+  page: 298
+  size: small
+  source: tob
+  type: humanoid
+- alignment: ce
+  cr: '1'
+  environment:
+  - forest
+  - mountain
+  - underdark
+  flags: []
+  name: Choker
+  page: 123
+  size: small
+  source: mtf
+  type: aberration
+- alignment: nn
+  cr: '3'
+  environment:
+  - forest
+  - plains
+  flags: []
+  name: Far Darrig
+  page: 179
+  size: small
+  source: tob
+  type: fey
+- alignment: ce
+  cr: '4'
+  environment:
+  - forest
+  - plains
+  flags: []
+  name: Death Butterfly Swarm
+  page: 71
+  size: large
+  source: tob
+  type: beast
+- alignment: ce
+  cr: '6'
+  environment:
+  - forest
+  - plains
+  flags: []
+  name: Death Butterfly Swarm, Greater
+  page: 71
+  size: huge
+  source: tob
+  type: beast
+- alignment: ne
+  cr: '6'
+  environment:
+  - forest
+  - plains
+  flags: []
+  name: Loxoda
+  page: 280
+  size: huge
+  source: tob
+  type: monstrosity
+- alignment: ne
+  cr: '8'
+  environment:
+  - forest
+  - plains
+  flags: []
+  name: Savager
+  page: 338
+  size: large
+  source: tob
+  type: beast
+- alignment: nn
+  cr: '6'
+  environment:
+  - forest
+  - plains
+  - urban
+  flags: []
+  name: Clockwork Myrmidon
+  page: 64
+  size: large
+  source: tob
+  type: construct
+- alignment: nn
+  cr: 1/4
+  environment:
+  - forest
+  - plains
+  - urban
+  flags: []
+  name: Treacle
+  page: 387
+  size: tiny
+  source: tob
+  type: ooze
+- alignment: nn
+  cr: '1'
+  environment:
+  - forest
+  - swamp
+  flags: []
+  name: Thorny
+  page: 197
+  size: medium
+  source: vgm
+  type: plant
+- alignment: nn
+  cr: '2'
+  environment:
+  - forest
+  - swamp
+  flags: []
+  name: Lizardfolk Shaman
+  page: 205
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: nn
+  cr: '5'
+  environment:
+  - forest
+  - swamp
+  flags: []
+  name: Shambling Mound
+  page: 270
+  size: large
+  source: mm
+  type: plant
+- alignment: ne
+  cr: '3'
+  environment:
+  - forest
+  - swamp
+  - hill
+  flags: []
+  name: Green Hag
+  page: 177
+  size: medium
+  source: mm
+  type: fey
+- alignment: cn
+  cr: '2'
+  environment:
+  - forest
+  - swamp
+  - underdark
+  - urban
+  flags: []
+  name: Darkling Elder
+  page: 134
+  size: medium
+  source: vgm
+  type: fey
+- alignment: nn
+  cr: '2'
+  environment:
+  - forest
+  - underdark
+  flags: []
+  name: Grick
+  page: 173
+  size: medium
+  source: mm
+  type: monstrosity
+- alignment: nn
+  cr: 1/4
+  environment:
+  - forest
+  - underdark
+  flags: []
+  name: Giant Bat
+  page: 323
+  size: large
+  source: mm
+  type: beast
+- alignment: nn
+  cr: '2'
+  environment:
+  - forest
+  - urban
+  flags: []
+  name: Clockwork Hound
+  page: 62
+  size: medium
+  source: tob
+  type: construct
+- alignment: nn
+  cr: '3'
+  environment:
+  - forest
+  - urban
+  flags: []
+  name: Clockwork Huntsman
+  page: 63
+  size: medium
+  source: tob
+  type: construct
+- alignment: le
+  cr: '7'
+  environment:
+  - forest
+  - urban
+  flags: []
+  name: Oni
+  page: 239
+  size: large
+  source: mm
+  type: giant
+- alignment: nn
+  cr: '8'
+  environment:
+  - forest
+  - urban
+  flags: []
+  name: Dragonleaf Tree
+  page: 147
+  size: large
+  source: tob
+  type: plant
+- alignment: nn
+  cr: 1/8
+  environment:
+  - forest
+  - urban
+  flags: []
+  name: Stryx
+  page: 369
+  size: tiny
+  source: tob
+  type: monstrosity
+- alignment: le
+  cr: '1'
+  environment:
+  - forest
+  - urban
+  - mountain
+  - underdark
+  - hill
+  flags: []
+  name: Kobold Scale Sorcerer
+  page: 167
+  size: small
+  source: vgm
+  type: humanoid
+- alignment: ce
+  cr: '8'
+  environment:
+  - forest
+  - urban
+  - swamp
+  flags: []
+  name: Corpse Flower
+  page: 127
+  size: large
+  source: mtf
+  type: plant
+- alignment: nn
+  cr: 1/4
+  environment:
+  - forest
+  - urban
+  - swamp
+  - hill
+  flags: []
+  name: Swarm of Ravens
+  page: 339
+  size: medium
+  source: mm
+  type: beast
+- alignment: nn
+  cr: 1/8
+  environment:
+  - forest
+  - urban
+  - swamp
+  - underdark
+  flags: []
+  name: Giant Rat
+  page: 327
+  size: small
+  source: mm
+  type: beast
+- alignment: ce
+  cr: '1'
+  environment:
+  - grassland
+  flags: []
+  name: Scarecrow
+  page: 268
+  size: medium
+  source: mm
+  type: construct
+- alignment: nn
+  cr: '2'
+  environment:
+  - grassland
+  flags: []
+  name: Rhinoceros
+  page: 336
+  size: large
+  source: mm
+  type: beast
+- alignment: nn
+  cr: '4'
+  environment:
+  - grassland
+  flags: []
+  name: Elephant
+  page: 322
+  size: huge
+  source: mm
+  type: beast
+- alignment: le
+  cr: '14'
+  environment:
+  - grassland
+  flags: []
+  name: Cadaver Collector
+  page: 122
+  size: large
+  source: mtf
+  type: construct
+- alignment: nn
+  cr: 1/2
+  environment:
+  - grassland
+  flags: []
+  name: Cockatrice
+  page: 42
+  size: small
+  source: mm
+  type: monstrosity
+- alignment: nn
+  cr: 1/4
+  environment:
+  - grassland
+  flags: []
+  name: Rothe
+  page: 207
+  size: large
+  source: vgm
+  type: beast
+- alignment: ne
+  cr: '1'
+  environment:
+  - grassland
+  - desert
+  flags: []
+  name: Giant Vulture
+  page: 329
+  size: large
+  source: mm
+  type: beast
+- alignment: cn
+  cr: '1'
+  environment:
+  - grassland
+  - desert
+  flags: []
+  name: Thri-kreen
+  page: 288
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: nn
+  cr: 1/4
+  environment:
+  - grassland
+  - desert
+  - coastal
+  - forest
+  - hill
+  flags: []
+  name: Giant Wolf Spider
+  page: 330
+  size: medium
+  source: mm
+  type: beast
+- alignment: ce
+  cr: '2'
+  environment:
+  - grassland
+  - desert
+  - forest
+  - hill
+  flags: []
+  name: Gnoll Pack Lord
+  page: 163
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: nn
+  cr: '4'
+  environment:
+  - grassland
+  - desert
+  - jungle
+  - forest
+  flags: []
+  name: Weretiger
+  page: 210
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: nn
+  cr: '2'
+  environment:
+  - grassland
+  - forest
+  flags: []
+  name: Ankheg
+  page: 21
+  size: large
+  source: mm
+  type: monstrosity
+- alignment: ng
+  cr: '2'
+  environment:
+  - grassland
+  - forest
+  flags: []
+  name: Centaur
+  page: 38
+  size: large
+  source: mm
+  type: monstrosity
+- alignment: lg
+  cr: '10'
+  environment:
+  - grassland
+  - forest
+  flags: []
+  name: Young Gold Dragon
+  page: 115
+  size: large
+  source: mm
+  type: dragon
+- alignment: lg
+  cr: '17'
+  environment:
+  - grassland
+  - forest
+  flags: []
+  name: Adult Gold Dragon
+  page: 114
+  size: huge
+  source: mm
+  type: dragon
+- alignment: lg
+  cr: '24'
+  environment:
+  - grassland
+  - forest
+  flags: []
+  name: Ancient Gold Dragon
+  page: 113
+  size: gargantuan
+  source: mm
+  type: dragon
+- alignment: ce
+  cr: 1/2
+  environment:
+  - grassland
+  - forest
+  - arctic
+  - hill
+  flags: []
+  name: Gnoll Hunter
+  page: 154
+  size: medium
+  source: vgm
+  type: humanoid
+- alignment: ne
+  cr: '4'
+  environment:
+  - grassland
+  - forest
+  - hill
+  flags: []
+  name: Yeth Hound
+  page: 201
+  size: large
+  source: vgm
+  type: fey
+- alignment: ne
+  cr: '4'
+  environment:
+  - grassland
+  - forest
+  - hill
+  - underdark
+  - mountain
+  flags: []
+  name: Barghest
+  page: 123
+  size: large
+  source: vgm
+  type: fiend
+- alignment: nn
+  cr: '1'
+  environment:
+  - grassland
+  - forest
+  - jungle
+  - hill
+  flags: []
+  name: Deinonychus
+  page: 139
+  size: medium
+  source: vgm
+  type: beast
+- alignment: ne
+  cr: '1'
+  environment:
+  - grassland
+  - forest
+  - swamp
+  - hill
+  - underdark
+  - desert
+  - urban
+  - mountain
+  flags: []
+  name: Meazel
+  page: 214
+  size: medium
+  source: mtf
+  type: humanoid
+- alignment: ce
+  cr: '6'
+  environment:
+  - grassland
+  - hill
+  flags: []
+  name: Mouth of Grolantor
+  page: 149
+  size: huge
+  source: vgm
+  type: giant
+- alignment: nn
+  cr: '1'
+  environment:
+  - grassland
+  - hill
+  - mountain
+  flags: []
+  name: Hippogriff
+  page: 184
+  size: large
+  source: mm
+  type: monstrosity
+- alignment: nn
+  cr: '5'
+  environment:
+  - grassland
+  - hill
+  - mountain
+  flags: []
+  name: Bulette
+  page: 34
+  size: large
+  source: mm
+  type: monstrosity
+- alignment: nn
+  cr: 1/2
+  environment:
+  - grassland
+  - hill
+  - mountain
+  flags: []
+  name: Giant Goat
+  page: 326
+  size: large
+  source: mm
+  type: beast
+- alignment: nn
+  cr: '2'
+  environment:
+  - grassland
+  - jungle
+  flags: []
+  name: Allosaurus
+  page: 79
+  size: large
+  source: mm
+  type: beast
+- alignment: nn
+  cr: '3'
+  environment:
+  - grassland
+  - jungle
+  flags: []
+  name: Ankylosaurus
+  page: 79
+  size: huge
+  source: mm
+  type: beast
+- alignment: nn
+  cr: '5'
+  environment:
+  - grassland
+  - jungle
+  flags: []
+  name: Triceratops
+  page: 80
+  size: huge
+  source: mm
+  type: beast
+- alignment: nn
+  cr: '4'
+  environment:
+  - grassland
+  - jungle
+  - forest
+  flags: []
+  name: Stegosaurus
+  page: 140
+  size: huge
+  source: vgm
+  type: beast
+- alignment: ne
+  cr: 1/4
+  environment:
+  - grassland
+  - jungle
+  - forest
+  - underdark
+  - hill
+  flags: []
+  name: Goblin
+  page: 166
+  size: small
+  source: mm
+  type: humanoid
+- alignment: nn
+  cr: 1/4
+  environment:
+  - grassland
+  - jungle
+  - hill
+  flags: []
+  name: Axe Beak
+  page: 317
+  size: large
+  source: mm
+  type: beast
+- alignment: ce
+  cr: '2'
+  environment:
+  - grassland
+  - mountain
+  - hill
+  flags: []
+  name: Ogre Bolt Launcher
+  page: 220
+  size: large
+  source: mtf
+  type: giant
+- alignment: le
+  cr: '3'
+  environment:
+  - grassland
+  - swamp
+  flags: []
+  name: Sword Wraith Warrior
+  page: 241
+  size: medium
+  source: mtf
+  type: undead
+- alignment: le
+  cr: '8'
+  environment:
+  - grassland
+  - swamp
+  flags: []
+  name: Sword Wraith Commander
+  page: 241
+  size: medium
+  source: mtf
+  type: undead
+- alignment: nn
+  cr: '0'
+  environment:
+  - grassland
+  - urban
+  - mountain
+  - hill
+  flags: []
+  name: Goat
+  page: 330
+  size: medium
+  source: mm
+  type: beast
+- alignment: ce
+  cr: '5'
+  environment:
+  - hill
+  flags: []
+  name: Hill Giant
+  page: 155
+  size: huge
+  source: mm
+  type: giant
+- alignment: cg
+  cr: '7'
+  environment:
+  - hill
+  flags: []
+  name: Young Copper Dragon
+  page: 111
+  size: large
+  source: mm
+  type: dragon
+- alignment: cg
+  cr: '14'
+  environment:
+  - hill
+  flags: []
+  name: Adult Copper Dragon
+  page: 111
+  size: huge
+  source: mm
+  type: dragon
+- alignment: cg
+  cr: '21'
+  environment:
+  - hill
+  flags: []
+  name: Ancient Copper Dragon
+  page: 110
+  size: gargantuan
+  source: mm
+  type: dragon
+- alignment: ng
+  cr: '5'
+  environment:
+  - hill
+  - arctic
+  - forest
+  flags: []
+  name: Werebear
+  page: 208
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: nn
+  cr: 1/4
+  environment:
+  - hill
+  - arctic
+  - forest
+  flags: []
+  name: Giant Owl
+  page: 327
+  size: large
+  source: mm
+  type: beast
+- alignment: ce
+  cr: '8'
+  environment:
+  - hill
+  - arctic
+  - forest
+  - grassland
+  flags: []
+  name: Shoosuva
+  page: 137
+  size: large
+  source: vgm
+  type: fiend
+- alignment: ce
+  cr: '9'
+  environment:
+  - hill
+  - arctic
+  - forest
+  - grassland
+  flags: []
+  name: Flind
+  page: 153
+  size: medium
+  source: vgm
+  type: humanoid
+- alignment: nn
+  cr: '0'
+  environment:
+  - hill
+  - desert
+  - grassland
+  flags: []
+  name: Vulture
+  page: 339
+  size: medium
+  source: mm
+  type: beast
+- alignment: ce
+  cr: '3'
+  environment:
+  - hill
+  - forest
+  flags: []
+  name: Werewolf
+  page: 211
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: nn
+  cr: '0'
+  environment:
+  - hill
+  - forest
+  - desert
+  - grassland
+  flags: []
+  name: Hyena
+  page: 331
+  size: medium
+  source: mm
+  type: beast
+- alignment: ce
+  cr: '4'
+  environment:
+  - hill
+  - forest
+  - desert
+  - grassland
+  flags: []
+  name: Gnoll Fang of Yeenoghu
+  page: 163
+  size: medium
+  source: mm
+  type: fiend
+- alignment: nn
+  cr: 1/4
+  environment:
+  - hill
+  - forest
+  - grassland
+  flags: []
+  name: Panther
+  page: 333
+  size: medium
+  source: mm
+  type: beast
+- alignment: nn
+  cr: '0'
+  environment:
+  - hill
+  - forest
+  - jungle
+  flags: []
+  name: Baboon
+  page: 318
+  size: small
+  source: mm
+  type: beast
+- alignment: le
+  cr: '2'
+  environment:
+  - hill
+  - grassland
+  - forest
+  flags: []
+  name: Hobgoblin Iron Shadow
+  page: 162
+  size: medium
+  source: vgm
+  type: humanoid
+- alignment: cg
+  cr: '2'
+  environment:
+  - hill
+  - grassland
+  - forest
+  flags: []
+  name: Pegasus
+  page: 250
+  size: large
+  source: mm
+  type: celestial
+- alignment: ne
+  cr: 1/2
+  environment:
+  - hill
+  - grassland
+  - forest
+  flags: []
+  name: Worg
+  page: 341
+  size: large
+  source: mm
+  type: monstrosity
+- alignment: nn
+  cr: 1/4
+  environment:
+  - hill
+  - grassland
+  - forest
+  flags: []
+  name: Boar
+  page: 319
+  size: medium
+  source: mm
+  type: beast
+- alignment: nn
+  cr: 1/4
+  environment:
+  - hill
+  - grassland
+  - forest
+  flags: []
+  name: Wolf
+  page: 341
+  size: medium
+  source: mm
+  type: beast
+- alignment: nn
+  cr: 1/8
+  environment:
+  - hill
+  - grassland
+  - forest
+  flags: []
+  name: Giant Weasel
+  page: 329
+  size: medium
+  source: mm
+  type: beast
+- alignment: ce
+  cr: '2'
+  environment:
+  - hill
+  - mountain
+  flags: []
+  name: Peryton
+  page: 251
+  size: medium
+  source: mm
+  type: monstrosity
+- alignment: ce
+  cr: '4'
+  environment:
+  - hill
+  - mountain
+  flags: []
+  name: Flab Giant
+  page: 223
+  size: large
+  source: tob
+  type: giant
+- alignment: nn
+  cr: '6'
+  environment:
+  - hill
+  - mountain
+  flags: []
+  name: Galeb Duhr
+  page: 139
+  size: medium
+  source: mm
+  type: elemental
+- alignment: ce
+  cr: '7'
+  environment:
+  - hill
+  - mountain
+  flags: []
+  name: Spider of Leng
+  page: 365
+  size: large
+  source: tob
+  type: abberation
+- alignment: ce
+  cr: '8'
+  environment:
+  - hill
+  - mountain
+  flags: []
+  name: Blemmyes
+  page: 37
+  size: large
+  source: tob
+  type: monstrosity
+- alignment: ce
+  cr: '10'
+  environment:
+  - hill
+  - mountain
+  flags: []
+  name: Young Red Dragon
+  page: 98
+  size: large
+  source: mm
+  type: dragon
+- alignment: ne
+  cr: '13'
+  environment:
+  - hill
+  - mountain
+  flags: []
+  name: Stuhac
+  page: 370
+  size: medium
+  source: tob
+  type: fiend
+- alignment: nn
+  cr: '15'
+  environment:
+  - hill
+  - mountain
+  flags: []
+  name: Drake, Star
+  page: 156
+  size: large
+  source: tob
+  type: dragon
+- alignment: le
+  cr: '3'
+  environment:
+  - hill
+  - mountain
+  - arctic
+  - coastal
+  - grassland
+  flags: []
+  name: Manticore
+  page: 213
+  size: large
+  source: mm
+  type: monstrosity
+- alignment: cn
+  cr: '10'
+  environment:
+  - hill
+  - mountain
+  - coastal
+  flags: []
+  name: Stone Giant Dreamwalker
+  page: 150
+  size: huge
+  source: vgm
+  type: giant
+- alignment: ce
+  cr: '4'
+  environment:
+  - hill
+  - mountain
+  - grassland
+  flags: []
+  name: Ogre Battering Ram
+  page: 220
+  size: large
+  source: mtf
+  type: giant
+- alignment: cn
+  cr: '1'
+  environment:
+  - hill
+  - mountain
+  - plains
+  flags: []
+  name: Wind Dragon Wyrmling
+  page: 145
+  size: medium
+  source: tob
+  type: dragon
+- alignment: cn
+  cr: '22'
+  environment:
+  - hill
+  - mountain
+  - plains
+  flags: []
+  name: Jotun Giant
+  page: 226
+  size: gargantuan
+  source: tob
+  type: giant
+- alignment: nn
+  cr: '2'
+  environment:
+  - hill
+  - mountain
+  - underdark
+  flags: []
+  name: Kot Bayun
+  page: 268
+  size: medium
+  source: tob
+  type: monstrosity
+- alignment: nn
+  cr: '5'
+  environment:
+  - hill
+  - mountain
+  - underdark
+  flags: []
+  name: Dogmole Juggernaut
+  page: 121
+  size: large
+  source: tob
+  type: monstrosity
+- alignment: nn
+  cr: '4'
+  environment:
+  - hill
+  - plains
+  flags: []
+  name: Frostveil
+  page: 207
+  size: medium
+  source: tob
+  type: plant
+- alignment: lg
+  cr: '4'
+  environment:
+  - hill
+  - plains
+  flags: []
+  name: Tusked Skyfish
+  page: 391
+  size: large
+  source: tob
+  type: abberation
+- alignment: nn
+  cr: '5'
+  environment:
+  - hill
+  - plains
+  - underdark
+  flags: []
+  name: Hound of the Night
+  page: 251
+  size: large
+  source: tob
+  type: monstrosity
+- alignment: ne
+  cr: '2'
+  environment:
+  - hill
+  - swamp
+  - forest
+  flags: []
+  name: Shadow Mastiff
+  page: 190
+  size: medium
+  source: vgm
+  type: monstrosity
+- alignment: nn
+  cr: 1/8
+  environment:
+  - hill
+  - swamp
+  - forest
+  - jungle
+  - coastal
+  - grassland
+  - desert
+  flags: []
+  name: Poisonous Snake
+  page: 334
+  size: tiny
+  source: mm
+  type: beast
+- alignment: ce
+  cr: '1'
+  environment:
+  - hill
+  - underdark
+  flags: []
+  name: Xvart Warlock of Raxivort
+  page: 200
+  size: small
+  source: vgm
+  type: humanoid
+- alignment: ce
+  cr: '6'
+  environment:
+  - hill
+  - underdark
+  flags: []
+  name: Scheznyki
+  page: 339
+  size: small
+  source: tob
+  type: fey
+- alignment: ce
+  cr: '6'
+  environment:
+  - hill
+  - underdark
+  - mountain
+  - grassland
+  flags: []
+  name: Chimera
+  page: 39
+  size: large
+  source: mm
+  type: monstrosity
+- alignment: nn
+  cr: '3'
+  environment:
+  - hill
+  - underdark
+  - urban
+  - forest
+  - desert
+  - grassland
+  flags: []
+  name: Phase Spider
+  page: 334
+  size: large
+  source: mm
+  type: monstrosity
+- alignment: nn
+  cr: '0'
+  environment:
+  - jungle
+  flags: []
+  name: Lizard
+  page: 332
+  size: tiny
+  source: mm
+  type: beast
+- alignment: nn
+  cr: '0'
+  environment:
+  - jungle
+  flags: []
+  name: Spider
+  page: 337
+  size: tiny
+  source: mm
+  type: beast
+- alignment: ne
+  cr: '5'
+  environment:
+  - jungle
+  flags: []
+  name: Night Hag
+  page: 178
+  size: medium
+  source: mm
+  type: fiend
+- alignment: nn
+  cr: '3'
+  environment:
+  - jungle
+  - desert
+  flags: []
+  name: Giant Scorpion
+  page: 327
+  size: large
+  source: mm
+  type: beast
+- alignment: nn
+  cr: '4'
+  environment:
+  - jungle
+  - forest
+  flags: []
+  name: Girallon
+  page: 152
+  size: large
+  source: vgm
+  type: monstrosity
+- alignment: nn
+  cr: 1/2
+  environment:
+  - jungle
+  - forest
+  flags: []
+  name: Ape
+  page: 317
+  size: medium
+  source: mm
+  type: beast
+- alignment: le
+  cr: 1/4
+  environment:
+  - jungle
+  - forest
+  flags: []
+  name: Grung
+  page: 156
+  size: small
+  source: vgm
+  type: humanoid
+- alignment: ne
+  cr: '2'
+  environment:
+  - jungle
+  - forest
+  - desert
+  - underdark
+  flags: []
+  name: Yuan-ti Broodguard
+  page: 203
+  size: medium
+  source: vgm
+  type: humanoid
+- alignment: ne
+  cr: '4'
+  environment:
+  - jungle
+  - forest
+  - desert
+  - underdark
+  flags: []
+  name: Yuan-ti Nightmare Speaker
+  page: 205
+  size: medium
+  source: vgm
+  type: monstrosity
+- alignment: ne
+  cr: '5'
+  environment:
+  - jungle
+  - forest
+  - desert
+  - underdark
+  flags: []
+  name: Yuan-ti Pit Master
+  page: 206
+  size: medium
+  source: vgm
+  type: monstrosity
+- alignment: ne
+  cr: '12'
+  environment:
+  - jungle
+  - forest
+  - desert
+  - underdark
+  flags: []
+  name: Yuan-ti Anathema
+  page: 202
+  size: huge
+  source: vgm
+  type: monstrosity
+- alignment: nn
+  cr: '2'
+  environment:
+  - jungle
+  - forest
+  - grassland
+  - hill
+  flags: []
+  name: Giant Boar
+  page: 323
+  size: large
+  source: mm
+  type: beast
+- alignment: ce
+  cr: '5'
+  environment:
+  - jungle
+  - forest
+  - mountain
+  - swamp
+  - hill
+  - underdark
+  - arctic
+  flags: []
+  name: Troll
+  page: 291
+  size: large
+  source: mm
+  type: giant
+- alignment: nn
+  cr: 1/4
+  environment:
+  - jungle
+  - forest
+  - swamp
+  flags: []
+  name: Vegepygmy
+  page: 196
+  size: small
+  source: vgm
+  type: plant
+- alignment: nn
+  cr: '8'
+  environment:
+  - jungle
+  - grassland
+  flags: []
+  name: Tyrannosaurus Rex
+  page: 80
+  size: huge
+  source: mm
+  type: beast
+- alignment: nn
+  cr: 1/4
+  environment:
+  - jungle
+  - grassland
+  - swamp
+  flags: []
+  name: Hadrosaurus
+  page: 140
+  size: large
+  source: vgm
+  type: beast
+- alignment: nn
+  cr: 1/4
+  environment:
+  - jungle
+  - mountain
+  - hill
+  - underdark
+  - urban
+  flags: []
+  name: Swarm of Bats
+  page: 337
+  size: medium
+  source: mm
+  type: beast
+- alignment: ne
+  cr: '1'
+  environment:
+  - marsh
+  flags: []
+  name: Boloti
+  page: 38
+  size: tiny
+  source: tob
+  type: fey
+- alignment: nn
+  cr: '1'
+  environment:
+  - marsh
+  flags: []
+  name: Snake, Zanskaran Viper
+  page: 354
+  size: large
+  source: tob
+  type: beast
+- alignment: ne
+  cr: '2'
+  environment:
+  - marsh
+  flags: []
+  name: Putrid Haunt
+  page: 315
+  size: medium
+  source: tob
+  type: undead
+- alignment: ce
+  cr: '5'
+  environment:
+  - marsh
+  flags: []
+  name: Eleinomae
+  page: 168
+  size: medium
+  source: tob
+  type: fey
+- alignment: ce
+  cr: 1/2
+  environment:
+  - marsh
+  flags: []
+  name: Miremal
+  page: 292
+  size: small
+  source: tob
+  type: fey
+- alignment: nn
+  cr: 1/4
+  environment:
+  - marsh
+  flags: []
+  name: Dipsa
+  page: 118
+  size: tiny
+  source: tob
+  type: ooze
+- alignment: nn
+  cr: '4'
+  environment:
+  - marsh
+  - plains
+  flags: []
+  name: Serpopard
+  page: 342
+  size: large
+  source: tob
+  type: beast
+- alignment: nn
+  cr: '5'
+  environment:
+  - marsh
+  - plains
+  flags: []
+  name: Kongamato
+  page: 265
+  size: large
+  source: tob
+  type: beast
+- alignment: cn
+  cr: '5'
+  environment:
+  - marsh
+  - plains
+  flags: []
+  name: Vapor Lynx
+  page: 398
+  size: large
+  source: tob
+  type: monstrosity
+- alignment: nn
+  cr: '8'
+  environment:
+  - marsh
+  - underdark
+  flags: []
+  name: Shabti
+  page: 343
+  size: medium
+  source: tob
+  type: construct
+- alignment: cn
+  cr: '2'
+  environment:
+  - mountain
+  flags: []
+  name: Void Dragon Wyrmling
+  page: 140
+  size: medium
+  source: tob
+  type: dragon
+- alignment: nn
+  cr: '3'
+  environment:
+  - mountain
+  flags: []
+  name: Basilisk
+  page: 24
+  size: medium
+  source: mm
+  type: monstrosity
+- alignment: ne
+  cr: '4'
+  environment:
+  - mountain
+  flags: []
+  name: Bereginyas
+  page: 36
+  size: tiny
+  source: tob
+  type: fey
+- alignment: nn
+  cr: '6'
+  environment:
+  - mountain
+  flags: []
+  name: Young Mithral Dragon
+  page: 134
+  size: medium
+  source: tob
+  type: dragon
+- alignment: ne
+  cr: '9'
+  environment:
+  - mountain
+  flags: []
+  name: Cloud Giant
+  page: 154
+  size: huge
+  source: mm
+  type: giant
+- alignment: ng
+  cr: '9'
+  environment:
+  - mountain
+  flags: []
+  name: Cloud Giant
+  page: 154
+  size: huge
+  source: mm
+  type: giant
+- alignment: cn
+  cr: '9'
+  environment:
+  - mountain
+  flags: []
+  name: Young Void Dragon
+  page: 140
+  size: large
+  source: tob
+  type: dragon
+- alignment: cn
+  cr: '11'
+  environment:
+  - mountain
+  flags: []
+  name: Cloud Giant Smiling One
+  page: 146
+  size: huge
+  source: vgm
+  type: giant
+- alignment: nn
+  cr: '14'
+  environment:
+  - mountain
+  flags: []
+  name: Adult Mithral Dragon
+  page: 133
+  size: huge
+  source: tob
+  type: dragon
+- alignment: ce
+  cr: '16'
+  environment:
+  - mountain
+  flags: []
+  name: Star Spawn Larva Mage
+  page: 235
+  size: medium
+  source: mtf
+  type: aberration
+- alignment: nn
+  cr: '18'
+  environment:
+  - mountain
+  flags: []
+  name: Ancient Mithral Dragon
+  page: 132
+  size: gargantuan
+  source: tob
+  type: dragon
+- alignment: ng
+  cr: 1/4
+  environment:
+  - mountain
+  flags: []
+  name: Aarakocra
+  page: 12
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: le
+  cr: 1/4
+  environment:
+  - mountain
+  - arctic
+  - urban
+  - desert
+  - swamp
+  - hill
+  - underdark
+  - forest
+  - coastal
+  flags: []
+  name: Winged Kobold
+  page: 195
+  size: small
+  source: mm
+  type: humanoid
+- alignment: nn
+  cr: '5'
+  environment:
+  - mountain
+  - desert
+  flags: []
+  name: Air Elemental
+  page: 124
+  size: large
+  source: mm
+  type: elemental
+- alignment: nn
+  cr: '16'
+  environment:
+  - mountain
+  - desert
+  flags: []
+  name: Phoenix
+  page: 199
+  size: gargantuan
+  source: mtf
+  type: elemental
+- alignment: ce
+  cr: '6'
+  environment:
+  - mountain
+  - hill
+  flags: []
+  name: Annis Hag
+  page: 159
+  size: large
+  source: vgm
+  type: fey
+- alignment: nn
+  cr: '6'
+  environment:
+  - mountain
+  - hill
+  flags: []
+  name: Wyvern
+  page: 303
+  size: large
+  source: mm
+  type: dragon
+- alignment: ce
+  cr: '17'
+  environment:
+  - mountain
+  - hill
+  flags: []
+  name: Adult Red Dragon
+  page: 98
+  size: huge
+  source: mm
+  type: dragon
+- alignment: ce
+  cr: '24'
+  environment:
+  - mountain
+  - hill
+  flags: []
+  name: Ancient Red Dragon
+  page: 97
+  size: gargantuan
+  source: mm
+  type: dragon
+- alignment: nn
+  cr: '11'
+  environment:
+  - mountain
+  - hill
+  - arctic
+  - desert
+  - coastal
+  flags: []
+  name: Roc
+  page: 260
+  size: gargantuan
+  source: mm
+  type: monstrosity
+- alignment: nn
+  cr: 1/8
+  environment:
+  - mountain
+  - hill
+  - arctic
+  - forest
+  - grassland
+  - coastal
+  flags: []
+  name: Blood Hawk
+  page: 319
+  size: small
+  source: mm
+  type: beast
+- alignment: nn
+  cr: '2'
+  environment:
+  - mountain
+  - hill
+  - coastal
+  flags: []
+  name: Quetzalcoatlus
+  page: 140
+  size: huge
+  source: vgm
+  type: beast
+- alignment: nn
+  cr: '2'
+  environment:
+  - mountain
+  - hill
+  - grassland
+  flags: []
+  name: Aurochs
+  page: 207
+  size: large
+  source: vgm
+  type: beast
+- alignment: ce
+  cr: '2'
+  environment:
+  - mountain
+  - hill
+  - grassland
+  flags: []
+  name: Ogre Howdah
+  page: 221
+  size: large
+  source: mtf
+  type: giant
+- alignment: ce
+  cr: '3'
+  environment:
+  - mountain
+  - hill
+  - grassland
+  flags: []
+  name: Ogre Chain Brute
+  page: 221
+  size: large
+  source: mtf
+  type: giant
+- alignment: nn
+  cr: '0'
+  environment:
+  - mountain
+  - hill
+  - grassland
+  - coastal
+  flags: []
+  name: Eagle
+  page: 322
+  size: small
+  source: mm
+  type: beast
+- alignment: ng
+  cr: '1'
+  environment:
+  - mountain
+  - hill
+  - grassland
+  - coastal
+  flags: []
+  name: Giant Eagle
+  page: 324
+  size: large
+  source: mm
+  type: beast
+- alignment: nn
+  cr: '4'
+  environment:
+  - mountain
+  - hill
+  - grassland
+  - forest
+  flags: []
+  name: Stone Defender
+  page: 126
+  size: medium
+  source: mtf
+  type: construct
+- alignment: ne
+  cr: '1'
+  environment:
+  - mountain
+  - hill
+  - underdark
+  flags: []
+  name: Giant Strider
+  page: 143
+  size: large
+  source: vgm
+  type: monstrosity
+- alignment: ce
+  cr: '5'
+  environment:
+  - mountain
+  - hill
+  - underdark
+  flags: []
+  name: Tanarukk
+  page: 186
+  size: medium
+  source: vgm
+  type: fiend
+- alignment: nn
+  cr: '7'
+  environment:
+  - mountain
+  - hill
+  - underdark
+  flags: []
+  name: Stone Giant
+  page: 156
+  size: huge
+  source: mm
+  type: giant
+- alignment: ce
+  cr: '2'
+  environment:
+  - mountain
+  - hill
+  - underdark
+  - arctic
+  - forest
+  - grassland
+  flags: []
+  name: Orog
+  page: 247
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: ce
+  cr: 1/2
+  environment:
+  - mountain
+  - hill
+  - underdark
+  - forest
+  - grassland
+  flags: []
+  name: Orc Nurtured One of Yurtrus
+  page: 184
+  size: medium
+  source: vgm
+  type: humanoid
+- alignment: cn
+  cr: '6'
+  environment:
+  - mountain
+  - hill
+  - underdark
+  - jungle
+  - grassland
+  - desert
+  - coastal
+  flags: []
+  name: Cyclops
+  page: 45
+  size: huge
+  source: mm
+  type: giant
+- alignment: cn
+  cr: '6'
+  environment:
+  - mountain
+  - plains
+  flags: []
+  name: Young Wind Dragon
+  page: 144
+  size: large
+  source: tob
+  type: dragon
+- alignment: cn
+  cr: '17'
+  environment:
+  - mountain
+  - plains
+  flags: []
+  name: Adult Wind Dragon
+  page: 143
+  size: huge
+  source: tob
+  type: dragon
+- alignment: cn
+  cr: '22'
+  environment:
+  - mountain
+  - plains
+  flags: []
+  name: Ancient Wind Dragon
+  page: 142
+  size: gargantuan
+  source: tob
+  type: dragon
+- alignment: ce
+  cr: 1/2
+  environment:
+  - mountain
+  - swamp
+  - hill
+  - underdark
+  - arctic
+  - forest
+  - grassland
+  flags: []
+  name: Orc
+  page: 246
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: ne
+  cr: '13'
+  environment:
+  - mountain
+  - swamp
+  - urban
+  flags: []
+  name: Star Spawn Seer
+  page: 236
+  size: medium
+  source: mtf
+  type: aberration
+- alignment: le
+  cr: '1'
+  environment:
+  - mountain
+  - underdark
+  flags: []
+  name: Duergar Soulblade
+  page: 190
+  size: medium
+  source: mtf
+  type: humanoid
+- alignment: le
+  cr: '2'
+  environment:
+  - mountain
+  - underdark
+  flags: []
+  name: Duergar Hammerer
+  page: 188
+  size: medium
+  source: mtf
+  type: construct
+- alignment: le
+  cr: '2'
+  environment:
+  - mountain
+  - underdark
+  flags: []
+  name: Duergar Kavalrachni
+  page: 189
+  size: medium
+  source: mtf
+  type: humanoid
+- alignment: le
+  cr: '2'
+  environment:
+  - mountain
+  - underdark
+  flags: []
+  name: Duergar Stone Guard
+  page: 191
+  size: medium
+  source: mtf
+  type: humanoid
+- alignment: le
+  cr: '3'
+  environment:
+  - mountain
+  - underdark
+  flags: []
+  name: Duergar Screamer
+  page: 190
+  size: medium
+  source: mtf
+  type: construct
+- alignment: ce
+  cr: '3'
+  environment:
+  - mountain
+  - underdark
+  flags: []
+  name: Flame Dragon Wyrmling
+  page: 131
+  size: medium
+  source: tob
+  type: dragon
+- alignment: le
+  cr: '3'
+  environment:
+  - mountain
+  - underdark
+  flags: []
+  name: Hell Hound
+  page: 182
+  size: medium
+  source: mm
+  type: fiend
+- alignment: le
+  cr: '6'
+  environment:
+  - mountain
+  - underdark
+  flags: []
+  name: Duergar Warlord
+  page: 192
+  size: medium
+  source: mtf
+  type: humanoid
+- alignment: ce
+  cr: '9'
+  environment:
+  - mountain
+  - underdark
+  flags: []
+  name: Young Flame Dragon
+  page: 130
+  size: large
+  source: tob
+  type: dragon
+- alignment: le
+  cr: '12'
+  environment:
+  - mountain
+  - underdark
+  flags: []
+  name: Duergar Despot
+  page: 188
+  size: medium
+  source: mtf
+  type: humanoid
+- alignment: le
+  cr: '14'
+  environment:
+  - mountain
+  - underdark
+  flags: []
+  name: Fire Giant Dreadnought
+  page: 147
+  size: huge
+  source: vgm
+  type: giant
+- alignment: ce
+  cr: '16'
+  environment:
+  - mountain
+  - underdark
+  flags: []
+  name: Adult Flame Dragon
+  page: 129
+  size: huge
+  source: tob
+  type: dragon
+- alignment: ce
+  cr: '24'
+  environment:
+  - mountain
+  - underdark
+  flags: []
+  name: Ancient Flame Dragon
+  page: 128
+  size: gargantuan
+  source: tob
+  type: dragon
+- alignment: nn
+  cr: '2'
+  environment:
+  - mountain
+  - underdark
+  - desert
+  flags: []
+  name: Adult Kruthik
+  page: 212
+  size: medium
+  source: mtf
+  type: monstrosity
+- alignment: ce
+  cr: '13'
+  environment:
+  - mountain
+  - underdark
+  - hill
+  - arctic
+  - forest
+  flags: []
+  name: Dire Troll
+  page: 243
+  size: huge
+  source: mtf
+  type: giant
+- alignment: ne
+  cr: 1/2
+  environment:
+  - mountain
+  - underdark
+  - hill
+  - desert
+  flags: []
+  name: Firenewt Warrior
+  page: 142
+  size: medium
+  source: vgm
+  type: humanoid
+- alignment: ne
+  cr: '9'
+  environment:
+  - mountain
+  - underdark
+  - urban
+  - desert
+  - coastal
+  flags: []
+  name: Lonely Sorrowsworn
+  page: 232
+  size: medium
+  source: mtf
+  type: monstrosity
+- alignment: ne
+  cr: '4'
+  environment:
+  - mountain
+  - urban
+  flags: []
+  name: Drake, Ash
+  page: 149
+  size: small
+  source: tob
+  type: dragon
+- alignment: lg
+  cr: '9'
+  environment:
+  - mountain
+  - urban
+  flags: []
+  name: Young Silver Dragon
+  page: 118
+  size: large
+  source: mm
+  type: dragon
+- alignment: le
+  cr: '19'
+  environment:
+  - mountain
+  - urban
+  flags: []
+  name: Red Abishai
+  page: 162
+  size: medium
+  source: mtf
+  type: fiend
+- alignment: le
+  cr: '10'
+  environment:
+  - mountain
+  - urban
+  - desert
+  flags: []
+  name: Githyanki Gish
+  page: 205
+  size: medium
+  source: mtf
+  type: humanoid
+- alignment: ln
+  cr: '10'
+  environment:
+  - mountain
+  - urban
+  - desert
+  flags: []
+  name: Githzerai Enlightened
+  page: 208
+  size: medium
+  source: mtf
+  type: humanoid
+- alignment: le
+  cr: '14'
+  environment:
+  - mountain
+  - urban
+  - desert
+  flags: []
+  name: Githyanki Supreme Commander
+  page: 206
+  size: medium
+  source: mtf
+  type: humanoid
+- alignment: ln
+  cr: '4'
+  environment:
+  - plains
+  flags: []
+  name: Nkosi Pridelord
+  page: 306
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: nn
+  cr: '5'
+  environment:
+  - plains
+  flags: []
+  name: Dinosaur, Ngobou
+  page: 115
+  size: large
+  source: tob
+  type: beast
+- alignment: nn
+  cr: '6'
+  environment:
+  - plains
+  flags: []
+  name: Gbahali
+  page: 209
+  size: huge
+  source: tob
+  type: beast
+- alignment: ln
+  cr: 1/2
+  environment:
+  - plains
+  flags: []
+  name: Burrowling
+  page: 49
+  size: small
+  source: tob
+  type: humanoid
+- alignment: ln
+  cr: 1/2
+  environment:
+  - plains
+  flags: []
+  name: Nkosi
+  page: 306
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: ce
+  cr: '8'
+  environment:
+  - plains
+  - underdark
+  flags: []
+  name: Degenerate Titan
+  page: 381
+  size: huge
+  source: tob
+  type: giant
+- alignment: nn
+  cr: 1/4
+  environment:
+  - plains
+  - urban
+  flags: []
+  name: Ramag
+  page: 317
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: nn
+  cr: '5'
+  environment:
+  - swamp
+  flags: []
+  name: Catoblepas
+  page: 129
+  size: large
+  source: vgm
+  type: monstrosity
+- alignment: nn
+  cr: '5'
+  environment:
+  - swamp
+  flags: []
+  name: Giant Crocodile
+  page: 324
+  size: huge
+  source: mm
+  type: beast
+- alignment: ce
+  cr: '7'
+  environment:
+  - swamp
+  flags: []
+  name: Young Black Dragon
+  page: 88
+  size: large
+  source: mm
+  type: dragon
+- alignment: nn
+  cr: '8'
+  environment:
+  - swamp
+  flags: []
+  name: Hydra
+  page: 190
+  size: huge
+  source: mm
+  type: monstrosity
+- alignment: ce
+  cr: '14'
+  environment:
+  - swamp
+  flags: []
+  name: Adult Black Dragon
+  page: 88
+  size: huge
+  source: mm
+  type: dragon
+- alignment: ce
+  cr: '21'
+  environment:
+  - swamp
+  flags: []
+  name: Ancient Black Dragon
+  page: 87
+  size: gargantuan
+  source: mm
+  type: dragon
+- alignment: ne
+  cr: 1/4
+  environment:
+  - swamp
+  flags: []
+  name: Bullywug
+  page: 35
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: ne
+  cr: 1/4
+  environment:
+  - swamp
+  flags: []
+  name: Mud Mephit
+  page: 216
+  size: small
+  source: mm
+  type: elemental
+- alignment: ne
+  cr: '7'
+  environment:
+  - swamp
+  - desert
+  - forest
+  - jungle
+  flags: []
+  name: Yuan-ti Abomination
+  page: 308
+  size: large
+  source: mm
+  type: monstrosity
+- alignment: nn
+  cr: '2'
+  environment:
+  - swamp
+  - forest
+  flags: []
+  name: Vegepygmy Chief
+  page: 197
+  size: small
+  source: vgm
+  type: plant
+- alignment: nn
+  cr: '5'
+  environment:
+  - swamp
+  - hill
+  - arctic
+  - urban
+  - forest
+  - desert
+  flags: []
+  name: Revenant
+  page: 259
+  size: medium
+  source: mm
+  type: undead
+- alignment: ce
+  cr: '3'
+  environment:
+  - swamp
+  - hill
+  - forest
+  flags: []
+  name: Redcap
+  page: 188
+  size: small
+  source: vgm
+  type: fey
+- alignment: nn
+  cr: '0'
+  environment:
+  - swamp
+  - hill
+  - urban
+  flags: []
+  name: Raven
+  page: 335
+  size: tiny
+  source: mm
+  type: beast
+- alignment: nn
+  cr: '2'
+  environment:
+  - swamp
+  - jungle
+  - forest
+  flags: []
+  name: Swarm of Poisonous Snakes
+  page: 338
+  size: medium
+  source: mm
+  type: beast
+- alignment: nn
+  cr: 1/2
+  environment:
+  - swamp
+  - jungle
+  - forest
+  flags: []
+  name: Lizardfolk
+  page: 204
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: nn
+  cr: 1/4
+  environment:
+  - swamp
+  - jungle
+  - forest
+  flags: []
+  name: Giant Frog
+  page: 325
+  size: medium
+  source: mm
+  type: beast
+- alignment: ne
+  cr: '3'
+  environment:
+  - swamp
+  - jungle
+  - forest
+  - desert
+  flags: []
+  name: Yuan-ti Malison
+  page: 309
+  size: medium
+  source: mm
+  type: monstrosity
+- alignment: ne
+  cr: 1/4
+  environment:
+  - swamp
+  - mountain
+  flags: []
+  name: Star Spawn Grue
+  page: 234
+  size: small
+  source: mtf
+  type: aberration
+- alignment: nn
+  cr: '10'
+  environment:
+  - swamp
+  - underdark
+  flags: []
+  name: Froghemoth
+  page: 145
+  size: huge
+  source: vgm
+  type: monstrosity
+- alignment: nn
+  cr: 1/2
+  environment:
+  - swamp
+  - underdark
+  flags: []
+  name: Swarm of Rot Grubs
+  page: 208
+  size: medium
+  source: vgm
+  type: beast
+- alignment: ce
+  cr: '2'
+  environment:
+  - swamp
+  - underdark
+  - urban
+  flags: []
+  name: Ghast
+  page: 148
+  size: medium
+  source: mm
+  type: undead
+- alignment: le
+  cr: '10'
+  environment:
+  - swamp
+  - underdark
+  - urban
+  flags: []
+  name: Elder Oblex
+  page: 219
+  size: huge
+  source: mtf
+  type: ooze
+- alignment: nn
+  cr: '5'
+  environment:
+  - swamp
+  - underwater
+  - coastal
+  flags: []
+  name: Water Elemental
+  page: 125
+  size: large
+  source: mm
+  type: elemental
+- alignment: nn
+  cr: '0'
+  environment:
+  - swamp
+  - urban
+  flags: []
+  name: Rat
+  page: 335
+  size: tiny
+  source: mm
+  type: beast
+- alignment: ce
+  cr: '7'
+  environment:
+  - swamp
+  - urban
+  flags: []
+  name: Maurezhi
+  page: 133
+  size: medium
+  source: mtf
+  type: fiend
+- alignment: nn
+  cr: 1/2
+  environment:
+  - swamp
+  - urban
+  flags: []
+  name: Crocodile
+  page: 320
+  size: large
+  source: mm
+  type: beast
+- alignment: ne
+  cr: '2'
+  environment:
+  - swamp
+  - urban
+  - forest
+  flags: []
+  name: Meenlock
+  page: 170
+  size: small
+  source: vgm
+  type: fey
+- alignment: nn
+  cr: '0'
+  environment:
+  - underdark
+  flags: []
+  name: Giant Fire Beetle
+  page: 325
+  size: small
+  source: mm
+  type: beast
+- alignment: ln
+  cr: '0'
+  environment:
+  - underdark
+  flags: []
+  name: Myconid Sprout
+  page: 230
+  size: small
+  source: mm
+  type: plant
+- alignment: nn
+  cr: '0'
+  environment:
+  - underdark
+  flags: []
+  name: Shrieker
+  page: 138
+  size: medium
+  source: mm
+  type: plant
+- alignment: le
+  cr: '1'
+  environment:
+  - underdark
+  flags: []
+  name: Duergar
+  page: 122
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: nn
+  cr: '1'
+  environment:
+  - underdark
+  flags: []
+  name: Female Steeder
+  page: 238
+  size: large
+  source: mtf
+  type: monstrosity
+- alignment: ne
+  cr: '1'
+  environment:
+  - underdark
+  flags: []
+  name: Fire Snake
+  page: 265
+  size: medium
+  source: mm
+  type: elemental
+- alignment: ne
+  cr: '1'
+  environment:
+  - underdark
+  flags: []
+  name: Kuo-toa Whip
+  page: 200
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: ce
+  cr: '1'
+  environment:
+  - underdark
+  flags: []
+  name: Maw Demon
+  page: 137
+  size: medium
+  source: vgm
+  type: fiend
+- alignment: nn
+  cr: '1'
+  environment:
+  - underdark
+  flags: []
+  name: Quaggoth Spore Servant
+  page: 230
+  size: medium
+  source: mm
+  type: plant
+- alignment: nn
+  cr: '2'
+  environment:
+  - underdark
+  flags: []
+  name: Carrion Crawler
+  page: 37
+  size: large
+  source: mm
+  type: monstrosity
+- alignment: ne
+  cr: '2'
+  environment:
+  - underdark
+  flags: []
+  name: Cave Dragon Wyrmling
+  page: 127
+  size: medium
+  source: tob
+  type: dragon
+- alignment: nn
+  cr: '2'
+  environment:
+  - underdark
+  flags: []
+  name: Gelatinous Cube
+  page: 242
+  size: large
+  source: mm
+  type: ooze
+- alignment: nn
+  cr: '2'
+  environment:
+  - underdark
+  flags: []
+  name: Gibbering Mouther
+  page: 157
+  size: medium
+  source: mm
+  type: aberration
+- alignment: le
+  cr: '2'
+  environment:
+  - underdark
+  flags: []
+  name: Intellect Devourer
+  page: 191
+  size: tiny
+  source: mm
+  type: aberration
+- alignment: le
+  cr: '2'
+  environment:
+  - underdark
+  flags: []
+  name: Minotaur Skeleton
+  page: 273
+  size: large
+  source: mm
+  type: undead
+- alignment: ne
+  cr: '2'
+  environment:
+  - underdark
+  flags: []
+  name: Nothic
+  page: 236
+  size: medium
+  source: mm
+  type: aberration
+- alignment: nn
+  cr: '2'
+  environment:
+  - underdark
+  flags: []
+  name: Ochre Jelly
+  page: 243
+  size: large
+  source: mm
+  type: ooze
+- alignment: cn
+  cr: '2'
+  environment:
+  - underdark
+  flags: []
+  name: Quaggoth
+  page: 256
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: ne
+  cr: '2'
+  environment:
+  - underdark
+  flags: []
+  name: Shellycoat
+  page: 346
+  size: medium
+  source: tob
+  type: fey
+- alignment: nn
+  cr: '3'
+  environment:
+  - underdark
+  flags: []
+  name: Cave Fisher
+  page: 130
+  size: medium
+  source: vgm
+  type: monstrosity
+- alignment: ce
+  cr: '3'
+  environment:
+  - underdark
+  flags: []
+  name: Choldrith
+  page: 132
+  size: medium
+  source: vgm
+  type: monstrosity
+- alignment: ce
+  cr: '3'
+  environment:
+  - underdark
+  flags: []
+  name: Derro Savant
+  page: 159
+  size: small
+  source: mtf
+  type: humanoid
+- alignment: ne
+  cr: '3'
+  environment:
+  - underdark
+  flags: []
+  name: Ghoul, Darakhul
+  page: 216
+  size: medium
+  source: tob
+  type: undead
+- alignment: ne
+  cr: '3'
+  environment:
+  - underdark
+  flags: []
+  name: Grell
+  page: 172
+  size: medium
+  source: mm
+  type: aberration
+- alignment: nn
+  cr: '3'
+  environment:
+  - underdark
+  flags: []
+  name: Hook Horror
+  page: 189
+  size: large
+  source: mm
+  type: monstrosity
+- alignment: ce
+  cr: '3'
+  environment:
+  - underdark
+  flags: []
+  name: Minotaur
+  page: 223
+  size: large
+  source: mm
+  type: monstrosity
+- alignment: cn
+  cr: '3'
+  environment:
+  - underdark
+  flags: []
+  name: Quaggoth Thonot
+  page: 256
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: ln
+  cr: '3'
+  environment:
+  - underdark
+  flags: []
+  name: Spectator
+  page: 30
+  size: medium
+  source: mm
+  type: aberration
+- alignment: nn
+  cr: '3'
+  environment:
+  - underdark
+  flags: []
+  name: Trapper
+  page: 194
+  size: large
+  source: vgm
+  type: monstrosity
+- alignment: nn
+  cr: '4'
+  environment:
+  - underdark
+  flags: []
+  name: Angler Worm
+  page: 22
+  size: huge
+  source: tob
+  type: monstrosity
+- alignment: nn
+  cr: '4'
+  environment:
+  - underdark
+  flags: []
+  name: Black Pudding
+  page: 241
+  size: large
+  source: mm
+  type: ooze
+- alignment: le
+  cr: '4'
+  environment:
+  - underdark
+  flags: []
+  name: Bone Naga
+  page: 233
+  size: large
+  source: mm
+  type: undead
+- alignment: nn
+  cr: '4'
+  environment:
+  - underdark
+  flags: []
+  name: Cavelight Moss
+  page: 53
+  size: large
+  source: tob
+  type: plant
+- alignment: ce
+  cr: '4'
+  environment:
+  - underdark
+  flags: []
+  name: Chuul
+  page: 40
+  size: large
+  source: mm
+  type: aberration
+- alignment: ce
+  cr: '4'
+  environment:
+  - underdark
+  flags: []
+  name: Derro Fetal Savant
+  page: 92
+  size: tiny
+  source: tob
+  type: humanoid
+- alignment: ne
+  cr: '4'
+  environment:
+  - underdark
+  flags: []
+  name: Flameskull
+  page: 134
+  size: tiny
+  source: mm
+  type: undead
+- alignment: le
+  cr: '4'
+  environment:
+  - underdark
+  flags: []
+  name: Ghoul, Imperial
+  page: 220
+  size: medium
+  source: tob
+  type: undead
+- alignment: ne
+  cr: '4'
+  environment:
+  - underdark
+  flags: []
+  name: Oculo Swarm
+  page: 309
+  size: large
+  source: tob
+  type: monstrosity
+- alignment: ne
+  cr: '5'
+  environment:
+  - underdark
+  flags: []
+  name: Beholder Zombie
+  page: 316
+  size: large
+  source: mm
+  type: undead
+- alignment: ce
+  cr: '5'
+  environment:
+  - underdark
+  flags: []
+  name: Derro Shadow Antipaladin
+  page: 93
+  size: small
+  source: tob
+  type: humanoid
+- alignment: ne
+  cr: '5'
+  environment:
+  - underdark
+  flags: []
+  name: Drow Elite Warrior
+  page: 128
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: nn
+  cr: '5'
+  environment:
+  - underdark
+  flags: []
+  name: Earth Elemental
+  page: 124
+  size: large
+  source: mm
+  type: elemental
+- alignment: le
+  cr: '5'
+  environment:
+  - underdark
+  flags: []
+  name: Ghoul, Iron
+  page: 221
+  size: medium
+  source: tob
+  type: undead
+- alignment: le
+  cr: '5'
+  environment:
+  - underdark
+  flags: []
+  name: Mindwitness
+  page: 176
+  size: large
+  source: vgm
+  type: aberration
+- alignment: nn
+  cr: '5'
+  environment:
+  - underdark
+  flags: []
+  name: Otyugh
+  page: 248
+  size: large
+  source: mm
+  type: aberration
+- alignment: ne
+  cr: '5'
+  environment:
+  - underdark
+  flags: []
+  name: Roper
+  page: 261
+  size: large
+  source: mm
+  type: monstrosity
+- alignment: ne
+  cr: '5'
+  environment:
+  - underdark
+  flags: []
+  name: Salamander
+  page: 266
+  size: large
+  source: mm
+  type: elemental
+- alignment: ne
+  cr: '5'
+  environment:
+  - underdark
+  flags: []
+  name: Sarcophagus Slime
+  page: 336
+  size: medium
+  source: tob
+  type: undead
+- alignment: ce
+  cr: '5'
+  environment:
+  - underdark
+  flags: []
+  name: Umber Hulk
+  page: 292
+  size: large
+  source: mm
+  type: monstrosity
+- alignment: ne
+  cr: '5'
+  environment:
+  - underdark
+  flags: []
+  name: Wraith
+  page: 302
+  size: medium
+  source: mm
+  type: undead
+- alignment: nn
+  cr: '5'
+  environment:
+  - underdark
+  flags: []
+  name: Xorn
+  page: 304
+  size: medium
+  source: mm
+  type: elemental
+- alignment: ce
+  cr: '6'
+  environment:
+  - underdark
+  flags: []
+  name: Drider
+  page: 120
+  size: large
+  source: mm
+  type: monstrosity
+- alignment: le
+  cr: '6'
+  environment:
+  - underdark
+  flags: []
+  name: Gauth
+  page: 125
+  size: medium
+  source: vgm
+  type: aberration
+- alignment: ne
+  cr: '6'
+  environment:
+  - underdark
+  flags: []
+  name: Kuo-toa Archpriest
+  page: 200
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: ce
+  cr: '7'
+  environment:
+  - underdark
+  flags: []
+  name: Armanite
+  page: 131
+  size: large
+  source: mtf
+  type: fiend
+- alignment: ne
+  cr: '7'
+  environment:
+  - underdark
+  flags: []
+  name: Dhergoloth
+  page: 248
+  size: medium
+  source: mtf
+  type: fiend
+- alignment: ce
+  cr: '7'
+  environment:
+  - underdark
+  flags: []
+  name: Draegloth
+  page: 141
+  size: large
+  source: vgm
+  type: fiend
+- alignment: ne
+  cr: '7'
+  environment:
+  - underdark
+  flags: []
+  name: Drow Mage
+  page: 129
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: le
+  cr: '7'
+  environment:
+  - underdark
+  flags: []
+  name: Mind Flayer
+  page: 222
+  size: medium
+  source: mm
+  type: aberration
+- alignment: cn
+  cr: '8'
+  environment:
+  - underdark
+  flags: []
+  name: Cloaker
+  page: 41
+  size: large
+  source: mm
+  type: aberration
+- alignment: ce
+  cr: '8'
+  environment:
+  - underdark
+  flags: []
+  name: Fomorian
+  page: 136
+  size: huge
+  source: mm
+  type: giant
+- alignment: ne
+  cr: '8'
+  environment:
+  - underdark
+  flags: []
+  name: Idolic Deity
+  page: 255
+  size: small
+  source: tob
+  type: construct
+- alignment: le
+  cr: '8'
+  environment:
+  - underdark
+  flags: []
+  name: Mind Flayer Arcanist
+  page: 222
+  size: medium
+  source: mm
+  type: aberration
+- alignment: ce
+  cr: '8'
+  environment:
+  - underdark
+  flags: []
+  name: Spirit Naga
+  page: 234
+  size: large
+  source: mm
+  type: monstrosity
+- alignment: ne
+  cr: '8'
+  environment:
+  - underdark
+  flags: []
+  name: Young Cave Dragon
+  page: 127
+  size: large
+  source: tob
+  type: dragon
+- alignment: ce
+  cr: '9'
+  environment:
+  - underdark
+  flags: []
+  name: Drake, Deep
+  page: 152
+  size: large
+  source: tob
+  type: dragon
+- alignment: ne
+  cr: '9'
+  environment:
+  - underdark
+  flags: []
+  name: Drow House Captain
+  page: 184
+  size: medium
+  source: mtf
+  type: humanoid
+- alignment: le
+  cr: '9'
+  environment:
+  - underdark
+  flags: []
+  name: Ulitharid
+  page: 175
+  size: large
+  source: vgm
+  type: aberration
+- alignment: nn
+  cr: '9'
+  environment:
+  - underdark
+  flags: []
+  name: Ushabti
+  page: 394
+  size: large
+  source: tob
+  type: construct
+- alignment: le
+  cr: '10'
+  environment:
+  - underdark
+  flags: []
+  name: Aboleth
+  page: 13
+  size: large
+  source: mm
+  type: aberration
+- alignment: ce
+  cr: '10'
+  environment:
+  - underdark
+  flags: []
+  name: Alhoon
+  page: 172
+  size: medium
+  source: vgm
+  type: undead
+- alignment: le
+  cr: '10'
+  environment:
+  - underdark
+  flags: []
+  name: Alhoon
+  page: 172
+  size: medium
+  source: vgm
+  type: undead
+- alignment: ne
+  cr: '10'
+  environment:
+  - underdark
+  flags: []
+  name: Alhoon
+  page: 172
+  size: medium
+  source: vgm
+  type: undead
+- alignment: ne
+  cr: '10'
+  environment:
+  - underdark
+  flags: []
+  name: Death Kiss
+  page: 124
+  size: large
+  source: vgm
+  type: aberration
+- alignment: ne
+  cr: '11'
+  environment:
+  - underdark
+  flags: []
+  name: Behir
+  page: 25
+  size: huge
+  source: mm
+  type: monstrosity
+- alignment: ne
+  cr: '11'
+  environment:
+  - underdark
+  flags: []
+  name: Dao
+  page: 143
+  size: large
+  source: mm
+  type: elemental
+- alignment: ne
+  cr: '11'
+  environment:
+  - underdark
+  flags: []
+  name: Drow Shadowblade
+  page: 187
+  size: medium
+  source: mtf
+  type: humanoid
+- alignment: ne
+  cr: '12'
+  environment:
+  - underdark
+  flags: []
+  name: Ghoul, Bonepowder
+  page: 214
+  size: small
+  source: tob
+  type: undead
+- alignment: ne
+  cr: '12'
+  environment:
+  - underdark
+  flags: []
+  name: Gug
+  page: 241
+  size: huge
+  source: tob
+  type: giant
+- alignment: le
+  cr: '13'
+  environment:
+  - underdark
+  flags: []
+  name: Beholder
+  page: 28
+  size: large
+  source: mm
+  type: aberration
+- alignment: ce
+  cr: '13'
+  environment:
+  - underdark
+  flags: []
+  name: Devourer
+  page: 138
+  size: large
+  source: vgm
+  type: fiend
+- alignment: ce
+  cr: '13'
+  environment:
+  - underdark
+  flags: []
+  name: Drow Arachnomancer
+  page: 182
+  size: medium
+  source: mtf
+  type: humanoid
+- alignment: ce
+  cr: '13'
+  environment:
+  - underdark
+  flags: []
+  name: Neothelid
+  page: 181
+  size: gargantuan
+  source: vgm
+  type: aberration
+- alignment: ce
+  cr: '13'
+  environment:
+  - underdark
+  flags: []
+  name: Young Red Shadow Dragon
+  page: 85
+  size: large
+  source: mm
+  type: dragon
+- alignment: le
+  cr: '14'
+  environment:
+  - underdark
+  flags: []
+  name: Death Tyrant
+  page: 29
+  size: large
+  source: mm
+  type: undead
+- alignment: ne
+  cr: '14'
+  environment:
+  - underdark
+  flags: []
+  name: Drow Inquisitor
+  page: 184
+  size: medium
+  source: mtf
+  type: humanoid
+- alignment: le
+  cr: '14'
+  environment:
+  - underdark
+  flags: []
+  name: Elder Brain
+  page: 174
+  size: large
+  source: vgm
+  type: aberration
+- alignment: ce
+  cr: '15'
+  environment:
+  - underdark
+  flags: []
+  name: Mordant Snare
+  page: 296
+  size: gargantuan
+  source: tob
+  type: abberation
+- alignment: ne
+  cr: '16'
+  environment:
+  - underdark
+  flags: []
+  name: Adult Cave Dragon
+  page: 125
+  size: huge
+  source: tob
+  type: dragon
+- alignment: ne
+  cr: '18'
+  environment:
+  - underdark
+  flags: []
+  name: Drow Favored Consort
+  page: 183
+  size: medium
+  source: mtf
+  type: humanoid
+- alignment: ce
+  cr: '18'
+  environment:
+  - underdark
+  flags: []
+  name: Sibriex
+  page: 137
+  size: huge
+  source: mtf
+  type: fiend
+- alignment: ne
+  cr: '20'
+  environment:
+  - underdark
+  flags: []
+  name: Drow Matron Mother
+  page: 186
+  size: medium
+  source: mtf
+  type: humanoid
+- alignment: ce
+  cr: '22'
+  environment:
+  - underdark
+  flags: []
+  name: Mind Flayer Lich
+  page: 172
+  size: medium
+  source: vgm
+  type: undead
+- alignment: le
+  cr: '22'
+  environment:
+  - underdark
+  flags: []
+  name: Mind Flayer Lich
+  page: 172
+  size: medium
+  source: vgm
+  type: undead
+- alignment: ne
+  cr: '22'
+  environment:
+  - underdark
+  flags: []
+  name: Mind Flayer Lich
+  page: 172
+  size: medium
+  source: vgm
+  type: undead
+- alignment: ce
+  cr: 1/2
+  environment:
+  - underdark
+  flags: []
+  name: Chitine
+  page: 131
+  size: small
+  source: vgm
+  type: monstrosity
+- alignment: nn
+  cr: 1/2
+  environment:
+  - underdark
+  flags: []
+  name: Darkmantle
+  page: 46
+  size: small
+  source: mm
+  type: monstrosity
+- alignment: nn
+  cr: 1/2
+  environment:
+  - underdark
+  flags: []
+  name: Gas Spore
+  page: 138
+  size: large
+  source: mm
+  type: plant
+- alignment: ne
+  cr: 1/2
+  environment:
+  - underdark
+  flags: []
+  name: Gazer
+  page: 126
+  size: tiny
+  source: vgm
+  type: aberration
+- alignment: nn
+  cr: 1/2
+  environment:
+  - underdark
+  flags: []
+  name: Gray Ooze
+  page: 243
+  size: medium
+  source: mm
+  type: ooze
+- alignment: ne
+  cr: 1/2
+  environment:
+  - underdark
+  flags: []
+  name: Magma Mephit
+  page: 216
+  size: small
+  source: mm
+  type: elemental
+- alignment: ln
+  cr: 1/2
+  environment:
+  - underdark
+  flags: []
+  name: Myconid Adult
+  page: 232
+  size: medium
+  source: mm
+  type: plant
+- alignment: nn
+  cr: 1/2
+  environment:
+  - underdark
+  flags: []
+  name: Piercer
+  page: 252
+  size: medium
+  source: mm
+  type: monstrosity
+- alignment: nn
+  cr: 1/2
+  environment:
+  - underdark
+  flags: []
+  name: Rust Monster
+  page: 262
+  size: medium
+  source: mm
+  type: monstrosity
+- alignment: ng
+  cr: 1/2
+  environment:
+  - underdark
+  flags: []
+  name: Svirfneblin
+  page: 164
+  size: small
+  source: mm
+  type: humanoid
+- alignment: nn
+  cr: 1/4
+  environment:
+  - underdark
+  flags: []
+  name: Deep Rothe
+  page: 207
+  size: medium
+  source: vgm
+  type: beast
+- alignment: ne
+  cr: 1/4
+  environment:
+  - underdark
+  flags: []
+  name: Drow
+  page: 128
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: ne
+  cr: 1/4
+  environment:
+  - underdark
+  flags: []
+  name: Grimlock
+  page: 175
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: ne
+  cr: 1/4
+  environment:
+  - underdark
+  flags: []
+  name: Kuo-toa
+  page: 199
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: nn
+  cr: 1/4
+  environment:
+  - underdark
+  flags: []
+  name: Male Steeder
+  page: 238
+  size: medium
+  source: mtf
+  type: monstrosity
+- alignment: ce
+  cr: 1/4
+  environment:
+  - underdark
+  flags: []
+  name: Troglodyte
+  page: 290
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: nn
+  cr: 1/4
+  environment:
+  - underdark
+  flags: []
+  name: Violet Fungus
+  page: 138
+  size: medium
+  source: mm
+  type: plant
+- alignment: lg
+  cr: 1/8
+  environment:
+  - underdark
+  flags: []
+  name: Flumph
+  page: 135
+  size: small
+  source: mm
+  type: aberration
+- alignment: ce
+  cr: '5'
+  environment:
+  - underdark
+  - desert
+  flags: []
+  name: Spawn of Kyuss
+  page: 192
+  size: medium
+  source: vgm
+  type: undead
+- alignment: nn
+  cr: '15'
+  environment:
+  - underdark
+  - desert
+  flags: []
+  name: Purple Worm
+  page: 255
+  size: gargantuan
+  source: mm
+  type: monstrosity
+- alignment: nn
+  cr: '7'
+  environment:
+  - underdark
+  - forest
+  flags: []
+  name: Grick Alpha
+  page: 173
+  size: large
+  source: mm
+  type: monstrosity
+- alignment: ne
+  cr: '4'
+  environment:
+  - underdark
+  - forest
+  - jungle
+  - desert
+  flags: []
+  name: Yuan-ti Mind Whisperer
+  page: 204
+  size: medium
+  source: vgm
+  type: monstrosity
+- alignment: le
+  cr: '3'
+  environment:
+  - underdark
+  - hill
+  flags: []
+  name: Neogi
+  page: 180
+  size: small
+  source: vgm
+  type: aberration
+- alignment: le
+  cr: '4'
+  environment:
+  - underdark
+  - hill
+  flags: []
+  name: Neogi Master
+  page: 180
+  size: medium
+  source: vgm
+  type: aberration
+- alignment: le
+  cr: 1/8
+  environment:
+  - underdark
+  - hill
+  flags: []
+  name: Neogi Hatchling
+  page: 179
+  size: tiny
+  source: vgm
+  type: aberration
+- alignment: ce
+  cr: 1/8
+  environment:
+  - underdark
+  - hill
+  flags: []
+  name: Xvart
+  page: 200
+  size: small
+  source: vgm
+  type: humanoid
+- alignment: le
+  cr: '3'
+  environment:
+  - underdark
+  - hill
+  - desert
+  - grassland
+  - forest
+  flags: []
+  name: Hobgoblin Captain
+  page: 186
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: le
+  cr: 1/2
+  environment:
+  - underdark
+  - hill
+  - forest
+  - grassland
+  - desert
+  flags: []
+  name: Hobgoblin
+  page: 186
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: ce
+  cr: '4'
+  environment:
+  - underdark
+  - hill
+  - mountain
+  flags: []
+  name: Ettin
+  page: 132
+  size: large
+  source: mm
+  type: giant
+- alignment: le
+  cr: '1'
+  environment:
+  - underdark
+  - hill
+  - mountain
+  - forest
+  flags: []
+  name: Kobold Dragonshield
+  page: 165
+  size: small
+  source: vgm
+  type: humanoid
+- alignment: ce
+  cr: '4'
+  environment:
+  - underdark
+  - hill
+  - mountain
+  - forest
+  - grassland
+  flags: []
+  name: Orc Blade of Ilneval
+  page: 183
+  size: medium
+  source: vgm
+  type: humanoid
+- alignment: le
+  cr: 1/4
+  environment:
+  - underdark
+  - hill
+  - mountain
+  - urban
+  - forest
+  flags: []
+  name: Kobold Inventor
+  page: 166
+  size: small
+  source: vgm
+  type: humanoid
+- alignment: le
+  cr: '2'
+  environment:
+  - underdark
+  - mountain
+  flags: []
+  name: Duergar Mind Master
+  page: 189
+  size: medium
+  source: mtf
+  type: humanoid
+- alignment: le
+  cr: '2'
+  environment:
+  - underdark
+  - mountain
+  flags: []
+  name: Duergar Xarrorn
+  page: 193
+  size: medium
+  source: mtf
+  type: humanoid
+- alignment: ce
+  cr: '2'
+  environment:
+  - underdark
+  - mountain
+  flags: []
+  name: Orc Claw of Luthic
+  page: 183
+  size: medium
+  source: vgm
+  type: humanoid
+- alignment: le
+  cr: '9'
+  environment:
+  - underdark
+  - mountain
+  flags: []
+  name: Fire Giant
+  page: 154
+  size: huge
+  source: mm
+  type: giant
+- alignment: ce
+  cr: 1/4
+  environment:
+  - underdark
+  - mountain
+  flags: []
+  name: Derro
+  page: 158
+  size: small
+  source: mtf
+  type: humanoid
+- alignment: ce
+  cr: '11'
+  environment:
+  - underdark
+  - mountain
+  - coastal
+  flags: []
+  name: Balhannoth
+  page: 118
+  size: large
+  source: mtf
+  type: aberration
+- alignment: nn
+  cr: 1/4
+  environment:
+  - underdark
+  - swamp
+  - coastal
+  - desert
+  - forest
+  - jungle
+  flags: []
+  name: Giant Lizard
+  page: 326
+  size: large
+  source: mm
+  type: beast
+- alignment: ce
+  cr: '1'
+  environment:
+  - underdark
+  - swamp
+  - desert
+  flags: []
+  name: Vargouille
+  page: 195
+  size: tiny
+  source: vgm
+  type: fiend
+- alignment: ce
+  cr: '7'
+  environment:
+  - underdark
+  - swamp
+  - forest
+  flags: []
+  name: Venom Troll
+  page: 245
+  size: large
+  source: mtf
+  type: giant
+- alignment: ce
+  cr: '3'
+  environment:
+  - underdark
+  - swamp
+  - forest
+  - coastal
+  - grassland
+  - mountain
+  - arctic
+  - urban
+  flags: []
+  name: Vampiric Mist
+  page: 246
+  size: medium
+  source: mtf
+  type: undead
+- alignment: ce
+  cr: '13'
+  environment:
+  - underdark
+  - swamp
+  - underwater
+  - coastal
+  flags: []
+  name: Wastrilith
+  page: 139
+  size: large
+  source: mtf
+  type: fiend
+- alignment: ne
+  cr: 1/4
+  environment:
+  - underdark
+  - swamp
+  - urban
+  flags: []
+  name: Wretched Sorrowsworn
+  page: 233
+  size: small
+  source: mtf
+  type: monstrosity
+- alignment: cn
+  cr: 1/2
+  environment:
+  - underdark
+  - swamp
+  - urban
+  - forest
+  flags: []
+  name: Darkling
+  page: 134
+  size: small
+  source: vgm
+  type: fey
+- alignment: nn
+  cr: 1/4
+  environment:
+  - underdark
+  - swamp
+  - urban
+  - forest
+  - jungle
+  - desert
+  - grassland
+  flags: []
+  name: Giant Poisonous Snake
+  page: 327
+  size: medium
+  source: mm
+  type: beast
+- alignment: nn
+  cr: 1/4
+  environment:
+  - underdark
+  - underdark
+  flags: []
+  name: Mimic, Map
+  page: 289
+  size: tiny
+  source: tob
+  type: abberation
+- alignment: ln
+  cr: '1'
+  environment:
+  - underdark
+  - urban
+  flags: []
+  name: Kobold Trapsmith
+  page: 263
+  size: small
+  source: tob
+  type: humanoid
+- alignment: nn
+  cr: '1'
+  environment:
+  - underdark
+  - urban
+  flags: []
+  name: Ratfolk Rogue
+  page: 320
+  size: small
+  source: tob
+  type: humanoid
+- alignment: nn
+  cr: '2'
+  environment:
+  - underdark
+  - urban
+  flags: []
+  name: Cobbleswarm
+  page: 68
+  size: medium
+  source: tob
+  type: monstrosity
+- alignment: nn
+  cr: '2'
+  environment:
+  - underdark
+  - urban
+  flags: []
+  name: Doppelrat
+  page: 123
+  size: tiny
+  source: tob
+  type: monstrosity
+- alignment: ln
+  cr: '2'
+  environment:
+  - underdark
+  - urban
+  flags: []
+  name: Kobold Alchemist
+  page: 261
+  size: small
+  source: tob
+  type: humanoid
+- alignment: nn
+  cr: '2'
+  environment:
+  - underdark
+  - urban
+  flags: []
+  name: Mimic
+  page: 220
+  size: medium
+  source: mm
+  type: monstrosity
+- alignment: cn
+  cr: '2'
+  environment:
+  - underdark
+  - urban
+  flags: []
+  name: Roachling Lord
+  page: 329
+  size: small
+  source: tob
+  type: humanoid
+- alignment: nn
+  cr: '3'
+  environment:
+  - underdark
+  - urban
+  flags: []
+  name: Doppelganger
+  page: 82
+  size: medium
+  source: mm
+  type: monstrosity
+- alignment: ce
+  cr: '3'
+  environment:
+  - underdark
+  - urban
+  flags: []
+  name: Slithering Tracker
+  page: 191
+  size: medium
+  source: vgm
+  type: ooze
+- alignment: nn
+  cr: '3'
+  environment:
+  - underdark
+  - urban
+  flags: []
+  name: Water Weird
+  page: 299
+  size: large
+  source: mm
+  type: elemental
+- alignment: ce
+  cr: '4'
+  environment:
+  - underdark
+  - urban
+  flags: []
+  name: Ghost
+  page: 147
+  size: medium
+  source: mm
+  type: undead
+- alignment: cg
+  cr: '4'
+  environment:
+  - underdark
+  - urban
+  flags: []
+  name: Ghost
+  page: 147
+  size: medium
+  source: mm
+  type: undead
+- alignment: cn
+  cr: '4'
+  environment:
+  - underdark
+  - urban
+  flags: []
+  name: Ghost
+  page: 147
+  size: medium
+  source: mm
+  type: undead
+- alignment: le
+  cr: '4'
+  environment:
+  - underdark
+  - urban
+  flags: []
+  name: Ghost
+  page: 147
+  size: medium
+  source: mm
+  type: undead
+- alignment: lg
+  cr: '4'
+  environment:
+  - underdark
+  - urban
+  flags: []
+  name: Ghost
+  page: 147
+  size: medium
+  source: mm
+  type: undead
+- alignment: ln
+  cr: '4'
+  environment:
+  - underdark
+  - urban
+  flags: []
+  name: Ghost
+  page: 147
+  size: medium
+  source: mm
+  type: undead
+- alignment: ne
+  cr: '4'
+  environment:
+  - underdark
+  - urban
+  flags: []
+  name: Ghost
+  page: 147
+  size: medium
+  source: mm
+  type: undead
+- alignment: ng
+  cr: '4'
+  environment:
+  - underdark
+  - urban
+  flags: []
+  name: Ghost
+  page: 147
+  size: medium
+  source: mm
+  type: undead
+- alignment: nn
+  cr: '4'
+  environment:
+  - underdark
+  - urban
+  flags: []
+  name: Ghost
+  page: 147
+  size: medium
+  source: mm
+  type: undead
+- alignment: le
+  cr: '4'
+  environment:
+  - underdark
+  - urban
+  flags: []
+  name: Kobold Chieftain
+  page: 262
+  size: small
+  source: tob
+  type: humanoid
+- alignment: le
+  cr: '5'
+  environment:
+  - underdark
+  - urban
+  flags: []
+  name: Dream Eater
+  page: 158
+  size: medium
+  source: tob
+  type: fiend
+- alignment: ce
+  cr: '5'
+  environment:
+  - underdark
+  - urban
+  flags: []
+  name: Rat King
+  page: 318
+  size: medium
+  source: tob
+  type: monstrosity
+- alignment: le
+  cr: '5'
+  environment:
+  - underdark
+  - urban
+  flags: []
+  name: Swarm of Cranium Rats
+  page: 133
+  size: medium
+  source: vgm
+  type: beast
+- alignment: ne
+  cr: '5'
+  environment:
+  - underdark
+  - urban
+  flags: []
+  name: Vampire Spawn
+  page: 298
+  size: medium
+  source: mm
+  type: undead
+- alignment: le
+  cr: '6'
+  environment:
+  - underdark
+  - urban
+  flags: []
+  name: Devil, Crystalline
+  page: 105
+  size: medium
+  source: tob
+  type: fiend
+- alignment: nn
+  cr: '6'
+  environment:
+  - underdark
+  - urban
+  flags: []
+  name: Gnarljak
+  page: 229
+  size: small
+  source: tob
+  type: construct
+- alignment: ce
+  cr: '8'
+  environment:
+  - underdark
+  - urban
+  flags: []
+  name: Drake, Rust
+  page: 155
+  size: medium
+  source: tob
+  type: dragon
+- alignment: ne
+  cr: '13'
+  environment:
+  - underdark
+  - urban
+  flags: []
+  name: Angry Sorrowsworn
+  page: 231
+  size: medium
+  source: mtf
+  type: monstrosity
+- alignment: ne
+  cr: '14'
+  environment:
+  - underdark
+  - urban
+  flags: []
+  name: Cambium
+  page: 51
+  size: large
+  source: tob
+  type: fiend
+- alignment: ce
+  cr: 1/2
+  environment:
+  - underdark
+  - urban
+  flags: []
+  name: Ghoul, Beggar
+  page: 213
+  size: medium
+  source: tob
+  type: undead
+- alignment: ce
+  cr: 1/2
+  environment:
+  - underdark
+  - urban
+  flags: []
+  name: Shadow
+  page: 269
+  size: medium
+  source: mm
+  type: undead
+- alignment: nn
+  cr: 1/4
+  environment:
+  - underdark
+  - urban
+  flags: []
+  name: Giant Centipede
+  page: 323
+  size: small
+  source: mm
+  type: beast
+- alignment: nn
+  cr: 1/4
+  environment:
+  - underdark
+  - urban
+  flags: []
+  name: Living Wick
+  page: 278
+  size: small
+  source: tob
+  type: construct
+- alignment: nn
+  cr: 1/4
+  environment:
+  - underdark
+  - urban
+  flags: []
+  name: Ratfolk
+  page: 320
+  size: small
+  source: tob
+  type: humanoid
+- alignment: cn
+  cr: 1/4
+  environment:
+  - underdark
+  - urban
+  flags: []
+  name: Roachling Skirmisher
+  page: 329
+  size: small
+  source: tob
+  type: humanoid
+- alignment: le
+  cr: '10'
+  environment:
+  - underdark
+  - urban
+  - desert
+  flags: []
+  name: Orthon
+  page: 169
+  size: large
+  source: mtf
+  type: fiend
+- alignment: ne
+  cr: '11'
+  environment:
+  - underdark
+  - urban
+  - forest
+  flags: []
+  name: Hungry Sorrowsworn
+  page: 232
+  size: medium
+  source: mtf
+  type: monstrosity
+- alignment: nn
+  cr: '0'
+  environment:
+  - underwater
+  flags: []
+  name: Quipper
+  page: 335
+  size: tiny
+  source: mm
+  type: beast
+- alignment: nn
+  cr: '1'
+  environment:
+  - underwater
+  flags: []
+  name: Giant Octopus
+  page: 326
+  size: large
+  source: mm
+  type: beast
+- alignment: nn
+  cr: '1'
+  environment:
+  - underwater
+  flags: []
+  name: Swarm of Quippers
+  page: 338
+  size: medium
+  source: mm
+  type: beast
+- alignment: nn
+  cr: '2'
+  environment:
+  - underwater
+  flags: []
+  name: Hunter Shark
+  page: 330
+  size: large
+  source: mm
+  type: beast
+- alignment: nn
+  cr: '3'
+  environment:
+  - underwater
+  flags: []
+  name: Killer Whale
+  page: 331
+  size: huge
+  source: mm
+  type: beast
+- alignment: nn
+  cr: '5'
+  environment:
+  - underwater
+  flags: []
+  name: Giant Shark
+  page: 328
+  size: huge
+  source: mm
+  type: beast
+- alignment: ce
+  cr: '23'
+  environment:
+  - underwater
+  flags: []
+  name: Kraken
+  page: 197
+  size: gargantuan
+  source: mm
+  type: monstrosity
+- alignment: nn
+  cr: 1/2
+  environment:
+  - underwater
+  flags: []
+  name: Giant Sea Horse
+  page: 328
+  size: large
+  source: mm
+  type: beast
+- alignment: nn
+  cr: 1/2
+  environment:
+  - underwater
+  flags: []
+  name: Reef Shark
+  page: 336
+  size: medium
+  source: mm
+  type: beast
+- alignment: ne
+  cr: 1/4
+  environment:
+  - underwater
+  flags: []
+  name: Steam Mephit
+  page: 217
+  size: small
+  source: mm
+  type: elemental
+- alignment: ne
+  cr: '1'
+  environment:
+  - underwater
+  - coastal
+  flags: []
+  name: Sea Spawn
+  page: 189
+  size: medium
+  source: vgm
+  type: humanoid
+- alignment: ce
+  cr: '2'
+  environment:
+  - underwater
+  - coastal
+  flags: []
+  name: Merrow
+  page: 219
+  size: large
+  source: mm
+  type: monstrosity
+- alignment: ne
+  cr: '3'
+  environment:
+  - underwater
+  - coastal
+  flags: []
+  name: Deep Scion
+  page: 135
+  size: medium
+  source: vgm
+  type: humanoid
+- alignment: le
+  cr: '5'
+  environment:
+  - underwater
+  - coastal
+  flags: []
+  name: Sahuagin Baron
+  page: 264
+  size: large
+  source: mm
+  type: humanoid
+- alignment: ce
+  cr: '11'
+  environment:
+  - underwater
+  - coastal
+  flags: []
+  name: Morkoth
+  page: 178
+  size: medium
+  source: vgm
+  type: aberration
+- alignment: nn
+  cr: '17'
+  environment:
+  - underwater
+  - coastal
+  flags: []
+  name: Dragon Turtle
+  page: 119
+  size: gargantuan
+  source: mm
+  type: dragon
+- alignment: nn
+  cr: 1/8
+  environment:
+  - underwater
+  - coastal
+  flags: []
+  name: Merfolk
+  page: 218
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: cn
+  cr: '1'
+  environment:
+  - urban
+  flags: []
+  name: Bastet Temple Cat
+  page: 32
+  size: small
+  source: tob
+  type: beast
+- alignment: nn
+  cr: '1'
+  environment:
+  - urban
+  flags: []
+  name: Chernomoi
+  page: 55
+  size: tiny
+  source: tob
+  type: fey
+- alignment: nn
+  cr: '1'
+  environment:
+  - urban
+  flags: []
+  name: Clockwork Weaving Spider
+  page: 66
+  size: tiny
+  source: tob
+  type: construct
+- alignment: nn
+  cr: '2'
+  environment:
+  - urban
+  flags: []
+  name: Drake, Paper
+  page: 154
+  size: small
+  source: tob
+  type: dragon
+- alignment: ln
+  cr: '3'
+  environment:
+  - urban
+  flags: []
+  name: Giff
+  page: 204
+  size: medium
+  source: mtf
+  type: humanoid
+- alignment: ln
+  cr: '4'
+  environment:
+  - urban
+  flags: []
+  name: City Watch Captain
+  page: 419
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: ne
+  cr: '4'
+  environment:
+  - urban
+  flags: []
+  name: Deathlock
+  page: 128
+  size: medium
+  source: mtf
+  type: undead
+- alignment: ne
+  cr: '4'
+  environment:
+  - urban
+  flags: []
+  name: Incubus
+  page: 285
+  size: medium
+  source: mm
+  type: fiend
+- alignment: ne
+  cr: '4'
+  environment:
+  - urban
+  flags: []
+  name: Succubus
+  page: 285
+  size: medium
+  source: mm
+  type: fiend
+- alignment: ne
+  cr: '5'
+  environment:
+  - urban
+  flags: []
+  name: Banderhobb
+  page: 122
+  size: large
+  source: vgm
+  type: monstrosity
+- alignment: ce
+  cr: '5'
+  environment:
+  - urban
+  flags: []
+  name: Cambion
+  page: 36
+  size: medium
+  source: mm
+  type: fiend
+- alignment: le
+  cr: '5'
+  environment:
+  - urban
+  flags: []
+  name: Cambion
+  page: 36
+  size: medium
+  source: mm
+  type: fiend
+- alignment: ne
+  cr: '5'
+  environment:
+  - urban
+  flags: []
+  name: Cambion
+  page: 36
+  size: medium
+  source: mm
+  type: fiend
+- alignment: cn
+  cr: '5'
+  environment:
+  - urban
+  flags: []
+  name: Kikimora
+  page: 260
+  size: medium
+  source: tob
+  type: fey
+- alignment: nn
+  cr: '6'
+  environment:
+  - urban
+  flags: []
+  name: Invisible Stalker
+  page: 192
+  size: medium
+  source: mm
+  type: elemental
+- alignment: le
+  cr: '6'
+  environment:
+  - urban
+  flags: []
+  name: White Abishai
+  page: 163
+  size: medium
+  source: mtf
+  type: fiend
+- alignment: le
+  cr: '7'
+  environment:
+  - urban
+  flags: []
+  name: Black Abishai
+  page: 160
+  size: medium
+  source: mtf
+  type: fiend
+- alignment: nn
+  cr: '7'
+  environment:
+  - urban
+  flags: []
+  name: Shield Guardian
+  page: 271
+  size: large
+  source: mm
+  type: construct
+- alignment: ne
+  cr: '8'
+  environment:
+  - urban
+  flags: []
+  name: Deathlock Mastermind
+  page: 129
+  size: medium
+  source: mtf
+  type: undead
+- alignment: cn
+  cr: '9'
+  environment:
+  - urban
+  flags: []
+  name: Gray Slaad
+  page: 277
+  size: medium
+  source: mm
+  type: aberration
+- alignment: ne
+  cr: '11'
+  environment:
+  - urban
+  flags: []
+  name: Yagnoloth
+  page: 252
+  size: large
+  source: mtf
+  type: fiend
+- alignment: le
+  cr: '13'
+  environment:
+  - urban
+  flags: []
+  name: Rakshasa
+  page: 257
+  size: medium
+  source: mm
+  type: fiend
+- alignment: le
+  cr: '13'
+  environment:
+  - urban
+  flags: []
+  name: Vampire
+  page: 297
+  size: medium
+  source: mm
+  type: undead
+- alignment: le
+  cr: '15'
+  environment:
+  - urban
+  flags: []
+  name: Green Abishai
+  page: 162
+  size: medium
+  source: mtf
+  type: fiend
+- alignment: le
+  cr: '15'
+  environment:
+  - urban
+  flags: []
+  name: Vampire (spellcaster)
+  page: 297
+  size: medium
+  source: mm
+  type: undead
+- alignment: le
+  cr: '15'
+  environment:
+  - urban
+  flags: []
+  name: Vampire (warrior)
+  page: 297
+  size: medium
+  source: mm
+  type: undead
+- alignment: le
+  cr: '16'
+  environment:
+  - urban
+  flags: []
+  name: Steel Predator
+  page: 239
+  size: large
+  source: mtf
+  type: construct
+- alignment: nn
+  cr: '30'
+  environment:
+  - urban
+  flags: []
+  name: Tarrasque
+  page: 286
+  size: gargantuan
+  source: mm
+  type: monstrosity
+- alignment: nn
+  cr: 1/2
+  environment:
+  - urban
+  flags: []
+  name: Clockwork Watchman
+  page: 65
+  size: medium
+  source: tob
+  type: construct
+- alignment: cn
+  cr: 1/2
+  environment:
+  - urban
+  flags: []
+  name: Drake, Alehouse
+  page: 148
+  size: tiny
+  source: tob
+  type: dragon
+- alignment: ln
+  cr: 1/2
+  environment:
+  - urban
+  flags: []
+  name: Library Automaton
+  page: 273
+  size: small
+  source: tob
+  type: construct
+- alignment: nn
+  cr: 1/2
+  environment:
+  - urban
+  flags: []
+  name: Warhorse
+  page: 340
+  size: large
+  source: mm
+  type: beast
+- alignment: cn
+  cr: 1/4
+  environment:
+  - urban
+  flags: []
+  name: Clurichaun
+  page: 67
+  size: tiny
+  source: tob
+  type: fey
+- alignment: nn
+  cr: 1/4
+  environment:
+  - urban
+  flags: []
+  name: Draft Horse
+  page: 321
+  size: large
+  source: mm
+  type: beast
+- alignment: nn
+  cr: 1/4
+  environment:
+  - urban
+  flags: []
+  name: Ox
+  page: 207
+  size: large
+  source: vgm
+  type: beast
+- alignment: le
+  cr: 1/4
+  environment:
+  - urban
+  flags: []
+  name: Skeleton
+  page: 272
+  size: medium
+  source: mm
+  type: undead
+- alignment: ne
+  cr: 1/4
+  environment:
+  - urban
+  flags: []
+  name: Smoke Mephit
+  page: 217
+  size: small
+  source: mm
+  type: elemental
+- alignment: nn
+  cr: 1/8
+  environment:
+  - urban
+  flags: []
+  name: Pony
+  page: 335
+  size: medium
+  source: mm
+  type: beast
+- alignment: le
+  cr: '17'
+  environment:
+  - urban
+  - coastal
+  flags: []
+  name: Blue Abishai
+  page: 161
+  size: medium
+  source: mtf
+  type: fiend
+- alignment: nn
+  cr: 1/2
+  environment:
+  - urban
+  - desert
+  - underdark
+  - hill
+  - swamp
+  - grassland
+  - forest
+  - jungle
+  flags: []
+  name: Swarm of Insects
+  page: 338
+  size: medium
+  source: mm
+  type: beast
+- alignment: le
+  cr: '2'
+  environment:
+  - urban
+  - forest
+  flags: []
+  name: Wererat
+  page: 209
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: cn
+  cr: 1/4
+  environment:
+  - urban
+  - forest
+  flags: []
+  name: Kenku
+  page: 194
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: lg
+  cr: '4'
+  environment:
+  - urban
+  - forest
+  - desert
+  - grassland
+  flags: []
+  name: Couatl
+  page: 43
+  size: medium
+  source: mm
+  type: celestial
+- alignment: nn
+  cr: 1/4
+  environment:
+  - urban
+  - grassland
+  flags: []
+  name: Riding Horse
+  page: 336
+  size: large
+  source: mm
+  type: beast
+- alignment: nn
+  cr: 1/8
+  environment:
+  - urban
+  - hill
+  - desert
+  flags: []
+  name: Mule
+  page: 333
+  size: medium
+  source: mm
+  type: beast
+- alignment: nn
+  cr: 1/8
+  environment:
+  - urban
+  - hill
+  - forest
+  flags: []
+  name: Mastiff
+  page: 332
+  size: medium
+  source: mm
+  type: beast
+- alignment: ce
+  cr: '3'
+  environment:
+  - urban
+  - hill
+  - underdark
+  - mountain
+  - forest
+  flags: []
+  name: Orc Red Fang of Shargaas
+  page: 185
+  size: medium
+  source: vgm
+  type: humanoid
+- alignment: ne
+  cr: 1/4
+  environment:
+  - urban
+  - jungle
+  flags: []
+  name: Zombie
+  page: 316
+  size: medium
+  source: mm
+  type: undead
+- alignment: nn
+  cr: 1/2
+  environment:
+  - urban
+  - jungle
+  - forest
+  - grassland
+  flags: []
+  name: Giant Wasp
+  page: 329
+  size: medium
+  source: mm
+  type: beast
+- alignment: lg
+  cr: '16'
+  environment:
+  - urban
+  - mountain
+  flags: []
+  name: Adult Silver Dragon
+  page: 117
+  size: huge
+  source: mm
+  type: dragon
+- alignment: lg
+  cr: '23'
+  environment:
+  - urban
+  - mountain
+  flags: []
+  name: Ancient Silver Dragon
+  page: 116
+  size: gargantuan
+  source: mm
+  type: dragon
+- alignment: le
+  cr: '1'
+  environment:
+  - urban
+  - mountain
+  - desert
+  flags: []
+  name: Stone Cursed
+  page: 240
+  size: medium
+  source: mtf
+  type: construct
+- alignment: ce
+  cr: '12'
+  environment:
+  - urban
+  - mountain
+  - grassland
+  - desert
+  - coastal
+  - forest
+  flags: []
+  name: Eidolon
+  page: 194
+  size: medium
+  source: mtf
+  type: undead
+- alignment: cg
+  cr: '12'
+  environment:
+  - urban
+  - mountain
+  - grassland
+  - desert
+  - coastal
+  - forest
+  flags: []
+  name: Eidolon
+  page: 194
+  size: medium
+  source: mtf
+  type: undead
+- alignment: cn
+  cr: '12'
+  environment:
+  - urban
+  - mountain
+  - grassland
+  - desert
+  - coastal
+  - forest
+  flags: []
+  name: Eidolon
+  page: 194
+  size: medium
+  source: mtf
+  type: undead
+- alignment: le
+  cr: '12'
+  environment:
+  - urban
+  - mountain
+  - grassland
+  - desert
+  - coastal
+  - forest
+  flags: []
+  name: Eidolon
+  page: 194
+  size: medium
+  source: mtf
+  type: undead
+- alignment: lg
+  cr: '12'
+  environment:
+  - urban
+  - mountain
+  - grassland
+  - desert
+  - coastal
+  - forest
+  flags: []
+  name: Eidolon
+  page: 194
+  size: medium
+  source: mtf
+  type: undead
+- alignment: ln
+  cr: '12'
+  environment:
+  - urban
+  - mountain
+  - grassland
+  - desert
+  - coastal
+  - forest
+  flags: []
+  name: Eidolon
+  page: 194
+  size: medium
+  source: mtf
+  type: undead
+- alignment: ne
+  cr: '12'
+  environment:
+  - urban
+  - mountain
+  - grassland
+  - desert
+  - coastal
+  - forest
+  flags: []
+  name: Eidolon
+  page: 194
+  size: medium
+  source: mtf
+  type: undead
+- alignment: ng
+  cr: '12'
+  environment:
+  - urban
+  - mountain
+  - grassland
+  - desert
+  - coastal
+  - forest
+  flags: []
+  name: Eidolon
+  page: 194
+  size: medium
+  source: mtf
+  type: undead
+- alignment: nn
+  cr: '12'
+  environment:
+  - urban
+  - mountain
+  - grassland
+  - desert
+  - coastal
+  - forest
+  flags: []
+  name: Eidolon
+  page: 194
+  size: medium
+  source: mtf
+  type: undead
+- alignment: ne
+  cr: '5'
+  environment:
+  - urban
+  - swamp
+  flags: []
+  name: Allip
+  page: 116
+  size: medium
+  source: mtf
+  type: undead
+- alignment: nn
+  cr: 1/4
+  environment:
+  - urban
+  - swamp
+  flags: []
+  name: Swarm of Rats
+  page: 339
+  size: medium
+  source: mm
+  type: beast
+- alignment: ne
+  cr: '1'
+  environment:
+  - urban
+  - swamp
+  - desert
+  - forest
+  - jungle
+  flags: []
+  name: Yuan-ti Pureblood
+  page: 310
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: ce
+  cr: '2'
+  environment:
+  - urban
+  - swamp
+  - forest
+  flags: []
+  name: Will-o-wisp
+  page: 301
+  size: tiny
+  source: mm
+  type: undead
+- alignment: le
+  cr: '5'
+  environment:
+  - urban
+  - swamp
+  - underdark
+  flags: []
+  name: Adult Oblex
+  page: 218
+  size: medium
+  source: mtf
+  type: ooze
+- alignment: ce
+  cr: '15'
+  environment:
+  - urban
+  - swamp
+  - underdark
+  flags: []
+  name: Nabassu
+  page: 135
+  size: medium
+  source: mtf
+  type: fiend
+- alignment: le
+  cr: 1/4
+  environment:
+  - urban
+  - swamp
+  - underdark
+  flags: []
+  name: Oblex Spawn
+  page: 217
+  size: tiny
+  source: mtf
+  type: ooze
+- alignment: ne
+  cr: '3'
+  environment:
+  - urban
+  - swamp
+  - underdark
+  - desert
+  flags: []
+  name: Wight
+  page: 300
+  size: medium
+  source: mm
+  type: undead
+- alignment: ce
+  cr: '1'
+  environment:
+  - urban
+  - swamp
+  - underdark
+  - jungle
+  flags: []
+  name: Ghoul
+  page: 148
+  size: medium
+  source: mm
+  type: undead
+- alignment: le
+  cr: '0'
+  environment:
+  - urban
+  - underdark
+  flags: []
+  name: Cranium Rat
+  page: 133
+  size: tiny
+  source: vgm
+  type: beast
+- alignment: ce
+  cr: '1'
+  environment:
+  - urban
+  - underdark
+  flags: []
+  name: Specter
+  page: 279
+  size: medium
+  source: mm
+  type: undead
+- alignment: ce
+  cr: '2'
+  environment:
+  - urban
+  - underdark
+  flags: []
+  name: Gargoyle
+  page: 140
+  size: medium
+  source: mm
+  type: elemental
+- alignment: ce
+  cr: '4'
+  environment:
+  - urban
+  - underdark
+  flags: []
+  name: Babau
+  page: 136
+  size: medium
+  source: vgm
+  type: fiend
+- alignment: nn
+  cr: '9'
+  environment:
+  - urban
+  - underdark
+  flags: []
+  name: Gloom Weaver
+  page: 224
+  size: medium
+  source: mtf
+  type: humanoid
+- alignment: ce
+  cr: '11'
+  environment:
+  - urban
+  - underdark
+  flags: []
+  name: Alkilith
+  page: 130
+  size: medium
+  source: mtf
+  type: fiend
+- alignment: nn
+  cr: '11'
+  environment:
+  - urban
+  - underdark
+  flags: []
+  name: Soul Monger
+  page: 226
+  size: medium
+  source: mtf
+  type: humanoid
+- alignment: ne
+  cr: '8'
+  environment:
+  - urban
+  - underdark
+  - coastal
+  flags: []
+  name: Canoloth
+  page: 247
+  size: medium
+  source: mtf
+  type: fiend
+- alignment: nn
+  cr: '7'
+  environment:
+  - urban
+  - underdark
+  - forest
+  flags: []
+  name: Shadow Dancer
+  page: 225
+  size: medium
+  source: mtf
+  type: humanoid
+- alignment: cn
+  cr: 1/8
+  environment:
+  - urban
+  - underdark
+  - hill
+  - forest
+  flags: []
+  name: Boggle
+  page: 128
+  size: small
+  source: vgm
+  type: fey
+- alignment: ce
+  cr: '6'
+  environment:
+  - urban
+  - underdark
+  - swamp
+  flags: []
+  name: Bodak
+  page: 127
+  size: medium
+  source: vgm
+  type: undead
+- alignment: nn
+  cr: '0'
+  environment:
+  - any
+  flags: []
+  name: Bat
+  page: 318
+  size: tiny
+  source: mm
+  type: beast
+- alignment: ne
+  cr: '0'
+  environment:
+  - any
+  flags: []
+  name: Crawling Claw
+  page: 44
+  size: tiny
+  source: mm
+  type: undead
+- alignment: nn
+  cr: '0'
+  environment:
+  - aquatic
+  - marsh
+  - jungle
+  - swamp
+  flags: []
+  name: Frog
+  page: 322
+  size: tiny
+  source: mm
+  type: beast
+- alignment: nn
+  cr: '0'
+  environment:
+  - costal
+  - desert
+  - hill
+  - mountain
+  - plains
+  flags: []
+  name: Hawk
+  page: 330
+  size: tiny
+  source: mm
+  type: beast
+- alignment: nn
+  cr: '0'
+  environment:
+  - unknown
+  flags: []
+  name: Homunculus
+  page: 188
+  size: tiny
+  source: mm
+  type: construct
+- alignment: le
+  cr: '0'
+  environment:
+  - unknown
+  flags: []
+  name: Lemure
+  page: 76
+  size: medium
+  source: mm
+  type: fiend
+- alignment: nn
+  cr: '0'
+  environment:
+  - aquatic
+  - underwater
+  flags: []
+  name: Octopus
+  page: 333
+  size: small
+  source: mm
+  type: beast
+- alignment: nn
+  cr: '0'
+  environment:
+  - aquatic
+  - underwater
+  flags: []
+  name: Sea Horse
+  page: 337
+  size: tiny
+  source: mm
+  type: beast
+- alignment: nn
+  cr: '0'
+  environment:
+  - any
+  flags: []
+  name: Weasel
+  page: 340
+  size: tiny
+  source: mm
+  type: beast
+- alignment: nn
+  cr: '1'
+  environment:
+  - unknown
+  flags: []
+  name: Animated Armor
+  page: 19
+  size: medium
+  source: mm
+  type: construct
+- alignment: cg
+  cr: '1'
+  environment:
+  - unknown
+  flags: []
+  name: Brass Dragon Wyrmling
+  page: 106
+  size: medium
+  source: mm
+  type: dragon
+- alignment: cg
+  cr: '1'
+  environment:
+  - unknown
+  flags: []
+  name: Copper Dragon Wyrmling
+  page: 112
+  size: medium
+  source: mm
+  type: dragon
+- alignment: le
+  cr: '1'
+  environment:
+  - any
+  flags: []
+  name: Imp
+  page: 76
+  size: tiny
+  source: mm
+  type: fiend
+- alignment: ne
+  cr: '1'
+  environment:
+  - unknown
+  flags: []
+  name: Nihilethic Zombie
+  page: 9
+  size: medium
+  source: tob
+  type: undead
+- alignment: ln
+  cr: '1'
+  environment:
+  - unknown
+  flags: []
+  name: Quadrone
+  page: 226
+  size: medium
+  source: mm
+  type: construct
+- alignment: ce
+  cr: '1'
+  environment:
+  - unknown
+  flags: []
+  name: Quasit
+  page: 63
+  size: tiny
+  source: mm
+  type: fiend
+- alignment: ln
+  cr: '2'
+  environment:
+  - unknown
+  flags: []
+  name: Azer
+  page: 22
+  size: medium
+  source: mm
+  type: elemental
+- alignment: ce
+  cr: '2'
+  environment:
+  - unknown
+  flags: []
+  name: Black Dragon Wyrmling
+  page: 88
+  size: medium
+  source: mm
+  type: dragon
+- alignment: lg
+  cr: '2'
+  environment:
+  - unknown
+  flags: []
+  name: Bronze Dragon Wyrmling
+  page: 109
+  size: medium
+  source: mm
+  type: dragon
+- alignment: nn
+  cr: '2'
+  environment:
+  - unknown
+  flags: []
+  name: Cave Bear
+  page: 334
+  size: large
+  source: mm
+  type: beast
+- alignment: ce
+  cr: '2'
+  environment:
+  - unknown
+  flags: []
+  name: Deep One
+  page: 73
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: le
+  cr: '2'
+  environment:
+  - unknown
+  flags: []
+  name: Devil, Ink
+  page: 108
+  size: small
+  source: tob
+  type: fiend
+- alignment: ln
+  cr: '2'
+  environment:
+  - unknown
+  flags: []
+  name: Githzerai Monk
+  page: 161
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: le
+  cr: '2'
+  environment:
+  - unknown
+  flags: []
+  name: Green Dragon Wyrmling
+  page: 95
+  size: medium
+  source: mm
+  type: dragon
+- alignment: ln
+  cr: '2'
+  environment:
+  - unknown
+  flags: []
+  name: Myconid Sovereign
+  page: 232
+  size: large
+  source: mm
+  type: plant
+- alignment: ne
+  cr: '2'
+  environment:
+  - unknown
+  flags: []
+  name: Ogre Zombie
+  page: 316
+  size: large
+  source: mm
+  type: undead
+- alignment: ln
+  cr: '2'
+  environment:
+  - unknown
+  flags: []
+  name: Pentadrone
+  page: 226
+  size: large
+  source: mm
+  type: construct
+- alignment: nn
+  cr: '2'
+  environment:
+  - unknown
+  flags: []
+  name: Rug of Smothering
+  page: 20
+  size: large
+  source: mm
+  type: construct
+- alignment: ce
+  cr: '2'
+  environment:
+  - unknown
+  flags: []
+  name: Rutterkin
+  page: 136
+  size: medium
+  source: mtf
+  type: fiend
+- alignment: ne
+  cr: '2'
+  environment:
+  - unknown
+  flags: []
+  name: Sea Dragon Qyrmling
+  page: 136
+  size: medium
+  source: tob
+  type: dragon
+- alignment: lg
+  cr: '2'
+  environment:
+  - unknown
+  flags: []
+  name: Silver Dragon Wyrmling
+  page: 118
+  size: medium
+  source: mm
+  type: dragon
+- alignment: ce
+  cr: '2'
+  environment:
+  - unknown
+  flags: []
+  name: Specter (poltergeist)
+  page: 279
+  size: medium
+  source: mm
+  type: undead
+- alignment: nn
+  cr: '2'
+  environment:
+  - unknown
+  flags: []
+  name: Spider Thief
+  page: 366
+  size: small
+  source: tob
+  type: construct
+- alignment: le
+  cr: '2'
+  environment:
+  - unknown
+  flags: []
+  name: Spined Devil
+  page: 78
+  size: small
+  source: mm
+  type: fiend
+- alignment: ce
+  cr: '2'
+  environment:
+  - unknown
+  flags: []
+  name: White Dragon Wyrmling
+  page: 102
+  size: medium
+  source: mm
+  type: dragon
+- alignment: cn
+  cr: '3'
+  environment:
+  - unknown
+  flags: []
+  name: Alseid Grovekeeper
+  page: 15
+  size: medium
+  source: tob
+  type: monstrosity
+- alignment: nn
+  cr: '3'
+  environment:
+  - unknown
+  flags: []
+  name: Amphiptere
+  page: 16
+  size: medium
+  source: tob
+  type: beast
+- alignment: le
+  cr: '3'
+  environment:
+  - unknown
+  flags: []
+  name: Bearded Devil
+  page: 70
+  size: medium
+  source: mm
+  type: fiend
+- alignment: le
+  cr: '3'
+  environment:
+  - unknown
+  flags: []
+  name: Blue Dragon Wyrmling
+  page: 91
+  size: medium
+  source: mm
+  type: dragon
+- alignment: ce
+  cr: '3'
+  environment:
+  - unknown
+  flags: []
+  name: Bugbear Chief
+  page: 33
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: ce
+  cr: '3'
+  environment:
+  - unknown
+  flags: []
+  name: Bulezau
+  page: 131
+  size: medium
+  source: mtf
+  type: fiend
+- alignment: ne
+  cr: '3'
+  environment:
+  - unknown
+  flags: []
+  name: Deathlock Wight
+  page: 129
+  size: medium
+  source: mtf
+  type: undead
+- alignment: le
+  cr: '3'
+  environment:
+  - unknown
+  flags: []
+  name: Githyanki Warrior
+  page: 160
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: lg
+  cr: '3'
+  environment:
+  - unknown
+  flags: []
+  name: Gold Dragon Wyrmling
+  page: 115
+  size: medium
+  source: mm
+  type: dragon
+- alignment: ne
+  cr: '3'
+  environment:
+  - unknown
+  flags: []
+  name: Nightmare
+  page: 235
+  size: large
+  source: mm
+  type: fiend
+- alignment: nn
+  cr: '3'
+  environment:
+  - unknown
+  flags: []
+  name: Prismatic Beetle Swarm
+  page: 375
+  size: medium
+  source: tob
+  type: beast
+- alignment: nn
+  cr: '3'
+  environment:
+  - unknown
+  flags: []
+  name: Ravenfolk Warrior
+  page: 322
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: ce
+  cr: '3'
+  environment:
+  - unknown
+  flags: []
+  name: Sluagh Swarm
+  page: 376
+  size: medium
+  source: tob
+  type: fey
+- alignment: ce
+  cr: '4'
+  environment:
+  - unknown
+  flags: []
+  name: Deep One Hybrid Priest
+  page: 73
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: ne
+  cr: '4'
+  environment:
+  - unknown
+  flags: []
+  name: Elves, Shadow Fey, Guardian
+  page: 174
+  size: large
+  source: tob
+  type: humanoid
+- alignment: nn
+  cr: '4'
+  environment:
+  - unknown
+  flags: []
+  name: Helmed Horror
+  page: 183
+  size: medium
+  source: mm
+  type: construct
+- alignment: ce
+  cr: '4'
+  environment:
+  - unknown
+  flags: []
+  name: Lizard King/Queen
+  page: 205
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: le
+  cr: '4'
+  environment:
+  - unknown
+  flags: []
+  name: Merregon
+  page: 166
+  size: medium
+  source: mtf
+  type: fiend
+- alignment: ne
+  cr: '4'
+  environment:
+  - unknown
+  flags: []
+  name: Myconid, Deathcap
+  page: 300
+  size: medium
+  source: tob
+  type: plant
+- alignment: ce
+  cr: '4'
+  environment:
+  - unknown
+  flags: []
+  name: Orc War Chief
+  page: 246
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: ce
+  cr: '4'
+  environment:
+  - unknown
+  flags: []
+  name: Red Dragon Wyrmling
+  page: 98
+  size: medium
+  source: mm
+  type: dragon
+- alignment: ce
+  cr: '4'
+  environment:
+  - unknown
+  flags: []
+  name: Selang
+  page: 341
+  size: medium
+  source: tob
+  type: fey
+- alignment: ce
+  cr: '4'
+  environment:
+  - unknown
+  flags: []
+  name: Shadow Demon
+  page: 64
+  size: medium
+  source: mm
+  type: fiend
+- alignment: le
+  cr: '5'
+  environment:
+  - unknown
+  flags: []
+  name: Barbed Devil
+  page: 70
+  size: medium
+  source: mm
+  type: fiend
+- alignment: ce
+  cr: '5'
+  environment:
+  - unknown
+  flags: []
+  name: Barlgura
+  page: 56
+  size: large
+  source: mm
+  type: fiend
+- alignment: nn
+  cr: '5'
+  environment:
+  - unknown
+  flags: []
+  name: Dinosaur, Young Spinosaurus
+  page: 117
+  size: huge
+  source: tob
+  type: beast
+- alignment: nn
+  cr: '5'
+  environment:
+  - unknown
+  flags: []
+  name: Drakon
+  page: 157
+  size: large
+  source: tob
+  type: beast
+- alignment: le
+  cr: '5'
+  environment:
+  - unknown
+  flags: []
+  name: Elves, Shadow Fey, Forest Hunter
+  page: 173
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: nn
+  cr: '5'
+  environment:
+  - unknown
+  flags: []
+  name: Flesh Golem
+  page: 169
+  size: medium
+  source: mm
+  type: construct
+- alignment: ce
+  cr: '5'
+  environment:
+  - unknown
+  flags: []
+  name: Half-Red Dragon Veteran
+  page: 180
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: cg
+  cr: '5'
+  environment:
+  - unknown
+  flags: []
+  name: Half-Red Dragon Veteran
+  page: 180
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: cn
+  cr: '5'
+  environment:
+  - unknown
+  flags: []
+  name: Half-Red Dragon Veteran
+  page: 180
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: le
+  cr: '5'
+  environment:
+  - unknown
+  flags: []
+  name: Half-Red Dragon Veteran
+  page: 180
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: lg
+  cr: '5'
+  environment:
+  - unknown
+  flags: []
+  name: Half-Red Dragon Veteran
+  page: 180
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: ln
+  cr: '5'
+  environment:
+  - unknown
+  flags: []
+  name: Half-Red Dragon Veteran
+  page: 180
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: ne
+  cr: '5'
+  environment:
+  - unknown
+  flags: []
+  name: Half-Red Dragon Veteran
+  page: 180
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: ng
+  cr: '5'
+  environment:
+  - unknown
+  flags: []
+  name: Half-Red Dragon Veteran
+  page: 180
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: nn
+  cr: '5'
+  environment:
+  - unknown
+  flags: []
+  name: Half-Red Dragon Veteran
+  page: 180
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: ne
+  cr: '5'
+  environment:
+  - unknown
+  flags: []
+  name: Mezzoloth
+  page: 313
+  size: medium
+  source: mm
+  type: fiend
+- alignment: cn
+  cr: '5'
+  environment:
+  - unknown
+  flags: []
+  name: Red Slaad
+  page: 276
+  size: large
+  source: mm
+  type: aberration
+- alignment: le
+  cr: '5'
+  environment:
+  - unknown
+  flags: []
+  name: Spawn of Arbeyach
+  page: 97
+  size: medium
+  source: tob
+  type: fiend
+- alignment: ce
+  cr: '5'
+  environment:
+  - unknown
+  flags: []
+  name: Star Spawn Mangler
+  page: 236
+  size: medium
+  source: mtf
+  type: aberration
+- alignment: ce
+  cr: '6'
+  environment:
+  - unknown
+  flags: []
+  name: Chasme
+  page: 57
+  size: large
+  source: mm
+  type: fiend
+- alignment: le
+  cr: '6'
+  environment:
+  - unknown
+  flags: []
+  name: Elves, Shadow Fey, Duelist
+  page: 171
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: ln
+  cr: '6'
+  environment:
+  - unknown
+  flags: []
+  name: Githzerai Zerth
+  page: 161
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: ce
+  cr: '6'
+  environment:
+  - unknown
+  flags: []
+  name: Nightgarm
+  page: 305
+  size: large
+  source: tob
+  type: monstrosity
+- alignment: ce
+  cr: '6'
+  environment:
+  - unknown
+  flags: []
+  name: Vrock
+  page: 64
+  size: large
+  source: mm
+  type: fiend
+- alignment: ne
+  cr: '6'
+  environment:
+  - unknown
+  flags: []
+  name: Wolf Spirit Swarm
+  page: 377
+  size: large
+  source: tob
+  type: undead
+- alignment: nn
+  cr: '7'
+  environment:
+  - unknown
+  flags: []
+  name: Air Elemental Myrmidon
+  page: 202
+  size: medium
+  source: mtf
+  type: elemental
+- alignment: cn
+  cr: '7'
+  environment:
+  - unknown
+  flags: []
+  name: Blue Slaad
+  page: 276
+  size: large
+  source: mm
+  type: aberration
+- alignment: nn
+  cr: '7'
+  environment:
+  - unknown
+  flags: []
+  name: Earth Elemental Myrmidon
+  page: 202
+  size: medium
+  source: mtf
+  type: elemental
+- alignment: cn
+  cr: '7'
+  environment:
+  - unknown
+  flags: []
+  name: Einherjar
+  page: 167
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: le
+  cr: '7'
+  environment:
+  - unknown
+  flags: []
+  name: Elves, Shadow Fey, Enchantress
+  page: 172
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: ne
+  cr: '7'
+  environment:
+  - unknown
+  flags: []
+  name: Fire Dancer Swarm
+  page: 373
+  size: medium
+  source: tob
+  type: elemental
+- alignment: nn
+  cr: '7'
+  environment:
+  - unknown
+  flags: []
+  name: Fire Elemental Myrmidon
+  page: 203
+  size: medium
+  source: mtf
+  type: elemental
+- alignment: nn
+  cr: '7'
+  environment:
+  - unknown
+  flags: []
+  name: Water Elemental Myrmidon
+  page: 203
+  size: medium
+  source: mtf
+  type: elemental
+- alignment: le
+  cr: '8'
+  environment:
+  - unknown
+  flags: []
+  name: Chain Devil
+  page: 72
+  size: medium
+  source: mm
+  type: fiend
+- alignment: ne
+  cr: '8'
+  environment:
+  - unknown
+  flags: []
+  name: Drow Priestess of Lolth
+  page: 129
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: le
+  cr: '8'
+  environment:
+  - unknown
+  flags: []
+  name: Githyanki Knight
+  page: 160
+  size: medium
+  source: mm
+  type: humanoid
+- alignment: cn
+  cr: '8'
+  environment:
+  - unknown
+  flags: []
+  name: Green Slaad
+  page: 277
+  size: large
+  source: mm
+  type: aberration
+- alignment: ce
+  cr: '8'
+  environment:
+  - unknown
+  flags: []
+  name: Hezrou
+  page: 60
+  size: large
+  source: mm
+  type: fiend
+- alignment: ln
+  cr: '8'
+  environment:
+  - unknown
+  flags: []
+  name: Mallqui
+  page: 282
+  size: medium
+  source: tob
+  type: undead
+- alignment: le
+  cr: '9'
+  environment:
+  - unknown
+  flags: []
+  name: Bone Devil
+  page: 71
+  size: large
+  source: mm
+  type: fiend
+- alignment: nn
+  cr: '9'
+  environment:
+  - unknown
+  flags: []
+  name: Clay Golem
+  page: 168
+  size: large
+  source: mm
+  type: construct
+- alignment: ce
+  cr: '9'
+  environment:
+  - unknown
+  flags: []
+  name: Glabrezu
+  page: 58
+  size: large
+  source: mm
+  type: fiend
+- alignment: ne
+  cr: '9'
+  environment:
+  - unknown
+  flags: []
+  name: Hydroloth
+  page: 249
+  size: medium
+  source: mtf
+  type: fiend
+- alignment: ne
+  cr: '9'
+  environment:
+  - unknown
+  flags: []
+  name: Nycaloth
+  page: 314
+  size: large
+  source: mm
+  type: fiend
+- alignment: ce
+  cr: '10'
+  environment:
+  - unknown
+  flags: []
+  name: Death Slaad
+  page: 278
+  size: medium
+  source: mm
+  type: aberration
+- alignment: lg
+  cr: '10'
+  environment:
+  - unknown
+  flags: []
+  name: Deva
+  page: 16
+  size: medium
+  source: mm
+  type: celestial
+- alignment: cn
+  cr: '10'
+  environment:
+  - unknown
+  flags: []
+  name: Fear Smith
+  page: 181
+  size: medium
+  source: tob
+  type: fey
+- alignment: ce
+  cr: '10'
+  environment:
+  - unknown
+  flags: []
+  name: Star Spawn Hulk
+  page: 234
+  size: large
+  source: mtf
+  type: aberration
+- alignment: nn
+  cr: '10'
+  environment:
+  - unknown
+  flags: []
+  name: Stone Golem
+  page: 170
+  size: large
+  source: mm
+  type: construct
+- alignment: ce
+  cr: '10'
+  environment:
+  - unknown
+  flags: []
+  name: Yochlol
+  page: 65
+  size: medium
+  source: mm
+  type: fiend
+- alignment: ln
+  cr: '11'
+  environment:
+  - unknown
+  flags: []
+  name: "Baba Yaga\u2019s Horsemen, Base"
+  page: 30
+  size: medium
+  source: tob
+  type: fey
+- alignment: le
+  cr: '11'
+  environment:
+  - unknown
+  flags: []
+  name: Devil, Koralk (Harvester Devil)
+  page: 108
+  size: large
+  source: tob
+  type: fiend
+- alignment: le
+  cr: '11'
+  environment:
+  - unknown
+  flags: []
+  name: Horned Devil
+  page: 74
+  size: large
+  source: mm
+  type: fiend
+- alignment: le
+  cr: '11'
+  environment:
+  - unknown
+  flags: []
+  name: Naina (in humanoid form)
+  page: 302
+  size: medium
+  source: tob
+  type: fey
+- alignment: ne
+  cr: '12'
+  environment:
+  - unknown
+  flags: []
+  name: Arcanaloth
+  page: 313
+  size: medium
+  source: mm
+  type: fiend
+- alignment: ce
+  cr: '12'
+  environment:
+  - unknown
+  flags: []
+  name: Demon Lord of Cockroaches Akyishigal
+  page: 82
+  size: large
+  source: tob
+  type: fiend
+- alignment: le
+  cr: '12'
+  environment:
+  - unknown
+  flags: []
+  name: Erinyes
+  page: 73
+  size: medium
+  source: mm
+  type: fiend
+- alignment: ln
+  cr: '12'
+  environment:
+  - unknown
+  flags: []
+  name: Fey Lord, Bear King
+  page: 186
+  size: medium
+  source: tob
+  type: fey
+- alignment: ce
+  cr: '13'
+  environment:
+  - unknown
+  flags: []
+  name: Nalfeshnee
+  page: 62
+  size: large
+  source: mm
+  type: fiend
+- alignment: le
+  cr: '13'
+  environment:
+  - unknown
+  flags: []
+  name: Narzugon
+  page: 167
+  size: medium
+  source: mtf
+  type: fiend
+- alignment: ne
+  cr: '13'
+  environment:
+  - unknown
+  flags: []
+  name: Ultroloth
+  page: 314
+  size: medium
+  source: mm
+  type: fiend
+- alignment: le
+  cr: '14'
+  environment:
+  - unknown
+  flags: []
+  name: Beholder (in lair)
+  page: 28
+  size: large
+  source: mm
+  type: aberration
+- alignment: le
+  cr: '14'
+  environment:
+  - unknown
+  flags: []
+  name: Ice Devil
+  page: 75
+  size: large
+  source: mm
+  type: fiend
+- alignment: le
+  cr: '15'
+  environment:
+  - unknown
+  flags: []
+  name: Death Tyrant (in lair)
+  page: 29
+  size: large
+  source: mm
+  type: undead
+- alignment: le
+  cr: '15'
+  environment:
+  - unknown
+  flags: []
+  name: "Devil, Ia\u2019Affrat"
+  page: 98
+  size: large
+  source: tob
+  type: fiend
+- alignment: cn
+  cr: '16'
+  environment:
+  - unknown
+  flags: []
+  name: Fey Lord, River King
+  page: 196
+  size: medium
+  source: tob
+  type: fey
+- alignment: ne
+  cr: '16'
+  environment:
+  - unknown
+  flags: []
+  name: Fey Snow Queen
+  page: 198
+  size: medium
+  source: tob
+  type: fey
+- alignment: ln
+  cr: '16'
+  environment:
+  - unknown
+  flags: []
+  name: Githzerai Anarch
+  page: 207
+  size: medium
+  source: mtf
+  type: humanoid
+- alignment: le
+  cr: '16'
+  environment:
+  - unknown
+  flags: []
+  name: Hellfire Engine
+  page: 165
+  size: huge
+  source: mtf
+  type: construct
+- alignment: nn
+  cr: '16'
+  environment:
+  - unknown
+  flags: []
+  name: Iron Golem
+  page: 170
+  size: large
+  source: mm
+  type: construct
+- alignment: ce
+  cr: '16'
+  environment:
+  - unknown
+  flags: []
+  name: Marilith
+  page: 61
+  size: large
+  source: mm
+  type: fiend
+- alignment: le
+  cr: '16'
+  environment:
+  - unknown
+  flags: []
+  name: Mummy Lord (in lair)
+  page: 229
+  size: medium
+  source: mm
+  type: undead
+- alignment: lg
+  cr: '16'
+  environment:
+  - unknown
+  flags: []
+  name: Planetar
+  page: 17
+  size: large
+  source: mm
+  type: celestial
+- alignment: ce
+  cr: '17'
+  environment:
+  - unknown
+  flags: []
+  name: Death Knight
+  page: 47
+  size: medium
+  source: mm
+  type: undead
+- alignment: ng
+  cr: '17'
+  environment:
+  - unknown
+  flags: []
+  name: Fey Lord, Moonlit King
+  page: 190
+  size: medium
+  source: tob
+  type: fey
+- alignment: nn
+  cr: '17'
+  environment:
+  - unknown
+  flags: []
+  name: Fey Queen of Witches
+  page: 194
+  size: large
+  source: tob
+  type: fey
+- alignment: ce
+  cr: '17'
+  environment:
+  - unknown
+  flags: []
+  name: Goristro
+  page: 59
+  size: huge
+  source: mm
+  type: fiend
+- alignment: ce
+  cr: '17'
+  environment:
+  - unknown
+  flags: []
+  name: Urochar
+  page: 393
+  size: huge
+  source: tob
+  type: abberation
+- alignment: le
+  cr: '18'
+  environment:
+  - unknown
+  flags: []
+  name: Amnizu
+  page: 164
+  size: medium
+  source: mtf
+  type: fiend
+- alignment: ne
+  cr: '18'
+  environment:
+  - unknown
+  flags: []
+  name: Demilich
+  page: 48
+  size: tiny
+  source: mm
+  type: undead
+- alignment: ln
+  cr: '18'
+  environment:
+  - unknown
+  flags: []
+  name: Fey Lord of the Hunt
+  page: 188
+  size: medium
+  source: tob
+  type: fey
+- alignment: ce
+  cr: '19'
+  environment:
+  - unknown
+  flags: []
+  name: Balor
+  page: 55
+  size: huge
+  source: mm
+  type: fiend
+- alignment: nn
+  cr: '19'
+  environment:
+  - unknown
+  flags: []
+  name: Hraesvelgr the Corpse Swallower
+  page: 224
+  size: huge
+  source: tob
+  type: giant
+- alignment: ne
+  cr: '20'
+  environment:
+  - unknown
+  flags: []
+  name: Demilich (in lair)
+  page: 48
+  size: tiny
+  source: mm
+  type: undead
+- alignment: ne
+  cr: '20'
+  environment:
+  - unknown
+  flags: []
+  name: Ghoul, Emperor
+  page: 218
+  size: medium
+  source: tob
+  type: undead
+- alignment: le
+  cr: '20'
+  environment:
+  - unknown
+  flags: []
+  name: Pit Fiend
+  page: 77
+  size: large
+  source: mm
+  type: fiend
+- alignment: nn
+  cr: '21'
+  environment:
+  - unknown
+  flags: []
+  name: Astral Dreadnought
+  page: 117
+  size: gargantuan
+  source: mtf
+  type: monstrosity
+- alignment: ce
+  cr: '21'
+  environment:
+  - unknown
+  flags: []
+  name: Demon Lord of Night Alquam
+  page: 84
+  size: huge
+  source: tob
+  type: fiend
+- alignment: le
+  cr: '21'
+  environment:
+  - unknown
+  flags: []
+  name: Devil, Arbeyach
+  page: 95
+  size: large
+  source: tob
+  type: fiend
+- alignment: ne
+  cr: '21'
+  environment:
+  - unknown
+  flags: []
+  name: Fey Queen of Night and Magic
+  page: 192
+  size: medium
+  source: tob
+  type: fey
+- alignment: ce
+  cr: '21'
+  environment:
+  - unknown
+  flags: []
+  name: Lich
+  page: 202
+  size: medium
+  source: mm
+  type: undead
+- alignment: le
+  cr: '21'
+  environment:
+  - unknown
+  flags: []
+  name: Lich
+  page: 202
+  size: medium
+  source: mm
+  type: undead
+- alignment: ne
+  cr: '21'
+  environment:
+  - unknown
+  flags: []
+  name: Lich
+  page: 202
+  size: medium
+  source: mm
+  type: undead
+- alignment: ce
+  cr: '21'
+  environment:
+  - unknown
+  flags: []
+  name: Molydeus
+  page: 134
+  size: huge
+  source: mtf
+  type: fiend
+- alignment: lg
+  cr: '21'
+  environment:
+  - unknown
+  flags: []
+  name: Solar
+  page: 18
+  size: large
+  source: mm
+  type: celestial
+- alignment: ce
+  cr: '22'
+  environment:
+  - unknown
+  flags: []
+  name: Demon Lord of Bats and Fire Camazotz
+  page: 85
+  size: large
+  source: tob
+  type: fiend
+- alignment: ce
+  cr: '22'
+  environment:
+  - unknown
+  flags: []
+  name: Lich (in lair)
+  page: 202
+  size: medium
+  source: mm
+  type: undead
+- alignment: le
+  cr: '22'
+  environment:
+  - unknown
+  flags: []
+  name: Lich (in lair)
+  page: 202
+  size: medium
+  source: mm
+  type: undead
+- alignment: ne
+  cr: '22'
+  environment:
+  - unknown
+  flags: []
+  name: Lich (in lair)
+  page: 202
+  size: medium
+  source: mm
+  type: undead
+- alignment: ce
+  cr: '23'
+  environment:
+  - unknown
+  flags: []
+  name: Demon Lord of the Devouring Worm Qorgeth
+  page: 90
+  size: gargantuan
+  source: tob
+  type: fiend
+- alignment: cg
+  cr: '23'
+  environment:
+  - unknown
+  flags: []
+  name: Empyrean
+  page: 130
+  size: huge
+  source: mm
+  type: celestial
+- alignment: ne
+  cr: '23'
+  environment:
+  - unknown
+  flags: []
+  name: Empyrean
+  page: 130
+  size: huge
+  source: mm
+  type: celestial
+- alignment: le
+  cr: '24'
+  environment:
+  - unknown
+  flags: []
+  name: Devil, Totivillus, Scribe of Hell
+  page: 101
+  size: medium
+  source: tob
+  type: fiend
+- alignment: le
+  cr: '25'
+  environment:
+  - unknown
+  flags: []
+  name: Devil, Mammon
+  page: 99
+  size: huge
+  source: tob
+  type: fiend
+- alignment: ln
+  cr: '25'
+  environment:
+  - unknown
+  flags: []
+  name: Marut
+  page: 213
+  size: large
+  source: mtf
+  type: construct
+- alignment: ce
+  cr: '27'
+  environment:
+  - unknown
+  flags: []
+  name: Demon Lord of Apes, Mechuiti
+  page: 88
+  size: gargantuan
+  source: tob
+  type: fiend
+- alignment: ne
+  cr: 1/2
+  environment:
+  - unknown
+  flags: []
+  name: Fraughashar
+  page: 206
+  size: small
+  source: tob
+  type: fey
+- alignment: cn
+  cr: 1/2
+  environment:
+  - unknown
+  flags: []
+  name: Magmin
+  page: 212
+  size: small
+  source: mm
+  type: elemental
+- alignment: le
+  cr: 1/2
+  environment:
+  - unknown
+  flags: []
+  name: Nupperibo
+  page: 168
+  size: medium
+  source: mtf
+  type: fiend
+- alignment: ln
+  cr: 1/2
+  environment:
+  - unknown
+  flags: []
+  name: Tridrone
+  page: 225
+  size: medium
+  source: mm
+  type: construct
+- alignment: le
+  cr: 1/2
+  environment:
+  - unknown
+  flags: []
+  name: Warhorse Skeleton
+  page: 273
+  size: large
+  source: mm
+  type: undead
+- alignment: ce
+  cr: 1/4
+  environment:
+  - unknown
+  flags: []
+  name: Abyssal Wretch
+  page: 136
+  size: medium
+  source: mtf
+  type: fiend
+- alignment: nn
+  cr: 1/4
+  environment:
+  - plains
+  - grassland
+  - ''
+  flags: []
+  name: Cow
+  page: 207
+  size: large
+  source: vgm
+  type: beast
+- alignment: ce
+  cr: 1/4
+  environment:
+  - unknown
+  flags: []
+  name: Dretch
+  page: 57
+  size: small
+  source: mm
+  type: fiend
+- alignment: ln
+  cr: 1/4
+  environment:
+  - unknown
+  flags: []
+  name: Duodrone
+  page: 225
+  size: medium
+  source: mm
+  type: construct
+- alignment: le
+  cr: 1/4
+  environment:
+  - unknown
+  flags: []
+  name: Elves, Shadow Fey, Elf
+  page: 171
+  size: medium
+  source: tob
+  type: humanoid
+- alignment: nn
+  cr: 1/4
+  environment:
+  - any
+  flags: []
+  name: Flying Sword
+  page: 20
+  size: small
+  source: mm
+  type: construct
+- alignment: nn
+  cr: 1/4
+  environment:
+  - unknown
+  flags: []
+  name: Lemurfolk
+  page: 271
+  size: small
+  source: tob
+  type: humanoid
+- alignment: nn
+  cr: 1/4
+  environment:
+  - unknown
+  flags: []
+  name: Snake, Swamp Adder
+  page: 354
+  size: small
+  source: tob
+  type: beast
+- alignment: nn
+  cr: 1/4
+  environment:
+  - unknown
+  flags: []
+  name: Stench Kow
+  page: 207
+  size: large
+  source: vgm
+  type: beast
+- alignment: ce
+  cr: 1/8
+  environment:
+  - unknown
+  flags: []
+  name: Manes
+  page: 60
+  size: small
+  source: mm
+  type: fiend
+- alignment: ln
+  cr: 1/8
+  environment:
+  - unknown
+  flags: []
+  name: Monodrone
+  page: 224
+  size: medium
+  source: mm
+  type: construct
+- alignment: cn
+  cr: 1/8
+  environment:
+  - unknown
+  flags: []
+  name: Slaad Tadpole
+  page: 276
+  size: tiny
+  source: mm
+  type: aberration

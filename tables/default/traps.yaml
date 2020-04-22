@@ -1,0 +1,9 @@
+
+# The likelyhood of triggering a door-based trap with
+# different actions
+door_trap_triggers:
+  use: 0
+  force: 0
+  detect: 0
+  disarm: 0
+  

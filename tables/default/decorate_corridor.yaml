@@ -1,0 +1,132 @@
+# Use this table to describe the way the corridor ends.
+corridor_ends:
+  bottomless_pit:
+    data:
+      contents: []
+      description:
+      - The corridor ends with a bottomless pit.
+      flags: []
+    weight: 1
+  collapsed:
+    data:
+      contents: []
+      description:
+      - The corridor has collapsed
+      flags: []
+    weight: 5
+  dead_end:
+    data:
+      contents: []
+      description:
+      - The corridor ends abruptly
+      flags: []
+    weight: 30
+  force:
+    data:
+      contents: []
+      description:
+      - The corridor appears to continue, but an invisible force keeps you from continuing
+      flags: []
+    weight: 1
+  gets_small:
+    data:
+      contents: []
+      description:
+      - The corridor gets smaller and smaller until you can't continue
+      flags: []
+    weight: 1
+  lava_flow:
+    data:
+      contents: []
+      description:
+      - The corridor terminates with a lava flow
+      flags: []
+    weight: 1
+  mirror:
+    data:
+      contents: []
+      description:
+      - The corridor ends with a mirror.  You look nice.
+      flags: []
+    weight: 1
+  painted_door:
+    data:
+      contents: []
+      description:
+      - There is a door at the end of the corridor, but it appears to be painted on
+      flags: []
+    weight: 1
+  turn_back:
+    data:
+      contents: []
+      description:
+      - The corridor ends with a sign reading 'turn back'
+      flags: []
+    weight: 1
+  unfinished:
+    data:
+      contents:
+      - PICKAXE
+      - SHOVEL
+      description:
+      - The corridor is unfinished
+      flags: []
+    weight: 5
+
+corridor_through:
+  grafitti_generic:
+    data:
+      contents: []
+      description:
+      - The walls of the corridor are covered with grafitti
+      flags:
+      - GRAFITTI
+    weight: 5
+  holes:
+    data:
+      contents: []
+      description:
+      - The walls, floor, and ceiling are covered with little holes
+      flags: []
+    weight: 5
+  holes_trap:
+    data:
+      contents: []
+      description:
+      - The walls, floor, and ceiling are covered with little holes
+      flags:
+      - TRAP
+    weight: 1
+  littered:
+    data:
+      contents: []
+      description:
+      - The floor of the corridor is littered with {litter}
+      flags:
+      - LITTER
+    weight: 20
+  slime:
+    data:
+      contents: []
+      description:
+      - The corridor is covered with a slimy substance
+      flags:
+      - SLIME
+    weight: 5
+  straight:
+    data:
+      contents: []
+      description:
+      - The corridor continues on
+      flags: []
+    weight: 50
+  straight_trap:
+    data:
+      contents: []
+      description:
+      - The corridor continues on
+      flags:
+      - TRAP
+    weight: 1
+
+

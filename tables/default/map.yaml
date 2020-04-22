@@ -1,0 +1,62 @@
+---
+### ###############################
+# All things for generating maps
+###################################
+#
+# Map structure generation
+#
+
+# The number of exits the start room has
+start_exits:
+  1: 50
+  2: 25
+  3: 25
+
+# The number of exits a node would like to have
+node_exits:
+  1: 60
+  2: 25
+  3: 15
+  4: 5
+
+# The odds of having a local connection vs creating a new node
+# this controls how bushy vs viny the map is.  The more local
+# connections, the bushier.
+node_connect_local:
+  true: 6
+  false: 9
+
+# if it is a local connection, how many levels away do we allow the 
+# destination to be in terms of distance from start?
+node_connect_local_distance:
+  0: 10
+  1: 10
+  2: 5
+  3: 1
+
+#
+# Node Classification
+#
+
+# This determines the ratio of rooms vs corridors
+node_type:
+  room: 70
+  corridor: 30
+
+
+#
+# Edge Classfication
+#
+# The following tables are the weights of connecting
+# two nodes together, based on the node types
+room_to_room:
+  door: 60
+  passage: 40
+
+room_to_corridor:
+  door: 70
+  passage: 30
+
+corridor_to_corridor:
+  passage: 90
+  door: 10

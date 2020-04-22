@@ -1,0 +1,235 @@
+# Types of doors
+type:
+  wsu: 
+    weight: 8
+    data:
+      description:
+          - A simple wooden door
+      flags: []
+      dc: 0
+  wsut:
+    weight: 1
+    data:
+      description:
+          - A simple wooden door
+      flags: [TRAP]
+      dc: 0
+  wss:
+    weight: 14
+    data:
+      description:
+          - A simple wooden door
+      flags: [STUCK]
+      dc: 8
+  wsst:
+    weight: 1
+    data:
+      description:
+          - A simple wooden door
+      flags: [STUCK, TRAP]
+      dc: 8
+  wsl:
+    weight: 4
+    data:
+      description:
+          - A simple wooden door
+      flags: [LOCKED]
+      dc: 10
+  wslt:
+    weight: 1
+    data:
+      description:
+          - A simple wooden door
+      flags: [LOCKED, TRAP]
+      dc: 10
+  wgu:
+    weight: 4
+    data:
+      description:
+          - A typical wooden door
+      flags: []
+      dc: 0
+  wgut:
+    weight: 1
+    data:
+      description:
+          - A typical wooden door
+      flags: [TRAP]
+      dc: 0
+  wgs:
+    weight: 8
+    data:
+      description:
+          - A typical wooden door
+      flags: [STUCK]
+      dc: 10
+  wgst:
+    weight: 1
+    data:
+      description:
+          - A typical wooden door
+      flags: [STUCK, TRAP]
+      dc: 10
+  wgl:
+    weight: 4
+    data:
+      description:
+          - A typical wooden door
+      flags: [LOCKED]
+      dc: 12
+  wglt:
+    weight: 4
+    data:
+      description:
+          - A typical wooden door
+      flags: [LOCKED, TRAP]
+      dc: 12
+  wsu:
+    weight: 4
+    data:
+      description:
+          - A sturdy, well-made wooden door
+      flags: []
+      dc: 0
+  wsut:
+    weight: 1
+    data:
+      description:
+          - A sturdy, well-made wooden door
+      flags: [TRAP]
+      dc: 0
+  wss:
+    weight: 8
+    data:
+      description:
+          - A sturdy, well-made wooden door
+      flags: [STUCK]
+      dc: 12
+  wsst:
+    weight: 1
+    data:
+      description:
+          - A sturdy, well-made wooden door
+      flags: [STUCK, TRAP]
+      dc: 12
+  wsl:
+    weight: 8
+    data:
+      description:
+          - A sturdy, well-made wooden door
+      flags: [LOCKED]
+      dc: 15
+  wslt:
+    weight: 8
+    data:
+      description:
+          - A sturdy, well-made wooden door
+      flags: [LOCKED, TRAP]
+      dc: 15
+  su:
+    weight: 1
+    data:
+      description:
+          - The door is made of stone
+      flags: []
+      dc: 0
+  sut:
+    weight: 1
+    data:
+      description:
+          - The door is made of stone
+      flags: [TRAP]
+      dc: 0
+  ss:
+    weight: 3
+    data:
+      description:
+          - The door is made of stone
+      flags: [STUCK]
+      dc: 15
+  sst:
+    weight: 1
+    data:
+      description:
+          - The door is made of stone
+      flags: [STUCK, TRAP]
+      dc: 15
+  sl:
+    weight: 3
+    data:
+      description:
+          - The door is made of stone
+      flags: [LOCKED]
+      dc: 18
+  slt:
+    weight: 1
+    data:
+      description:
+          - The door is made of stone
+      flags: [LOCKED, TRAP]
+      dc: 18
+  iu:
+    weight: 1
+    data:
+      description:
+          - A sturdy iron door
+      flags: []
+      dc: 0
+  iut:
+    weight: 1
+    data:
+      description:
+          - A sturdy iron door
+      flags: [TRAP]
+      dc: 0
+  ius:
+    weight: 3
+    data:
+      description:
+          - A sturdy iron door
+      flags: [STUCK]
+      dc: 15
+  iust:
+    weight: 1
+    data:
+      description:
+          - A sturdy iron door
+      flags: [STUCK, TRAP]
+      dc: 15
+  il:
+    weight: 3
+    data:
+      description:
+          - A sturdy iron door
+      flags: [LOCKED]
+      dc: 20
+  ilt:
+    weight: 1
+    data:
+      description:
+          - A sturdy iron door
+      flags: [LOCKED, TRAP]
+      dc: 20
+  
+special:
+  nothing: 96
+  side: 1
+  down: 1
+  up: 1
+  magic: 1
+
+
+key_material:
+  iron: 50
+  brass: 25
+  silver: 12
+  copper: 12
+  wood: 12
+
+key_size:
+  normal: 50
+  large: 25
+  small: 25
+  tiny: 6
+  huge: 6
+  
