@@ -1,3 +1,9 @@
+from yaml import YAMLObject
+from .graph import gen_graph
+from .door import Door
+from .room import Room
+
+
 from .map import Map
 from .node import Node
 from .edge import Edge
@@ -9,54 +15,77 @@ from .utils import generate_avg_list
 import random
 
 # THE DUNGEON!
+# The dungeon serves as a container for everything about the dungeon:  the rooms, doors,
+# monsters, treasure, etc.  It also contains the information about the game in progress.
+#
+# 
 
 
+class Dungeon(YAMLObject):
+    """
+    The dungeon including everything in it and the current state.
+    """
+    def __init__(self, **kwargs):
+        version = kwargs.get('version')
+        if version is None:
+            raise ValueError("Cannot create a dungeon with no version!")
+        if version == 1:
+            # create the prototype object
+            self.version = 1
+            self.parameters = {}
+            self.characters = {}
+            self.state = {
+                'current_room': 0,
+                'current_time': 0
+            }
+            self.monsters = {}
+            self.rooms = {}
+            self.doors = {}
+            self.traps = {}
 
-class Dungeon:
-    def __init__(self):
-        self.map = Map()
-        self.state = {
-            'current_room': 1,
-            'current_time': 0
-        }
-        self.monsters = {}
-        self.parameters = {
-            'characters': [
-                # information about the playing characters, especially passive perception
-            ],
-            'wandering_monster_percent_per_hour': 3
-        }
+            # and then override whatever we got from the kwargs
+            for k in vars(self):
+                if k in kwargs:
+                    setattr(k, kwargs[k])
+        else:
+            raise ValueError(f"Cannot create dungeon version {version}")
 
     @staticmethod
-    def load(data):
-        d = Dungeon()
-        d.map = Map.load(data['map'])
-        d.state = data['state']
-        m = {}
-        for k,v in data['monsters'].items():
-            m[k] = Monster.load(v)
-        d.monsters = m
-        d.parameters = data['parameters']
-        return d
-
-    def save(self):
-        m = {}
-        for k, v in self.monsters.items():
-            m[k] = v.save()
-        return {
-            'map': self.map.save(),
-            'state': self.state,
-            'monsters': m,
-            'parameters': self.parameters,
-        }
-
-    def generate(self, tables, room_count=10, character_levels=[1, 1, 1, 1],
+    def generate(tables, room_count=10, character_levels=[1, 1, 1, 1],
                  monster_sources=['mm'], monster_types=[], monster_alignments=[],
                  encounter_average_difficulty=Encounter.MEDIUM,
                  encounter_room_percent=25, wandering_monsters=6): 
+        """
+        Generate a dungeon based on the parameters given, as well as the parameters
+        from the settings/parameters table for the current style.
+        """
+        parameters = tables.get_table('settings', 'parameters')
+        edges = gen_graph(room_count, 
+                          edge_dist=tables.get_table('graph', 'edges_per_node'),
+                          use_existing_node_dist=tables.get_table('graph', 'edge_connect_existing'),
+                          edge_distance_dist=tables.get_table('graph', 'edge_distance'))
 
-        # set the wandering monster per hour percent
-        self.parameters['wandering_monster_percent_per_hour'] = int(tables.lookup('settings', 'monsters', 'wandering_percent_per_hour'))
+        # the edges data tells us all of the room ids and how they're
+        # connected, but we need to compute the list of edge connections
+        # per node to give context to the room generator
+        node_ids = {}
+        for i, edge in enumerate(edges):
+            for con in edge:
+                if con not in node_ids:
+                    node_ids[con] = []
+                else:
+                    node_ids[con] += 1
+        # generate the rooms
+        rooms = {}
+        for node_id in node_ids:
+            rooms[node_id] = Room(tables, node_id, node_ids[node_id])
+
+        # create doors/passages from all of the edges
+        doors = []
+        for e in edges:
+            pass
+
+
 
 
         # get the overall dungeon settings
@@ -117,69 +146,3 @@ class Dungeon:
 
 
 
-
-    def render_html(self, directory, dot_cmd):
-        directory = Path(directory)
-        # first, render the map
-        map_file = directory.joinpath("map.png")
-        dot = self.map.dump_graphviz().encode('utf-8')
-        subprocess.run([dot_cmd, '-Tpng', '-o', map_file], input=dot, check=True)
-        imap_file = directory.joinpath("map.imap")
-        subprocess.run([dot_cmd, '-Tcmapx', '-o', imap_file], input=dot, check=True)
-
-        html = "<html><head>"
-        html += "<title>A dungeon dump</title>"
-        html += "</head><body>"
-        html += "<h2>A dungeon</h2>"
-        html += "<img src=map.png usemap=#dungeon_map>"
-        with open(imap_file) as f:
-            html += f.read()
-
-
-
-        html += "<hr>"
-        for node in sorted(self.map.get_nodes(), key=lambda x: x.id):
-            print(f"{node.id}: {node.attributes}")
-            html += f"<a name={node.id}></a>"
-            html += "<table border=1 width=100%>"
-            if node.type == Node.ROOM:
-                html += f"<tr><td colspan=2><b>Room {node.id}</b></td></tr>"
-            elif node.type == Node.CORRIDOR:
-                html += f"<tr><td colspan=2><b>Corridor {node.id}</b></td></tr>"
-            else:
-                html += f"<tr><td colspan=2><b>Starting Room {node.id}</b></td></tr>"
-
-            html += "<tr><td>Description</td><td><ul>"
-            for d in node.attributes['description']:
-                html += f"<li>{d}</li>"
-            html += "</ul></td></tr>"
-
-            html += "<tr><td>Contents</td><td><ul>"
-            for d in node.attributes['contents']:
-                html += f"<li>{d}</li>"
-            html += "</ul></td></tr>"
-
-            html += "<tr><td>Flags</td><td><ul>"
-            for d in node.attributes['flags']:
-                html += f"<li>{d}</li>"
-            html += "</ul></td></tr>"
-
-            html += "<tr><td>Exits</td><td><ul>"
-            for d in node.exits:
-                edge = self.map.get_edge(d)
-                if edge.left == node.id:
-                    to = edge.right
-                else:
-                    to = edge.left
-                e = f"<a href=#{to}>Leads to room/corridor {to}</a>"
-                e += "<ul>"
-                for i in edge.attributes['description']:
-                    e += f"<li>{i}</li>"
-                e += "</ul>"
-                html += f"<li>{e}</li>"
-            html += "</ul></td></tr>"
-            html += "</table>"
-        html += "</body></html>"
-
-        with open(directory.joinpath("index.html"), "w") as f:
-            f.write(html)

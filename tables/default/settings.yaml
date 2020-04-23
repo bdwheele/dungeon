@@ -1,5 +1,10 @@
+---
 ## Overall dungeon default settings
-monsters:
-  environments: 
+parameters:
+  environments:
     - underdark
-  wandering_percent_per_hour: 3
+    - any
+  wandering_monsters:
+    count: 6
+    percent_chance_per_hour_rest: 3
+

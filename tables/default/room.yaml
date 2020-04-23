@@ -1,0 +1,148 @@
+room_type:
+  - [70, room]
+  - [30, corridor]
+ 
+corridor_ends:
+  - - 1
+    - description: 
+        - The corridor ends with a bottomless pit.
+  - - 5
+    - description:
+        - The corridor has collapsed
+  - - 30
+    - description:
+        - The corridor ends abruptly
+  - - 1
+    - description:
+        - The corridor appears to continue, but an invisible force keeps you from continuing
+  - - 1
+    - description:
+        - The corridor gets smaller and smaller until you can't continue
+  - - 1
+    - description:
+        - The corridor terminates with a lava flow
+  - - 1
+    - description:
+        - The corridor ends with a mirror.  You look nice.
+  - - 1
+    - description:
+        - There is a door at the end of the corridor, but it appears to be painted on
+  - - 1
+    - description:
+        - The corridor ends with a sign reading 'turn back'
+  - - 5
+    - description:
+        - The corridor is unfinished
+      contents:
+        - A rusted pickaxe
+        - A shovel of quality make
+
+corridor_through:
+  - - 5
+    - description:
+        - The walls of the corridor are covered with grafitti
+      flags:
+        - GRAFITTI
+  - - 5
+    - description:
+        - The walls, floor, and ceiling are covered with little holes
+  - - 1
+    - description:
+        - The walls, floor, and ceiling are covered with little holes
+      flags:
+        - TRAP
+  - - 20
+    - description:
+        - The floor of the corridor is littered with {litter}
+      flags:
+        - LITTER
+  - - 5
+    - description:
+        - The corridor is covered with a slimy substance
+      flags:
+        - SLIME
+  - - 50
+    - description:
+       - The corridor continues on
+  - - 1
+    - description:
+        - The corridor continues on
+      flags:
+        - TRAP
+
+# Room sizes bell curve.
+room_size:
+  - [1, tiny]
+  - [10, small]
+  - [30, medium]
+  - [10, large]
+  - [1, huge]
+
+# the basic shape of the room
+room_shape:
+  - [20, rectangle]
+  - [16, square]
+  - [1, irregular]
+  - [1, circle]
+  - [3, octagon]
+  - [1, star]
+  - [1, cross]
+
+
+# the 'state' of the room
+room_state:
+  - [3, "The ceiling is partially collapsed"]
+  - [2, "The contents are mostly burned"]
+  - [2, "This room has been used as a campsite"]
+  - [2, "There is a pool of water and original contents are water damaged"]
+  - [4, "The furniture is wrecked but still present"]
+  - [1, "The original furnishings have been removed"]
+  - [1, "The room is pristine and in original state"]
+
+
+room_kind:
+  antechamber: 1
+  armory: 2
+  "audience chamber": 1
+  aviary: 1
+  "banquet room": 2
+  barracks: 3
+  latrine: 1
+  bedroom: 1
+  bestiary: 1
+  cell: 3
+  chapel: 1
+  cistern: 2
+  classroom: 1
+  closet: 1
+  "conjuring room": 2
+  court: 2
+  crypt: 3
+  "dining room": 2
+  "divination room": 2
+  dormitory: 1
+  "dressing room": 1
+  "entry room": 1
+  gallery: 2
+  "game room": 2
+  "guard room": 2
+  "kennel": 1
+  kitchen: 2
+  laboratory: 2
+  library: 3
+  lounge: 2
+  "meditation chamber": 1
+  office: 1
+  pantry: 2
+  "reception room": 2
+  salon: 1
+  shrine: 2
+  "sitting room": 2
+  smithy: 2
+  storage: 2
+  vault: 2
+  study: 2
+  temple: 2
+  "torture chamber": 1
+  "exercise room": 2
+  "trophy room": 2

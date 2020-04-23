@@ -1,6 +1,7 @@
 import logging
 from .utils import array_random
 import sys
+from random import shuffle
 
 logger = logging.getLogger()
 
@@ -9,10 +10,9 @@ This is a new implementation of the map generation -- it's much lighter
 than the original incarnation which had multiple objects and was
 pretty confusing.
 
-This is the same algorithm, except that it's been cleaned up and is
+This is (mostly) the same algorithm, except that it's been cleaned up and is
 substantially easier to understand.  It also takes out all of the
-dependencies (beyond array_random) so it could be used for other
-things.
+dependencies (beyond array_random) so it could be used for other things.
 """
 
 def gen_graph(count,
@@ -79,6 +79,7 @@ def gen_graph(count,
         
         # fill in all of the edges for all of the
         # available nodes.
+        shuffle(available)
         for node_id in available:
             node = nodes[node_id]
             for _ in [1]: #range(node[1] - node[0]):
@@ -112,27 +113,6 @@ def gen_graph(count,
                         nodes[node_id][0] += 1
                         nodes[other][0] += 1
 
-    for i, n in enumerate(nodes):
-        print(f"{i}: {n}", file=sys.stderr)
-
     return edges
 
-
-def make_dot(edges):
-    dot = ['graph {']
-    for e in edges:
-        l, r = e
-        dot.append(f"{l} -- {r};")
-    dot.append("}")
-    return "\n".join(dot)
-
-
-if __name__ == "__main__":
-    logger.setLevel(logging.DEBUG)
-    log_handler =logging.StreamHandler(sys.stderr)
-    log_formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-    log_handler.setFormatter(log_formatter)
-    logger.addHandler(log_handler)
-    e = gen_graph(50)
-    print(make_dot(e))
 

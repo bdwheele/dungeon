@@ -1,6 +1,7 @@
 from math import floor
 from random import randint, choices, choice
 import re
+from copy import deepcopy
 
 """
 Miscellaneous utility functions that are useful for many things
@@ -89,6 +90,11 @@ def array_random(array):
 
     if isinstance(array[0], (list, set, tuple)):
         weights, values = list(zip(*array))
-        return choices(values, weights=weights, k=1)[0]
+        return deepcopy(choices(values, weights=weights, k=1)[0])
     else:
-        return choice(array)
+        return deepcopy(choice(array))
+
+def template(string, values):
+    for k, v in values:
+        string = string.replace(f"{k}", v)
+    return string

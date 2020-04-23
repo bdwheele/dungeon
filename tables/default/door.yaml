@@ -1,0 +1,100 @@
+---
+# The following tables are the weights of connecting
+# two rooms together, based on the room types
+room_to_room:
+  - [60, door]
+  - [40, passage]
+
+room_to_corridor:
+  - [70, door]
+  - [30, passage]
+
+corridor_to_corridor:
+  - [90, passage]
+  - [10, door]
+
+
+ # describe the different passage types
+passage:
+  - - 50
+    - description:
+        - A normal opening
+  - - 1
+    - description:
+        - A normal opening
+      flags: [DRIPPING]
+  - - 20
+    - description:
+        - The opening is an archway
+  - - 1
+    - description:
+        - The opening is an archway
+      flags: [DRIPPING]
+  - - 15
+    - description:
+        - The door which was here is now missing
+  - - 1
+    - description:
+        - The opening is a portcullis that's permanantly open
+  - - 5
+    - description:
+        - The opening is partially concealed by curtains
+  - - 1
+    - description:
+        - The opening is partially concealed by curtains
+      flags: [MOLD]        
+  - - 3
+    - description:
+        - The opening is a rough hole through which you can barely pass
+
+# doors in the original implemenation...sucked.  Let's try a new method
+door_material:
+  - - 30 
+    - description: 
+        - A simple wooden door
+      break_down_dc: 10
+  - - 22
+    - description:
+        - A typical wooden door
+      break_down_dc: 12
+  - - 30
+    - description:
+        - A sturdy, well-made wooden door
+      break_down_dc: 15
+  - - 10
+    - description:
+        - A door made of stone
+      break_down_dc: 25
+  - - 8
+    - description:
+        - The door is sturdy and made of iron
+      break_dwon_dc: 25
+
+door_flags:
+  - - 4
+      flags: [TRAP]
+  - - 22
+      flags: [LOCKED]
+  - - 36
+      flags: [STUCK]
+  - - 5
+      flags: [STUCK, TRAP]
+  - - 15
+      flags: [LOCKED, TRAP]
+  - - 8
+      flags: []
+
+key_material:
+  - [50, iron]
+  - [25, brass]
+  - [12, silver]
+  - [12, copper]
+  - [12, wood]
+  - [6, ivory]
+
+key_size:
+  - [50, normal]
+  - [25, large]
+  - [25, small]
+  - [6, tiny]
+  - [6, huge]

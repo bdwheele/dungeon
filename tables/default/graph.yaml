@@ -1,0 +1,25 @@
+---
+# parameters for setting up the graph for the map
+
+# The distribution of number (initial) edges per node
+edges_per_node:
+  - [60, 1]
+  - [25, 2]
+  - [15, 3]
+  - [5, 4]
+
+# The odds of using an existing node or creating a new one.
+# This controls how bushy vs viny the map is.  The more existing
+# connections, the bushier.
+edge_connect_existing:
+  - [6, true]
+  - [9, false]
+
+# if it is an existing connection, how many levels away do we allow the 
+# destination to be in terms of distance from start?
+edge_distance:
+  - [10, 0]
+  - [10, 1]
+  - [5, 2]
+  - [1, 3]
+  
