@@ -68,21 +68,15 @@ door_material:
   - - 8
     - description:
         - The door is sturdy and made of iron
-      break_dwon_dc: 25
+      break_down_dc: 25
 
 door_flags:
-  - - 4
-      flags: [TRAP]
-  - - 22
-      flags: [LOCKED]
-  - - 36
-      flags: [STUCK]
-  - - 5
-      flags: [STUCK, TRAP]
-  - - 15
-      flags: [LOCKED, TRAP]
-  - - 8
-      flags: []
+  - [4, [TRAP]]
+  - [22, [LOCKED]]
+  - [36, [STUCK]]
+  - [5, [STUCK, TRAP]]
+  - [15, [LOCKED, TRAP]]
+  - [8, []]
 
 key_material:
   - [50, iron]

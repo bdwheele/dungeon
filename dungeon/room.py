@@ -15,6 +15,7 @@ class Room(YAMLObject):
         self.description = []
         self.visited = False
         self.size = 'undetermined'
+        self.size_integer = -1
         # traps
         self.traps = []
         self.traps_found = []
@@ -36,7 +37,6 @@ class Room(YAMLObject):
         }
 
         # determine if this is a room or a corridor
-        
         args['is_corridor'] = 'corridor' == array_random(tables.get_table('room', 'room_type'))
         if args['is_corridor']:
             if len(doors) == 1:
@@ -51,11 +51,13 @@ class Room(YAMLObject):
     
             # fill in any details that didn't come from the room kind lookup.
             size = array_random(tables.get_table('room', 'room_size'))
-            shape = array_random(tables.get_table('room', 'room_shapes'))
+            shape = array_random(tables.get_table('room', 'room_shape'))
             state = array_random(tables.get_table('room', 'room_state'))
 
             if 'size' not in args:
-                args['size'] = state
+                args['size'] = size
+
+            args['size_integer'] = tables.get_table('room', 'size_to_integer').get(args['size'], -2)
             if 'description' not in args or not args['description']:
                 args['description'] = [f"The room is {args['size']} and {shape}-shaped."]
             else:
@@ -66,8 +68,9 @@ class Room(YAMLObject):
                                                     'shape': shape}) for x in args['description']]
 
         # TODO: handle flags...
-        for f in args['flags']:
-            logger.debug(f"Dont' know how to handle flag: {f}")
+        if 'flags' in args:
+            for f in args['flags']:
+                logger.debug(f"Dont' know how to handle flag: {f}")
 
         return Room(**args)        
 

@@ -11,7 +11,7 @@ import io
 
 from dungeon.dungeon import Dungeon
 from dungeon.tables import Tables
-from dungeon.monster import Encounter
+from dungeon.monster import MonsterStore
 
 logger = logging.getLogger()
 
@@ -72,24 +72,23 @@ def main():
 
 
     if args['cmd'] == 'generate':
-        dungeon = Dungeon()
-        dungeon.generate(tables, 
+        dungeon = Dungeon.generate(tables, 
                          room_count=args['room_count'],
                          character_levels=[int(x) for x in args['character_levels'].split(',')],
                          monster_sources=[] if args['monster_sources'] is None else [x.lower() for x in args['monster_sources'].split(',')],
                          monster_alignments=[] if args['monster_alignments'] is None else [x.lower() for x in args['monster_alignments'].split(',')],
                          monster_types= [] if args['monster_types'] is None else [x.lower() for x in args['monster_types'].split(',')],
-                         encounter_average_difficulty={'easy': Encounter.EASY, 
-                                                       'medium': Encounter.MEDIUM, 
-                                                       'hard': Encounter.HARD, 
-                                                       'deadly': Encounter.DEADLY}[args['encounter_average_difficulty']],
+                         encounter_average_difficulty={'easy': MonsterStore.EASY, 
+                                                       'medium': MonsterStore.MEDIUM, 
+                                                       'hard': MonsterStore.HARD, 
+                                                       'deadly': MonsterStore.DEADLY}[args['encounter_average_difficulty']],
                          encounter_room_percent=args['encounter_room_percent'],
                          wandering_monsters=args['wandering_monsters'])
 
 
 
         with open(args['dungeon'], 'w') as f:
-            yaml.safe_dump(dungeon.save(), stream=f)
+            yaml.dump(dungeon, stream=f)
 
     elif args['cmd'] == 'regen':
         pass
@@ -119,10 +118,10 @@ def main():
 
     elif args['cmd'] == 'encounter':
         party = [int(x) for x in args['character_levels'].split(',')]
-        difficulty = {'easy': Encounter.EASY,
-                      'medium': Encounter.MEDIUM,
-                      'hard': Encounter.HARD,
-                      'deadly': Encounter.DEADLY}[args['encounter_difficulty'].lower()]
+        difficulty = {'easy': MonsterStore.EASY,
+                      'medium': MonsterStore.MEDIUM,
+                      'hard': MonsterStore.HARD,
+                      'deadly': MonsterStore.DEADLY}[args['encounter_difficulty'].lower()]
         source_filter = [] if args['monster_sources'] is None else [x.strip().lower() for x in args['monster_sources'].split(',')]
         environment_filter = [] if args['monster_environments'] is None else [x.strip().lower() for x in args['monster_environments'].split(',')]
         type_filter = [] if args['monster_types'] is None else [x.strip().lower() for x in args['monster_types'].split(',')]
@@ -130,7 +129,7 @@ def main():
 
         encounter = Encounter(tables, party, source_filter=source_filter, alignment_filter=alignment_filter,
                               type_filter=type_filter, environment_filter=environment_filter)
-        for m in encounter.create_encounter(difficulty):
+        for m in MonsterStore.create_encounter(difficulty):
             print(m.attributes)
 
 

@@ -87,7 +87,6 @@ def array_random(array):
     """
     if not array:
         return None
-
     if isinstance(array[0], (list, set, tuple)):
         weights, values = list(zip(*array))
         return deepcopy(choices(values, weights=weights, k=1)[0])
@@ -95,6 +94,11 @@ def array_random(array):
         return deepcopy(choice(array))
 
 def template(string, values):
-    for k, v in values:
+    for k, v in values.items():
         string = string.replace(f"{k}", v)
     return string
+
+def get_template_vars(string):
+    var_re = re.compile(r"\{(.+?)\}")
+    return list(set(var_re.findall(string)))
+

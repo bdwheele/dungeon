@@ -77,6 +77,16 @@ room_size:
   - [30, medium]
   - [10, large]
   - [1, huge]
+  - [1, gargantuan]
+
+size_to_integer:
+  tiny: 16
+  small: 24
+  medium: 32
+  large: 48
+  huge: 64
+  gargantuan: 80
+
 
 # the basic shape of the room
 room_shape:
@@ -99,50 +109,147 @@ room_state:
   - [1, "The original furnishings have been removed"]
   - [1, "The room is pristine and in original state"]
 
-
 room_kind:
-  antechamber: 1
-  armory: 2
-  "audience chamber": 1
-  aviary: 1
-  "banquet room": 2
-  barracks: 3
-  latrine: 1
-  bedroom: 1
-  bestiary: 1
-  cell: 3
-  chapel: 1
-  cistern: 2
-  classroom: 1
-  closet: 1
-  "conjuring room": 2
-  court: 2
-  crypt: 3
-  "dining room": 2
-  "divination room": 2
-  dormitory: 1
-  "dressing room": 1
-  "entry room": 1
-  gallery: 2
-  "game room": 2
-  "guard room": 2
-  "kennel": 1
-  kitchen: 2
-  laboratory: 2
-  library: 3
-  lounge: 2
-  "meditation chamber": 1
-  office: 1
-  pantry: 2
-  "reception room": 2
-  salon: 1
-  shrine: 2
-  "sitting room": 2
-  smithy: 2
-  storage: 2
-  vault: 2
-  study: 2
-  temple: 2
-  "torture chamber": 1
-  "exercise room": 2
-  "trophy room": 2
+  - - 1
+    - description:
+      - The room appears to be a antechamber
+  - - 2
+    - description:
+      - The room appears to be a armory
+  - - 1
+    - description:
+      - The room appears to be a audience chamber
+  - - 1
+    - description:
+      - The room appears to be a aviary
+  - - 2
+    - description:
+      - The room appears to be a banquet room
+  - - 3
+    - description:
+      - The room appears to be a barracks
+  - - 1
+    - description:
+      - The room appears to be a bedroom
+  - - 1
+    - description:
+      - The room appears to be a bestiary
+  - - 3
+    - description:
+      - The room appears to be a cell
+  - - 1
+    - description:
+      - The room appears to be a chapel
+  - - 2
+    - description:
+      - The room appears to be a cistern
+  - - 1
+    - description:
+      - The room appears to be a classroom
+  - - 1
+    - description:
+      - The room appears to be a closet
+  - - 2
+    - description:
+      - The room appears to be a conjuring room
+  - - 2
+    - description:
+      - The room appears to be a court
+  - - 3
+    - description:
+      - The room appears to be a crypt
+  - - 2
+    - description:
+      - The room appears to be a dining room
+  - - 2
+    - description:
+      - The room appears to be a divination room
+  - - 1
+    - description:
+      - The room appears to be a dormitory
+  - - 1
+    - description:
+      - The room appears to be a dressing room
+  - - 1
+    - description:
+      - The room appears to be a entry room
+  - - 2
+    - description:
+      - The room appears to be a exercise room
+  - - 2
+    - description:
+      - The room appears to be a gallery
+  - - 2
+    - description:
+      - The room appears to be a game room
+  - - 2
+    - description:
+      - The room appears to be a guard room
+  - - 1
+    - description:
+      - The room appears to be a kennel
+  - - 2
+    - description:
+      - The room appears to be a kitchen
+  - - 2
+    - description:
+      - The room appears to be a laboratory
+  - - 1
+    - description:
+      - The room appears to be a latrine
+  - - 3
+    - description:
+      - The room appears to be a library
+  - - 2
+    - description:
+      - The room appears to be a lounge
+  - - 1
+    - description:
+      - The room appears to be a meditation chamber
+  - - 1
+    - description:
+      - The room appears to be a office
+  - - 2
+    - description:
+      - The room appears to be a pantry
+  - - 2
+    - description:
+      - The room appears to be a reception room
+  - - 1
+    - description:
+      - The room appears to be a salon
+  - - 2
+    - description:
+      - The room appears to be a shrine
+  - - 2
+    - description:
+      - The room appears to be a sitting room
+  - - 2
+    - description:
+      - The room appears to be a smithy
+  - - 2
+    - description:
+      - The room appears to be a storage
+  - - 2
+    - description:
+      - The room appears to be a study
+  - - 2
+    - description:
+      - The room appears to be a temple
+  - - 1
+    - description:
+      - The room appears to be a torture chamber
+  - - 2
+    - description:
+      - The room appears to be a trophy room
+  - - 2
+    - description:
+      - The room appears to be a vault
+
+water:
+  - [30, 'The water is drinkable']
+  - [15, 'The water is muddy']
+  - [2, 'The water is thick with animal hair']
+  - [2, 'The water is frozen']
+  - [1, 'On closer inspection, the water is actually urine']
+  
