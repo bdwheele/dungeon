@@ -1,25 +1,20 @@
-from yaml import YAMLObject
-from .graph import gen_graph
-from .door import Door
-from .room import Room
-from .monster import MonsterStore
-
-
-#from .map import Map
-from pathlib import Path
-import subprocess
 import math
-from .utils import generate_avg_list
 import random
+import subprocess
+from pathlib import Path
+from .door import Door
+from .graph import gen_graph
+from .mergeable import Mergeable
+from .monster import MonsterStore
+from .room import Room
+from .utils import gen_id, generate_avg_list, is_template, template, get_template_vars, array_random
+from .flags import process_flags
 
 # THE DUNGEON!
 # The dungeon serves as a container for everything about the dungeon:  the rooms, doors,
 # monsters, treasure, etc.  It also contains the information about the game in progress.
 #
-# 
-
-
-class Dungeon(YAMLObject):
+class Dungeon(Mergeable):
     """
     The dungeon including everything in it and the current state.
     """
@@ -31,20 +26,14 @@ class Dungeon(YAMLObject):
             # create the prototype object
             self.version = 1
             self.parameters = {}
-            self.characters = {}
+            self.player_data = {}
             self.state = {
                 'current_room': 0,
                 'current_time': 0
             }
-            self.monsters = {}
-            self.rooms = {}
-            self.doors = {}
-            self.traps = {}
-
+            self.objects = {}
             # and then override whatever we got from the kwargs
-            for k in vars(self):
-                if k in kwargs:
-                    setattr(self, k, kwargs[k])
+            self.merge_attrs(kwargs)
         else:
             raise ValueError(f"Cannot create dungeon version {version}")
 
@@ -57,8 +46,8 @@ class Dungeon(YAMLObject):
         Generate a dungeon based on the parameters given, as well as the parameters
         from the settings/parameters table for the current style.
         """
-        args = {'version': 1}
-        args['parameters'] = tables.get_table('dungeon', 'parameters')
+        dungeon = Dungeon(version=1)
+        dungeon.parameters = tables.get_table('dungeon', 'parameters')
         edges = gen_graph(room_count, 
                           edge_dist=tables.get_table('graph', 'edges_per_node'),
                           use_existing_node_dist=tables.get_table('graph', 'edge_connect_existing'),
@@ -74,90 +63,131 @@ class Dungeon(YAMLObject):
                     node_edges[node_id] = []
                 node_edges[node_id].append(i)
         # generate the rooms
-        args['rooms'] = {}
         for node_id in node_edges:
-            args['rooms'][node_id] = Room.generate(tables, node_id, node_edges[node_id])
+            room_id = f"R{node_id}"
+            dungeon.objects[room_id] = Room.generate(tables, room_id, len(node_edges[node_id]))
 
         # create doors/passages from all of the edges
-        args['doors'] = {}
         for i, e in enumerate(edges):
-            e = [args['rooms'][x] for x in e]
-            args['doors'][i] = Door.generate(tables, i, e)
+            i = f"D{i}"
+            e = [dungeon.objects[f"R{x}"] for x in e]
+            dungeon.objects[i] = Door.generate(tables, i, e)
+
+        # put the door objects into the rooms (insetad of just ids).
+        for node_id in node_edges:
+            room_id = f"R{node_id}"
+            doors = [dungeon.objects[f"D{x}"] for x in node_edges[node_id]]
+            dungeon.objects[room_id].doors = doors
 
         # generate encounters
-        args['monsters'] = {}
         encounter_count = math.ceil(room_count * (encounter_room_percent / 100))
         monster_store = MonsterStore(tables)
-        base_monster_list = monster_store.filter(environment_filter=args['parameters']['environments'],
+        base_monster_list = monster_store.filter(environment_filter=dungeon.parameters['environments'],
                                                  alignment_filter=monster_alignments,
                                                  type_filter=monster_types,
                                                  source_filter=monster_sources)
-        all_rooms = [x for x in args['rooms'].keys() if not args['rooms'][x].is_corridor]
+        all_rooms = [x for x in dungeon.find_objects(Room) if not x.is_corridor]
         for difficulty in generate_avg_list(encounter_average_difficulty, encounter_count,
                                             MonsterStore.EASY, MonsterStore.DEADLY):
-            room_id = random.choice(all_rooms)
-            room = args['rooms'][room_id]
+            #room_id = random.choice(all_rooms)
+            #room = dungeon.objects[room_id]
+            room = random.choice(all_rooms)
             encounter = monster_store.create_encounter(character_levels, difficulty, base_monster_list, room.size_integer)
             if encounter is not None:
                 for m in encounter:
-                    m.location = room_id
-                    args['monsters'][m.id] = m
-            all_rooms.remove(room_id)
+                    m.location = room
+                    m.decorate()
+                    dungeon.objects[m.id] = m
+                    room.store(m)
+            all_rooms.remove(room)
             if not all_rooms:
                 break
 
 
-        return Dungeon(**args)
 
-        # get the overall dungeon settings
-        environments = tables.lookup("settings", "monsters", "environments")
+        # pick the starting room
+        start_room = random.choice([x for x in dungeon.find_objects(Room) if not x.is_corridor])
+        start_room.visited = True
+        start_room.is_start = True
+        dungeon.state['current_room'] = start_room
 
-        # distribute the keys in locations where they can be found.
-        self.map.hide_door_keys()
-
-
-
-        encounter = Encounter(tables, character_levels, source_filter=monster_sources, 
-                              type_filter=monster_types, alignment_filter=monster_alignments,
-                              environment_filter=environments)
-        encounter_count = math.ceil(room_count * (encounter_room_percent / 100))
-        difficulties = generate_avg_list(encounter_average_difficulty, encounter_count, Encounter.EASY, Encounter.DEADLY)
-        # get all of the rooms (but not corridors or the start room)
-        non_monster_rooms = set([x for x in self.map.get_nodes() if x.type == Node.ROOM])
-        for d in difficulties:
-            e = encounter.create_encounter(d)
-            r = random.choice(list(non_monster_rooms))
-            for m in e:
-                m.set_location(r.id)
-                m.decorate(tables)
-                self.monsters[m.id] = m
-            non_monster_rooms.remove(r)
-            print(f"Wanted difficulty {d}, got encounter {e}, placed in room {r.id}")
             
-        # generate the wandering mosnters
-        difficulties = generate_avg_list(encounter_average_difficulty, wandering_monsters, Encounter.EASY, Encounter.DEADLY)
+        # generate the wandering monsters
+        difficulties = generate_avg_list(encounter_average_difficulty, wandering_monsters, MonsterStore.EASY, MonsterStore.DEADLY)
         for difficulty in difficulties:
-            wm = encounter.create_wandering_monster(difficulty)
-            wm.set_location(None)
-            wm.decorate(tables)
-            self.monsters[wm.id] = wm
+            monster = monster_store.create_wandering_monster(character_levels, difficulty, base_monster_list)
+            dungeon.objects[monster.id] = monster
+
+        # TODO:  handle flags on EVERYTHING
+        todo_objects = list(dungeon.objects.values())
+        done_objects = set()
+        while todo_objects:
+            for o in todo_objects:
+                done_objects.add(o)
+                process_flags(o, dungeon, tables)
+
+            todo_objects = [x for x in list(dungeon.objects.values()) if x not in done_objects]           
 
 
-    def get_monsters_for_room(self, room_id):
-        r = []
-        for mon in self.monsters.values():
-            if mon.is_alive() and mon.get_location() == room_id:
-                r.append(mon)
-        return r
-
-    def get_wandering_monster(self):
-        wms = [m for m in self.monsters.values() if m.is_alive() and m.get_location() is None]
-        if wms:
-            return random.choice(wms)
-        else:
-            return None        
+        # TODO:  fill in any templates
+        for o in dungeon.objects.values():
+            if hasattr(o, 'description'):
+                for i, d in enumerate(o.description):
+                    if is_template(d):
+                        print(f"Object {o.id} has a template in description[{i}], needing keys {get_template_vars(d)}: {d}")
+                        vals = {}
+                        for v in get_template_vars(d):
+                            vals[v] = array_random(tables.get_table('dressing', v))
+                        o.description[i] = template(d, vals)
+                        print(f"   Result: {o.description[i]}")
 
 
+        # TODO:  hide keys 
+
+        return dungeon
 
 
+    def generate_map_dot(self, all_rooms=False):
+        dot = ["graph dungeon_map {",
+               "  rankdir = LR;"]
+        rooms = self.find_objects(Room) if all_rooms else [x for x in self.find_objects(Room) if x.visited]
+        print([x.id for x in rooms])
+        seen_doors = set()
+        for room in rooms:
+            shape = 'house'
+            if room.is_start:
+                shape = 'octagon'
+            elif room.is_corridor:
+                shape = 'rectangle'
+
+            style = ', style="filled"' if room == self.state['current_room'] else ""
+            dot.append(f'{room.id} [label="{room.id}", shape="{shape}", URL="#{room.id}"{style}];')
+            for door in room.doors:
+                if not door in seen_doors:
+                    seen_doors.add(door)
+                    if door.visited or all_rooms:
+                        a, b = [x.id for x in door.sides]
+                    else: # one side is a mystery!
+                        a = "x" + str(gen_id('map_room'))
+                        dot.append(f'{a} [label="?", shape="circle"];')
+                        b = door.sides[0].id if door.sides[0].visited else door.sides[1].id
+                    style = 'solid' if door.is_passage else 'dashed'
+                    dot.append(f'{a} -- {b} [label="{door.id}", style="{style}"];')
+        dot.append("}")
+        return "\n".join(dot)
+
+
+    def find_objects(self, cls):
+        """
+        Return all of the objects which are instances of
+        the class specified in cls
+        """
+        result = []
+        for x in self.objects.values():
+            if isinstance(x, cls):
+                result.append(x)
+        return result
+
+    def add_object(self, thing):
+        self.objects[thing.id] = thing
 

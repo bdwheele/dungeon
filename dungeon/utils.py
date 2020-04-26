@@ -8,18 +8,19 @@ Miscellaneous utility functions that are useful for many things
 """
 
 id_state = {}
-def gen_id(table, seed=1, random=False, prefix=None, random_limit=4095):
+def gen_id(table, seed=1, random=False, prefix=None, random_limit=4095, reserved=[]):
     """
     Generate a per-program-run-unique ID either by using a 
     random number or by incrementing a counter. optionally,
-    a prefix can be added to the ID
+    a prefix can be added to the ID.  When choosing a random id,
+    a reserved list can be specified to avoid generating those ids.
     """
     new_id = None
     if random:
         if table not in id_state:
             id_state[table] = set()
         new_id = randint(0, random_limit)
-        while new_id in id_state[table]:
+        while new_id in id_state[table] or new_id in reserved:
             new_id = randint(0, random_limit)
         id_state[table].add(new_id)
     else:
@@ -93,12 +94,22 @@ def array_random(array):
     else:
         return deepcopy(choice(array))
 
+
+#
+# Templating 'system'
+#
 def template(string, values):
+    """Apply a template"""
     for k, v in values.items():
-        string = string.replace(f"{k}", v)
+        string = string.replace(f"{{{k}}}", v)
     return string
 
 def get_template_vars(string):
+    """get the variables needed to complete the template"""
     var_re = re.compile(r"\{(.+?)\}")
     return list(set(var_re.findall(string)))
+
+def is_template(string):
+    """return whether or not the string is a template"""
+    return len(get_template_vars(string)) != 0
 

@@ -2,6 +2,7 @@ import random
 import math
 import copy
 from .utils import gen_id
+from .container import Container
 from .treasure import Treasure
 
 
@@ -160,7 +161,7 @@ class MonsterStore:
         return copy.deepcopy(random.choice(monsters))
 
 
-class Monster:
+class Monster(Container):
     """
     A monster.   Behind you.  NO, I'm serious.
     """
@@ -168,12 +169,11 @@ class Monster:
         self.id = gen_id('monster', prefix='M')
         self.is_alive = True
         self.location = None
-        self.contents = []
         # stuff from the tables...
         self.alignment = None
         self.cr = None
         self.decimal_cr = None
-        self.envrionment = []
+        self.environment = []
         self.flags = []
         self.name = "Unnamed Monster"
         self.page = 0
@@ -181,27 +181,22 @@ class Monster:
         self.size_integer = 0
         self.source = None
         self.type = None
+        Container.__init__(self)
 
         # and then override whatever we got from the kwargs
         for k in vars(self):
             if k in kwargs:
                 setattr(self, k, kwargs[k])
 
+    def __str__(self):
+        return f"Monster(name={self.name}, type={self.type}, source={self.source}/{self.page}, cr={self.cr}, env={self.environment})"
     
-    def generate(self, tables):
+    def decorate(self):
         "Make the monster more than just the catalog entry"
+        # Humanoid monsters will have treasure they carry around...
+        if self.type.lower() == 'humanoid':
+            self.flags.append(f'TREASURE[type=i; cr={self.decimal_cr}]')
 
-        # TODO: Handle flags
-        # Humanoid monsters get treasure...maybe add a flag expression that 
-        # gets picked up later?
 
-
-        # give the monster appropriate treasure?
-        #if self.attributes['type'].lower() == 'humanoid':
-        #    # give them some coins, based on cr
-        #    treasure = Treasure(tables)
-        #    x = treasure.generate_individual(cr_to_decimal(self.attributes['cr']))
-        #    self.state['property'].extend(x)
-
+    def flee(self):
         pass
-

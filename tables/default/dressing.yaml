@@ -1,0 +1,26 @@
+
+key_material:
+  - [50, iron]
+  - [25, brass]
+  - [12, silver]
+  - [12, copper]
+  - [12, wood]
+  - [6, ivory]
+  - [1, dragon tooth]
+
+key_size:
+  - [50, normal]
+  - [25, large]
+  - [25, small]
+  - [6, tiny]
+  - [6, huge]
+  
+chair_material:
+  - wood
+  - dragon hide
+  
+litter:
+  - pebbles
+  - losing lottery tickets
+  - CVS receipts which are 6 feet long
+  

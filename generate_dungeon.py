@@ -39,6 +39,7 @@ def main():
 
     render_cmd = subparsers.add_parser("render", help="Render a dungeon")
     render_cmd.add_argument('--dot-cmd', default='/usr/bin/dot', help='Location of Graphviz dot command')
+    render_cmd.add_argument('--all', default=False, action="store_true", help="Render bits even if not visited")
     render_cmd.add_argument("dungeon", metavar="<dungeon>", help="Dungeon file")
     render_cmd.add_argument('what', metavar='<what>', choices=['map', 'html'], help='What to render')
     render_cmd.add_argument('output', metavar='<output>', help='render output file / directory')    
@@ -88,7 +89,14 @@ def main():
 
 
         with open(args['dungeon'], 'w') as f:
-            yaml.dump(dungeon, stream=f)
+            yaml.dump(dungeon, stream=f, sort_keys=False)
+
+        # for debugging, let's make sure we can load the damned thing
+        print("Loading dungeon")
+        with open(args['dungeon']) as f:
+            dungeon = yaml.load(f)
+        print(dungeon)
+
 
     elif args['cmd'] == 'regen':
         pass
@@ -97,24 +105,14 @@ def main():
     elif args['cmd'] == 'render':
         tables = Tables(tables_dir, style=args['style'])
         with open(args['dungeon'], 'r') as f:
-            data = yaml.safe_load(f)
-        dungeon = Dungeon.load(data)
-        if args['what'] == 'map':        
-            dot = dungeon.map.dump_graphviz().encode('utf-8')
-            subprocess.run([args['dot_cmd'], '-Tsvg', '-o', args['output']], input=dot, check=True)
+            dungeon = yaml.load(f)
+        if args['what'] == 'map':
+            dot = dungeon.generate_map_dot(all_rooms=args['all'])
+            print(dot)
+            subprocess.run([args['dot_cmd'], '-Tsvg', '-o', args['output']], input=dot.encode('utf-8'), check=True)
         elif args['what'] == 'html':
-            output = Path(args['output'])
-            if output.exists():
-                if output.is_dir():
-                    if len(list(output.iterdir())) != 0:
-                        print("Directory exists but isn't empty")
-                        exit(1)
-                else:
-                    print("Output exists as a file -- refusing to overwrite")
-                    exit(1)
-            else:
-                output.mkdir()
-            dungeon.render_html(output, args['dot_cmd'])
+            # implement later?
+            pass
 
     elif args['cmd'] == 'encounter':
         party = [int(x) for x in args['character_levels'].split(',')]
@@ -127,10 +125,15 @@ def main():
         type_filter = [] if args['monster_types'] is None else [x.strip().lower() for x in args['monster_types'].split(',')]
         alignment_filter = [] if args['monster_alignments'] is None else [x.strip().lower() for x in args['monster_alignments'].split(',')]
 
-        encounter = Encounter(tables, party, source_filter=source_filter, alignment_filter=alignment_filter,
-                              type_filter=type_filter, environment_filter=environment_filter)
-        for m in MonsterStore.create_encounter(difficulty):
-            print(m.attributes)
+
+        monster_store = MonsterStore(tables)
+        base_monster_list = monster_store.filter(environment_filter=environment_filter,
+                                                 alignment_filter=alignment_filter,
+                                                 type_filter=type_filter,
+                                                 source_filter=source_filter)
+        encounter = monster_store.create_encounter(party, difficulty, base_monster_list, 1000)
+        for m in encounter:
+            print(m)
 
 
 

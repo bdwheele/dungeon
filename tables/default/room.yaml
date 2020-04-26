@@ -33,9 +33,9 @@ corridor_ends:
   - - 5
     - description:
         - The corridor is unfinished
-      contents:
-        - A rusted pickaxe
-        - A shovel of quality make
+      flags:
+        - OBJECT[description=A rusted pickaxe]
+        - OBJECT[description=A shovel of quality make]
 
 corridor_through:
   - - 5
@@ -54,8 +54,6 @@ corridor_through:
   - - 20
     - description:
         - The floor of the corridor is littered with {litter}
-      flags:
-        - LITTER
   - - 5
     - description:
         - The corridor is covered with a slimy substance
@@ -119,9 +117,14 @@ room_kind:
   - - 1
     - description:
       - The room appears to be a audience chamber
+      flags:
+        - OBJECT[description=Throne]
+        - (2d6)OBJECT[description=Comfy chair made of {chair_material}]
+
   - - 1
     - description:
       - The room appears to be a aviary
+      flags: ["(2d6)OBJECT[description=Birdcage]"]
   - - 2
     - description:
       - The room appears to be a banquet room

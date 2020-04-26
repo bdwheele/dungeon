@@ -1,43 +1,58 @@
-from yaml import YAMLObject
 from .utils import gen_id, array_random
 import logging
 import math
+from .lockable import Lockable
+from .trappable import Trappable
+from .mergeable import Mergeable
 
 logger = logging.getLogger()
 
-class Door(YAMLObject):
+class Door(Lockable, Trappable, Mergeable):
     def __init__(self, **kwargs):
         # general door/passage stuff
         self.id = None
-        self.connections = (-1, -1)
+        self.sides = (-1, -1)
         self.is_passage = False
         self.flags = []
         self.description = []
-        self.is_open = True
+        self.is_open = False
         self.visited = False
         self.break_down_dc = 0
         # lock
-        self.is_locked = False
-        self.has_lock = False
-        self.needs_key = None
-        self.key_description = None
-        self.pick_lock_dc = 0
+        Lockable.__init__(self)
         # stickyness
         self.is_stuck = False
         self.stuck_found = False
         self.stuck_dc = 0
         # trap
-        self.has_trap = False
-        self.trap_found = False
-        self.trap_id = -1
+        Trappable.__init__(self)
 
-        for k in kwargs:
-            if hasattr(self, k):
-                setattr(self, k, kwargs[k])
+        self.merge_attrs(kwargs)
+
+    @staticmethod
+    def generate(tables, id, sides):
+        # build the arguments and generate the room
+        door = Door(id=id, sides=sides)
+        type_table = "room_to_corridor"
+        if sides[0].is_corridor == sides[1].is_corridor:
+            type_table = "corridor_to_corridor" if sides[0].is_corridor else "room_to_room"
+        door.is_passage = 'passage' == array_random(tables.get_table("door", type_table))
+        if door.is_passage:
+            # decorate the passage
+            door.merge_attrs(array_random(tables.get_table('door', 'passage')))
+            door.is_open = True
+        else:
+            # decorate the door
+            door.merge_attrs(array_random(tables.get_table('door', 'door_material')))
+            door.flags.extend(array_random(tables.get_table('door', 'door_flags')))
+
+
+        return door
+
 
 
     @staticmethod
-    def generate(tables, id, connections):
+    def agenerate(tables, id, connections):
         # build the arguments and generate the room
         args = {
             'id': id,
@@ -54,6 +69,7 @@ class Door(YAMLObject):
         if args['is_passage']:
             # decorate the passage
             args.update(array_random(tables.get_table('door', 'passage')))
+            args['is_open'] = True
         else:
             # decorate the door
             args.update(array_random(tables.get_table('door', 'door_material')))
@@ -91,41 +107,29 @@ class Door(YAMLObject):
     ###
     ### Run-time behavior
     ###
-    def valid_key(self, key):
-        return key == self.needs_key or key == 'skeleton'
 
     def unlock(self, key):
         if not self.has_lock:
             return (False, "This door doesn't have a lock")
         self.trigger_trap('use')
-        if not self.valid_key(key):
-            return (False, "This key will not work in this lock")
-        self.is_locked = False
-        return (True, "Door is unlocked")
+        return super().unlock(key)
+
 
     def lock(self, key): 
         if not self.has_lock:
             return (False, "Door does not have a lock")
         if self.is_open:
             return (False, "Cannot lock an open door")
-        if not self.valid_key(key):
-            return (False, "This key will not work with this door")
-        self.is_locked = True
-        return (True, "The door is locked")
+        return super().lock(key)
+
 
     def pick(self, dex):
         if not self.has_lock:
             return (True, "Door has no lock")
         if self.is_open:
             return (True, "Door is already open")
-        if not self.is_locked:
-            return (True, "Door is already unlocked")
-        self.trigger_trap('use')
-        if dex >= self.pick_lock_dc:
-            self.is_locked = False
-            return (True, "Lock has been picked")
-        else:
-            return (False, "Lock was not picked successfuly")
+        return super().pick(dex)
+
 
     def open(self):
         if self.is_open:
@@ -156,7 +160,7 @@ class Door(YAMLObject):
             self.is_stuck = False
             self.is_locked = False
             self.visited = True
-            new_room = self.connections[0] if self.connections[1] == current_room else self.connections[1]
+            new_room = self.sides[0] if self.sides[1] == current_room else self.sides[1]
             return (True, "Successfully forced door open", new_room)
         else:
             return (False, "Attempt to break open door fails", None)
@@ -183,27 +187,5 @@ class Door(YAMLObject):
                     return (False, "Door is stuck", None)
                 self.is_open = True
         self.visited = True
-        new_room = self.connections[0] if self.connections[1] == current_room else self.connections[1]
+        new_room = self.sides[0] if self.sides[1] == current_room else self.sides[1]
         return (True, "Door/Passage has been used", new_room)
-
-    def detect_trap(self, perception):
-        self.trigger_trap('detect')
-        # TODO: Actual detection
-        self.trap_found = True
-        return (True, 'successfully detected trap')
-
-    def disarm_trap(self, dexterity):
-        # TODO: Disarm trap
-        self.trigger_trap('disarm')
-        self.has_trap = False
-        return (True, "Trap disarmed")
-
-    def trigger_trap(self, mode):
-        """ Trigger the trap """
-        if not self.has_trap:
-            return
-        #if self.has_trap and mode in self.attributes['trap']['triggers']:
-        #    percent = self.attributes['trap']['triggers']
-        #else:
-        #    raise ValueError(f"Don't know how to trigger trap with mode {mode}")
-        ### TODO:  compute probabilty and trigger the trap.
