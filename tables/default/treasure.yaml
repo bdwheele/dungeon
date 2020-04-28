@@ -1,199 +1,225 @@
+# Treasure tables
 
-
-
-individual_0_4x:
-  cp:
-    weight: 30
-    data:
-      - count: 5d6
-        unit: CP
-  sp:
-    weight: 30
-    data:
-      - count: 4d6
-        unit: SP
-  ep:
-    weight: 10
-    data:
-      - count: 3d6
-        unit: EP
-  gp:
-    weight: 25
-    data:
-      - count: 3d6
-        unit: GP
-  pp:
-    weight: 5
-    data:
-      - count: 1d6
-        unit: PP
+individual_0_4:
+  - - 30
+    - - count: 5d6
+        unit: cp
+  - - 30
+    - - count: 4d6
+        unit: sp
+  - - 10
+    - - count: 3d6
+        unit: ep
+  - - 25
+    - - count: 3d6
+        unit: gp
+  - - 5
+    - - count: 1d6
+        unit: pp
 
 individual_5_10:
-  30:
-    weight: 30
-    data:
-      - count: 4d6 x 100
-        unit: CP
-      - count: 1d6 x 10
-        unit: EP
-  60:
-    weight: 30
-    data:
-      - count: 6d6x10
-        unit: SP
+  - - 30
+    - - count: 4d6x100
+        unit: cp
+      - count: 1d6x10
+        unit: ep
+  - - 30
+    - - count: 6d6x10
+        unit: sp
       - count: 2d6x10
-        unit: GP
-  70:
-    weight: 10
-    data:
-      - count: 1d6x100
-        unit: EP
+        unit: gp
+  - - 10
+    - - count: 3d6x10
+        unit: ep
       - count: 2d6x10
-        unit: GP
-  95:
-    weight: 25
-    data:
-      - count: 4d6x10
-        unit: GP
-  100:
-    weight: 5
-    data:
-      - count: 2d6x10
-        unit: GP
+        unit: gp
+  - - 25
+    - - count: 4d6x10
+        unit: gp
+  - - 5
+    - - count: 2d6x10
+        unit: gp
       - count: 3d6
-        unit: PP
+        unit: pp
 
-
-HOARD_COINS:
-  LEVEL_0_4:
-    - count: 6d6x100
-      unit: CP
-    - count: 3d6x100
-      unit: SP
-    - count: 2d6x10
-      unit: GP
-  LEVEL_5_10:
-    - count: 2d6x100
-      units: CP
-    - count: 2d6x1000
-      units: SP
-    - count: 6d6x100
-      units: GP
-    - count: 3d6x10
-      units: PP
-
-HOARD_0_4:
-  6:
-    weight: 6
-    data: []
-  16:
-    weight: 10
-    data:
+hoard_0_4:
+  - - 6
+    - - count: 6d6x100
+        unit: cp
+      - count: 3d6x100
+        unit: sp
+      - count: 2d6x10
+        unit: gp
+  - - 10
+    - - count: 6d6x100
+        unit: cp
+      - count: 3d6x100
+        unit: sp
+      - count: 2d6x10
+        unit: gp
       - count: 2d6
-        unit: GEM_10
-  26:
-    weight: 10
-    data:
+        table: GEM_10
+  - - 10
+    - - count: 6d6x100
+        unit: cp
+      - count: 3d6x100
+        unit: sp
+      - count: 2d6x10
+        unit: gp
       - count: 2d4
-        unit: GEM_25
-  36:
-    weight: 10
-    data:
+        table: ART_25
+  - - 10
+    - - count: 6d6x100
+        unit: cp
+      - count: 3d6x100
+        unit: sp
+      - count: 2d6x10
+        unit: gp
       - count: 2d6
-        unit: GEM_50
-  44:
-    weight: 8
-    data:
+        table: GEM_50
+  - - 8
+    - - count: 6d6x100
+        unit: cp
+      - count: 3d6x100
+        unit: sp
+      - count: 2d6x10
+        unit: gp
       - count: 2d6
-        unit: GEM_50
+        table: GEM_50
       - count: 1d6
-        unit: MAGIC_A
-        
-  52:
-    weight: 8
-    data:
+        table: MAGIC_A
+  - - 8
+    - - count: 6d6x100
+        unit: cp
+      - count: 3d6x100
+        unit: sp
+      - count: 2d6x10
+        unit: gp
       - count: 2d4
-        unit: ART_25
+        table: ART_25
       - count: 1d6
-        unit: MAGIC_A
-  60:
-    weight: 8
-    data:
+        table: MAGIC_A
+  - - 8
+    - - count: 6d6x100
+        unit: cp
+      - count: 3d6x100
+        unit: sp
+      - count: 2d6x10
+        unit: gp
       - count: 2d6
-        unit: GEM_50
+        table: GEM_50
       - count: 1d6
-        unit: MAGIC_A
-  65:
-    weight: 5
-    data:
+        table: MAGIC_A
+  - - 5
+    - - count: 6d6x100
+        unit: cp
+      - count: 3d6x100
+        unit: sp
+      - count: 2d6x10
+        unit: gp
       - count: 2d6
-        unit: GEM_10
+        table: GEM_10
       - count: 1d6
-        unit: MAGIC_B
-  70:
-    weight: 5
-    data:
+        table: MAGIC_B
+  - - 5
+    - - count: 6d6x100
+        unit: cp
+      - count: 3d6x100
+        unit: sp
+      - count: 2d6x10
+        unit: gp
       - count: 2d4
-        unit: ART_25
+        table: ART_25
       - count: 1d6
-        unit: MAGIC_B
-  75:
-    weight: 5
-    data:
+        table: MAGIC_B
+  - - 5
+    - - count: 6d6x100
+        unit: cp
+      - count: 3d6x100
+        unit: sp
+      - count: 2d6x10
+        unit: gp
       - count: 2d6
-        unit: GEM_50
+        table: GEM_50
       - count: 1d6
-        unit: MAGIC_B
-  78:
-    weight: 3
-    data:
+        table: MAGIC_B
+  - - 3
+    - - count: 6d6x100
+        unit: cp
+      - count: 3d6x100
+        unit: sp
+      - count: 2d6x10
+        unit: gp
       - count: 2d6
-        unit: GEM_10
+        table: GEM_10
       - count: 1d6
-        unit: MAGIC_C
-  80:
-    weight: 3
-    data:
+        table: MAGIC_C
+  - - 3
+    - - count: 6d6x100
+        unit: cp
+      - count: 3d6x100
+        unit: sp
+      - count: 2d6x10
+        unit: gp
       - count: 2d4
-        unit: ART_25
+        table: ART_25
       - count: 1d6
-        unit: MAGIC_C
-  85:
-    weight: 5
-    data:
+        table: MAGIC_C
+  - - 5
+    - - count: 6d6x100
+        unit: cp
+      - count: 3d6x100
+        unit: sp
+      - count: 2d6x10
+        unit: gp
       - count: 2d6
-        unit: GEM_25
+        table: GEM_50
       - count: 1d6
-        unit: MAGIC_C
-  92:
-    weight: 7
-    data:
+        table: MAGIC_C
+  - - 7
+    - - count: 6d6x100
+        unit: cp
+      - count: 3d6x100
+        unit: sp
+      - count: 2d6x10
+        unit: gp
       - count: 2d4
-        unit: ART_25
+        table: ART_25
       - count: 1d6
-        unit: MAGIC_F
-  97:
-    weight: 5
-    data:
+        table: MAGIC_F
+  - - 5
+    - - count: 6d6x100
+        unit: cp
+      - count: 3d6x100
+        unit: sp
+      - count: 2d6x10
+        unit: gp
       - count: 2d6
-        unit: GEM_50
+        table: GEM_50
       - count: 1d6
-        unit: MAGIC_F
-  99:
-    weight: 2
-    data:
+        table: MAGIC_F
+  - - 2
+    - - count: 6d6x100
+        unit: cp
+      - count: 3d6x100
+        unit: sp
+      - count: 2d6x10
+        unit: gp
       - count: 2d4
-        unit: ART_25
+        table: ART_25
       - count: 1d6
-        unit: MAGIC_G
-  100:
-    weight: 1
-    data:
+        table: MAGIC_G
+  - - 1
+    - - count: 6d6x100
+        unit: cp
+      - count: 3d6x100
+        unit: sp
+      - count: 2d6x10
+        unit: gp
       - count: 2d6
-        unit: GEM_50
+        table: GEM_50
       - count: 1d6
-        unit: MAGIC_G
-
+        table: MAGIC_G
 
 
 #
@@ -259,3 +285,232 @@ ART_250:
   - Box of turquoise animal figurines (25GP)
   - Gold bird cage with electrum filigree (25GP)
 
+MAGIC_A:
+  - [50, Potion of healing]
+  - [10, Spell scroll (cantrip)]
+  - [10, Potion of climbing]
+  - [20, Spell scroll (1st level)]
+  - [4, Spell scroll (2nd level)]
+  - [4, Potion of greater healing]
+  - [1, Bag of holding]
+  - [1, Driftglobe]
+
+MAGIC_B:
+  - [15,  Potion of greater healing]
+  - [7,   Potion of fire breath]
+  - [7,   Potion of resistance]
+  - [5, "Ammunition, +1"]
+  - [5, Potion of animal friendship]
+  - [5, Potion of hill giant strength]
+  - [5, Potion of growth]
+  - [5, Potion of water breathing]
+  - [5, Spell scroll (2nd level)]
+  - [5, Spell scroll (3rd level)]
+  - [3, Bag of holding]
+  - [3, Keoghtom's ointment]
+  - [3, Oil of slipperiness]
+  - [2, Dust of disappearance]
+  - [2, Dust of dryness]
+  - [2, Dust of sneezing and choking]
+  - [2, Elemental gem]
+  - [2, Philter of love]
+  - [1, Alchemy jug]
+  - [1, Cap of water breathing]
+  - [1, Cloak of the manta ray]
+  - [1, Driftglobe]
+  - [1, Goggles of night]
+  - [1, Helm of comprehending languages]
+  - [1, Immovable rod]
+  - [1, Lantern of revealing]
+  - [1, Mariner's armor]
+  - [1, Mithral armor]
+  - [1, Potion of poison]
+  - [1, Ring of swimming]
+  - [1, Robe of useful items]
+  - [1, Rope of climbing]
+  - [1, Saddle of the cavalier]
+  - [1, Wand of magic detection]
+  - [1, Wand of secrets]
+
+MAGIC_C:
+  - [15, Potion of superior healing]
+  - [7, Spell scroll (4thlevel)]
+  - [7, "Ammunition, +2"]
+  - [5, Potion of clairvoyance]
+  - [5, Potion of diminution]
+  - [5, Potion of gaseous form]
+  - [5, Potion of frost giant strength]
+  - [5, Potion of stone giant strength]
+  - [5, Potion of heroism]
+  - [5, Potion of invulnerability]
+  - [5, Potion of mind reading]
+  - [5, Spell scroll (5thlevel)]
+  - [3, Elixir of health]
+  - [3, Oil of etherealness]
+  - [3, Potion of fire giant strength]
+  - [3, Quaal's feather token]
+  - [3, Scroll of protection]
+  - [2, Bag of beans]
+  - [2, Bead of force]
+  - [1, Chime of opening]
+  - [1, Decanter of endless water]
+  - [1, Eyes of minute seeing]
+  - [1, Folding boat]
+  - [1, Heward's handy haversack]
+  - [1, Horseshoes of speed]
+  - [1, Necklace of fireballs]
+  - [1, Periapt of health]
+  - [1, Sending Stones]
+
+
+MAGIC_F:
+  - [15, "Weapon, +1"]
+  - [3, "Shield,+ 1"]
+  - [3, Sentinel shield]
+  - [2, Amulet of proof against detection and location]
+  - [2, Boots of elvenkind]
+  - [2, Boots of striding and springing]
+  - [2, Bracers of archery]
+  - [2, Brooch of shielding]
+  - [2, Broom of flying]
+  - [2, Cloak of elvenkind]
+  - [2, Cloak of protection]
+  - [2, Gauntlets of ogre power]
+  - [2, Hat of disguise]
+  - [2, Javelin of lightning]
+  - [2, Pearl of power]
+  - [2, "Rod of the pact keeper, + 1"]
+  - [2, Slippers of spider climbing]
+  - [2, Staff of the adder]
+  - [2, Staff of the python]
+  - [2, Sword of vengeance]
+  - [2, Trident of fish command]
+  - [2, Wand of magic missiles]
+  - [2, "Wand of the war mage, + 1"]
+  - [2, Wand of web]
+  - [2, Weapon of warning]
+  - [1, Adamantine armor (chain mail)]
+  - [1, Adamantine armor (chain shirt)]
+  - [1, Adamantine armor (scale mail)]
+  - [1, Bag of tricks (gray)]
+  - [1, Bag of tricks (rust)]
+  - [1, Bag of tricks (tan)]
+  - [1, Boots of the winterlands]
+  - [1, Circlet of blasting]
+  - [1, Deck of illusions]
+  - [1, Eversmoking bottle]
+  - [1, Eyes of charming]
+  - [1, Eyes of the eagle]
+  - [1, Figurine of wondrous power (silver raven)]
+  - [1,Gem of brightness]
+  - [1, Gloves of missile snaring]
+  - [1, Gloves of swimming and climbing]
+  - [1, Gloves of thievery]
+  - [1, Headband of intellect]
+  - [1, Helm of telepathy]
+  - [1, Instrument of the bards (Doss lute)]
+  - [1, Instrument of the bards (Fochlucan bandore)]
+  - [1, Instrument of the bards (Mac-Fuimidh cittern)]
+  - [1, Medallion of thoughts]
+  - [1, Necklace of adaptation]
+  - [1, Periapt of wound closure]
+  - [1, Pipes of haunting]
+  - [1, Pipes of the sewers]
+  - [1, Ring of jumping]
+  - [1, Ring of mind shielding]
+  - [1, Ring of warmth]
+  - [1, Ring of water walking]
+  - [1, Quiver of Ehlonna]
+  - [1, Stone of good luck]
+  - [1, Wind fan]
+  - [1, Winged boots]
+
+MAGIC_G:
+  - [11 "Weapon, +2"]
+  - [3, "Figurine of wondrous power {figurine_of_wondrous_power}"]
+  - [1, Adamantine armor (breastplate)]
+  - [1, Adamantine armor (splint)]
+  - [1, Amulet of health]
+  - [1, Armor of vulnerability]
+  - [1, Arrow-catching shield]
+  - [1, Belt of dwarvenkind]
+  - [1, Belt of hill giant strength]
+  - [1, Berserker axe]
+  - [1, Boots of levitation]
+  - [1, Boots of speed]
+  - [1, Bowl of commanding water elementals]
+  - [1,   Bracers of defense]
+  - [1, Brazier of commanding fire elementals]
+  - [1, Cape of the mountebank]
+  - [1, Censer of controlling air elementals]
+  - [1, "Armor, +1 chain mail"]
+  - [1, Armor of resistance (chain mail)]
+  - [1, Armor of resistance (chain shirt)]
+  - [1, "Armor,+ 1 chain shirt"]
+  - [1, Cloak of displacement]
+  - [1, Cloak of the bat]
+  - [1, Cube of force]
+  - [1, Daern's instant fortress]
+  - [1, Dagger of venom]
+  - [1, Dimensional shackles]
+  - [1, Dragon slayer]
+  - [1, Elven chain]
+  - [1, Flame tongue]
+  - [1, Gem of seeing]
+  - [1, Giant slayer]
+  - [1, Clamoured studded leather]
+  - [1, Helm of teleportation]
+  - [1, Horn of blasting]
+  - [1, Horn of Valhalla (silver or brass)]
+  - [1, Instrument of the bards (Canaithmandolin)]
+  - [1, Instrument ofthe bards (Cii lyre)]
+  - [1, loun stone (awareness)]
+  - [1, loun stone (protection)]
+  - [1, loun stone (reserve)]
+  - [1, loun stone (sustenance)]
+  - [1, Iron bands of Bilarro]
+  - [1, "Armor, + 1 leather"]
+  - [1, Armor of resistance (leather)]
+  - [1, Mace of disruption]
+  - [1, Mace of smiting]
+  - [1, Mace of terror]
+  - [1, Mantle of spell resistance]
+  - [1, Necklace of prayer beads]
+  - [1, Periapt of proof against poison]
+  - [1, Ring of animal influence]
+  - [1, Ring of evasion]
+  - [1, Ring of feather falling]
+  - [1, Ring of free action]
+  - [1, Ring of protection]
+  - [1, Ring of resistance]
+  - [1, Ring of spell storing]
+  - [1, Ring of the ram]
+  - [1, Ring of X-ray vision]
+  - [1, Robe of eyes]
+  - [1, Rod of rulership]
+  - [1, "Rod of the pact keeper, +2"]
+  - [1, Rope of entanglement]
+  - [1, "Armor, +1 scale mail"]
+  - [1, Armor of resistance (scale mail)]
+  - [1, "Shield, +2"]
+  - [1, Shield of missile attraction]
+  - [1, Staff of charming]
+  - [1, Staff of healing]
+  - [1, Staff of swarming insects]
+  - [1,  Staff of the woodlands]
+  - [1,  Staff of withering]
+  - [1, Stone of controlling earthelementals]
+  - [1, Sun blade]
+  - [1, Sword of life stealing]
+  - [1, Sword of wounding]
+  - [1, Tentacle rod]
+  - [1, Vicious weapon]
+  - [1, Wand of binding]
+  - [1, Wand of enemy detection]
+  - [1, Wand of fear]
+  - [1, Wand of fireballs]
+  - [1, Wand of lightning bolts]
+  - [1, Wand of paralysis]
+  - [1, "Wand of the war mage, +2"]
+  - [1, Wand of wonder]
+  - [1, Wings of flying]

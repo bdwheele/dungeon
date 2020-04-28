@@ -8,6 +8,7 @@ import argparse
 import tempfile
 import subprocess
 import io
+import base64
 
 from dungeon.dungeon import Dungeon
 from dungeon.tables import Tables
@@ -108,9 +109,46 @@ def main():
             dungeon = yaml.load(f)
         if args['what'] == 'map':
             dot = dungeon.generate_map_dot(all_rooms=args['all'])
-            print(dot)
             subprocess.run([args['dot_cmd'], '-Tsvg', '-o', args['output']], input=dot.encode('utf-8'), check=True)
         elif args['what'] == 'html':
+            output=["<html>", "<head>", f"<title>Dungeon in {args['dungeon']}</title>", "</head>", "<body>"]
+            output.extend([f'<h2>Dungeon in {args["dungeon"]}</h2>'])
+            dot = dungeon.generate_map_dot(all_rooms=True)
+            p = subprocess.run([args['dot_cmd'], '-Tpng'], check=True, input=dot.encode('utf-8'), stdout=subprocess.PIPE)
+            image = base64.b64encode(p.stdout).decode('ascii')
+            output.append(f'<img src="data:image/png;base64,{image}">')
+            output.extend(['<hr>','<h3>Rooms</h3>', "<table border=1>"])
+            for i, o in dungeon.objects.items():
+                if i.startswith('R'):
+                    output.append(f'<tr><td><a name={i}>{i}</a></td><td>')
+                    output.append(f"Description:<br><ul><li>" + "</li><li>".join(o.description) + "</li></ul>")
+                    output.append(f"Doors:<br><ul>")
+                    for d in o.doors:
+                        output.append(f"<li><a href=#{d.id}>{d.id}</a> ({d.sides[0].id} &lt;--&gt; {d.sides[1].id})</li>")
+                    output.append("</ul>")
+                    output.append(f'</td></tr>')
+            output.extend(['</table>', '<h3>Doors</h3>', '<table border=1>'])
+            for i, o in dungeon.objects.items():
+                if i.startswith('D'):
+                    output.append(f'<tr><td><a name={i}>{i}</a></td><td>')
+                    output.append(f"Description:<br><ul><li>" + "</li><li>".join(o.description) + "</li></ul>")
+                    output.append(f"Connects: <a href=#{o.sides[0].id}>{o.sides[0].id}</a> &lt;--&gt; <a href=#{o.sides[1].id}>{o.sides[1].id}</a>")
+                    
+
+                    output.append('</td></tr>')
+
+
+
+
+            output.extend(['</table>'])                   
+            output.extend(['</body>', '</html>'])
+            with open(args['output'], 'w') as f:
+                f.write("\n".join(output))
+                f.write("\n")
+
+            
+
+            
             # implement later?
             pass
 

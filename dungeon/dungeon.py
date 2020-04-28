@@ -7,8 +7,9 @@ from .graph import gen_graph
 from .mergeable import Mergeable
 from .monster import MonsterStore
 from .room import Room
-from .utils import gen_id, generate_avg_list, is_template, template, get_template_vars, array_random
+from .utils import gen_id, generate_avg_list, is_template, template, get_template_vars, array_random, roll_dice
 from .flags import process_flags
+from .key import Key
 
 # THE DUNGEON!
 # The dungeon serves as a container for everything about the dungeon:  the rooms, doors,
@@ -89,15 +90,12 @@ class Dungeon(Mergeable):
         all_rooms = [x for x in dungeon.find_objects(Room) if not x.is_corridor]
         for difficulty in generate_avg_list(encounter_average_difficulty, encounter_count,
                                             MonsterStore.EASY, MonsterStore.DEADLY):
-            #room_id = random.choice(all_rooms)
-            #room = dungeon.objects[room_id]
             room = random.choice(all_rooms)
             encounter = monster_store.create_encounter(character_levels, difficulty, base_monster_list, room.size_integer)
             if encounter is not None:
                 for m in encounter:
-                    m.location = room
                     m.decorate()
-                    dungeon.objects[m.id] = m
+                    dungeon.add_object(m)
                     room.store(m)
             all_rooms.remove(room)
             if not all_rooms:
@@ -118,7 +116,7 @@ class Dungeon(Mergeable):
             monster = monster_store.create_wandering_monster(character_levels, difficulty, base_monster_list)
             dungeon.objects[monster.id] = monster
 
-        # TODO:  handle flags on EVERYTHING
+        # Handle flags on everything
         todo_objects = list(dungeon.objects.values())
         done_objects = set()
         while todo_objects:
@@ -129,22 +127,69 @@ class Dungeon(Mergeable):
             todo_objects = [x for x in list(dungeon.objects.values()) if x not in done_objects]           
 
 
-        # TODO:  fill in any templates
+        # Fill in any templates
         for o in dungeon.objects.values():
             if hasattr(o, 'description'):
                 for i, d in enumerate(o.description):
                     if is_template(d):
-                        print(f"Object {o.id} has a template in description[{i}], needing keys {get_template_vars(d)}: {d}")
                         vals = {}
                         for v in get_template_vars(d):
-                            vals[v] = array_random(tables.get_table('dressing', v))
+                            if '.' in v:
+                                group, table = v.split('.', 1)
+                            else:
+                                group = 'dressing'
+                                table = v
+                            vals[v] = array_random(tables.get_table(group, table))
                         o.description[i] = template(d, vals)
-                        print(f"   Result: {o.description[i]}")
 
-
-        # TODO:  hide keys 
-
+        dungeon.hide_keys()
         return dungeon
+
+
+
+    def hide_keys(self):
+        """
+        This is a lot harder now that we have more than just doors that can be
+        locked.  The theory is the same as the old implementation:  from the
+        starting room walk each locked item in the room 
+        """
+        # find all of the keys to hide
+        keys_to_hide = set()
+        room_count = 0
+        for o in self.objects.values():
+            if isinstance(o, Key) and o.location is None:
+                keys_to_hide.add(o)
+            if isinstance(o, Room):
+                room_count += 1
+                if o.is_start:
+                    start_room = o
+        print(f"{len(keys)} to hide, {len(rooms)} rooms in dungeon.")
+        while True:
+            visited_rooms = set()
+            keychain = set()
+            todo = set([start_room])
+            needed_keys = set()
+            while todo:
+                here = todo.pop(0)
+                visited_rooms.add(here)
+                for x in here.get_recursive_contents():
+                    if isinstance(x, Key):
+                        keychain.add(x)
+                for door in here.doors:
+                    if not door.has_lock:
+                        # go through.
+                        todo.append([x for x in door.sides if x not in visited_rooms])
+                    else:
+                        if door.lock_key in keychain:
+                            # we can unlock this with the keys we know.
+                            todo.append([x for x in door.sides if x not in visited_rooms])
+                        else:
+                            if door.lock_key not in keys_to_hide:
+                                # 
+
+            if len(visited_rooms) == len(rooms):
+                break
+
 
 
     def generate_map_dot(self, all_rooms=False):

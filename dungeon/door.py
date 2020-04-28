@@ -4,10 +4,11 @@ import math
 from .lockable import Lockable
 from .trappable import Trappable
 from .mergeable import Mergeable
+from .breakable import Breakable
 
 logger = logging.getLogger()
 
-class Door(Lockable, Trappable, Mergeable):
+class Door(Lockable, Trappable, Mergeable, Breakable):
     def __init__(self, **kwargs):
         # general door/passage stuff
         self.id = None
@@ -17,7 +18,8 @@ class Door(Lockable, Trappable, Mergeable):
         self.description = []
         self.is_open = False
         self.visited = False
-        self.break_down_dc = 0
+        # it can be broken
+        Breakable.__init__(self)
         # lock
         Lockable.__init__(self)
         # stickyness
@@ -28,6 +30,10 @@ class Door(Lockable, Trappable, Mergeable):
         Trappable.__init__(self)
 
         self.merge_attrs(kwargs)
+
+    def __str__(self):
+        return f"Door(id={self.id}, description={self.description}, has_trap={self.has_trap}, has_lock={self.has_lock}, connects: {[x.id for x in self.sides]})" #pylint: disable=no-member
+
 
     @staticmethod
     def generate(tables, id, sides):
@@ -48,60 +54,6 @@ class Door(Lockable, Trappable, Mergeable):
 
 
         return door
-
-
-
-    @staticmethod
-    def agenerate(tables, id, connections):
-        # build the arguments and generate the room
-        args = {
-            'id': id,
-            'connections': (connections[0].id, connections[1].id)
-        }
-
-        type_table = "room_to_corridor"
-        if connections[0].is_corridor == connections[1].is_corridor:
-            if connections[0].is_corridor:
-                type_table = "corridor_to_corridor"
-            else:
-                type_table = "room_to_room"
-        args['is_passage'] = 'passage' == array_random(tables.get_table("door", type_table))
-        if args['is_passage']:
-            # decorate the passage
-            args.update(array_random(tables.get_table('door', 'passage')))
-            args['is_open'] = True
-        else:
-            # decorate the door
-            args.update(array_random(tables.get_table('door', 'door_material')))
-            if 'flags' not in args:
-                args['flags'] = []
-            args['flags'].extend(array_random(tables.get_table('door', 'door_flags')))
-
-        # TODO: handle flags.
-        if 'flags' in args:
-            for f in args['flags']:
-                if f == 'STUCK':
-                    args['is_stuck'] = True
-                    args['stuck_dc'] = math.floor(args['break_down_dc'] / 2)
-                elif f == 'LOCKED':
-                    args['has_lock'] = True
-                    args['is_locked'] = True
-                    args['pick_lock_dc'] = 3 # TODO
-                    args['needs_key'] = gen_id('key', random=True, prefix='K')
-                    material = array_random(tables.get_table('door', 'key_material'))
-                    size = array_random(tables.get_table('door', 'key_size'))
-                    description = f"{size}-sized key made of {material}"
-                    args['description'].append(f"The lock requires a {description} to lock or unlock")
-                    args['key_description'] = description
-                elif f == 'TRAP':
-                    args['has_trap'] = True
-                    # TODO:  build a trap and put it in!
-                    pass
-                else:
-                    logger.debug(f"Don't know how to decorate door with flag {f}")
-
-        return Door(**args)
-
 
 
     ###

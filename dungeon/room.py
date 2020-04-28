@@ -24,6 +24,9 @@ class Room(Mergeable, Container, Trappable):
 
         self.merge_attrs(kwargs)
 
+    def __str__(self):
+        return f"Room(id={self.id}, description={self.description}, doors={[str(d) for d in self.doors]})"
+
     @staticmethod
     def generate(tables, id, door_count):
         # build arguments and create the room.

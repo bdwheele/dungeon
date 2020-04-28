@@ -52,23 +52,23 @@ door_material:
   - - 30 
     - description: 
         - A simple wooden door
-      break_down_dc: 10
+      break_dc: 10
   - - 22
     - description:
         - A typical wooden door
-      break_down_dc: 12
+      break_dc: 12
   - - 30
     - description:
         - A sturdy, well-made wooden door
-      break_down_dc: 15
+      break_dc: 15
   - - 10
     - description:
         - A door made of stone
-      break_down_dc: 25
+      break_dc: 25
   - - 8
     - description:
         - The door is sturdy and made of iron
-      break_down_dc: 25
+      break_dc: 25
 
 door_flags:
   - [4, [TRAP]]

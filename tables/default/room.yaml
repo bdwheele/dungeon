@@ -113,27 +113,83 @@ room_kind:
       - The room appears to be a antechamber
   - - 2
     - description:
-      - The room appears to be a armory
-  - - 1
-    - description:
-      - The room appears to be a audience chamber
+      - The room appears to be an armory
       flags:
-        - OBJECT[description=Throne]
-        - (2d6)OBJECT[description=Comfy chair made of {chair_material}]
+        - OBJECT:
+            percent: 50
+            count: 1d2 
+            description: Large chest
+            is_portable: no
+            break_dc: 10
+            flags:
+              - LOCKED
+              - TREASURE:
+                  type: h
+                  cr: 3
+              - MONSTER:
+                  percent: 50
+                  name: Swarm of Bats
+
+        - OBJECT:
+            description: A large pile of potatoes
+            is_portable: no
+        - OBJECT:
+            description: Portable toilet
+
 
   - - 1
     - description:
+      - The room appears to be a audience chamber
+  - - 1
+    - description:
       - The room appears to be a aviary
-      flags: ["(2d6)OBJECT[description=Birdcage]"]
+      flags:
+        - OBJECT:
+            count: 2d6
+            description: Empty bird cage
+            flags:
+              - OBJECT:
+                  percent: 2
+                  description: "{treasure.GEM_10}"
   - - 2
     - description:
       - The room appears to be a banquet room
+      flags:
+        - OBJECT:
+            description: Long table covered with the remnants of a long ago enjoyed meal
+            is_portable: no
+        - OBJECT:
+            count: 2d4+3
+            description: Chairs in various states of disrepair
   - - 3
     - description:
       - The room appears to be a barracks
+      flags:
+        - OBJECT:
+            count: 3d4+5
+            description: Old wooden bed covered with a rough blanket
+            is_portable: no
+            flags:
+              - MONSTER:
+                  percent: 8
+                  name: Skeleton
   - - 1
     - description:
       - The room appears to be a bedroom
+      flags:
+        - OBJECT:
+            description: Poorly-made bed
+            is_portable: no
+        - OBJECT:
+            description: Full-length mirror
+        - OBJECT:
+            description: Wardrobe
+            flags:
+              - MONSTER:
+                  percent: 3
+                  name: Swarm of Bats
+              - OBJECT:
+                  description:  Very fancy robe of {materials.cloth}
   - - 1
     - description:
       - The room appears to be a bestiary

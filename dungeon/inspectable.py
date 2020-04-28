@@ -14,17 +14,17 @@ class Inspectable:
            true to indicate the UI should refresh.
         """
         changed = False
-        for i, x in enumerate(x.hidden_description):
+        for x in x.hidden_description:
             if x[0] <= perception:
                 self.hidden_description.remove(x)
-                self.description.append(x)
+                self.description.extend(x[1]) #pylint: disable=no-member
                 changed = True
 
         if isinstance(self, Container):
-            for i, x in enumerate(self.hidden_contents):
+            for x in self.hidden_contents:
                 if x[0] <= perception:
                     self.hidden_contents.remove(x)
-                    self.contents.append(x)
+                    self.contents.exted(x[1]) #pylint: disable=no-member
                     changed = True
         
         if not self.hidden_contents and not self.hidden_description:

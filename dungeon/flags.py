@@ -2,56 +2,56 @@ from collections import namedtuple
 import re
 from .utils import roll_dice, array_random, gen_id
 import math
+from random import randint
 from .door import Door
 from .trappable import Trappable
 from .lockable import Lockable
 from .container import Container
 from .thing import Thing
+from .monster import MonsterStore
+from .treasure import Treasure
+from .key import Key
 
 #
 # Flags
 #
-
 def parse_flag(flag):
     """
-    convert a flag specification into its component parts.  A
-    flag has this format: (repeats)flag[args]  where the
-    (repeats) and [args] are optional.  The [args] are a list of
-    key=value pairs, separated by commas.  The (repeats) is either
-    an integer or a roll specification.
-    examples:
-        FLAG  - a single flag with no arguments
-        (3)FLAG - flag will get repeated 3 times
-        (3d6-1)FLAG - flag will get repeated 0 to 17 times
-        FLAG[arg1=value] - a single flag with arg1 set to value
-        (3)FLAG[arg1=value; arg2=value] - 3 flags with args
+    Convert a flag specification into its component parts.  
+
+    Flags come in two flavors:  a simple string or a complex dict.
+
+    A simple string is turned into a name, with the rest of the fields default
+
+    The complex dict should contain exactly 1 key:  the flag name.  The
+    values of that key become the args for the flag.  If percent and count are
+    specified, they are removed and placed into the flag itself.
+
     """
-    Flag = namedtuple('Flag', ['name', 'repeat', 'args'])
-    fmt = re.compile(r"^(\((.+?)\))?([^\[]+?)(\[(.+?)\])?$")
-    m = fmt.match(flag)
-    if not m:
-        raise ValueError(f"'{flag}' doesn't seem like a valid flag specification")
-    repeat = m.group(2)
-    name = m.group(3)
-    args = m.group(5)
-    if repeat:
-        if re.match(r"^\d+$", repeat):
-            repeat = int(repeat)
-        else:
-            repeat = roll_dice(repeat)
+    Flag = namedtuple("Flag", ('name', 'percent', 'count', 'args'))
+
+    if isinstance(flag, str):
+        return Flag(flag, 100, 1, {})
+    if not isinstance(flag, dict):
+        raise ValueError(f"Cannot process non-dictionary {flag} as flag.")
+    if len(flag.keys()) != 1:
+        raise ValueError(f"Flag dictionaries can only contain one key: {flag}")
+
+    name = list(flag.keys())[0]
+    args = flag[name]
+    percent = args.pop('percent') if 'percent' in args else 100
+    count = args.pop('count') if 'count' in args else 1
+    if re.match(r"^\d+$", str(count)):
+        count = int(count)
     else:
-        repeat = 1
+        count = roll_dice(count)
+    if 'description' in args:
+        if isinstance(args['description'], str):
+            args['description'] = [args['description']]
 
-    argdata = {}    
-    if args:
-        for pair in args.split(';'):
-            if '=' not in pair:
-                raise ValueError("Flag arguments must be key=value pairs")
-            k, v = pair.split('=', maxsplit=1)
-            argdata[k.strip()] = v.strip()
+    return Flag(name.upper(), percent, count, args)
 
-    return Flag(name.upper(), repeat, argdata)
-    
+
 
 def process_flags(obj, dungeon, tables):
     """
@@ -59,53 +59,60 @@ def process_flags(obj, dungeon, tables):
     of the dungeon.  Creating locks & keys, traps, treasure, etc.
     """
     flags_todo = list(obj.flags)
+    monster_store = MonsterStore(tables)
+    treasure = Treasure(tables)
     while flags_todo:
         flag = parse_flag(flags_todo.pop(0))
-        for _ in range(flag.repeat):
+        if randint(1, 100) > flag.percent:
+            # it's not here
+            continue
+
+        for _ in range(flag.count):
+            print(f"FLAG:  {flag.name}, args: {flag.args}")
             if flag.name == 'TRAP':
                 # generate a trap
                 pass
             elif flag.name == 'LOCKED':
                 # generate a lock & key
+                print(f"Adding lock to {obj.id}")
                 if isinstance(obj, Lockable):
                     # create the lock
                     obj.has_lock = True
                     obj.is_locked = True
-                    obj.lock_pick_dc = math.floor(obj.break_down_dc * 0.75)
+                    obj.lock_pick_dc = math.floor(obj.break_dc * 0.75)
                     # create the key object
-                    key = Thing()
-                    key.id = gen_id('key', prefix='K')
-                    key.location = None
-                    code = gen_id('key_code', random=True, reserved=[666])
-                    key.description = ["{key_size} key made of {key_material}", f"Key code: {key.id}"]
-                    obj.lock_code = code
+                    key = Key()
+                    key.location = None                    
+                    obj.lock_key = key
                     dungeon.add_object(key)
             elif flag.name == 'STUCK':
                 # for doors, the door is stuck
                 if isinstance(obj, Door):
                     obj.is_stuck = True
-                    obj.stuck_dc = math.floor(obj.break_down_dc / 2)
+                    obj.stuck_dc = math.floor(obj.break_dc / 3)
             elif flag.name == 'TREASURE':
                 # generate some treasure for this object
                 print(f"Treasure: {flag}")
-
-
-                pass
-            elif flag.name == 'OBJECT':
-                print(f"Generic object {flag}")
                 new_obj = Thing()
-                if 'description' not in flag.args:
-                    raise ValueError("Can't create an object without a description!")
-                new_obj.description = [flag.args['description']]
-                new_obj.id = gen_id('object', prefix='O')
-                new_obj.location = obj
-                if 'flags' in flag.args:
-                    new_obj.flags = flag.args.split(',')
+                new_obj.description = treasure.generate(treasure_type=flag.args['type'], cr=flag.args['cr'])
                 obj.store(new_obj)
                 dungeon.add_object(new_obj)
 
+            elif flag.name == 'OBJECT':
+                print(f"Generic object {flag}")
+                new_obj = Thing()
+                new_obj.merge_attrs(flag.args)
+                if 'description' not in flag.args:
+                    raise ValueError("Can't create an object without a description!")
+                #new_obj.id = gen_id('object', prefix='O')
+                obj.store(new_obj)
+                dungeon.add_object(new_obj)
 
-
+            elif flag.name == 'MONSTER':
+                monster = monster_store.get_monster(flag.args['name'])
+                monster.decorate()
+                dungeon.add_object(monster)
+                obj.store(monster)        
             else:
                 # don't know how to handle this...
                 print(f"Don't know how to handle flag {flag.name} for {obj}")

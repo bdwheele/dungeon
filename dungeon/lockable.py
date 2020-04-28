@@ -5,7 +5,6 @@ class Lockable:
         self.has_lock = False
         self.is_locked = False
         self.lock_key = None
-        self.lock_code = None
         self.lock_pick_dc = 0
 
 
@@ -13,7 +12,7 @@ class Lockable:
         return [f'This lock requires a {self.lock_key.description[0]} key to operate']
 
     def valid_key(self, key):
-        return key == self.lock_code or key == 666
+        return key == self.lock_key.code or key == 666
 
     def unlock(self, key):
         if not self.valid_key(key):

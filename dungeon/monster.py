@@ -36,7 +36,13 @@ class MonsterStore:
 
     def cr_to_decimal(self, cr):
         "convert a challenge rating to decimal for comparisons"
-        return {'1/8': 0.125, '1/4': 0.25, '1/2': 0.5}.get(cr, cr)
+        table = {'1/8': 0.125, 
+                 '1/4': 0.25, 
+                 '1/2': 0.5}
+        if cr not in table:
+            return int(cr)
+        else:
+            return table[cr]
 
     def cr_to_xp(self, cr):
         "convert a challenge rating to experience points"
@@ -88,6 +94,13 @@ class MonsterStore:
     def get_sizes(self):
         "Get the valid monster sizes"
         return list(set([x.size for x in self.store]))
+
+
+    def get_monster(self, name):
+        for m in self.store:
+            if m.name.lower() == name.lower():
+                return copy.deepcopy(m)
+        raise ValueError(f"Unknown monster {name} requested")
 
     def filter(self, monsters=None, source_filter=[], alignment_filter=[], type_filter=[], 
                environment_filter=[], flags_filter=[], size_filter=[],
@@ -195,7 +208,10 @@ class Monster(Container):
         "Make the monster more than just the catalog entry"
         # Humanoid monsters will have treasure they carry around...
         if self.type.lower() == 'humanoid':
-            self.flags.append(f'TREASURE[type=i; cr={self.decimal_cr}]')
+            self.flags.append({'TREASURE': {'type': 'i', 'cr': self.decimal_cr}})
+        else:
+            # these monsters don't have a place for stuff.
+            self.can_contain = False
 
 
     def flee(self):
