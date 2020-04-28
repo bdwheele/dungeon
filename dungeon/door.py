@@ -1,38 +1,49 @@
 from .utils import gen_id, array_random
 import logging
 import math
+from .dobject import DObject
 from .lockable import Lockable
 from .trappable import Trappable
-from .mergeable import Mergeable
 from .breakable import Breakable
 
 logger = logging.getLogger()
 
-class Door(Lockable, Trappable, Mergeable, Breakable):
+class Door(DObject, Lockable, Trappable, Breakable):
     def __init__(self, **kwargs):
+        DObject.__init__(self, **kwargs)
         # general door/passage stuff
-        self.id = None
-        self.sides = (-1, -1)
+        self.sides = []
         self.is_passage = False
-        self.flags = []
-        self.description = []
         self.is_open = False
         self.visited = False
-        # it can be broken
-        Breakable.__init__(self)
-        # lock
-        Lockable.__init__(self)
         # stickyness
         self.is_stuck = False
         self.stuck_found = False
         self.stuck_dc = 0
-        # trap
+
+        Breakable.__init__(self)
+        Lockable.__init__(self)
         Trappable.__init__(self)
 
         self.merge_attrs(kwargs)
 
     def __str__(self):
         return f"Door(id={self.id}, description={self.description}, has_trap={self.has_trap}, has_lock={self.has_lock}, connects: {[x.id for x in self.sides]})" #pylint: disable=no-member
+
+    def decorate(self, tables):
+        # build the arguments and generate the room
+        type_table = "room_to_corridor"
+        if self.sides[0].is_corridor == self.sides[1].is_corridor:
+            type_table = "corridor_to_corridor" if self.sides[0].is_corridor else "room_to_room"
+        self.is_passage = 'passage' == array_random(tables.get_table("door", type_table))
+        if self.is_passage:
+            # decorate the passage
+            self.merge_attrs(array_random(tables.get_table('door', 'passage')))
+            self.is_open = True
+        else:
+            # decorate the door
+            self.merge_attrs(array_random(tables.get_table('door', 'door_material')))
+            self.flags.extend(array_random(tables.get_table('door', 'door_flags')))
 
 
     @staticmethod

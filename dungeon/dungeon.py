@@ -29,14 +29,28 @@ class Dungeon(Mergeable):
             self.parameters = {}
             self.player_data = {}
             self.state = {
-                'current_room': 0,
+                'current_room': None,
                 'current_time': 0
             }
             self.objects = {}
+            self.start_room = None
             # and then override whatever we got from the kwargs
             self.merge_attrs(kwargs)
         else:
             raise ValueError(f"Cannot create dungeon version {version}")
+
+
+    def find_objects(self, *classes):
+        """
+        Return all of the objects which are instances of
+        the class specified in cls
+        """
+        return [x for x in self.objects.values() if x.is_a(*classes)]
+
+    def add_object(self, thing):
+        self.objects[thing.id] = thing
+        return thing
+
 
     @staticmethod
     def generate(tables, room_count=10, character_levels=[1, 1, 1, 1],
@@ -54,31 +68,24 @@ class Dungeon(Mergeable):
                           use_existing_node_dist=tables.get_table('graph', 'edge_connect_existing'),
                           edge_distance_dist=tables.get_table('graph', 'edge_distance'))
 
-        # the edges data tells us all of the room ids and how they're
-        # connected, but we need to compute the list of edge ids 
-        # per node to give context to the room generator.  
-        node_edges = {}
+        # the edges data tell us how things are connected, but we don't have 
+        # any objects yet.  Doors and Rooms are co-dependent so they're
+        # a little tricky.
+        rooms = {}
+        doors = {}
         for i, edge in enumerate(edges):
-            for node_id in edge:
-                if node_id not in node_edges:
-                    node_edges[node_id] = []
-                node_edges[node_id].append(i)
-        # generate the rooms
-        for node_id in node_edges:
-            room_id = f"R{node_id}"
-            dungeon.objects[room_id] = Room.generate(tables, room_id, len(node_edges[node_id]))
+            doors[i] = dungeon.add_object(Door())
+            for s in edge:
+                if s not in rooms:
+                    rooms[s] = dungeon.add_object(Room())
+                rooms[s].store(doors[i])
+                doors[i].sides.append(rooms[s])
 
-        # create doors/passages from all of the edges
-        for i, e in enumerate(edges):
-            i = f"D{i}"
-            e = [dungeon.objects[f"R{x}"] for x in e]
-            dungeon.objects[i] = Door.generate(tables, i, e)
-
-        # put the door objects into the rooms (insetad of just ids).
-        for node_id in node_edges:
-            room_id = f"R{node_id}"
-            doors = [dungeon.objects[f"D{x}"] for x in node_edges[node_id]]
-            dungeon.objects[room_id].doors = doors
+        # Decorate the newly-minted rooms and doors
+        for r in rooms.values():
+            r.decorate(tables)
+        for d in doors.values():
+            d.decorate(tables)
 
         # generate encounters
         encounter_count = math.ceil(room_count * (encounter_room_percent / 100))
@@ -87,14 +94,14 @@ class Dungeon(Mergeable):
                                                  alignment_filter=monster_alignments,
                                                  type_filter=monster_types,
                                                  source_filter=monster_sources)
-        all_rooms = [x for x in dungeon.find_objects(Room) if not x.is_corridor]
+        all_rooms = [x for x in dungeon.find_objects("Room") if not x.is_corridor]
         for difficulty in generate_avg_list(encounter_average_difficulty, encounter_count,
                                             MonsterStore.EASY, MonsterStore.DEADLY):
             room = random.choice(all_rooms)
             encounter = monster_store.create_encounter(character_levels, difficulty, base_monster_list, room.size_integer)
             if encounter is not None:
                 for m in encounter:
-                    m.decorate()
+                    m.decorate(tables)
                     dungeon.add_object(m)
                     room.store(m)
             all_rooms.remove(room)
@@ -102,19 +109,18 @@ class Dungeon(Mergeable):
                 break
 
 
-
         # pick the starting room
         start_room = random.choice([x for x in dungeon.find_objects(Room) if not x.is_corridor])
         start_room.visited = True
-        start_room.is_start = True
+        dungeon.start_room = start_room
         dungeon.state['current_room'] = start_room
 
             
         # generate the wandering monsters
         difficulties = generate_avg_list(encounter_average_difficulty, wandering_monsters, MonsterStore.EASY, MonsterStore.DEADLY)
         for difficulty in difficulties:
-            monster = monster_store.create_wandering_monster(character_levels, difficulty, base_monster_list)
-            dungeon.objects[monster.id] = monster
+            monster = dungeon.add_object(monster_store.create_wandering_monster(character_levels, difficulty, base_monster_list))
+            monster.decorate()
 
         # Handle flags on everything
         todo_objects = list(dungeon.objects.values())
@@ -142,7 +148,7 @@ class Dungeon(Mergeable):
                             vals[v] = array_random(tables.get_table(group, table))
                         o.description[i] = template(d, vals)
 
-        dungeon.hide_keys()
+        #dungeon.hide_keys()
         return dungeon
 
 
@@ -154,7 +160,8 @@ class Dungeon(Mergeable):
         starting room walk each locked item in the room 
         """
         # find all of the keys to hide
-        keys_to_hide = set()
+        keys_to_hide = set([x for x in self.find_objects('Key') if x.location is None])
+        
         room_count = 0
         for o in self.objects.values():
             if isinstance(o, Key) and o.location is None:
@@ -185,7 +192,7 @@ class Dungeon(Mergeable):
                             todo.append([x for x in door.sides if x not in visited_rooms])
                         else:
                             if door.lock_key not in keys_to_hide:
-                                # 
+                                pass
 
             if len(visited_rooms) == len(rooms):
                 break
@@ -196,18 +203,17 @@ class Dungeon(Mergeable):
         dot = ["graph dungeon_map {",
                "  rankdir = LR;"]
         rooms = self.find_objects(Room) if all_rooms else [x for x in self.find_objects(Room) if x.visited]
-        print([x.id for x in rooms])
         seen_doors = set()
         for room in rooms:
             shape = 'house'
-            if room.is_start:
+            if room == self.start_room:
                 shape = 'octagon'
             elif room.is_corridor:
                 shape = 'rectangle'
 
             style = ', style="filled"' if room == self.state['current_room'] else ""
             dot.append(f'{room.id} [label="{room.id}", shape="{shape}", URL="#{room.id}"{style}];')
-            for door in room.doors:
+            for door in [x for x in room.contents if x.is_a("Door")]:
                 if not door in seen_doors:
                     seen_doors.add(door)
                     if door.visited or all_rooms:
@@ -220,19 +226,4 @@ class Dungeon(Mergeable):
                     dot.append(f'{a} -- {b} [label="{door.id}", style="{style}"];')
         dot.append("}")
         return "\n".join(dot)
-
-
-    def find_objects(self, cls):
-        """
-        Return all of the objects which are instances of
-        the class specified in cls
-        """
-        result = []
-        for x in self.objects.values():
-            if isinstance(x, cls):
-                result.append(x)
-        return result
-
-    def add_object(self, thing):
-        self.objects[thing.id] = thing
 

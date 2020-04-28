@@ -75,42 +75,36 @@ def process_flags(obj, dungeon, tables):
             elif flag.name == 'LOCKED':
                 # generate a lock & key
                 print(f"Adding lock to {obj.id}")
-                if isinstance(obj, Lockable):
+                if obj.is_a("Lockable"):
                     # create the lock
                     obj.has_lock = True
                     obj.is_locked = True
                     obj.lock_pick_dc = math.floor(obj.break_dc * 0.75)
                     # create the key object
-                    key = Key()
+                    key = dungeon.add_object(Key())
                     key.location = None                    
                     obj.lock_key = key
-                    dungeon.add_object(key)
             elif flag.name == 'STUCK':
                 # for doors, the door is stuck
-                if isinstance(obj, Door):
+                if obj.is_a("Door"):
                     obj.is_stuck = True
                     obj.stuck_dc = math.floor(obj.break_dc / 3)
             elif flag.name == 'TREASURE':
                 # generate some treasure for this object
-                print(f"Treasure: {flag}")
-                new_obj = Thing()
+                new_obj = dungeon.add_object(Thing())
                 new_obj.description = treasure.generate(treasure_type=flag.args['type'], cr=flag.args['cr'])
                 obj.store(new_obj)
-                dungeon.add_object(new_obj)
 
             elif flag.name == 'OBJECT':
-                print(f"Generic object {flag}")
-                new_obj = Thing()
+                new_obj = dungeon.add_object(Thing())
                 new_obj.merge_attrs(flag.args)
                 if 'description' not in flag.args:
                     raise ValueError("Can't create an object without a description!")
-                #new_obj.id = gen_id('object', prefix='O')
                 obj.store(new_obj)
-                dungeon.add_object(new_obj)
 
             elif flag.name == 'MONSTER':
                 monster = monster_store.get_monster(flag.args['name'])
-                monster.decorate()
+                monster.decorate(tables)
                 dungeon.add_object(monster)
                 obj.store(monster)        
             else:

@@ -4,7 +4,7 @@ import copy
 from .utils import gen_id
 from .container import Container
 from .treasure import Treasure
-
+from .dobject import DObject
 
 class MonsterStore:
     """
@@ -174,12 +174,12 @@ class MonsterStore:
         return copy.deepcopy(random.choice(monsters))
 
 
-class Monster(Container):
+class Monster(DObject, Container):
     """
     A monster.   Behind you.  NO, I'm serious.
     """
     def __init__(self, **kwargs):
-        self.id = gen_id('monster', prefix='M')
+        DObject.__init__(self)
         self.is_alive = True
         self.location = None
         # stuff from the tables...
@@ -187,7 +187,6 @@ class Monster(Container):
         self.cr = None
         self.decimal_cr = None
         self.environment = []
-        self.flags = []
         self.name = "Unnamed Monster"
         self.page = 0
         self.size = None
@@ -196,15 +195,12 @@ class Monster(Container):
         self.type = None
         Container.__init__(self)
 
-        # and then override whatever we got from the kwargs
-        for k in vars(self):
-            if k in kwargs:
-                setattr(self, k, kwargs[k])
+        self.merge_attrs(kwargs)
 
     def __str__(self):
         return f"Monster(name={self.name}, type={self.type}, source={self.source}/{self.page}, cr={self.cr}, env={self.environment})"
     
-    def decorate(self):
+    def decorate(self, tables):
         "Make the monster more than just the catalog entry"
         # Humanoid monsters will have treasure they carry around...
         if self.type.lower() == 'humanoid':
