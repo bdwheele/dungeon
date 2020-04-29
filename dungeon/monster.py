@@ -1,6 +1,5 @@
 import random
 import math
-import copy
 from .utils import gen_id
 from .container import Container
 from .treasure import Treasure
@@ -32,6 +31,9 @@ class MonsterStore:
             mdata['xp'] = self.cr_to_xp(mdata['cr'])
             mdata['decimal_cr'] = self.cr_to_decimal(mdata['cr'])
             mdata['size_integer'] = self.size_to_integer(mdata['size'])
+            # convert 'name' into a 1-line description.
+            if 'name' in mdata.keys():
+                mdata['description'] = [mdata.pop('name')]
             self.store.append(Monster(**mdata))
 
     def cr_to_decimal(self, cr):
@@ -98,8 +100,8 @@ class MonsterStore:
 
     def get_monster(self, name):
         for m in self.store:
-            if m.name.lower() == name.lower():
-                return copy.deepcopy(m)
+            if m.description[0].lower() == name.lower():
+                return m.clone()
         raise ValueError(f"Unknown monster {name} requested")
 
     def filter(self, monsters=None, source_filter=[], alignment_filter=[], type_filter=[], 
@@ -162,16 +164,22 @@ class MonsterStore:
 
             group = []
             for _ in range(count):
-                group.append(copy.deepcopy(m))
+                group.append(m)
             encounters.append(group)
         if not encounters:
             return None
-        return random.choice(encounters)
+        group = []
+        for m in random.choice(encounters):
+            # clone the monsters, so we don't corrupt the catalog when dressing them up.
+            group.append(m.clone())
+    
+
+        return group
 
     def create_wandering_monster(self, party, difficulty, monsters):
         xp_thresh = self.compute_party_threshold(party, difficulty)
         monsters = self.filter(monsters, max_xp=xp_thresh)
-        return copy.deepcopy(random.choice(monsters))
+        return random.choice(monsters).clone()
 
 
 class Monster(DObject, Container):
@@ -181,13 +189,13 @@ class Monster(DObject, Container):
     def __init__(self, **kwargs):
         DObject.__init__(self)
         self.is_alive = True
-        self.location = None
+        #self.location = None
         # stuff from the tables...
         self.alignment = None
         self.cr = None
         self.decimal_cr = None
         self.environment = []
-        self.name = "Unnamed Monster"
+        #self.name = "Unnamed Monster"
         self.page = 0
         self.size = None
         self.size_integer = 0
@@ -198,13 +206,14 @@ class Monster(DObject, Container):
         self.merge_attrs(kwargs)
 
     def __str__(self):
-        return f"Monster(name={self.name}, type={self.type}, source={self.source}/{self.page}, cr={self.cr}, env={self.environment})"
+        return f"Monster(name={self.description[0]}, type={self.type}, source={self.source}/{self.page}, cr={self.cr}, env={self.environment})"
     
     def decorate(self, tables):
         "Make the monster more than just the catalog entry"
         # Humanoid monsters will have treasure they carry around...
         if self.type.lower() == 'humanoid':
             self.flags.append({'TREASURE': {'type': 'i', 'cr': self.decimal_cr}})
+            self.can_contain = True
         else:
             # these monsters don't have a place for stuff.
             self.can_contain = False

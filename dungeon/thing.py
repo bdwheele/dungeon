@@ -9,7 +9,6 @@ class Thing(DObject, Lockable, Container, Inspectable, Breakable):
     def __init__(self, **kwargs):
         DObject.__init__(self)
         self.is_portable = True
-        self.location = None
         Lockable.__init__(self)
         Container.__init__(self)
         Inspectable.__init__(self)

@@ -39,8 +39,8 @@ def parse_flag(flag):
 
     name = list(flag.keys())[0]
     args = flag[name]
-    percent = args.pop('percent') if 'percent' in args else 100
-    count = args.pop('count') if 'count' in args else 1
+    percent = args.get('percent', 100)
+    count = args.get('count', 1)
     if re.match(r"^\d+$", str(count)):
         count = int(count)
     else:
@@ -53,35 +53,38 @@ def parse_flag(flag):
 
 
 
-def process_flags(obj, dungeon, tables):
+def process_flags(obj, dungeon, monster_store, tables):
     """
     This walks through an object's flags and processes them in the context
     of the dungeon.  Creating locks & keys, traps, treasure, etc.
     """
-    flags_todo = list(obj.flags)
-    monster_store = MonsterStore(tables)
     treasure = Treasure(tables)
-    while flags_todo:
-        flag = parse_flag(flags_todo.pop(0))
-        if randint(1, 100) > flag.percent:
+    new_objects = []
+    for raw_flag in obj.flags:
+        #print(f"RAW_FLAG: {raw_flag}")
+        flag = parse_flag(raw_flag)
+        pct = randint(1, 100)
+        #print(f"FLAG: {flag.name}, {flag.percent}/{pct}, {flag.count}, {flag.args}")
+        if pct > flag.percent:
+            #print("*** SKIPPING ***")
             # it's not here
             continue
 
         for _ in range(flag.count):
-            print(f"FLAG:  {flag.name}, args: {flag.args}")
             if flag.name == 'TRAP':
                 # generate a trap
                 pass
             elif flag.name == 'LOCKED':
                 # generate a lock & key
-                print(f"Adding lock to {obj.id}")
+                #print(f"Adding lock to {obj.id}")
                 if obj.is_a("Lockable"):
                     # create the lock
                     obj.has_lock = True
                     obj.is_locked = True
                     obj.lock_pick_dc = math.floor(obj.break_dc * 0.75)
                     # create the key object
-                    key = dungeon.add_object(Key())
+                    key = Key()
+                    new_objects.append(key)
                     key.location = None                    
                     obj.lock_key = key
             elif flag.name == 'STUCK':
@@ -91,23 +94,41 @@ def process_flags(obj, dungeon, tables):
                     obj.stuck_dc = math.floor(obj.break_dc / 3)
             elif flag.name == 'TREASURE':
                 # generate some treasure for this object
-                new_obj = dungeon.add_object(Thing())
+                new_obj = Thing()
+                new_objects.append(new_obj)
                 new_obj.description = treasure.generate(treasure_type=flag.args['type'], cr=flag.args['cr'])
                 obj.store(new_obj)
 
             elif flag.name == 'OBJECT':
-                new_obj = dungeon.add_object(Thing())
+                # create a new object by hand
+                new_obj = Thing()
+                new_objects.append(new_obj)
                 new_obj.merge_attrs(flag.args)
                 if 'description' not in flag.args:
                     raise ValueError("Can't create an object without a description!")
                 obj.store(new_obj)
 
+            elif flag.name == "CATALOG":
+                # pull an item out of the catalog and possibly update it with
+                # local values 
+                group = 'catalog'
+                if '.' in flag.args['name']:
+                    group, name = flag.args['name'].split('.', 1)
+                else:
+                    name = flag.args['name']
+                new_obj = Thing()
+                new_obj.merge_attrs(tables.get_table(group, name))
+                print(new_obj)
+                new_objects.append(new_obj)
+                obj.store(new_obj)
+
             elif flag.name == 'MONSTER':
                 monster = monster_store.get_monster(flag.args['name'])
                 monster.decorate(tables)
-                dungeon.add_object(monster)
+                new_objects.append(monster)
                 obj.store(monster)        
             else:
                 # don't know how to handle this...
                 print(f"Don't know how to handle flag {flag.name} for {obj}")
 
+    return new_objects

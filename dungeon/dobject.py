@@ -1,5 +1,6 @@
 from .mergeable import Mergeable
 from .utils import gen_id
+from copy import deepcopy
 
 
 class DObject(Mergeable):
@@ -12,7 +13,11 @@ class DObject(Mergeable):
         self.id = gen_id('dobject', prefix=self._get_prefix())
         self.description = []
         self.flags = []
+        self.location = None
         self.merge_attrs(kwargs)
+
+    def __str__(self):
+        return f"{type(self).__name__}(id={self.id}, description={self.description[0]})"
 
     def _get_prefix(self):
         name = type(self).__name__
@@ -26,6 +31,14 @@ class DObject(Mergeable):
                         break
         return DObject.prefixes[name]
 
+    def clone(self):
+        new = deepcopy(self)
+        new.id = gen_id('dobject', prefix=new.id[0])
+        return new
+
+    def class_label(self):
+        return type(self).__name__
+
     def is_a(self, *classes):
         """
         Do the equivalent of isinstance() except take string class names.
@@ -33,7 +46,8 @@ class DObject(Mergeable):
         only passing around.
         """
         if not classes:
-            raise ValueError("You must supply at least one class to check for")
+            # If they didn't specify, then ... yes it is
+            return True
 
         names = []
         for c in classes:
@@ -45,6 +59,17 @@ class DObject(Mergeable):
         if search.intersection(set([x.__name__ for x in type(self).__mro__])):
             return True
         return False
+
+    def find_ancestor(self, *classes):
+        """
+        Find an ancestor that is in one of the specified classes
+        """
+        if self.location is None:
+            return None
+        if self.location.is_a(classes):
+            return self.location
+        return self.location.find_parent(classes)
+
 
     def decorate(self, tables):
         """

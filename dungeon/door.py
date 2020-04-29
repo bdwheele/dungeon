@@ -45,26 +45,10 @@ class Door(DObject, Lockable, Trappable, Breakable):
             self.merge_attrs(array_random(tables.get_table('door', 'door_material')))
             self.flags.extend(array_random(tables.get_table('door', 'door_flags')))
 
-
-    @staticmethod
-    def generate(tables, id, sides):
-        # build the arguments and generate the room
-        door = Door(id=id, sides=sides)
-        type_table = "room_to_corridor"
-        if sides[0].is_corridor == sides[1].is_corridor:
-            type_table = "corridor_to_corridor" if sides[0].is_corridor else "room_to_room"
-        door.is_passage = 'passage' == array_random(tables.get_table("door", type_table))
-        if door.is_passage:
-            # decorate the passage
-            door.merge_attrs(array_random(tables.get_table('door', 'passage')))
-            door.is_open = True
-        else:
-            # decorate the door
-            door.merge_attrs(array_random(tables.get_table('door', 'door_material')))
-            door.flags.extend(array_random(tables.get_table('door', 'door_flags')))
-
-
-        return door
+    def other_side(self, room):
+        if self.sides[0] == room:
+            return self.sides[1]
+        return self.sides[0]
 
 
     ###

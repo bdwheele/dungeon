@@ -120,6 +120,7 @@ room_kind:
             count: 1d2 
             description: Large chest
             is_portable: no
+            can_contain: yes
             break_dc: 10
             flags:
               - LOCKED
@@ -147,6 +148,7 @@ room_kind:
         - OBJECT:
             count: 2d6
             description: Empty bird cage
+            can_contain: yes
             flags:
               - OBJECT:
                   percent: 2
@@ -160,7 +162,7 @@ room_kind:
             is_portable: no
         - OBJECT:
             count: 2d4+3
-            description: Chairs in various states of disrepair
+            description: Chair in various states of disrepair
   - - 3
     - description:
       - The room appears to be a barracks
@@ -168,22 +170,33 @@ room_kind:
         - OBJECT:
             count: 3d4+5
             description: Old wooden bed covered with a rough blanket
+            can_contain: yes
             is_portable: no
             flags:
               - MONSTER:
                   percent: 8
                   name: Skeleton
+        - CATALOG: 
+            name: bed
+            count: 1d4
+            flags:
+              - MONSTER:
+                  percent: 30
+                  name: Skeleton
+
   - - 1
     - description:
       - The room appears to be a bedroom
       flags:
         - OBJECT:
             description: Poorly-made bed
+            can_contain: yes
             is_portable: no
         - OBJECT:
             description: Full-length mirror
         - OBJECT:
             description: Wardrobe
+            can_contain: yes
             flags:
               - MONSTER:
                   percent: 3

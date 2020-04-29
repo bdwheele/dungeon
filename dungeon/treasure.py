@@ -23,5 +23,4 @@ class Treasure:
                 description.append(f"{count}x {x}")
             else:
                 raise ValueError(f"Can't generate treasure without unit or table: {t}")
-        print(description)
         return description

@@ -1,0 +1,16 @@
+#
+# Stock items used to decorate the dungeon.
+#
+
+bed:
+  description:
+    - "{catalog.bed_description}"
+  can_contain: yes
+  is_portable: no
+
+
+bed_description:
+  - Well-maintained four-posted bed
+  - Unmade bed with rough blankets on it
+  - Simple, but lumpy, cot
+  - A pile of bed pieces
