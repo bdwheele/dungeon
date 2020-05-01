@@ -14,3 +14,117 @@ bed_description:
   - Unmade bed with rough blankets on it
   - Simple, but lumpy, cot
   - A pile of bed pieces
+
+
+desk:
+  description:
+    - "{catalog.desk_description}"
+    - "{catalog.desk_coverings}"
+  can_contain: yes
+  is_portable: no
+
+
+desk_description:
+  - [90, A standard wooden desk]
+  - [5, A desk with a bone inlay reading 'The buck stops here']
+  - [5, A desk with a dragon hide cover]
+
+desk_coverings:
+  - The desk is clear
+  - There is a calendar on the desk.
+  - A todo list sits on the desk.  It reads 'Kill something'
+  - There is a pile of small bones on the desk
+  - The desk is covered with doodles
+  - There are rings from where the user didn't use a coaster
+
+wooden_chair:
+  description:
+    - A wooden chair
+  is_portable: yes
+
+
+fireplace:
+  description:
+    - A fireplace with chimney
+  is_portable: no
+  can_contain: yes
+  flags:
+    - MONSTER:
+        percent: 10
+        name: Swarm of Bats
+    - OBJECT:
+        percent: 4
+        description:
+          - "{treasure.GEM_50}"
+
+locked_chest:
+  description:
+    - A locked chest
+  is_portable: no
+  can_contain: yes
+  flags:
+    - LOCKED
+    - TREASURE:
+        type: h
+        cr: 3
+
+wardrobe:
+  description:
+    - Wardrobe
+  can_contain: yes
+  is_portable: no
+  flags:
+    - OBJECT:
+        count: 1d4
+        description:
+          - "{catalog.fancy_clothes}"
+    - MONSTER:
+        percent: 5
+        name: Swarm of Insects
+
+artisans_tools:
+  - Alchemist's supplies  
+  - Brewer's supplies 
+  - Calligrapher's supplies
+  - Carpenter's tools
+  - Cobbler's tools
+  - Cook's utensils
+  - Glassblower's tools
+  - Jeweler's tools
+  - Mason's tools
+  - Painter's supplies
+  - Potter's tools
+  - Cartographer's tools
+  - Leatherworker's tools
+  - Smith's tools
+  - Tinker's tools
+  - Weaver's tools
+  - Woodcarver's tools
+
+clothing_colors:
+  - red
+  - blue
+  - green
+  - yellow
+  - gold
+  - orange
+  - purple
+  - black
+  - white
+
+clothing_material:
+  - linen
+  - silk
+  - burlap
+  - cotton
+  - leather
+  - dragon hide
+
+
+fancy_clothes:
+  - A {catalog.clothing_colors} hat with a jaunty feather
+  - Velveteen coat with tails
+  - A surprisingly convincing leopard costume
+  - A {catalog.clothing_colors} {catalog.clothing_material} dress
+  - A Russian codpiece with all the trimmings
+  - Italian Loafers

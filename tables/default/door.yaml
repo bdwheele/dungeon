@@ -22,14 +22,14 @@ passage:
   - - 1
     - description:
         - A normal opening
-      flags: [DRIPPING]
+        - "{dripping}"
   - - 20
     - description:
         - The opening is an archway
   - - 1
     - description:
         - The opening is an archway
-      flags: [DRIPPING]
+        - "{dripping}"
   - - 15
     - description:
         - The door which was here is now missing
@@ -42,7 +42,7 @@ passage:
   - - 1
     - description:
         - The opening is partially concealed by curtains
-      flags: [MOLD]        
+        - "{mold}"      
   - - 3
     - description:
         - The opening is a rough hole through which you can barely pass

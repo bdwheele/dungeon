@@ -87,17 +87,8 @@ def main():
                          encounter_room_percent=args['encounter_room_percent'],
                          wandering_monsters=args['wandering_monsters'])
 
-
-
         with open(args['dungeon'], 'w') as f:
             yaml.dump(dungeon, stream=f, sort_keys=False)
-
-        # for debugging, let's make sure we can load the damned thing
-        print("Loading dungeon")
-        with open(args['dungeon']) as f:
-            dungeon = yaml.load(f)
-        print(dungeon)
-
 
     elif args['cmd'] == 'regen':
         pass
@@ -106,13 +97,12 @@ def main():
     elif args['cmd'] == 'render':
         tables = Tables(tables_dir, style=args['style'])
         with open(args['dungeon'], 'r') as f:
-            dungeon = yaml.load(f)
+            dungeon = yaml.load(f, Loader=yaml.FullLoader)
         if args['what'] == 'map':
             dot = dungeon.generate_map_dot(all_rooms=args['all'])
             subprocess.run([args['neato_cmd'], '-Tsvg', '-o', args['output']], input=dot.encode('utf-8'), check=True)
         elif args['what'] == 'tree':
             dot = dungeon.generate_object_graph_dot()
-            print(dot)
             subprocess.run([args['neato_cmd'], '-Tsvg', '-o', args['output']], input=dot.encode('utf-8'), check=True)
 
     elif args['cmd'] == 'encounter':

@@ -17,13 +17,24 @@ key_size:
   
 chair_material:
   - wood
+  - wicker
+  - bamboo
   - dragon hide
   
 litter:
   - pebbles
-  - losing lottery tickets
+  - losing lottery tickets      flags:
+        - SLIME
+
   - CVS receipts which are 6 feet long
   
+water:
+  - [30, 'The water is drinkable']
+  - [15, 'The water is muddy']
+  - [2, 'The water is thick with animal hair']
+  - [2, 'The water is frozen']
+  - [1, 'On closer inspection, the water is actually urine']
+
 figurine_of_wondrous_power:
   - Bronze griffon
   - Ebony fly
@@ -33,3 +44,36 @@ figurine_of_wondrous_power:
   - Onyx dog
   - Onyx dog
   - Serpentine owl
+
+box_labels:
+  - hamdingers
+  - fresh rust monster milk
+  - gelatanous cube jelly packs
+  - sword polish
+  - elvish shoes
+  - hard tack mix
+  - this side up
+  - keep out of reach of goblins
+  - kobold chow
+  
+# things that drip
+dripping:
+  - It is dripping with water
+  - It is dripping with a thick black substance
+  - Is that blood dripping from this?
+
+# types of mold
+mold:
+  - Yellow, moist mold covers this
+  - A dry, white mold covers this
+
+slime:
+  - The slime is yellow and harmless
+  - The slime burns to the touch
+  - The slime is purple and tastes like grape-aid
+
+graffiti:
+  - A picture of a beholder with eyestalk piercings
+  - The words "Dengar smells like chicken"
+  - A symbol of unknown meaning
+  - Crudely drawn naughty bits

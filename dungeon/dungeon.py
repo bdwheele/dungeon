@@ -10,7 +10,6 @@ from .room import Room
 from .utils import gen_id, generate_avg_list, is_template, template, get_template_vars, array_random, roll_dice
 from .flags import process_flags
 import random
-#from .key import Key
 
 # THE DUNGEON!
 # The dungeon serves as a container for everything about the dungeon:  the rooms, doors,
@@ -116,7 +115,6 @@ class Dungeon(Mergeable):
         dungeon.start_room = start_room
         dungeon.state['current_room'] = start_room
 
-            
         # generate the wandering monsters
         difficulties = generate_avg_list(encounter_average_difficulty, wandering_monsters, MonsterStore.EASY, MonsterStore.DEADLY)
         for difficulty in difficulties:
@@ -124,44 +122,53 @@ class Dungeon(Mergeable):
             monster.decorate(tables)
 
         # Handle flags on everything
-        if True:
-            todo = list(dungeon.objects.values())
-            while todo:
-                obj = todo.pop()
-                #print(f"Processing {obj.id}")
-                new = process_flags(obj, dungeon, monster_store, tables)
-                for o in new:
-                    dungeon.add_object(o)
-                todo.extend(new)
-                #print(f"Created {len(new)} new objects {[x.id for x in new]}, {len(todo)} objects outstanding")
-
-        else:
-            todo_objects = list(dungeon.objects.values())
-            done_objects = set()
-            while todo_objects:
-                for o in todo_objects:
-                    done_objects.add(o)
-                    process_flags(o, dungeon, monster_store, tables)
-
-                todo_objects = [x for x in list(dungeon.objects.values()) if x not in done_objects]           
-
+        todo = list(dungeon.objects.values())
+        while todo:
+            obj = todo.pop()
+            new = process_flags(obj, dungeon, monster_store, tables)
+            for o in new:
+                dungeon.add_object(o)
+            todo.extend(new)
 
         # Fill in any templates
         for o in dungeon.objects.values():
             if hasattr(o, 'description'):
                 for i, d in enumerate(o.description):
-                    if is_template(d):
+                    while is_template(d): 
                         vals = {}
                         for v in get_template_vars(d):
-                            if '.' in v:
-                                group, table = v.split('.', 1)
+                            if v.startswith("roll:"):
+                                vals[v] = roll_dice(v[5:])
                             else:
-                                group = 'dressing'
-                                table = v
-                            vals[v] = array_random(tables.get_table(group, table))
-                        o.description[i] = template(d, vals)
+                                if '.' in v:
+                                    group, table = v.split('.', 1)
+                                else:
+                                    group = 'dressing'
+                                    table = v
+                                vals[v] = array_random(tables.get_table(group, table))
+                        d = template(d, vals)
+                    o.description[i] = d
 
         dungeon.hide_keys()
+
+        # put the dungeon on a diet:  there are lots of things which are needed
+        # for generation that are never needed again.  clear them out!
+        for o in dungeon.objects.values():
+            # part 1: convert flags into a set of keys, rather than
+            # the full details.
+            flags = set()
+            for f in o.flags:
+                if isinstance(f, str):
+                    flags.add(f)
+                else:
+                    flags.add(list(f.keys())[0])
+            o.flags = list(flags)
+            # part 2: remove monster environments
+            if o.is_a('Monster'):
+                del o.environment
+
+
+
         return dungeon
 
 
@@ -181,7 +188,6 @@ class Dungeon(Mergeable):
         # until there are no more keys to hide.
         keyring = set()
         while keys_to_hide:
-            #print(f"******** Hiding pass.  Keys_to_hide: {[x.id for x in keys_to_hide]}")
             hiding_places = set()
             todo = set([self.start_room])
             new_keys = set()
@@ -217,9 +223,7 @@ class Dungeon(Mergeable):
             key_to_hide = random.sample(new_keys, 1)[0]  
             hiding_place = random.sample(hiding_places, 1)[0] 
             hiding_place.store(key_to_hide)
-            #print(f"Hiding {key_to_hide} in {hiding_place}")
             keys_to_hide.remove(key_to_hide)
-            #print(f"There are {len(keys_to_hide)} still to hide")
             keyring.add(key_to_hide)
 
 
@@ -227,11 +231,9 @@ class Dungeon(Mergeable):
 
     def generate_map_dot(self, all_rooms=False):
         dot = ["graph dungeon_map {",
-               "  rankdir = LR;",
-               "  splines = true;",
                '  node [fontname="Helvetica", fontsize=8, margin=0, height=0.25, width=0.5];',
                '  edge [fontname="Helvetica", fontsize=8];',
-               '  graph [fontname="Helvetica", fontsize=8, overlap=false];',
+               '  graph [fontname="Helvetica", fontsize=8, overlap=false, splines=true];',
                "  "]
         rooms = self.find_objects(Room) if all_rooms else [x for x in self.find_objects(Room) if x.visited]
         seen_doors = set()
@@ -253,8 +255,6 @@ class Dungeon(Mergeable):
                         dot.append(f'{a} [label="?", shape="circle"];')
                         b = door.sides[0].id if door.sides[0].visited else door.sides[1].id
                     style = 'solid' if door.is_passage else 'dashed'
-                    #dot.append(f'{a} -- {b} [headlabel="{door.id}", taillabel="{door.id}", style="{style}"];')
-                    #dot.append(f'{a} -- {b} [label="{door.id}", style="{style}"];')
                     dot.append(f'{door.id} [label="{door.id}", shape="plain"]')
                     dot.append(f'{a} -- {door.id} -- {b};')
         dot.append("}")
@@ -266,32 +266,32 @@ class Dungeon(Mergeable):
         Generate a tree of the objects in the dungeon
         """
         result = ["graph {", 
-                  'overlap=false;',
-                  'splines=true;',
+               '  node [fontname="Helvetica", fontsize=8, margin=0, height=0.25, width=0.5];',
+               '  edge [fontname="Helvetica", fontsize=8];',
+               '  graph [fontname="Helvetica", fontsize=8, overlap=false, splines=true];',
                   ]
 
         # provide a container for things which don't have a location
-        result.append('Unparented [label="Unparented", shape="rectangle"];')
+        result.append('Unparented [label="Wandering\\nMonsters", shape="rectangle"];')
 
 
         for o in self.objects.values():
-            print(f"Processing {o}")
             if o.is_a('Container'):
                 if o.location is None and not o.is_a('Room'):
                     result.append(f"{o.id} -- Unparented")
-                label = f"{o.class_label()} {o.id}\\n{o.description[0][:20]}"
+                label = f"{o.class_label()} {o.id}\\n{o.description[0][:20]}".replace('"', '\\"')
                 style = ', style="filled"' if self.start_room == o else ""
                 result.append(f'{o.id} [label="{label}", shape="rectangle"{style}];')
                 for c in o.contents:
                     result.append(f'{o.id} -- {c.id};')
             elif o.is_a('Door'):
                 # door gets a box with info, and links to the rooms.
-                label = f"Door {o.id}\\nLock: {'yes' if o.is_locked else 'no'}"
-                result.append(f'{o.id} [label="{label}", shape="rectangle"];')
+                style = 'dashed' if o.is_locked else 'solid'
+                result.append(f'{o.id} [label="{o.id}", shape="rectangle", style="{style}", width=0, height=0];')
                 if o.is_locked:
-                    result.append(f'{o.id} -- {o.lock_key.id} [style="dotted"];')
+                    result.append(f'{o.id} -- {o.lock_key.id} [style="dashed"];')
             elif o.is_a('Key'):
-                result.append(f'{o.id} [label="Key\\n{o.id}", shape="rectangle"];')
+                result.append(f'{o.id} [label="Key\\n{o.id}", shape="rectangle", style="dashed"];')
             else:
                 print(f"Don't know how to handle {o}")
         result.append("}")

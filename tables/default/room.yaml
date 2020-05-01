@@ -34,15 +34,16 @@ corridor_ends:
     - description:
         - The corridor is unfinished
       flags:
-        - OBJECT[description=A rusted pickaxe]
-        - OBJECT[description=A shovel of quality make]
+        - OBJECT:
+            description: A rusted pickaxe
+        - OBJECT:
+            description: A shovel of quality make
 
 corridor_through:
   - - 5
     - description:
-        - The walls of the corridor are covered with grafitti
-      flags:
-        - GRAFITTI
+        - The walls of the corridor are covered with graffiti
+        - "{graffiti}"
   - - 5
     - description:
         - The walls, floor, and ceiling are covered with little holes
@@ -57,8 +58,7 @@ corridor_through:
   - - 5
     - description:
         - The corridor is covered with a slimy substance
-      flags:
-        - SLIME
+        - {slime}
   - - 50
     - description:
        - The corridor continues on
@@ -107,7 +107,7 @@ room_state:
   - [1, "The original furnishings have been removed"]
   - [1, "The room is pristine and in original state"]
 
-room_kind:
+room_kind_original:
   - - 1
     - description:
       - The room appears to be a antechamber
@@ -318,10 +318,199 @@ room_kind:
     - description:
       - The room appears to be a vault
 
-water:
-  - [30, 'The water is drinkable']
-  - [15, 'The water is muddy']
-  - [2, 'The water is thick with animal hair']
-  - [2, 'The water is frozen']
-  - [1, 'On closer inspection, the water is actually urine']
+# This is from DMG 293
+room_kind:
+  - - 1
+    - description:
+        - Armory stocked with weapons and armor
+  - - 1
+    - description:
+        - Audience chamber, used to receive guests
+  - - 1
+    - description:
+        - Banquet room for important celebrations
+  - - 1
+    - description:
+        - Barracks where the lair's defenders are quartered
+      flags:
+        - CATALOG:
+            name: locked_chest
+        - OBJECT:
+            count: 1d3+2
+            description:
+              - Lumpy cot with rough blankets
+  - - 1
+    - description:
+        - Bedroom, for use by leaders
+      flags:
+        - CATALOG:
+            name: bed
+        - CATALOG:
+            name: wardrobe
+        - OBJECT:
+            description:
+              - Full-length mirror
+
+        - OBJECT:
+            description:
+              - Comfy Chair
+  - - 1
+    - description:
+        - Chapel where the lair's inhabitants worship
+      flags:
+        - OBJECT:
+            description: 
+              - Altar
+            is_portable: no
+        - OBJECT:
+            count: 1d2+1
+            description: 
+              - "{treasure.ART_25} sitting on Altar"
+        - OBJECT:
+            count: 1d6+2
+            description:
+              - Free standing candles, unscented
+  - - 1
+    - description:
+        - Cistern or well for drinking water
+      flags:
+        - OBJECT:
+            description:
+              - A well in the middle of the room
+              - "{dressing.water}"
+            is_portable: no
+        - OBJECT:
+            description:
+              - A Bucket with a length of rope
+  - - 2
+    - description:
+        - Guardroom for defense of the lair
+      flags:
+        - CATALOG:
+            name: desk
+        - CATALOG:
+            name: wooden_chair
+            count: 1d4
+        
+  - - 1
+    - description:
+        - Kennel for pets or guard beasts
+      flags:
+        - OBJECT:
+            count: 1d6+1
+            description:
+              - Kennel
+            can_contain: yes
+            is_portable: no
+            flags:
+              - OBJECT:
+                  description:
+                    - "{treasure.GEM_10}"
+                  percent: 10
+              - OBJECT:
+                  description:
+                    - Little bits of "beast chow" scattered throughout
+  - - 1
+    - description:
+        - Kitchen for for food storage and preparation
+      flags:
+        - CATALOG:
+            name: fireplace
+            flags:
+              - OBJECT:
+                  percent: 5
+                  description:
+                    - "{treasure.GEM_10}"
+        - OBJECT:
+            description:
+              - Prep table
+  - - 2
+    - description:
+        - Storage, mostly non-perishable goods
+      flags:
+        - OBJECT:
+            count: 1d6
+            percent: 75
+            description:
+              - Crate of supplies
+              - "Label on side reads: {dressing.box_labels}"
+            can_contain: yes
+            is_portable: no
+            flags:
+              - TREASURE:
+                  percent: 3
+                  type: h
+                  cr: 3
+  - - 1
+    - description:
+        - Throne room where the lair's leaders hold court
+  - - 1
+    - description:
+        - Torture chamber
+  - - 1
+    - description:
+        - Training and exercise room
+  - - 1
+    - description:
+        - Trophy room or museum
+  - - 1
+    - description:
+        - Latrine or bath
+      flags:
+        - OBJECT:
+            count: 1d4
+            description:
+              - Pit toilet
+            is_portable: no
+        - OBJECT:
+            percent: 5
+            description:
+              - Catalog of magic supplies with some pages missing
+        - OBJECT:
+            description:
+              - Wash basin filled with water
+              - "{dressing.water}"
+
+
+  - - 1
+    - description:
+        - Workshop for construction of weapons, armor, tools and other goods
+      flags:
+        - OBJECT:
+            percent: 25
+            description: 
+              - Anvil
+            is_portable: no
+        - OBJECT:
+            percent: 25
+            description: 
+              - Small Forge
+            is_portable: no
+        - OBJECT:
+            percent: 25
+            description: 
+              - Lathe
+            is_portable: no
+        - OBJECT:
+            percent: 50
+            description: 
+              - Work bench
+            is_portable: no
+        - OBJECT:
+            percent: 25
+            description: 
+              - Cobbler's bench
+            is_portable: no
+        - OBJECT:
+            percent: 25
+            description: 
+              - Discarded scraps
+            is_portable: no
+            can_contain: yes
+
+        - OBJECT:
+            count: 1d2
+            description: 
+              - "{catalog.artisans_tools}"
+  
   

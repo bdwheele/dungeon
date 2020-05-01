@@ -2,6 +2,9 @@ import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 import re
+import sys
+from .uiutils import ChildFinder
+from .keypadwidget import KeypadWidget
 
 # Misc dialog boxes for the application
 
@@ -86,5 +89,45 @@ class DialogUser(Gtk.Widget):
                     self.message_box(Gtk.MessageType.ERROR, "Validation Error", msg)
                     default = text
 
-    def open_file_dialog():
-        pass
+    def keypad_input(self, title, message, window_title=None, length=4):
+        window_title = title if window_title is None else window_title
+        dialog = Gtk.Dialog(title, self.get_toplevel(), 0,
+            (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
+            Gtk.STOCK_OK, Gtk.ResponseType.OK),
+            title=window_title, resizable=False) #,
+            #default_height=default_height, default_width=150)
+        box = dialog.get_content_area()
+        vbox = Gtk.VBox(margin_top=10, margin_bottom=10, margin_start=10, margin_end=10)
+        box.add(vbox)
+        if message is not None:
+            vbox.add(Gtk.Label(message))
+        self.keypad = KeypadWidget(length=length)
+        vbox.add(self.keypad)
+        dialog.show_all()
+        response = dialog.run()
+        dialog.destroy()
+        if response == Gtk.ResponseType.CANCEL:
+            return None
+        else:
+            return self.keypad.result()
+
+    def file_dialog(self, mode='r', title='File', suggested_name="untitled.dgn"):
+        action = Gtk.FileChooserAction.OPEN if mode == 'r' else Gtk.FileChooserAction.SAVE
+        dialog = Gtk.FileChooserDialog(title, self, action,
+                                       ("_Cancel", Gtk.ResponseType.CANCEL,
+                                        "_OK", Gtk.ResponseType.OK))
+        if mode != 'r':
+            dialog.set_filename(suggested_name)
+            
+        for x in (("Dungeon Files", "*.dng"), ("All Files", "*.dng")):
+            filter = Gtk.FileFilter()
+            filter.set_name(x[0])
+            filter.add_pattern(x[1])
+            dialog.add_filter(filter)
+        response = dialog.run()
+        new_filename = dialog.get_filename()
+        dialog.destroy()
+        if response == Gtk.ResponseType.OK:
+            return new_filename
+        else:
+            return None

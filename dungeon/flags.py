@@ -61,13 +61,9 @@ def process_flags(obj, dungeon, monster_store, tables):
     treasure = Treasure(tables)
     new_objects = []
     for raw_flag in obj.flags:
-        #print(f"RAW_FLAG: {raw_flag}")
         flag = parse_flag(raw_flag)
         pct = randint(1, 100)
-        #print(f"FLAG: {flag.name}, {flag.percent}/{pct}, {flag.count}, {flag.args}")
         if pct > flag.percent:
-            #print("*** SKIPPING ***")
-            # it's not here
             continue
 
         for _ in range(flag.count):
@@ -76,7 +72,6 @@ def process_flags(obj, dungeon, monster_store, tables):
                 pass
             elif flag.name == 'LOCKED':
                 # generate a lock & key
-                #print(f"Adding lock to {obj.id}")
                 if obj.is_a("Lockable"):
                     # create the lock
                     obj.has_lock = True
@@ -118,7 +113,6 @@ def process_flags(obj, dungeon, monster_store, tables):
                     name = flag.args['name']
                 new_obj = Thing()
                 new_obj.merge_attrs(tables.get_table(group, name))
-                print(new_obj)
                 new_objects.append(new_obj)
                 obj.store(new_obj)
 
