@@ -23,9 +23,7 @@ chair_material:
   
 litter:
   - pebbles
-  - losing lottery tickets      flags:
-        - SLIME
-
+  - losing lottery tickets
   - CVS receipts which are 6 feet long
   
 water:

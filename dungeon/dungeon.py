@@ -6,6 +6,8 @@ from .door import Door
 from .graph import gen_graph
 from .mergeable import Mergeable
 from .monster import MonsterStore
+from .wandering_monsters import WanderingMonsters
+from .inventory import Inventory
 from .room import Room
 from .utils import gen_id, generate_avg_list, is_template, template, get_template_vars, array_random, roll_dice
 from .flags import process_flags
@@ -116,9 +118,11 @@ class Dungeon(Mergeable):
         dungeon.state['current_room'] = start_room
 
         # generate the wandering monsters
+        wm = dungeon.add_object(WanderingMonsters())
         difficulties = generate_avg_list(encounter_average_difficulty, wandering_monsters, MonsterStore.EASY, MonsterStore.DEADLY)
         for difficulty in difficulties:
             monster = dungeon.add_object(monster_store.create_wandering_monster(character_levels, difficulty, base_monster_list))
+            wm.store(monster)
             monster.decorate(tables)
 
         # Handle flags on everything
@@ -164,11 +168,12 @@ class Dungeon(Mergeable):
                     flags.add(list(f.keys())[0])
             o.flags = list(flags)
             # part 2: remove monster environments
-            if o.is_a('Monster'):
-                del o.environment
+            #if o.is_a('Monster'):
+            #    del o.environment
 
-
-
+        # Create the players' inventory
+        dungeon.add_object(Inventory())
+    
         return dungeon
 
 
@@ -272,7 +277,7 @@ class Dungeon(Mergeable):
                   ]
 
         # provide a container for things which don't have a location
-        result.append('Unparented [label="Wandering\\nMonsters", shape="rectangle"];')
+        result.append('Unparented [label="Unparented\\nThings", shape="rectangle"];')
 
 
         for o in self.objects.values():

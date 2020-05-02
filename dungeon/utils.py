@@ -101,7 +101,10 @@ def array_random(array):
 def template(string, values):
     """Apply a template"""
     for k, v in values.items():
-        string = string.replace(f"{{{k}}}", v)
+        try:
+            string = string.replace(f"{{{k}}}", v)
+        except Exception as e:
+            print(f"Can't apply template for '{k}' with '{v}' -- {e}")
     return string
 
 def get_template_vars(string):

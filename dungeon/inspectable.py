@@ -2,7 +2,7 @@ from .container import Container
 
 class Inspectable:
     def __init__(self):
-        self.is_inspectable = False
+        self.is_inspectable = True
         self.hidden_description = []
         self.hidden_contents = []
 

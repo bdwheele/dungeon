@@ -5,10 +5,11 @@ from .dobject import DObject
 from .lockable import Lockable
 from .trappable import Trappable
 from .breakable import Breakable
+from .inspectable import Inspectable
 
 logger = logging.getLogger()
 
-class Door(DObject, Lockable, Trappable, Breakable):
+class Door(DObject, Lockable, Trappable, Breakable, Inspectable):
     def __init__(self, **kwargs):
         DObject.__init__(self, **kwargs)
         # general door/passage stuff
@@ -24,6 +25,7 @@ class Door(DObject, Lockable, Trappable, Breakable):
         Breakable.__init__(self)
         Lockable.__init__(self)
         Trappable.__init__(self)
+        Inspectable.__init__(self)
 
         self.merge_attrs(kwargs)
 
@@ -107,7 +109,7 @@ class Door(DObject, Lockable, Trappable, Breakable):
             self.is_stuck = False
             self.is_locked = False
             self.visited = True
-            new_room = self.sides[0] if self.sides[1] == current_room else self.sides[1]
+            new_room = self.other_side(current_room)
             return (True, "Successfully forced door open", new_room)
         else:
             return (False, "Attempt to break open door fails", None)

@@ -4,17 +4,19 @@ from .dobject import DObject
 from .mergeable import Mergeable
 from .container import Container
 from .trappable import Trappable
+from .inspectable import Inspectable
 from .utils import gen_id, array_random, template
 
 
 logger = logging.getLogger()
 
-class Room(DObject, Container, Trappable):
+class Room(DObject, Container, Trappable, Inspectable):
     def __init__(self, **kwargs):
         DObject.__init__(self)
         Container.__init__(self)
         self.can_contain = True
         Trappable.__init__(self)
+        Inspectable.__init__(self)
 
         # general room/corridor stuff
         self.is_corridor = False

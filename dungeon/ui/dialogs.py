@@ -113,13 +113,13 @@ class DialogUser(Gtk.Widget):
 
     def file_dialog(self, mode='r', title='File', suggested_name="untitled.dgn"):
         action = Gtk.FileChooserAction.OPEN if mode == 'r' else Gtk.FileChooserAction.SAVE
-        dialog = Gtk.FileChooserDialog(title, self, action,
+        dialog = Gtk.FileChooserDialog(title, self.window, action,  
                                        ("_Cancel", Gtk.ResponseType.CANCEL,
                                         "_OK", Gtk.ResponseType.OK))
         if mode != 'r':
             dialog.set_filename(suggested_name)
-            
-        for x in (("Dungeon Files", "*.dng"), ("All Files", "*.dng")):
+
+        for x in (("Dungeon Files", "*.dgn"), ("All Files", "*")):
             filter = Gtk.FileFilter()
             filter.set_name(x[0])
             filter.add_pattern(x[1])
