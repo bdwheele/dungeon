@@ -1,6 +1,6 @@
 import random
 import math
-from .utils import gen_id
+from .utils import gen_id, roll_dice
 from .container import Container
 from .treasure import Treasure
 from .dobject import DObject
@@ -220,4 +220,25 @@ class Monster(DObject, Container):
 
 
     def flee(self):
+        "Monster flees!"
+        distance = roll_dice('1d6')
+        here = self.location
+        seen = set([here])
+        door = None
+        while distance:
+            # get possible doors...
+            doors = [x for x in here.contents if x.is_open]
+            if not doors:
+                break
+            
+            if not door:
+                pass
+            
+            
+            distance -= 1
+            
+
+        return door
+
+    def kill(self):
         pass

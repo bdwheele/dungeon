@@ -1,7 +1,7 @@
 from .mergeable import Mergeable
 from .utils import gen_id
 from copy import deepcopy
-
+import re
 
 class DObject(Mergeable):
     prefixes = {}
@@ -76,3 +76,24 @@ class DObject(Mergeable):
         Do any post-creation decoration of the object.
         """
         pass
+
+
+    def get_value(self, recursive=True):
+        exchange = {'c': 0.01, 's': 0.1, 'e': 0.5, 'g': 1.0, 'p': 5.0}
+        pat = re.compile(r"(\b(\d+)x\b.+)?\b(\d+)\s*([csegp])p\b", re.IGNORECASE)
+        total = 0
+        for d in self.description:
+            for m in pat.finditer(d):
+                multiplier = 1
+                if m.group(1):
+                    multiplier = int(m.group(2))
+                amt = int(m.group(3))
+                coin = m.group(4).lower()
+                if coin in exchange:
+                    total += multiplier * (amt * exchange[coin])
+        if recursive and self.is_a('Container'):
+            for c in self.contents: #pylint: disable=no-member
+                total += c.get_value()
+
+        return total
+

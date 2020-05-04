@@ -61,7 +61,7 @@ class Door(DObject, Lockable, Trappable, Breakable, Inspectable):
         if not self.has_lock:
             return (False, "This door doesn't have a lock")
         self.trigger_trap('use')
-        return super().unlock(key)
+        return super().unlock(key) #pylint: disable=no-member
 
 
     def lock(self, key): 
@@ -69,7 +69,7 @@ class Door(DObject, Lockable, Trappable, Breakable, Inspectable):
             return (False, "Door does not have a lock")
         if self.is_open:
             return (False, "Cannot lock an open door")
-        return super().lock(key)
+        return super().lock(key) #pylint: disable=no-member
 
 
     def pick(self, dex):
@@ -138,3 +138,12 @@ class Door(DObject, Lockable, Trappable, Breakable, Inspectable):
         self.visited = True
         new_room = self.sides[0] if self.sides[1] == current_room else self.sides[1]
         return (True, "Door/Passage has been used", new_room)
+
+    def break_object(self, strength):
+        ret = super().break_object(strength)
+        if ret:
+            self.has_lock = False
+            self.is_open = True
+            self.is_stuck = False
+            self.stuck_dc = 0
+                            

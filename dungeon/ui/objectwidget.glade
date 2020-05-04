@@ -250,8 +250,8 @@
         <property name="name">expContents</property>
         <property name="visible">True</property>
         <property name="can_focus">True</property>
-        <property name="expanded">True</property>
-        <signal name="activate" handler="onContainerOpen" swapped="no"/>
+        <signal name="activate" handler="onContainerOpenx" swapped="no"/>
+        <signal name="notify::expanded" handler="onContainerOpen" swapped="no"/>
         <child>
           <object class="GtkBox" id="lstContents">
             <property name="name">lstContents</property>

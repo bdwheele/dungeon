@@ -15,6 +15,7 @@ class Room(DObject, Container, Trappable, Inspectable):
         DObject.__init__(self)
         Container.__init__(self)
         self.can_contain = True
+        self.container_open = True
         Trappable.__init__(self)
         Inspectable.__init__(self)
 

@@ -9,11 +9,10 @@ import yaml
 import logging
 import argparse
 import sys
-#from dungeon.ui.doorwidget import DoorWidget
 from dungeon.ui.dialogs import DialogUser
-#from dungeon.ui.monsterwidget import MonsterWidget
 from dungeon.ui.objectwidget import ObjectWidget
 from dungeon.utils import roll_dice
+from dungeon.ui.uiutils import frame_wrap
 import tempfile
 import subprocess
 import os
@@ -26,14 +25,17 @@ class PlayDungeon(Gtk.Application, DialogUser):
         builder = Gtk.Builder()
         builder.add_objects_from_file(sys.path[0] + "/ui/windows.glade", 
                                       ('mainWindow', 'imgParty', 'imgInventory',
-                                       'imgTree', 'imgMap', 'imgSkeletonKey'))
+                                       'imgTree', 'imgMap', 'imgSkeletonKey',
+                                       'inventoryWindow', 'treeWindow', 'imgRun'))
         builder.connect_signals(self)
+        self.builder = builder
         # find the objects we care about
         self.window = builder.get_object('mainWindow')
         self.mapImage = builder.get_object('mapImage')
         #self.mapImage.modify_bg(Gtk.StateType.NORMAL, Gdk.Color.parse("white")[1])
         self.mapImage.modify_bg(Gtk.StateType.NORMAL, Gdk.RGBA(1.0, 1.0, 1.0, 1.0).to_color())
         self.roomLabel = builder.get_object('roomLabel')
+        self.visitedLabel = builder.get_object('visitedLabel')
         self.detailsPanel = builder.get_object('detailsPanel')
         self.exitsPanel = builder.get_object('exitsPanel')
         self.monstersPanel = builder.get_object('monstersPanel')
@@ -41,7 +43,6 @@ class PlayDungeon(Gtk.Application, DialogUser):
         # variables
         self.dungeon = None
         self.dungeon_filename = None
-        self.skeleton_key = False
         self.all_map = False
         
         self.window.show()
@@ -81,20 +82,88 @@ class PlayDungeon(Gtk.Application, DialogUser):
         print("on party")
 
     def onInventory(self, caller):
-        print("on inventory")
+        if not self.dungeon.inventory.contents:
+            self.message_box(Gtk.MessageType.INFO, "Inventory", "There are no items in the inventory")
+            return
+
+        value = self.dungeon.inventory.get_value()
+        window = self.builder.get_object('inventoryWindow')
+        print(f"Got window object {window}")
+        label = self.builder.get_object('lblInventory')
+        label.set_markup(f"<b>Inventory (value: {value:0.2f}gp)</b>")
+        box = self.builder.get_object('boxInventory')
+        print(f"  box: {box}")
+        for o in box.get_children():
+            box.remove(o)
+
+        for i in self.dungeon.inventory.contents:
+            ow = ObjectWidget(self.dungeon, i, controls=False)
+            frame = frame_wrap(ow, f"{i.class_label()} {i.id}",
+                               hpad=5, vpad=0, hmargin=10, vmargin=5)
+            box.pack_start(frame, True, True, 0)
+        window.show()
+        window.run()
+        window.hide()
+        
 
     def onMap(self, caller):
         self.all_map = caller.get_active()
         print(f"OnMap: {self.all_map}")
         self.onUpdateData(caller)
 
+
     def onTree(self, caller):
         print("On tree")
+        window = self.builder.get_object("treeWindow")
+        image = self.builder.get_object("treeImage")
+        tmp = tempfile.mktemp() + ".png"
+        dot = self.dungeon.generate_object_graph_dot().encode('utf-8')
+        subprocess.run(['neato', '-Tpng', '-o', tmp], input=dot, check=True)
+        image.set_from_file(tmp)
+        os.unlink(tmp)
+        window.show()
+        window.run()
+        window.hide()
+
 
     def onSkeletonKey(self, caller):
-        print(f"onSkeletonKey: {self.skeleton_key}")
-        self.skeleton_key = caller.get_active()
+        print(f"onSkeletonKey: {self.dungeon.state.get('skeleton_key', None)}")
+        self.dungeon.state['skeleton_key'] = caller.get_active()
 
+
+    def onRunTo(self, caller):
+        # update the run-to menu
+        scrolled = Gtk.ScrolledWindow()
+        scrolled.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
+        scrolled.set_hexpand(True)
+        flowbox = Gtk.FlowBox()
+        flowbox.set_valign(Gtk.Align.START)
+        flowbox.set_max_children_per_line(5)
+        flowbox.set_selection_mode(Gtk.SelectionMode.NONE)
+        scrolled.add(flowbox)
+        menu = Gtk.Popover()
+        menu.set_size_request(240, 150)
+        menu.add(scrolled)
+        if self.all_map:
+            rooms = [x for x in self.dungeon.objects.values() if x.is_a('Room')]
+        else:
+            rooms = [x for x in self.dungeon.objects.values() if x.is_a('Room') and x.visited]
+        for r in sorted(rooms, key=lambda x: int(x.id[1:])):
+            x = Gtk.Button(label=r.id)
+            x.connect('clicked', self.onRunToChoice)
+            flowbox.add(x)
+        menu.set_relative_to(caller)
+        menu.set_position(Gtk.PositionType.BOTTOM)
+        menu.show_all()
+        menu.popup()
+        self.runtopopup = menu
+
+    def onRunToChoice(self, caller):
+        logger.debug(f"User has run to room {caller.get_label()}")
+        self.dungeon.state['current_room'] = self.dungeon.objects[caller.get_label()]
+        self.dungeon.state['current_room'].visited = True
+        self.runtopopup.popdown()
+        self.onUpdateData(caller)
 
     def onDestroyWindow(self, caller, something):
         print(f"Destroy!  {something}")
@@ -148,6 +217,18 @@ class PlayDungeon(Gtk.Application, DialogUser):
                     panel.add(frame)
                 else:
                     panel.add(ow)
+
+        # update other information
+        self.roomLabel.set_label(f"{current_room.class_label()} {current_room.id}")
+        count = 0
+        visited = 0
+        for o in self.dungeon.objects.values():
+            if o.is_a('Room'):
+                count += 1
+                if o.visited:
+                    visited += 1
+        self.visitedLabel.set_label(f"Rooms visited: {visited}/{count}")
+
 
 
 

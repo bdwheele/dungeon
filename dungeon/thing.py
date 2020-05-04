@@ -19,3 +19,9 @@ class Thing(DObject, Lockable, Container, Inspectable, Breakable, Trappable):
 
     def __str__(self):
         return f"Thing(id={self.id}, description={self.description})"
+
+    def break_object(self, strength):
+        ret = super().break_object(strength)
+        if ret:
+            self.open()
+            self.has_lock = False

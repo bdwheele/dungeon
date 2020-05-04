@@ -36,6 +36,8 @@ class Dungeon(Mergeable):
             }
             self.objects = {}
             self.start_room = None
+            self.inventory = None
+            self.wm = None
             # and then override whatever we got from the kwargs
             self.merge_attrs(kwargs)
         else:
@@ -118,11 +120,11 @@ class Dungeon(Mergeable):
         dungeon.state['current_room'] = start_room
 
         # generate the wandering monsters
-        wm = dungeon.add_object(WanderingMonsters())
+        dungeon.wm = dungeon.add_object(WanderingMonsters())
         difficulties = generate_avg_list(encounter_average_difficulty, wandering_monsters, MonsterStore.EASY, MonsterStore.DEADLY)
         for difficulty in difficulties:
             monster = dungeon.add_object(monster_store.create_wandering_monster(character_levels, difficulty, base_monster_list))
-            wm.store(monster)
+            dungeon.wm.store(monster)
             monster.decorate(tables)
 
         # Handle flags on everything
@@ -172,7 +174,7 @@ class Dungeon(Mergeable):
             #    del o.environment
 
         # Create the players' inventory
-        dungeon.add_object(Inventory())
+        dungeon.inventory = dungeon.add_object(Inventory())
     
         return dungeon
 
@@ -268,7 +270,7 @@ class Dungeon(Mergeable):
 
     def generate_object_graph_dot(self):
         """
-        Generate a tree of the objects in the dungeon
+        Generate a graph of the objects in the dungeon
         """
         result = ["graph {", 
                '  node [fontname="Helvetica", fontsize=8, margin=0, height=0.25, width=0.5];',
@@ -279,25 +281,33 @@ class Dungeon(Mergeable):
         # provide a container for things which don't have a location
         result.append('Unparented [label="Unparented\\nThings", shape="rectangle"];')
 
-
         for o in self.objects.values():
-            if o.is_a('Container'):
-                if o.location is None and not o.is_a('Room'):
-                    result.append(f"{o.id} -- Unparented")
-                label = f"{o.class_label()} {o.id}\\n{o.description[0][:20]}".replace('"', '\\"')
-                style = ', style="filled"' if self.start_room == o else ""
-                result.append(f'{o.id} [label="{label}", shape="rectangle"{style}];')
-                for c in o.contents:
-                    result.append(f'{o.id} -- {c.id};')
-            elif o.is_a('Door'):
-                # door gets a box with info, and links to the rooms.
-                style = 'dashed' if o.is_locked else 'solid'
-                result.append(f'{o.id} [label="{o.id}", shape="rectangle", style="{style}", width=0, height=0];')
-                if o.is_locked:
-                    result.append(f'{o.id} -- {o.lock_key.id} [style="dashed"];')
-            elif o.is_a('Key'):
-                result.append(f'{o.id} [label="Key\\n{o.id}", shape="rectangle", style="dashed"];')
+            if o.is_a('Lockable'):
+                style = 'dashed' if o.has_lock else 'solid'
             else:
-                print(f"Don't know how to handle {o}")
+                if o.is_a('Room'):
+                    style = 'filled' if self.start_room == o else ""
+                else:
+                    style = 'solid'
+                    
+            if o.is_a('Door'):
+                # doors are special
+                result.append(f'{o.id} [label="{o.id}", shape="rectangle", width=0, height=0, style="{style}"];')
+                # connect the two rooms.
+                result.append(f'{o.sides[0].id} -- {o.id};')
+                result.append(f'{o.sides[1].id} -- {o.id};')
+            else:
+                label = f"{o.class_label()} {o.id}\\n{o.description[0][:20]}".replace('"', '\\"')
+                result.append(f'{o.id} [label="{label}", shape="rectangle", style="{style}"];')
+                if o.location is None:
+                    #result.append(f"{o.id} -- Unparented;")
+                    pass
+                else:
+                    result.append(f'{o.id} -- {o.location.id} [style="{style}"];')
+            
+            # connect the key with this...
+            if o.is_a('Lockable') and o.lock_key is not None:
+                result.append(f'{o.id} -- {o.lock_key.id} [style="{style}"];')
+
         result.append("}")
         return "\n".join(result)

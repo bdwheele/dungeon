@@ -8,23 +8,11 @@ class Lockable:
         self.lock_pick_dc = 0
 
 
-    def get_description(self):
+    def get_key_description(self):
         return [f'This lock requires a {self.lock_key.description[0]} key to operate']
 
     def valid_key(self, key):
-        return key == self.lock_key.code or key == 666
-
-    def unlock(self, key):
-        if not self.valid_key(key):
-            return (False, "This key will not work in this lock")
-        self.is_locked = False
-        return (True, "Lock is now unlocked")
-
-    def lock(self, key): 
-        if not self.valid_key(key):
-            return (False, "This key will not work with this lock")
-        self.is_locked = True
-        return (True, "The lock is locked")
+        return key == self.lock_key
 
     def pick(self, dex):
         if not self.is_locked:

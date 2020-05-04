@@ -7,5 +7,6 @@ class Inventory(DObject, Container):
         DObject.__init__(self)
         Container.__init__(self)
         self.description = ['Player inventory']
+        self.can_contain = True
         self.merge_attrs(kwargs)
 

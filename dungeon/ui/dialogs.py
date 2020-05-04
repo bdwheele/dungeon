@@ -20,6 +20,18 @@ class DialogUser(Gtk.Widget):
         dialog.run()
         dialog.destroy()
 
+    def complex_dialog(self, children, window_title):
+        dialog = Gtk.Dialog()
+        dialog.add_button("OK", Gtk.ResponseType.OK)
+        dialog.set_title(window_title)
+        dialog.set_modal(True)
+        content = dialog.get_content_area()
+        content.add(children)
+        content.show()
+        dialog.run()
+        dialog.destroy()
+
+
     def ok_cancel_dialog(self, dialog_type, title, message, window_title=None):
         dialog = Gtk.MessageDialog(self.get_toplevel(), 0, dialog_type,
                                    Gtk.ButtonsType.OK_CANCEL, title)
@@ -113,10 +125,10 @@ class DialogUser(Gtk.Widget):
 
     def file_dialog(self, mode='r', title='File', suggested_name="untitled.dgn"):
         action = Gtk.FileChooserAction.OPEN if mode == 'r' else Gtk.FileChooserAction.SAVE
-        dialog = Gtk.FileChooserDialog(title, self.window, action,  
+        dialog = Gtk.FileChooserDialog(title, self.window, action,  #pylint: disable=no-member
                                        ("_Cancel", Gtk.ResponseType.CANCEL,
                                         "_OK", Gtk.ResponseType.OK))
-        if mode != 'r':
+        if mode != 'r' and suggested_name is not None:
             dialog.set_filename(suggested_name)
 
         for x in (("Dungeon Files", "*.dgn"), ("All Files", "*")):

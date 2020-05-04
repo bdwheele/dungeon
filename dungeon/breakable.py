@@ -1,7 +1,7 @@
 class Breakable:
     def __init__(self):
         self.is_breakable = False
-        self.is_broken = True
+        self.is_broken = False
         self.break_dc = 0
 
     def break_object(self, strength):

@@ -25,3 +25,20 @@ def get_handler_id_for_signal(widget, signal):
     signal_id, detail = GObject.signal_parse_name(signal, widget, True)
     handler_id = GObject.signal_handler_find(widget, GObject.SignalMatchType.ID, signal_id, detail, None, None, None)
     return handler_id
+
+def frame_wrap(widget, title=None, hmargin=5, vmargin=5, hpad=5, vpad=5):
+    frame = Gtk.Frame()
+    frame.set_label(title)
+    frame.set_margin_start(hmargin)
+    frame.set_margin_end(hmargin)
+    frame.set_margin_top(vmargin)
+    frame.set_margin_bottom(vmargin)
+    widget.set_margin_start(hpad)
+    widget.set_margin_end(hpad)
+    widget.set_margin_top(vpad)
+    widget.set_margin_bottom(vpad)
+    frame.add(widget)
+    frame.show()
+    widget.show()
+    print(f"Returning frame {frame} for {widget}")
+    return frame
