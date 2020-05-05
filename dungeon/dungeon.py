@@ -52,6 +52,16 @@ class Dungeon(Mergeable):
         return [x for x in self.objects.values() if x.is_a(*classes)]
 
     def add_object(self, thing):
+        if thing.id in self.objects:
+            # crud, it's runtime and we're making a new object...
+            # with an ID which already exists.  Let's try to find
+            # a vacant one.
+            x = 1
+            id = thing.id
+            while id := id + str(x):
+                x += 1
+            thing.id = id
+            print(f"Creating a new runtime object with id {thing.id}") 
         self.objects[thing.id] = thing
         return thing
 
@@ -300,8 +310,8 @@ class Dungeon(Mergeable):
                 label = f"{o.class_label()} {o.id}\\n{o.description[0][:20]}".replace('"', '\\"')
                 result.append(f'{o.id} [label="{label}", shape="rectangle", style="{style}"];')
                 if o.location is None:
-                    #result.append(f"{o.id} -- Unparented;")
-                    pass
+                    if not o.is_a('Room', 'Inventory', 'WanderingMonsters'):
+                        result.append(f"{o.id} -- Unparented;")
                 else:
                     result.append(f'{o.id} -- {o.location.id} [style="{style}"];')
             

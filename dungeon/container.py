@@ -13,8 +13,13 @@ class Container:
         self.contents.append(thing)
 
     def discard(self, thing):
+        thing.location = None
         self.contents.remove(thing)
     
+    def transfer(self, thing, destination):
+        self.discard(thing)
+        destination.store(thing)
+
     def find_decendents(self, *classes):
         """Get my contents and the contents of the children.  And their
            children's children.  For three months."""

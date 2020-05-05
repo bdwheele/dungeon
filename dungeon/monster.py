@@ -4,6 +4,7 @@ from .utils import gen_id, roll_dice
 from .container import Container
 from .treasure import Treasure
 from .dobject import DObject
+from .thing import Thing
 
 class MonsterStore:
     """
@@ -223,22 +224,40 @@ class Monster(DObject, Container):
         "Monster flees!"
         distance = roll_dice('1d6')
         here = self.location
-        seen = set([here])
-        door = None
+        seen = set()
+        exit_door = None
         while distance:
             # get possible doors...
-            doors = [x for x in here.contents if x.is_open]
+            doors = [x for x in here.contents if x not in seen and x.is_a('Door') and x.is_open]
             if not doors:
                 break
-            
-            if not door:
-                pass
-            
-            
+            next_door = random.choice(doors)
+            if not exit_door:
+                exit_door = next_door
+            new_room = next_door.other_side(here)
+            seen.add(next_door)
+            here = new_room
             distance -= 1
-            
+        # this is weird, but remember:  the monster is moving itself
+        # from its location to another room...
+        self.location.transfer(self, here)            
+        return exit_door
 
-        return door
+    def kill(self, dungeon):
+        "Dead monsters tell no tales."
+        if not self.is_alive:
+            return
+        # create a corpse object.
+        corpse = dungeon.add_object(Thing(prefix='X'))
+        corpse.is_breakable = False
+        corpse.can_contain = True
+        corpse.description = [f'The corpse of {self.description[0]} ({self.id})']
+        corpse.is_portable = self.size in ('tiny', 'small', 'medium')
+        for c in self.contents:
+            self.transfer(c, corpse)
+        self.location.store(corpse)
+        self.location.discard(self)
+        print(f"monster location: {self.location}, corpse.location: {corpse.location}")
 
-    def kill(self):
-        pass
+
+

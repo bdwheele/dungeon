@@ -170,13 +170,19 @@ class ObjectWidget(Gtk.Box, ChildFinder, DialogUser):
     @Gtk.Template.Callback()
     def onKill(self, caller):
         print("On kill")
-        # TODO: create a new object of the dead beast.
+        self.dobject.kill(self.dungeon)
+        self.emit('update_data')
 
 
     @Gtk.Template.Callback()
     def onFlee(self, caller):
         print("On flee")
-        self.dobject.flee()
+        door = self.dobject.flee()
+        if door is None:
+            self.message_box(Gtk.MessageType.INFO, "Monster Flees", "There are no open doors that the\nmonster can flee through!")
+        else:
+            self.message_box(Gtk.MessageType.INFO, "Monster Flees", f"The monster has fled through {door.id}")
+
         self.emit('update_data')
 
     @Gtk.Template.Callback()

@@ -113,7 +113,6 @@ class PlayDungeon(Gtk.Application, DialogUser):
 
 
     def onTree(self, caller):
-        print("On tree")
         window = self.builder.get_object("treeWindow")
         image = self.builder.get_object("treeImage")
         tmp = tempfile.mktemp() + ".png"
@@ -121,9 +120,11 @@ class PlayDungeon(Gtk.Application, DialogUser):
         subprocess.run(['neato', '-Tpng', '-o', tmp], input=dot, check=True)
         image.set_from_file(tmp)
         os.unlink(tmp)
+        def hide_tree_window(caller, event):
+            caller.hide()
+            return True
+        window.connect('delete-event', hide_tree_window)                
         window.show()
-        window.run()
-        window.hide()
 
 
     def onSkeletonKey(self, caller):

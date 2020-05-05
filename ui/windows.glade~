@@ -77,6 +77,11 @@
     <property name="can_focus">False</property>
     <property name="pixbuf">emoji/busts-in-silhouette_1f465.png</property>
   </object>
+  <object class="GtkImage" id="imgRun">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">emoji/person-running_1f3c3.png</property>
+  </object>
   <object class="GtkImage" id="imgSkeletonKey">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
