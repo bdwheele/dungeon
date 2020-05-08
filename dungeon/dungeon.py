@@ -38,6 +38,8 @@ class Dungeon(Mergeable):
             self.start_room = None
             self.inventory = None
             self.wm = None
+            self.max_object_id = 0
+            self.prefixes = {}
             # and then override whatever we got from the kwargs
             self.merge_attrs(kwargs)
         else:
@@ -52,16 +54,17 @@ class Dungeon(Mergeable):
         return [x for x in self.objects.values() if x.is_a(*classes)]
 
     def add_object(self, thing):
-        if thing.id in self.objects:
-            # crud, it's runtime and we're making a new object...
-            # with an ID which already exists.  Let's try to find
-            # a vacant one.
-            x = 1
-            id = thing.id
-            while id := id + str(x):
-                x += 1
-            thing.id = id
-            print(f"Creating a new runtime object with id {thing.id}") 
+        self.max_object_id += 1
+        name = type(thing).__name__
+        if name not in self.prefixes:
+            if name[0] not in self.prefixes.values():
+                self.prefixes[name] = name[0]
+            else:
+                for x in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ':
+                    if x not in self.prefixes.values():
+                        self.prefixes[name] = x
+                        break
+        thing.id = self.prefixes[name] + str(self.max_object_id)
         self.objects[thing.id] = thing
         return thing
 
@@ -296,7 +299,9 @@ class Dungeon(Mergeable):
                 style = 'dashed' if o.has_lock else 'solid'
             else:
                 if o.is_a('Room'):
-                    style = 'filled' if self.start_room == o else ""
+                    style = 'filled' if self.state['current_room'] == o else ""
+                elif o.is_a('Inventory'):
+                    style = 'filled'
                 else:
                     style = 'solid'
                     

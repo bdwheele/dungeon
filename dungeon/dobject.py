@@ -10,7 +10,7 @@ class DObject(Mergeable):
     doors, keys, monsters, etc.  Pretty much everything.
     """
     def __init__(self, **kwargs):
-        self.id = gen_id('dobject', prefix=self._get_prefix())
+        self.id = None # gen_id('dobject', prefix=self._get_prefix())
         self.description = []
         self.flags = []
         self.location = None
@@ -33,7 +33,7 @@ class DObject(Mergeable):
 
     def clone(self):
         new = deepcopy(self)
-        new.id = gen_id('dobject', prefix=new.id[0])
+        #new.id = gen_id('dobject', prefix=new.id[0])
         return new
 
     def class_label(self):

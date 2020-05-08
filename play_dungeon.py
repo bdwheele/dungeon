@@ -2,7 +2,7 @@
 
 import gi
 gi.require_version('Gtk', '3.0')
-from gi.repository import Gtk, Gdk, GObject
+from gi.repository import Gtk, Gdk, GObject, GdkPixbuf
 from pathlib import Path
 from dungeon.dungeon import Dungeon
 import yaml
@@ -16,6 +16,8 @@ from dungeon.ui.uiutils import frame_wrap
 import tempfile
 import subprocess
 import os
+import re
+import random
 
 logger = logging.getLogger()
 
@@ -44,7 +46,11 @@ class PlayDungeon(Gtk.Application, DialogUser):
         self.dungeon = None
         self.dungeon_filename = None
         self.all_map = False
-        
+        self.tree_scale = 0
+        self.tree_svg = None
+        self.map_scale = 0
+        self.map_svg = None
+        self.scales = [1, 1.5, 2, 0.75, 0.50]
         self.window.show()
 
 
@@ -88,11 +94,9 @@ class PlayDungeon(Gtk.Application, DialogUser):
 
         value = self.dungeon.inventory.get_value()
         window = self.builder.get_object('inventoryWindow')
-        print(f"Got window object {window}")
         label = self.builder.get_object('lblInventory')
         label.set_markup(f"<b>Inventory (value: {value:0.2f}gp)</b>")
         box = self.builder.get_object('boxInventory')
-        print(f"  box: {box}")
         for o in box.get_children():
             box.remove(o)
 
@@ -104,33 +108,58 @@ class PlayDungeon(Gtk.Application, DialogUser):
         window.show()
         window.run()
         window.hide()
-        
+
 
     def onMap(self, caller):
         self.all_map = caller.get_active()
-        print(f"OnMap: {self.all_map}")
         self.onUpdateData(caller)
-
 
     def onTree(self, caller):
         window = self.builder.get_object("treeWindow")
-        image = self.builder.get_object("treeImage")
-        tmp = tempfile.mktemp() + ".png"
-        dot = self.dungeon.generate_object_graph_dot().encode('utf-8')
-        subprocess.run(['neato', '-Tpng', '-o', tmp], input=dot, check=True)
-        image.set_from_file(tmp)
-        os.unlink(tmp)
         def hide_tree_window(caller, event):
             caller.hide()
             return True
-        window.connect('delete-event', hide_tree_window)                
+        window.connect('delete-event', hide_tree_window)
+        def zoom_tree_window(caller, event):
+            if event.string == '-':
+                self.tree_scale = max(-2, self.tree_scale - 1)
+            elif event.string == '+':
+                self.tree_scale = min(2, self.tree_scale + 1)
+            self.updateTree()
+        window.connect('key_press_event', zoom_tree_window)
         window.show()
 
+    def updateTree(self):
+        factor = self.scales[self.tree_scale]
+        loader = GdkPixbuf.PixbufLoader()
+        # Get the size of the svg
+        if m := re.search(r'viewBox="(.+?)\s+(.+?)\s+(.+?)\s+(.+?)"', str(self.tree_svg)):
+            loader.set_size(float(m.group(3)) * factor, float(m.group(4)) * factor)
+        loader.write(self.tree_svg)
+        loader.close()
+        pixbuf = loader.get_pixbuf()
+        self.builder.get_object("treeImage").set_from_pixbuf(pixbuf)
+
+    def updateMap(self):
+        factor = self.scales[self.map_scale]
+        loader = GdkPixbuf.PixbufLoader()
+        # Get the size of the svg
+        if m := re.search(r'viewBox="(.+?)\s+(.+?)\s+(.+?)\s+(.+?)"', str(self.map_svg)):
+            loader.set_size(float(m.group(3)) * factor, float(m.group(4)) * factor)
+        loader.write(self.map_svg)
+        loader.close()
+        pixbuf = loader.get_pixbuf()
+        self.mapImage.set_from_pixbuf(pixbuf)
+
+    def onKeyPress(self, caller, event):
+        if event.string == '-':
+            self.map_scale = max(-2, self.map_scale - 1)
+        elif event.string == '+':
+            self.map_scale = min(2, self.map_scale + 1)
+        self.updateMap()
 
     def onSkeletonKey(self, caller):
-        print(f"onSkeletonKey: {self.dungeon.state.get('skeleton_key', None)}")
         self.dungeon.state['skeleton_key'] = caller.get_active()
-
 
     def onRunTo(self, caller):
         # update the run-to menu
@@ -167,7 +196,6 @@ class PlayDungeon(Gtk.Application, DialogUser):
         self.onUpdateData(caller)
 
     def onDestroyWindow(self, caller, something):
-        print(f"Destroy!  {something}")
         if self.ok_cancel_dialog(Gtk.MessageType.QUESTION, "Quit Application?", 
                                  "Any progress you have made since the last save will be lost"):
             Gtk.main_quit()
@@ -186,11 +214,16 @@ class PlayDungeon(Gtk.Application, DialogUser):
             return
 
         # generate the map image
-        tmp = tempfile.mktemp() + ".png"
         dot = self.dungeon.generate_map_dot(all_rooms=self.all_map).encode('utf-8')
-        subprocess.run(['neato', '-Tpng', '-o', tmp], input=dot, check=True)
-        self.mapImage.set_from_file(tmp)
-        os.unlink(tmp)
+        p = subprocess.run(['neato', '-Tsvg'], input=dot, stdout=subprocess.PIPE, check=True)
+        self.map_svg = p.stdout
+        self.updateMap()
+
+        dot = self.dungeon.generate_object_graph_dot().encode('utf-8')
+        p = subprocess.run(['neato', '-Tsvg'], input=dot, stdout=subprocess.PIPE, check=True)
+        self.tree_svg = p.stdout
+        self.updateTree()
+
 
         # update the panels.
         current_room = self.dungeon.state['current_room']
@@ -208,13 +241,8 @@ class PlayDungeon(Gtk.Application, DialogUser):
                 ow.connect('update_time', self.onUpdateTime)
                 ow.show()
                 if use_frame:
-                    frame = Gtk.Frame()
-                    flag = ""
-                    if c.is_a('Door') and c.visited:
-                        flag = " \u2714 "
-                    frame.set_label(f"{c.class_label()} {c.id}{flag}")
-                    frame.add(ow)
-                    frame.show()
+                    flag = " \u2714 " if c.is_a('Door') and c.visited else "" 
+                    frame = frame_wrap(ow, f"{c.class_label()} {c.id}{flag}")
                     panel.add(frame)
                 else:
                     panel.add(ow)
@@ -231,11 +259,10 @@ class PlayDungeon(Gtk.Application, DialogUser):
         self.visitedLabel.set_label(f"Rooms visited: {visited}/{count}")
 
 
-
-
     def onUpdateTime(self, caller, time):
-        self.dungeon.state['current_time'] += time
-        total = self.dungeon.state['current_time']
+        state = self.dungeon.state
+        state['current_time'] += time
+        total = state['current_time']
         days = total // (24 * 60)
         total -= days * (24 * 60)
         hours = total // 60
@@ -246,35 +273,26 @@ class PlayDungeon(Gtk.Application, DialogUser):
             t = f"{hours:02d}:{mins:02d}"
         self.dungeonTime.set_label(t)
 
+        # handle wandering monsters
+        if 'next_wandering_monster' not in state:
+            state['next_wandering_monster'] = total + 10 + random.randint(1, 30)
+
+        if total > state['next_wandering_monster']:
+            # we're due for a monster, maybe.
+            logger.debug("check for wandering monster")
+            if random.randint(0, 3) <= self.dungeon.parameters['wandering_monsters']['percent_chance']:
+                logger.debug("Monster will appear")
+                print("*** TODO ***")
+            state['next_wandering_monster'] = total + 10 + random.randint(1, 30)
+            logger.debug(f"Next wandering monster after {state['next_wandering_monster']}")
+        
+
+        
 
 
-    def onRest(self, caller):
-        times = [0, 8, 4]
-        mode = caller.get_active()
-        txt = caller.get_active_text()
-        if mode > 0:
-            wm_percent = self.dungeon.parameters['wandering_monster_percent_per_hour']
-            node = self.dungeon.map.get_node(self.dungeon.state['current_room'])
-            is_open = False
-            for ex in node.exits:
-                edge = self.dungeon.map.get_edge(ex)
-                is_open |= edge.is_open()
-            for c in range(times[mode]):
-                d = roll_dice('1d100')
-                m = self.dungeon.get_wandering_monster()
-                #print(f"d: {d}, wm%: {wm_percent}, open: {is_open}, monster: {m.attributes['name']}")                
 
-                if is_open and (d <= wm_percent) and m is not None:
-                    # a wandering monster will arrive.
-                    m.set_location(self.dungeon.state['current_room'])
-                    self.message_box(Gtk.MessageType.INFO, f"{txt} Rest Interrupted!", f"A {m.attributes['name']} has wandered into the room afer {c} hours")
-                    self.onMonstersRefresh()
-                    break
-                else:
-                    self.onTimeUpdate(None, 60)
-            else:        
-                self.message_box(Gtk.MessageType.INFO, f"{txt} Rest", f"The characters have taken a {txt} rest")
-            caller.set_active(0)
+
+
 
 
 def main():

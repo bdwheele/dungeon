@@ -5,6 +5,7 @@ from .dialogs import DialogUser
 from .uiutils import ChildFinder, get_handler_id_for_signal
 import sys
 import logging
+import random
 
 logger = logging.getLogger()
 
@@ -71,7 +72,7 @@ class ObjectWidget(Gtk.Box, ChildFinder, DialogUser):
                     frame = Gtk.Frame()
                     frame.set_label(f"{c.class_label()} {c.id}")
 
-                    ow = ObjectWidget(self.dungeon, c)
+                    ow = ObjectWidget(self.dungeon, c, controls=self.controls)
                     ow.set_margin_start(12)
                     ow.connect('update_data', self.onUpdateData)
                     ow.connect('update_time', self.onUpdateTime)
@@ -99,6 +100,14 @@ class ObjectWidget(Gtk.Box, ChildFinder, DialogUser):
             self.description.set_label(desc)    
         
 
+
+        if dobject.is_a('Lockable'):
+            if dobject.has_lock:
+                if dobject.is_locked:
+                    self.set_button_state('btnPick', True, True)
+                self.set_button_state('btnLock', True, dobject.is_locked)            
+
+
         if not self.controls:
             return
 
@@ -120,19 +129,16 @@ class ObjectWidget(Gtk.Box, ChildFinder, DialogUser):
         if dobject.is_a('Monster'):
             for b in ('btnKill', 'btnFlee', 'btnSpeak'):
                 self.set_button_state(b, True, True)
-            self.description.set_label(dobject.description[0])
+            label = (f"<b>{dobject.description[0]}</b>\n"
+                     f"Source: {dobject.source}/{dobject.page}, Alignment: {dobject.alignment}\n"
+                     f"Type: {dobject.type}, Size: {dobject.size}")
+            self.description.set_label(label)
 
         if dobject.is_a('Door'):
             self.set_button_state('btnUse', True, True)
             if not dobject.is_passage:
                 self.set_button_state('btnOpen', True, dobject.is_open)
                 self.set_button_state('btnUnstick', dobject.stuck_found and dobject.stuck_dc > 0, dobject.is_stuck)
-
-        if dobject.is_a('Lockable'):
-            if dobject.has_lock:
-                if dobject.is_locked:
-                    self.set_button_state('btnPick', True, True)
-                self.set_button_state('btnLock', True, dobject.is_locked)            
  
         if dobject.is_a('Room'):
             self.set_button_state('btnRest', True, True)
@@ -171,6 +177,7 @@ class ObjectWidget(Gtk.Box, ChildFinder, DialogUser):
     def onKill(self, caller):
         print("On kill")
         self.dobject.kill(self.dungeon)
+        self.emit('update_time', random.randint(1, 5))
         self.emit('update_data')
 
 
@@ -192,7 +199,6 @@ class ObjectWidget(Gtk.Box, ChildFinder, DialogUser):
 
     @Gtk.Template.Callback()
     def onLock(self, caller):
-        print(f"On lock {self}")
         lock = self.dobject
         key_wanted = lock.lock_key
         can_unlock = False
@@ -200,9 +206,9 @@ class ObjectWidget(Gtk.Box, ChildFinder, DialogUser):
             can_unlock = True
         else:
             # look in the player's keys to see if it's there...
-            if key_wanted in self.dungeon.inventory.contents:
+            if key_wanted in self.dungeon.inventory.find_decendents('Key', obey_locks=True):
                 can_unlock = True
-            
+
         if not can_unlock:
             self.message_box(Gtk.MessageType.INFO, "Lock", f"You do not have the key for this lock\n{lock.get_key_description()[0]}")
         else:
@@ -237,6 +243,7 @@ class ObjectWidget(Gtk.Box, ChildFinder, DialogUser):
             self.message_box(Gtk.MessageType.INFO, "Cannot use door", why)
             self.reset_widget()
         else:
+            self.emit('update_time', 1 if new_room.visited else random.randint(1, 3))
             new_room.visited = True
             self.dungeon.state['current_room'] = new_room
             self.emit('update_data')
@@ -251,7 +258,7 @@ class ObjectWidget(Gtk.Box, ChildFinder, DialogUser):
                                          length=2)
             if strength is None:
                 return
-            self.emit('update_time', 1)
+            self.emit('update_time', 2)
             if not door.is_open:
                 success, why, new_room = door.force_open(strength, self.dungeon.state['current_room'])
                 logger.debug(f"Trying to force open on {door.id}: {success} : {why}")
@@ -277,7 +284,11 @@ class ObjectWidget(Gtk.Box, ChildFinder, DialogUser):
 
     @Gtk.Template.Callback()
     def onRest(self, caller):
-        print("On rest")
+        for _ in range(4):
+            self.emit('update_time', 60)
+            # TODO:  if a new monster appeared, then...
+            # stop the loop?  Inform the users that not a 
+            # full rest?  
 
     @Gtk.Template.Callback()
     def onPick(self, caller):

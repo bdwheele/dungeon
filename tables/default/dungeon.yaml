@@ -5,5 +5,5 @@ parameters:
     - underdark
   wandering_monsters:
     count: 6
-    percent_chance_per_hour_rest: 3
+    percent_chance: 3
 

@@ -248,16 +248,15 @@ class Monster(DObject, Container):
         if not self.is_alive:
             return
         # create a corpse object.
-        corpse = dungeon.add_object(Thing(prefix='X'))
+        corpse = dungeon.add_object(Thing())
         corpse.is_breakable = False
         corpse.can_contain = True
         corpse.description = [f'The corpse of {self.description[0]} ({self.id})']
         corpse.is_portable = self.size in ('tiny', 'small', 'medium')
-        for c in self.contents:
+        for c in list(self.contents):
             self.transfer(c, corpse)
         self.location.store(corpse)
         self.location.discard(self)
-        print(f"monster location: {self.location}, corpse.location: {corpse.location}")
 
 
 

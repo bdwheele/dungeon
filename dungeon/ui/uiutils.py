@@ -40,5 +40,4 @@ def frame_wrap(widget, title=None, hmargin=5, vmargin=5, hpad=5, vpad=5):
     frame.add(widget)
     frame.show()
     widget.show()
-    print(f"Returning frame {frame} for {widget}")
     return frame

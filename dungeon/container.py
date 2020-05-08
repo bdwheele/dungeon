@@ -20,15 +20,18 @@ class Container:
         self.discard(thing)
         destination.store(thing)
 
-    def find_decendents(self, *classes):
+    def find_decendents(self, *classes, obey_locks=False):
         """Get my contents and the contents of the children.  And their
            children's children.  For three months."""
         result = []
         for x in self.contents:
-            if x.isa(classes):
+            if x.is_a(*classes):
                 result.append(x)
-            if x.isa('Container'):
-                result.extend(x.find_decendents(classes))
+            if x.is_a('Container'):
+                if obey_locks and x.is_a('Lockable'):
+                    if x.has_lock and x.is_locked:
+                        continue
+                result.extend(x.find_decendents(*classes, obey_locks=obey_locks))
         return result
 
 
