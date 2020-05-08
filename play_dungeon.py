@@ -134,6 +134,9 @@ class PlayDungeon(Gtk.Application, DialogUser):
             self.updateTree()
         window.connect('key_press_event', zoom_tree_window)
         window.show()
+        if self.tree_svg is None:
+            self.onUpdateData(caller)
+
 
     def updateTree(self):
         factor = self.scales[self.tree_scale]
@@ -225,11 +228,14 @@ class PlayDungeon(Gtk.Application, DialogUser):
         self.map_svg = p.stdout
         self.updateMap()
 
-        dot = self.dungeon.generate_object_graph_dot().encode('utf-8')
-        p = subprocess.run(['neato', '-Tsvg'], input=dot, stdout=subprocess.PIPE, check=True)
-        self.tree_svg = p.stdout
-        self.updateTree()
-
+        # only update the tree if it's showing...
+        if self.builder.get_object("treeWindow").get_visible():
+            dot = self.dungeon.generate_object_graph_dot().encode('utf-8')
+            p = subprocess.run(['neato', '-Tsvg'], input=dot, stdout=subprocess.PIPE, check=True)
+            self.tree_svg = p.stdout
+            self.updateTree()
+        else:
+            self.tree_svg = None
 
         # update the panels.
         current_room = self.dungeon.state['current_room']

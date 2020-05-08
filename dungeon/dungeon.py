@@ -156,9 +156,10 @@ class Dungeon(Mergeable):
         for o in dungeon.objects.values():
             if hasattr(o, 'description'):
                 for i, d in enumerate(o.description):
-                    while is_template(d): 
+                    desc = d[1] if isinstance(d, (list, tuple)) else d
+                    while is_template(desc): 
                         vals = {}
-                        for v in get_template_vars(d):
+                        for v in get_template_vars(desc):
                             if v.startswith("roll:"):
                                 vals[v] = roll_dice(v[5:])
                             else:
@@ -168,8 +169,11 @@ class Dungeon(Mergeable):
                                     group = 'dressing'
                                     table = v
                                 vals[v] = array_random(tables.get_table(group, table))
-                        d = template(d, vals)
-                    o.description[i] = d
+                        desc = template(desc, vals)
+                    if isinstance(d, (list, tuple)):
+                        o.description[i][1] = desc
+                    else:
+                        o.description[i] = desc
 
         dungeon.hide_keys()
 

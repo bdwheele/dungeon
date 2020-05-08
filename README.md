@@ -72,7 +72,7 @@ New isn't implemented yet, but when finished will allow the user to generate a n
 ### Map
 The map shows the explored dungeon.  +/- can be used to zoom and it can be scrolled horizontally or vertically.  When the map icon is selected from the main toolbar, all rooms will be shown.
 
-* Octogon is the starting room
+* Octagon is the starting room
 * Houses are regular rooms
 * Rectangles are corridor rooms
 * Circles with '?' are unknown rooms
@@ -111,6 +111,49 @@ This pane will show any (living) monsters in the room.
 
 ### Bottom status bar
 The rooms visited, the amount of XP earned, and current time in the dungeon is displayed.
+
+
+## Generating a new dungeon
+For now, the command line is required to generate a new dungeon.
+````
+usage: generate_dungeon.py generate [-h] [--room_count ROOM_COUNT] [--character_levels CHARACTER_LEVELS]
+                                    [--monster_sources MONSTER_SOURCES] [--monster_types MONSTER_TYPES]
+                                    [--monster_alignments MONSTER_ALIGNMENTS]
+                                    [--encounter_average_difficulty {easy,medium,hard,deadly}]
+                                    [--encounter_room_percent ENCOUNTER_ROOM_PERCENT]
+                                    [--wandering_monsters WANDERING_MONSTERS]
+                                    <dungeon>
+
+positional arguments:
+  <dungeon>             Dungeon file
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --room_count ROOM_COUNT
+                        Number of rooms/corridors
+  --character_levels CHARACTER_LEVELS
+                        Comma-separated list of character levels
+  --monster_sources MONSTER_SOURCES
+                        Comma-separated list of monster sources
+  --monster_types MONSTER_TYPES
+                        Comma-separated list of monster types
+  --monster_alignments MONSTER_ALIGNMENTS
+                        Comma-separated list of monster alignments
+  --encounter_average_difficulty {easy,medium,hard,deadly}
+                        Average encounter difficulty
+  --encounter_room_percent ENCOUNTER_ROOM_PERCENT
+                        Percentage of rooms with an encounter
+  --wandering_monsters WANDERING_MONSTERS
+                        Number of random wandering monsters to generate
+````
+
+So, to generate a 2-first-level-player dungeon with 20 rooms using only the monsters from the Monster Manual and a medium encounter difficulty, one would run:
+
+````
+./generate_dungeon.py generate --character_levels=1,1 --monster_sources=mm --encounter_average_difficulty=medium --room_count=20 test.dgn
+````
+
+
 
 ## Software Requirements
 This is written in Python 3.8 using the GTK3 toolkit.  Graphviz is used to generate the graph images.  I developed this on Linux, so it should run pretty much out-of-the-box there.

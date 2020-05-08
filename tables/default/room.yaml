@@ -58,7 +58,7 @@ corridor_through:
   - - 5
     - description:
         - The corridor is covered with a slimy substance
-        - {slime}
+        - "{slime}"
   - - 50
     - description:
        - The corridor continues on
