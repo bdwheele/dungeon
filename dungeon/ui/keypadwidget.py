@@ -8,10 +8,13 @@ import sys
 class KeypadWidget(Gtk.Box, ChildFinder):
     __gtype_name__ = "KeypadWidget"
 
-    def __init__(self, length=5):
+    def __init__(self, length=5, default=None):
         Gtk.Box.__init__(self)        
         self.value = self.find_child('value')
-        self.value.set_label('')
+        if default is not None:
+            self.value.set_label(default)
+        else:
+            self.value.set_label('')
         self.length = length
         self.show_all()
 
@@ -21,6 +24,8 @@ class KeypadWidget(Gtk.Box, ChildFinder):
     @Gtk.Template.Callback()
     def onClick(self, caller):
         lbl = self.value.get_label()
+        if lbl.startswith('0'):
+            lbl = lbl[1:]
         if len(lbl) < self.length:
             lbl += caller.get_label()
             self.value.set_label(lbl)

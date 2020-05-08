@@ -38,6 +38,7 @@ class PlayDungeon(Gtk.Application, DialogUser):
         self.mapImage.modify_bg(Gtk.StateType.NORMAL, Gdk.RGBA(1.0, 1.0, 1.0, 1.0).to_color())
         self.roomLabel = builder.get_object('roomLabel')
         self.visitedLabel = builder.get_object('visitedLabel')
+        self.xpLabel = builder.get_object('xpLabel')
         self.detailsPanel = builder.get_object('detailsPanel')
         self.exitsPanel = builder.get_object('exitsPanel')
         self.monstersPanel = builder.get_object('monstersPanel')
@@ -50,7 +51,7 @@ class PlayDungeon(Gtk.Application, DialogUser):
         self.tree_svg = None
         self.map_scale = 0
         self.map_svg = None
-        self.scales = [1, 1.5, 2, 0.75, 0.50]
+        self.scales = [1, 1.25, 1.5, 2, 2.5]
         self.window.show()
 
 
@@ -79,13 +80,18 @@ class PlayDungeon(Gtk.Application, DialogUser):
                 self.message_box(Gtk.MessageType.ERROR, "Save Failed", e)
 
     def onSaveAs(self, caller, suggested=None):
+        if suggested is None and self.dungeon_filename is not None:
+            suggested = self.dungeon_filename
         new_filename = self.file_dialog(mode='w', suggested_name=suggested, title="Save Dungeon")
         if new_filename is not None:
             self.dungeon_filename = new_filename
             self.onSave(caller)
 
     def onParty(self, caller):
-        print("on party")
+        self.dungeon.player_data['passive_perception'] = self.keypad_input("Passive Perception",
+                                                                           "Enter the party's maximum\npassive perception",
+                                                                           length=2, default=str(self.dungeon.player_data['passive_perception']))
+        self.onUpdateData(caller)
 
     def onInventory(self, caller):
         if not self.dungeon.inventory.contents:
@@ -122,9 +128,9 @@ class PlayDungeon(Gtk.Application, DialogUser):
         window.connect('delete-event', hide_tree_window)
         def zoom_tree_window(caller, event):
             if event.string == '-':
-                self.tree_scale = max(-2, self.tree_scale - 1)
+                self.tree_scale = max(0, self.tree_scale - 1)
             elif event.string == '+':
-                self.tree_scale = min(2, self.tree_scale + 1)
+                self.tree_scale = min(4, self.tree_scale + 1)
             self.updateTree()
         window.connect('key_press_event', zoom_tree_window)
         window.show()
@@ -153,9 +159,9 @@ class PlayDungeon(Gtk.Application, DialogUser):
 
     def onKeyPress(self, caller, event):
         if event.string == '-':
-            self.map_scale = max(-2, self.map_scale - 1)
+            self.map_scale = max(0, self.map_scale - 1)
         elif event.string == '+':
-            self.map_scale = min(2, self.map_scale + 1)
+            self.map_scale = min(4, self.map_scale + 1)
         self.updateMap()
 
     def onSkeletonKey(self, caller):
@@ -258,6 +264,7 @@ class PlayDungeon(Gtk.Application, DialogUser):
                     visited += 1
         self.visitedLabel.set_label(f"Rooms visited: {visited}/{count}")
 
+        self.xpLabel.set_label(f"XP Earned: {self.dungeon.state['xp_earned']}")
 
     def onUpdateTime(self, caller, time):
         state = self.dungeon.state
@@ -274,17 +281,25 @@ class PlayDungeon(Gtk.Application, DialogUser):
         self.dungeonTime.set_label(t)
 
         # handle wandering monsters
+        total = state['current_time']
         if 'next_wandering_monster' not in state:
             state['next_wandering_monster'] = total + 10 + random.randint(1, 30)
-
         if total > state['next_wandering_monster']:
             # we're due for a monster, maybe.
             logger.debug("check for wandering monster")
-            if random.randint(0, 3) <= self.dungeon.parameters['wandering_monsters']['percent_chance']:
-                logger.debug("Monster will appear")
-                print("*** TODO ***")
+            if random.randint(0, 100) <= self.dungeon.parameters['wandering_monsters']['percent_chance']:
+                logger.debug(f"Monster should appear")
+                # see if there are any open doors in this room.  If not, no monster!
+                for c in self.dungeon.state['current_room'].contents:
+                    if c.is_a('Door') and c.is_open:
+                        monster = random.choice(self.dungeon.wm.contents).clone()
+                        self.dungeon.add_object(monster)
+                        state['current_room'].store(monster)
+                        logger.debug(f"Wandering monster {monster.id} encountered")
+                        caller.emit('update_data')
+                        break
             state['next_wandering_monster'] = total + 10 + random.randint(1, 30)
-            logger.debug(f"Next wandering monster after {state['next_wandering_monster']}")
+            logger.debug(f"Next wandering monster after {state['next_wandering_monster']} ({state['current_time']})")
         
 
         

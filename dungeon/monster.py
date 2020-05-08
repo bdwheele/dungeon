@@ -151,10 +151,11 @@ class MonsterStore:
         monsters = self.filter(monsters, max_xp=xp_thresh)
         encounters = []
         for m in monsters:
-            xp = self.cr_to_xp(m.cr)
-            base_xp = xp
+            base_xp = m.xp
             count = 1
-            while m.size_integer * count < room_size:
+            # TODO: don't overrun room size
+            #while m.size_integer * count < room_size:
+            while True:
                 count += 1
                 multiplier = self.get_encounter_multiplier(len(party), count)
                 proposed_xp = count * base_xp * multiplier
@@ -190,13 +191,12 @@ class Monster(DObject, Container):
     def __init__(self, **kwargs):
         DObject.__init__(self)
         self.is_alive = True
-        #self.location = None
         # stuff from the tables...
         self.alignment = None
         self.cr = None
         self.decimal_cr = None
+        self.xp = 0
         self.environment = []
-        #self.name = "Unnamed Monster"
         self.page = 0
         self.size = None
         self.size_integer = 0
@@ -213,7 +213,7 @@ class Monster(DObject, Container):
         "Make the monster more than just the catalog entry"
         # Humanoid monsters will have treasure they carry around...
         if self.type.lower() == 'humanoid':
-            self.flags.append({'TREASURE': {'type': 'i', 'cr': self.decimal_cr}})
+            self.flags.append({'TREASURE': {'type': 'i', 'cr': self.decimal_cr, 'hidden': 1}})
             self.can_contain = True
         else:
             # these monsters don't have a place for stuff.

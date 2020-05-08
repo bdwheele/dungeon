@@ -29,10 +29,13 @@ class Dungeon(Mergeable):
             # create the prototype object
             self.version = 1
             self.parameters = {}
-            self.player_data = {}
+            self.player_data = {
+                'passive_perception': 0
+            }
             self.state = {
                 'current_room': None,
-                'current_time': 0
+                'current_time': 0,
+                'xp_earned': 0
             }
             self.objects = {}
             self.start_room = None

@@ -68,7 +68,7 @@ def process_flags(obj, dungeon, monster_store, tables):
 
         for _ in range(flag.count):
             if flag.name == 'TRAP':
-                # generate a trap
+                # TODO: generate a trap
                 pass
             elif flag.name == 'LOCKED':
                 # generate a lock & key
@@ -91,7 +91,10 @@ def process_flags(obj, dungeon, monster_store, tables):
                 # generate some treasure for this object
                 new_obj = Thing()
                 new_objects.append(new_obj)
+                new_obj.is_inspectable = False
                 new_obj.description = treasure.generate(treasure_type=flag.args['type'], cr=flag.args['cr'])
+                if 'hidden' in flag.args['type']:
+                    new_obj.is_hidden = flag.args['hidden']
                 obj.store(new_obj)
 
             elif flag.name == 'OBJECT':
@@ -115,14 +118,19 @@ def process_flags(obj, dungeon, monster_store, tables):
                 new_obj.merge_attrs(tables.get_table(group, name))
                 new_objects.append(new_obj)
                 obj.store(new_obj)
-
             elif flag.name == 'MONSTER':
                 monster = monster_store.get_monster(flag.args['name'])
                 monster.decorate(tables)
                 new_objects.append(monster)
                 obj.store(monster)        
+
+            elif flag.name == 'HIDE':
+                if obj.location is not None and obj.location.is_a("Inspectable"):
+                    print(f"Figure out how to hide {obj} in {obj.location}")
             else:
                 # don't know how to handle this...
                 print(f"Don't know how to handle flag {flag.name} for {obj}")
+        
+
 
     return new_objects

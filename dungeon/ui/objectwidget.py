@@ -2,7 +2,7 @@ import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk, GObject
 from .dialogs import DialogUser
-from .uiutils import ChildFinder, get_handler_id_for_signal
+from .uiutils import ChildFinder, get_handler_id_for_signal, frame_wrap
 import sys
 import logging
 import random
@@ -51,34 +51,36 @@ class ObjectWidget(Gtk.Box, ChildFinder, DialogUser):
         bullet = "\u2022 "
         dobject = self.dobject
 
+        # handle passive perception.
+        if dobject.is_a('Inspectable') and dobject.is_inspectable:
+            dobject.inspect(self.dungeon.player_data.get('passive_perception', 0), True)
+
         for b in self.buttons:
             self.set_button_state(b, False)
 
         if dobject.is_a('Container'):
-            # TODO:  does inspect make this thing visible for non-rooms?
-            if not dobject.can_contain or not dobject.contents:
-                
+            visible_contents = len([x for x in dobject.contents if not x.is_hidden])
+            if not dobject.can_contain or not visible_contents:
                 self.contents_exp.hide()
             else:
-                logger.debug(f"There are {len(dobject.contents)} items in this container: {dobject.contents}")
+                logger.debug(f"There are {len(dobject.contents)} items in {dobject.id}: {[x.id for x in dobject.contents]}")
                 # remove all existing children
                 for c in self.contents_list.get_children():
                     self.contents_list.remove(c)
                 # add the children back
                 for c in dobject.contents:
-                    if dobject.is_a('Room'):
-                        if c.is_a('Monster') or c.is_a('Door'):
-                            continue
-                    frame = Gtk.Frame()
-                    frame.set_label(f"{c.class_label()} {c.id}")
-
+                    if dobject.is_a('Room') and (c.is_a('Monster') or c.is_a('Door')):
+                        # dont' show monsters and doors in a room:  they're in a panel
+                        continue
+                    if c.is_hidden:
+                        # hidden contents aren't to be seen
+                        continue
                     ow = ObjectWidget(self.dungeon, c, controls=self.controls)
                     ow.set_margin_start(12)
                     ow.connect('update_data', self.onUpdateData)
                     ow.connect('update_time', self.onUpdateTime)
                     ow.show()
-                    frame.add(ow)
-                    frame.show()
+                    frame = frame_wrap(ow, f"{c.class_label()} {c.id}")
                     self.contents_list.pack_start(frame, True, True, 0)
                 self.contents_list.show()
                 # expand or contract the expander based on the state of the container.
@@ -95,9 +97,11 @@ class ObjectWidget(Gtk.Box, ChildFinder, DialogUser):
 
         # set the object's description
         if dobject.description:
-            d = list(dobject.description)
-            desc = bullet + f"\n{bullet}".join(d)
-            self.description.set_label(desc)    
+            desc = []
+            for d in dobject.description:
+                if isinstance(d, str):
+                    desc.append(f"{bullet} {d}")
+            self.description.set_label("\n".join(desc))
         
 
 
@@ -106,6 +110,9 @@ class ObjectWidget(Gtk.Box, ChildFinder, DialogUser):
                 if dobject.is_locked:
                     self.set_button_state('btnPick', True, True)
                 self.set_button_state('btnLock', True, dobject.is_locked)            
+
+        if dobject.is_a('Inspectable') and dobject.is_inspectable:
+            self.set_button_state('btnInspect', True, True)
 
 
         if not self.controls:
@@ -116,9 +123,6 @@ class ObjectWidget(Gtk.Box, ChildFinder, DialogUser):
 
         if dobject.is_a('Breakable') and dobject.is_breakable:
             self.set_button_state('btnBreakable', True, None if dobject.is_broken else True)
-        
-        if dobject.is_a('Inspectable') and dobject.is_inspectable:
-            self.set_button_state('btnInspect', True, True)
 
         if dobject.is_a('Trappable'):
             # btnDisarm
@@ -131,7 +135,8 @@ class ObjectWidget(Gtk.Box, ChildFinder, DialogUser):
                 self.set_button_state(b, True, True)
             label = (f"<b>{dobject.description[0]}</b>\n"
                      f"Source: {dobject.source}/{dobject.page}, Alignment: {dobject.alignment}\n"
-                     f"Type: {dobject.type}, Size: {dobject.size}")
+                     f"Type: {dobject.type}, Size: {dobject.size}\n"
+                     f"CR: {dobject.cr}, XP: {dobject.xp}")
             self.description.set_label(label)
 
         if dobject.is_a('Door'):
@@ -154,7 +159,20 @@ class ObjectWidget(Gtk.Box, ChildFinder, DialogUser):
 
     @Gtk.Template.Callback()
     def onInspect(self, caller):
-        print("On inspect")
+        dobject = self.dobject
+        logger.debug(f"On inspect {dobject.id}")
+        perception = self.keypad_input("Inspect this object",
+                                        "Use the character's wisdom roll to\ninspect the object",
+                                        length=2)
+        if dobject.is_a('Door'):
+            dobject.stuck_found = True
+        if dobject.is_a('Trappable') and dobject.has_trap:
+            dobject.detect_trap(perception)
+
+        dobject.inspect(perception, False)
+        self.emit('update_time', dobject.inspect_count * random.randint(1, 2))
+        self.emit('update_data')
+
 
     @Gtk.Template.Callback()
     def onBreak(self, caller):
@@ -175,7 +193,8 @@ class ObjectWidget(Gtk.Box, ChildFinder, DialogUser):
 
     @Gtk.Template.Callback()
     def onKill(self, caller):
-        print("On kill")
+        print(f"On kill {self.dobject.xp}")
+        self.dungeon.state['xp_earned'] += self.dobject.xp
         self.dobject.kill(self.dungeon)
         self.emit('update_time', random.randint(1, 5))
         self.emit('update_data')
@@ -194,8 +213,10 @@ class ObjectWidget(Gtk.Box, ChildFinder, DialogUser):
 
     @Gtk.Template.Callback()
     def onSpeak(self, caller):
-        print("On speak")
-
+        "Speaking to a monster will reveal their contents"
+        for c in self.dobject.contents:
+            c.is_hidden = 0
+        self.emit('update_data')
 
     @Gtk.Template.Callback()
     def onLock(self, caller):
@@ -284,11 +305,19 @@ class ObjectWidget(Gtk.Box, ChildFinder, DialogUser):
 
     @Gtk.Template.Callback()
     def onRest(self, caller):
-        for _ in range(4):
-            self.emit('update_time', 60)
-            # TODO:  if a new monster appeared, then...
-            # stop the loop?  Inform the users that not a 
-            # full rest?  
+        room = self.dobject
+        sleep_time = 240
+        c_count = len(room.contents)
+        t_total = 0
+        while t_total < sleep_time:
+            t = random.randint(10, 30)
+            t_total += t
+            self.emit('update_time', t)
+            if len(room.contents) != c_count:
+                # the room has changed...wake up!
+                print(self.get_toplevel())
+                self.message_box(Gtk.MessageType.INFO, "Wake up", f"Something has entered the room after {t_total} minutes")
+                break
 
     @Gtk.Template.Callback()
     def onPick(self, caller):
@@ -318,4 +347,4 @@ class ObjectWidget(Gtk.Box, ChildFinder, DialogUser):
         self.emit('update_data')
 
     def onUpdateTime(self, caller, time):
-        self.emit('update_time')
+        self.emit('update_time', time)

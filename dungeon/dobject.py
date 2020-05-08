@@ -14,6 +14,7 @@ class DObject(Mergeable):
         self.description = []
         self.flags = []
         self.location = None
+        self.is_hidden = 0
         self.merge_attrs(kwargs)
 
     def __str__(self):

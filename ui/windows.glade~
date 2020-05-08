@@ -99,6 +99,7 @@
     <property name="default_height">600</property>
     <property name="show_menubar">False</property>
     <signal name="delete-event" handler="onDestroyWindow" swapped="no"/>
+    <signal name="key-press-event" handler="onKeyPress" swapped="no"/>
     <child type="titlebar">
       <placeholder/>
     </child>
@@ -150,6 +151,7 @@
                     <property name="tooltip_text" translatable="yes">Open</property>
                     <property name="label" translatable="yes">Open...</property>
                     <property name="use_underline">True</property>
+                    <property name="stock_id">gtk-open</property>
                     <signal name="clicked" handler="onOpen" swapped="no"/>
                   </object>
                   <packing>
@@ -600,7 +602,16 @@
               </packing>
             </child>
             <child>
-              <placeholder/>
+              <object class="GtkLabel" id="xpLabel">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">xp_earned</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
             </child>
           </object>
           <packing>
@@ -725,6 +736,7 @@
   </object>
   <object class="GtkWindow" id="treeWindow">
     <property name="can_focus">False</property>
+    <property name="title" translatable="yes">Object Tree (+/- to zoom)</property>
     <property name="default_width">800</property>
     <property name="default_height">600</property>
     <property name="destroy_with_parent">True</property>

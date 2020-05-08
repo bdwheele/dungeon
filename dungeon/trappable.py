@@ -4,7 +4,8 @@ class Trappable:
     def __init__(self):
         self.has_trap = False
         self.trap_found = False
-        self.trap_id = -1
+        self.trap = None
+
 
     def detect_trap(self, perception):
         self.trigger_trap('detect')

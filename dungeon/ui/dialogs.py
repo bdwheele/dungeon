@@ -101,7 +101,7 @@ class DialogUser(Gtk.Widget):
                     self.message_box(Gtk.MessageType.ERROR, "Validation Error", msg)
                     default = text
 
-    def keypad_input(self, title, message, window_title=None, length=4):
+    def keypad_input(self, title, message, window_title=None, length=4, default=None):
         window_title = title if window_title is None else window_title
         dialog = Gtk.Dialog(title, self.get_toplevel(), 0,
             (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
@@ -113,7 +113,7 @@ class DialogUser(Gtk.Widget):
         box.add(vbox)
         if message is not None:
             vbox.add(Gtk.Label(message))
-        self.keypad = KeypadWidget(length=length)
+        self.keypad = KeypadWidget(length=length, default=default)
         vbox.add(self.keypad)
         dialog.show_all()
         response = dialog.run()

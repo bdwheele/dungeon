@@ -1,0 +1,2250 @@
+!!python/object:dungeon.dungeon.Dungeon
+inventory: &id001 !!python/object:dungeon.inventory.Inventory
+  can_contain: true
+  container_open: false
+  contents:
+  - &id030 !!python/object:dungeon.key.Key
+    description:
+    - normal key made of brass
+    flags: []
+    id: K63
+    is_hidden: 0
+    is_portable: true
+    location: *id001
+  - &id014 !!python/object:dungeon.key.Key
+    description:
+    - small key made of iron
+    flags: []
+    id: K93
+    is_hidden: 0
+    is_portable: true
+    location: *id001
+  description:
+  - Player inventory
+  flags: []
+  id: I94
+  is_hidden: 0
+  location: null
+max_object_id: 94
+objects:
+  D1: &id002 !!python/object:dungeon.door.Door
+    break_dc: 0
+    description:
+    - The opening is an archway
+    flags: []
+    has_inspected: false
+    has_lock: false
+    has_trap: false
+    id: D1
+    is_breakable: false
+    is_broken: false
+    is_hidden: 0
+    is_inspectable: true
+    is_locked: false
+    is_open: true
+    is_passage: true
+    is_stuck: false
+    location: &id004 !!python/object:dungeon.room.Room
+      can_contain: true
+      container_open: true
+      contents:
+      - *id002
+      - &id003 !!python/object:dungeon.door.Door
+        break_dc: 0
+        description:
+        - The opening is an archway
+        flags: []
+        has_inspected: false
+        has_lock: false
+        has_trap: false
+        id: D23
+        is_breakable: false
+        is_broken: false
+        is_hidden: 0
+        is_inspectable: true
+        is_locked: false
+        is_open: true
+        is_passage: true
+        is_stuck: false
+        location: &id005 !!python/object:dungeon.room.Room
+          can_contain: true
+          container_open: true
+          contents:
+          - *id003
+          description:
+          - Audience chamber, used to receive guests
+          flags: []
+          has_inspected: false
+          has_trap: false
+          id: R24
+          is_corridor: false
+          is_hidden: 0
+          is_inspectable: true
+          location: null
+          size: large
+          size_integer: 48
+          trap: null
+          trap_found: false
+          visited: false
+        lock_key: null
+        lock_pick_dc: 0
+        sides:
+        - *id004
+        - *id005
+        stuck_dc: 0
+        stuck_found: false
+        trap: null
+        trap_found: false
+        visited: false
+      - &id011 !!python/object:dungeon.door.Door
+        break_dc: 0
+        description:
+        - The opening is an archway
+        flags: []
+        has_inspected: false
+        has_lock: false
+        has_trap: false
+        id: D38
+        is_breakable: false
+        is_broken: false
+        is_hidden: 0
+        is_inspectable: true
+        is_locked: false
+        is_open: true
+        is_passage: true
+        is_stuck: false
+        location: &id007 !!python/object:dungeon.room.Room
+          can_contain: true
+          container_open: true
+          contents:
+          - &id006 !!python/object:dungeon.door.Door
+            break_dc: 15
+            description:
+            - A sturdy, well-made wooden door
+            flags:
+            - STUCK
+            has_inspected: false
+            has_lock: false
+            has_trap: false
+            id: D7
+            is_breakable: false
+            is_broken: false
+            is_hidden: 0
+            is_inspectable: true
+            is_locked: false
+            is_open: false
+            is_passage: false
+            is_stuck: true
+            location: &id008 !!python/object:dungeon.room.Room
+              can_contain: true
+              container_open: true
+              contents:
+              - *id006
+              description:
+              - Banquet room for important celebrations
+              flags: []
+              has_inspected: false
+              has_trap: false
+              id: R9
+              is_corridor: false
+              is_hidden: 0
+              is_inspectable: true
+              location: null
+              size: small
+              size_integer: 24
+              trap: null
+              trap_found: false
+              visited: false
+            lock_key: null
+            lock_pick_dc: 0
+            sides:
+            - *id007
+            - *id008
+            stuck_dc: 5
+            stuck_found: false
+            trap: null
+            trap_found: false
+            visited: false
+          - &id009 !!python/object:dungeon.door.Door
+            break_dc: 0
+            description:
+            - The opening is an archway
+            flags: []
+            has_inspected: false
+            has_lock: false
+            has_trap: false
+            id: D25
+            is_breakable: false
+            is_broken: false
+            is_hidden: 0
+            is_inspectable: true
+            is_locked: false
+            is_open: true
+            is_passage: true
+            is_stuck: false
+            location: &id010 !!python/object:dungeon.room.Room
+              can_contain: true
+              container_open: true
+              contents:
+              - *id009
+              description:
+              - The corridor ends abruptly
+              flags: []
+              has_inspected: false
+              has_trap: false
+              id: R26
+              is_corridor: true
+              is_hidden: 0
+              is_inspectable: true
+              location: null
+              size: null
+              size_integer: -1
+              trap: null
+              trap_found: false
+              visited: false
+            lock_key: null
+            lock_pick_dc: 0
+            sides:
+            - *id007
+            - *id010
+            stuck_dc: 0
+            stuck_found: false
+            trap: null
+            trap_found: false
+            visited: false
+          - *id011
+          - &id012 !!python/object:dungeon.door.Door
+            break_dc: 10
+            description:
+            - A simple wooden door
+            flags:
+            - LOCKED
+            has_inspected: false
+            has_lock: true
+            has_trap: false
+            id: D39
+            is_breakable: false
+            is_broken: false
+            is_hidden: 0
+            is_inspectable: true
+            is_locked: true
+            is_open: false
+            is_passage: false
+            is_stuck: false
+            location: &id048 !!python/object:dungeon.room.Room
+              can_contain: true
+              container_open: true
+              contents:
+              - *id012
+              description:
+              - The corridor has collapsed
+              flags: []
+              has_inspected: false
+              has_trap: false
+              id: R40
+              is_corridor: true
+              is_hidden: 0
+              is_inspectable: true
+              location: null
+              size: null
+              size_integer: -1
+              trap: null
+              trap_found: false
+              visited: false
+            lock_key: &id047 !!python/object:dungeon.key.Key
+              description:
+              - normal key made of brass
+              flags: []
+              id: K58
+              is_hidden: 0
+              is_portable: true
+              location: &id013 !!python/object:dungeon.room.Room
+                can_contain: true
+                container_open: true
+                contents:
+                - &id015 !!python/object:dungeon.door.Door
+                  break_dc: 15
+                  description:
+                  - A sturdy, well-made wooden door
+                  flags:
+                  - LOCKED
+                  - TRAP
+                  has_inspected: false
+                  has_lock: true
+                  has_trap: false
+                  id: D4
+                  is_breakable: false
+                  is_broken: false
+                  is_hidden: 0
+                  is_inspectable: true
+                  is_locked: true
+                  is_open: false
+                  is_passage: false
+                  is_stuck: false
+                  location: *id013
+                  lock_key: *id014
+                  lock_pick_dc: 11
+                  sides:
+                  - &id016 !!python/object:dungeon.room.Room
+                    can_contain: true
+                    container_open: true
+                    contents:
+                    - *id015
+                    - &id017 !!python/object:dungeon.door.Door
+                      break_dc: 12
+                      description:
+                      - A typical wooden door
+                      flags:
+                      - STUCK
+                      has_inspected: false
+                      has_lock: false
+                      has_trap: false
+                      id: D32
+                      is_breakable: false
+                      is_broken: false
+                      is_hidden: 0
+                      is_inspectable: true
+                      is_locked: false
+                      is_open: false
+                      is_passage: false
+                      is_stuck: true
+                      location: *id016
+                      lock_key: null
+                      lock_pick_dc: 0
+                      sides:
+                      - &id018 !!python/object:dungeon.room.Room
+                        can_contain: true
+                        container_open: true
+                        contents:
+                        - *id017
+                        - &id035 !!python/object:dungeon.door.Door
+                          break_dc: 0
+                          description:
+                          - A normal opening
+                          flags: []
+                          has_inspected: false
+                          has_lock: false
+                          has_trap: false
+                          id: D34
+                          is_breakable: false
+                          is_broken: false
+                          is_hidden: 0
+                          is_inspectable: true
+                          is_locked: false
+                          is_open: true
+                          is_passage: true
+                          is_stuck: false
+                          location: *id018
+                          lock_key: null
+                          lock_pick_dc: 0
+                          sides:
+                          - &id034 !!python/object:dungeon.room.Room
+                            can_contain: true
+                            container_open: true
+                            contents:
+                            - &id019 !!python/object:dungeon.door.Door
+                              break_dc: 0
+                              description:
+                              - A normal opening
+                              flags: []
+                              has_inspected: false
+                              has_lock: false
+                              has_trap: false
+                              id: D13
+                              is_breakable: false
+                              is_broken: false
+                              is_hidden: 0
+                              is_inspectable: true
+                              is_locked: false
+                              is_open: true
+                              is_passage: true
+                              is_stuck: false
+                              location: &id022 !!python/object:dungeon.room.Room
+                                can_contain: true
+                                container_open: true
+                                contents:
+                                - *id019
+                                - &id020 !!python/object:dungeon.door.Door
+                                  break_dc: 10
+                                  description:
+                                  - A simple wooden door
+                                  flags:
+                                  - TRAP
+                                  - STUCK
+                                  has_inspected: false
+                                  has_lock: false
+                                  has_trap: false
+                                  id: D18
+                                  is_breakable: false
+                                  is_broken: false
+                                  is_hidden: 0
+                                  is_inspectable: true
+                                  is_locked: false
+                                  is_open: false
+                                  is_passage: false
+                                  is_stuck: true
+                                  location: &id021 !!python/object:dungeon.room.Room
+                                    can_contain: true
+                                    container_open: true
+                                    contents:
+                                    - *id020
+                                    - &id036 !!python/object:dungeon.door.Door
+                                      break_dc: 0
+                                      description:
+                                      - A normal opening
+                                      flags: []
+                                      has_inspected: false
+                                      has_lock: false
+                                      has_trap: false
+                                      id: D36
+                                      is_breakable: false
+                                      is_broken: false
+                                      is_hidden: 0
+                                      is_inspectable: true
+                                      is_locked: false
+                                      is_open: true
+                                      is_passage: true
+                                      is_stuck: false
+                                      location: *id018
+                                      lock_key: null
+                                      lock_pick_dc: 0
+                                      sides:
+                                      - *id021
+                                      - *id018
+                                      stuck_dc: 0
+                                      stuck_found: false
+                                      trap: null
+                                      trap_found: false
+                                      visited: false
+                                    description:
+                                    - The corridor continues on
+                                    flags: []
+                                    has_inspected: false
+                                    has_trap: false
+                                    id: R19
+                                    is_corridor: true
+                                    is_hidden: 0
+                                    is_inspectable: true
+                                    location: null
+                                    size: null
+                                    size_integer: -1
+                                    trap: null
+                                    trap_found: false
+                                    visited: false
+                                  lock_key: null
+                                  lock_pick_dc: 0
+                                  sides:
+                                  - *id022
+                                  - *id021
+                                  stuck_dc: 3
+                                  stuck_found: false
+                                  trap: null
+                                  trap_found: false
+                                  visited: false
+                                - &id026 !!python/object:dungeon.door.Door
+                                  break_dc: 12
+                                  description:
+                                  - A typical wooden door
+                                  flags:
+                                  - LOCKED
+                                  has_inspected: false
+                                  has_lock: true
+                                  has_trap: false
+                                  id: D22
+                                  is_breakable: false
+                                  is_broken: false
+                                  is_hidden: 0
+                                  is_inspectable: true
+                                  is_locked: true
+                                  is_open: false
+                                  is_passage: false
+                                  is_stuck: false
+                                  location: &id025 !!python/object:dungeon.room.Room
+                                    can_contain: true
+                                    container_open: true
+                                    contents:
+                                    - &id023 !!python/object:dungeon.door.Door
+                                      break_dc: 12
+                                      description:
+                                      - A typical wooden door
+                                      flags: []
+                                      has_inspected: false
+                                      has_lock: false
+                                      has_trap: false
+                                      id: D10
+                                      is_breakable: false
+                                      is_broken: false
+                                      is_hidden: 0
+                                      is_inspectable: true
+                                      is_locked: false
+                                      is_open: false
+                                      is_passage: false
+                                      is_stuck: false
+                                      location: &id024 !!python/object:dungeon.room.Room
+                                        can_contain: true
+                                        container_open: true
+                                        contents:
+                                        - *id023
+                                        - &id045 !!python/object:dungeon.key.Key
+                                          description:
+                                          - large key made of iron
+                                          flags: []
+                                          id: K69
+                                          is_hidden: 0
+                                          is_portable: true
+                                          location: *id024
+                                        description:
+                                        - The corridor has collapsed
+                                        flags: []
+                                        has_inspected: false
+                                        has_trap: false
+                                        id: R12
+                                        is_corridor: true
+                                        is_hidden: 0
+                                        is_inspectable: true
+                                        location: null
+                                        size: null
+                                        size_integer: -1
+                                        trap: null
+                                        trap_found: false
+                                        visited: false
+                                      lock_key: null
+                                      lock_pick_dc: 0
+                                      sides:
+                                      - *id025
+                                      - *id024
+                                      stuck_dc: 0
+                                      stuck_found: false
+                                      trap: null
+                                      trap_found: false
+                                      visited: false
+                                    - *id026
+                                    - &id027 !!python/object:dungeon.monster.Monster
+                                      alignment: le
+                                      can_contain: true
+                                      container_open: false
+                                      contents:
+                                      - &id064 !!python/object:dungeon.thing.Thing
+                                        break_dc: 0
+                                        can_contain: false
+                                        container_open: false
+                                        contents: []
+                                        description:
+                                        - 14sp
+                                        flags: []
+                                        has_inspected: false
+                                        has_lock: false
+                                        has_trap: false
+                                        id: T57
+                                        is_breakable: false
+                                        is_broken: false
+                                        is_hidden: 0
+                                        is_inspectable: true
+                                        is_locked: false
+                                        is_portable: true
+                                        location: *id027
+                                        lock_key: null
+                                        lock_pick_dc: 0
+                                        trap: null
+                                        trap_found: false
+                                      cr: 1/2
+                                      decimal_cr: 0.5
+                                      description:
+                                      - Hobgoblin
+                                      environment:
+                                      - underdark
+                                      - hill
+                                      - forest
+                                      - grassland
+                                      - desert
+                                      flags:
+                                      - TREASURE
+                                      id: M45
+                                      is_alive: true
+                                      is_hidden: 0
+                                      location: *id025
+                                      page: 186
+                                      size: medium
+                                      size_integer: 4
+                                      source: mm
+                                      type: humanoid
+                                    - &id077 !!python/object:dungeon.thing.Thing
+                                      break_dc: 0
+                                      can_contain: false
+                                      container_open: false
+                                      contents: []
+                                      description:
+                                      - Altar
+                                      flags: []
+                                      has_inspected: false
+                                      has_lock: false
+                                      has_trap: false
+                                      id: T75
+                                      is_breakable: false
+                                      is_broken: false
+                                      is_hidden: 0
+                                      is_inspectable: true
+                                      is_locked: false
+                                      is_portable: false
+                                      location: *id025
+                                      lock_key: null
+                                      lock_pick_dc: 0
+                                      trap: null
+                                      trap_found: false
+                                    - &id078 !!python/object:dungeon.thing.Thing
+                                      break_dc: 0
+                                      can_contain: false
+                                      container_open: false
+                                      contents: []
+                                      description:
+                                      - Pair of engraved bone dice (25GP) sitting
+                                        on Altar
+                                      flags: []
+                                      has_inspected: false
+                                      has_lock: false
+                                      has_trap: false
+                                      id: T76
+                                      is_breakable: false
+                                      is_broken: false
+                                      is_hidden: 0
+                                      is_inspectable: true
+                                      is_locked: false
+                                      is_portable: true
+                                      location: *id025
+                                      lock_key: null
+                                      lock_pick_dc: 0
+                                      trap: null
+                                      trap_found: false
+                                    - &id079 !!python/object:dungeon.thing.Thing
+                                      break_dc: 0
+                                      can_contain: false
+                                      container_open: false
+                                      contents: []
+                                      description:
+                                      - Small gold bracelet (25GP) sitting on Altar
+                                      flags: []
+                                      has_inspected: false
+                                      has_lock: false
+                                      has_trap: false
+                                      id: T77
+                                      is_breakable: false
+                                      is_broken: false
+                                      is_hidden: 0
+                                      is_inspectable: true
+                                      is_locked: false
+                                      is_portable: true
+                                      location: *id025
+                                      lock_key: null
+                                      lock_pick_dc: 0
+                                      trap: null
+                                      trap_found: false
+                                    - &id080 !!python/object:dungeon.thing.Thing
+                                      break_dc: 0
+                                      can_contain: false
+                                      container_open: false
+                                      contents: []
+                                      description:
+                                      - Small gold bracelet (25GP) sitting on Altar
+                                      flags: []
+                                      has_inspected: false
+                                      has_lock: false
+                                      has_trap: false
+                                      id: T78
+                                      is_breakable: false
+                                      is_broken: false
+                                      is_hidden: 0
+                                      is_inspectable: true
+                                      is_locked: false
+                                      is_portable: true
+                                      location: *id025
+                                      lock_key: null
+                                      lock_pick_dc: 0
+                                      trap: null
+                                      trap_found: false
+                                    - &id081 !!python/object:dungeon.thing.Thing
+                                      break_dc: 0
+                                      can_contain: false
+                                      container_open: false
+                                      contents: []
+                                      description:
+                                      - Free standing candles, unscented
+                                      flags: []
+                                      has_inspected: false
+                                      has_lock: false
+                                      has_trap: false
+                                      id: T79
+                                      is_breakable: false
+                                      is_broken: false
+                                      is_hidden: 0
+                                      is_inspectable: true
+                                      is_locked: false
+                                      is_portable: true
+                                      location: *id025
+                                      lock_key: null
+                                      lock_pick_dc: 0
+                                      trap: null
+                                      trap_found: false
+                                    - &id082 !!python/object:dungeon.thing.Thing
+                                      break_dc: 0
+                                      can_contain: false
+                                      container_open: false
+                                      contents: []
+                                      description:
+                                      - Free standing candles, unscented
+                                      flags: []
+                                      has_inspected: false
+                                      has_lock: false
+                                      has_trap: false
+                                      id: T80
+                                      is_breakable: false
+                                      is_broken: false
+                                      is_hidden: 0
+                                      is_inspectable: true
+                                      is_locked: false
+                                      is_portable: true
+                                      location: *id025
+                                      lock_key: null
+                                      lock_pick_dc: 0
+                                      trap: null
+                                      trap_found: false
+                                    - &id083 !!python/object:dungeon.thing.Thing
+                                      break_dc: 0
+                                      can_contain: false
+                                      container_open: false
+                                      contents: []
+                                      description:
+                                      - Free standing candles, unscented
+                                      flags: []
+                                      has_inspected: false
+                                      has_lock: false
+                                      has_trap: false
+                                      id: T81
+                                      is_breakable: false
+                                      is_broken: false
+                                      is_hidden: 0
+                                      is_inspectable: true
+                                      is_locked: false
+                                      is_portable: true
+                                      location: *id025
+                                      lock_key: null
+                                      lock_pick_dc: 0
+                                      trap: null
+                                      trap_found: false
+                                    - &id084 !!python/object:dungeon.thing.Thing
+                                      break_dc: 0
+                                      can_contain: false
+                                      container_open: false
+                                      contents: []
+                                      description:
+                                      - Free standing candles, unscented
+                                      flags: []
+                                      has_inspected: false
+                                      has_lock: false
+                                      has_trap: false
+                                      id: T82
+                                      is_breakable: false
+                                      is_broken: false
+                                      is_hidden: 0
+                                      is_inspectable: true
+                                      is_locked: false
+                                      is_portable: true
+                                      location: *id025
+                                      lock_key: null
+                                      lock_pick_dc: 0
+                                      trap: null
+                                      trap_found: false
+                                    - &id085 !!python/object:dungeon.thing.Thing
+                                      break_dc: 0
+                                      can_contain: false
+                                      container_open: false
+                                      contents: []
+                                      description:
+                                      - Free standing candles, unscented
+                                      flags: []
+                                      has_inspected: false
+                                      has_lock: false
+                                      has_trap: false
+                                      id: T83
+                                      is_breakable: false
+                                      is_broken: false
+                                      is_hidden: 0
+                                      is_inspectable: true
+                                      is_locked: false
+                                      is_portable: true
+                                      location: *id025
+                                      lock_key: null
+                                      lock_pick_dc: 0
+                                      trap: null
+                                      trap_found: false
+                                    - &id086 !!python/object:dungeon.thing.Thing
+                                      break_dc: 0
+                                      can_contain: false
+                                      container_open: false
+                                      contents: []
+                                      description:
+                                      - Free standing candles, unscented
+                                      flags: []
+                                      has_inspected: false
+                                      has_lock: false
+                                      has_trap: false
+                                      id: T84
+                                      is_breakable: false
+                                      is_broken: false
+                                      is_hidden: 0
+                                      is_inspectable: true
+                                      is_locked: false
+                                      is_portable: true
+                                      location: *id025
+                                      lock_key: null
+                                      lock_pick_dc: 0
+                                      trap: null
+                                      trap_found: false
+                                    - &id087 !!python/object:dungeon.thing.Thing
+                                      break_dc: 0
+                                      can_contain: false
+                                      container_open: false
+                                      contents: []
+                                      description:
+                                      - Free standing candles, unscented
+                                      flags: []
+                                      has_inspected: false
+                                      has_lock: false
+                                      has_trap: false
+                                      id: T85
+                                      is_breakable: false
+                                      is_broken: false
+                                      is_hidden: 0
+                                      is_inspectable: true
+                                      is_locked: false
+                                      is_portable: true
+                                      location: *id025
+                                      lock_key: null
+                                      lock_pick_dc: 0
+                                      trap: null
+                                      trap_found: false
+                                    description:
+                                    - Chapel where the lair's inhabitants worship
+                                    flags:
+                                    - OBJECT
+                                    has_inspected: false
+                                    has_trap: false
+                                    id: R11
+                                    is_corridor: false
+                                    is_hidden: 0
+                                    is_inspectable: true
+                                    location: null
+                                    size: small
+                                    size_integer: 24
+                                    trap: null
+                                    trap_found: false
+                                    visited: false
+                                  lock_key: &id037 !!python/object:dungeon.key.Key
+                                    description:
+                                    - normal key made of iron
+                                    flags: []
+                                    id: K64
+                                    is_hidden: 0
+                                    is_portable: true
+                                    location: *id018
+                                  lock_pick_dc: 9
+                                  sides:
+                                  - *id022
+                                  - *id025
+                                  stuck_dc: 0
+                                  stuck_found: false
+                                  trap: null
+                                  trap_found: false
+                                  visited: false
+                                - &id032 !!python/object:dungeon.door.Door
+                                  break_dc: 10
+                                  description:
+                                  - A simple wooden door
+                                  flags:
+                                  - LOCKED
+                                  - TRAP
+                                  has_inspected: true
+                                  has_lock: true
+                                  has_trap: false
+                                  id: D35
+                                  is_breakable: false
+                                  is_broken: false
+                                  is_hidden: 0
+                                  is_inspectable: false
+                                  is_locked: true
+                                  is_open: false
+                                  is_passage: false
+                                  is_stuck: false
+                                  location: &id031 !!python/object:dungeon.room.Room
+                                    can_contain: true
+                                    container_open: true
+                                    contents:
+                                    - &id028 !!python/object:dungeon.door.Door
+                                      break_dc: 12
+                                      description:
+                                      - A typical wooden door
+                                      flags:
+                                      - LOCKED
+                                      - TRAP
+                                      has_inspected: true
+                                      has_lock: true
+                                      has_trap: false
+                                      id: D27
+                                      is_breakable: false
+                                      is_broken: false
+                                      is_hidden: 0
+                                      is_inspectable: false
+                                      is_locked: false
+                                      is_open: true
+                                      is_passage: false
+                                      is_stuck: false
+                                      location: &id029 !!python/object:dungeon.room.Room
+                                        can_contain: true
+                                        container_open: true
+                                        contents:
+                                        - *id028
+                                        - &id033 !!python/object:dungeon.key.Key
+                                          description:
+                                          - normal key made of ivory
+                                          flags: []
+                                          id: K59
+                                          is_hidden: 0
+                                          is_portable: true
+                                          location: *id029
+                                        description:
+                                        - Training and exercise room
+                                        flags: []
+                                        has_inspected: false
+                                        has_trap: false
+                                        id: R29
+                                        is_corridor: false
+                                        is_hidden: 0
+                                        is_inspectable: true
+                                        location: null
+                                        size: large
+                                        size_integer: 48
+                                        trap: null
+                                        trap_found: false
+                                        visited: true
+                                      lock_key: *id030
+                                      lock_pick_dc: 9
+                                      sides:
+                                      - *id031
+                                      - *id029
+                                      stuck_dc: 0
+                                      stuck_found: true
+                                      trap: null
+                                      trap_found: false
+                                      visited: true
+                                    - *id032
+                                    description:
+                                    - Banquet room for important celebrations
+                                    flags: []
+                                    has_inspected: true
+                                    has_trap: false
+                                    id: R28
+                                    is_corridor: false
+                                    is_hidden: 0
+                                    is_inspectable: false
+                                    location: null
+                                    size: medium
+                                    size_integer: 32
+                                    trap: null
+                                    trap_found: false
+                                    visited: true
+                                  lock_key: *id033
+                                  lock_pick_dc: 7
+                                  sides:
+                                  - *id022
+                                  - *id031
+                                  stuck_dc: 0
+                                  stuck_found: true
+                                  trap: null
+                                  trap_found: false
+                                  visited: false
+                                - &id051 !!python/object:dungeon.monster.Monster
+                                  alignment: nn
+                                  can_contain: false
+                                  container_open: false
+                                  contents: []
+                                  cr: 1/4
+                                  decimal_cr: 0.25
+                                  description:
+                                  - Giant Lizard
+                                  environment:
+                                  - underdark
+                                  - swamp
+                                  - coastal
+                                  - desert
+                                  - forest
+                                  - jungle
+                                  flags: []
+                                  id: M43
+                                  is_alive: true
+                                  is_hidden: 0
+                                  location: *id022
+                                  page: 326
+                                  size: large
+                                  size_integer: 8
+                                  source: mm
+                                  type: beast
+                                - &id052 !!python/object:dungeon.monster.Monster
+                                  alignment: nn
+                                  can_contain: false
+                                  container_open: false
+                                  contents: []
+                                  cr: 1/4
+                                  decimal_cr: 0.25
+                                  description:
+                                  - Giant Lizard
+                                  environment:
+                                  - underdark
+                                  - swamp
+                                  - coastal
+                                  - desert
+                                  - forest
+                                  - jungle
+                                  flags: []
+                                  id: M44
+                                  is_alive: true
+                                  is_hidden: 0
+                                  location: *id022
+                                  page: 326
+                                  size: large
+                                  size_integer: 8
+                                  source: mm
+                                  type: beast
+                                - &id072 !!python/object:dungeon.thing.Thing
+                                  break_dc: 0
+                                  can_contain: true
+                                  container_open: false
+                                  contents: []
+                                  description:
+                                  - A standard wooden desk
+                                  - There is a pile of small bones on the desk
+                                  flags: []
+                                  has_inspected: false
+                                  has_lock: false
+                                  has_trap: false
+                                  id: T70
+                                  is_breakable: false
+                                  is_broken: false
+                                  is_hidden: 0
+                                  is_inspectable: true
+                                  is_locked: false
+                                  is_portable: false
+                                  location: *id022
+                                  lock_key: null
+                                  lock_pick_dc: 0
+                                  trap: null
+                                  trap_found: false
+                                - &id073 !!python/object:dungeon.thing.Thing
+                                  break_dc: 0
+                                  can_contain: false
+                                  container_open: false
+                                  contents: []
+                                  description:
+                                  - A wooden chair
+                                  flags: []
+                                  has_inspected: false
+                                  has_lock: false
+                                  has_trap: false
+                                  id: T71
+                                  is_breakable: false
+                                  is_broken: false
+                                  is_hidden: 0
+                                  is_inspectable: true
+                                  is_locked: false
+                                  is_portable: true
+                                  location: *id022
+                                  lock_key: null
+                                  lock_pick_dc: 0
+                                  trap: null
+                                  trap_found: false
+                                - &id074 !!python/object:dungeon.thing.Thing
+                                  break_dc: 0
+                                  can_contain: false
+                                  container_open: false
+                                  contents: []
+                                  description:
+                                  - A wooden chair
+                                  flags: []
+                                  has_inspected: false
+                                  has_lock: false
+                                  has_trap: false
+                                  id: T72
+                                  is_breakable: false
+                                  is_broken: false
+                                  is_hidden: 0
+                                  is_inspectable: true
+                                  is_locked: false
+                                  is_portable: true
+                                  location: *id022
+                                  lock_key: null
+                                  lock_pick_dc: 0
+                                  trap: null
+                                  trap_found: false
+                                - &id075 !!python/object:dungeon.thing.Thing
+                                  break_dc: 0
+                                  can_contain: false
+                                  container_open: false
+                                  contents: []
+                                  description:
+                                  - A wooden chair
+                                  flags: []
+                                  has_inspected: false
+                                  has_lock: false
+                                  has_trap: false
+                                  id: T73
+                                  is_breakable: false
+                                  is_broken: false
+                                  is_hidden: 0
+                                  is_inspectable: true
+                                  is_locked: false
+                                  is_portable: true
+                                  location: *id022
+                                  lock_key: null
+                                  lock_pick_dc: 0
+                                  trap: null
+                                  trap_found: false
+                                - &id076 !!python/object:dungeon.thing.Thing
+                                  break_dc: 0
+                                  can_contain: false
+                                  container_open: false
+                                  contents: []
+                                  description:
+                                  - A wooden chair
+                                  flags: []
+                                  has_inspected: false
+                                  has_lock: false
+                                  has_trap: false
+                                  id: T74
+                                  is_breakable: false
+                                  is_broken: false
+                                  is_hidden: 0
+                                  is_inspectable: true
+                                  is_locked: false
+                                  is_portable: true
+                                  location: *id022
+                                  lock_key: null
+                                  lock_pick_dc: 0
+                                  trap: null
+                                  trap_found: false
+                                description:
+                                - Guardroom for defense of the lair
+                                flags:
+                                - CATALOG
+                                has_inspected: false
+                                has_trap: false
+                                id: R15
+                                is_corridor: false
+                                is_hidden: 0
+                                is_inspectable: true
+                                location: null
+                                size: small
+                                size_integer: 24
+                                trap: null
+                                trap_found: false
+                                visited: false
+                              lock_key: null
+                              lock_pick_dc: 0
+                              sides:
+                              - *id034
+                              - *id022
+                              stuck_dc: 0
+                              stuck_found: false
+                              trap: null
+                              trap_found: false
+                              visited: false
+                            - *id035
+                            description:
+                            - The corridor continues on
+                            flags: []
+                            has_inspected: false
+                            has_trap: false
+                            id: R14
+                            is_corridor: true
+                            is_hidden: 0
+                            is_inspectable: true
+                            location: null
+                            size: null
+                            size_integer: -1
+                            trap: null
+                            trap_found: false
+                            visited: false
+                          - *id018
+                          stuck_dc: 0
+                          stuck_found: false
+                          trap: null
+                          trap_found: false
+                          visited: false
+                        - *id036
+                        - *id037
+                        description:
+                        - The corridor branches into 3 routes, including the one you
+                          came from
+                        flags: []
+                        has_inspected: false
+                        has_trap: false
+                        id: R33
+                        is_corridor: true
+                        is_hidden: 0
+                        is_inspectable: true
+                        location: null
+                        size: null
+                        size_integer: -1
+                        trap: null
+                        trap_found: false
+                        visited: false
+                      - *id016
+                      stuck_dc: 4
+                      stuck_found: false
+                      trap: null
+                      trap_found: false
+                      visited: false
+                    - &id049 !!python/object:dungeon.monster.Monster
+                      alignment: lg
+                      can_contain: false
+                      container_open: false
+                      contents: []
+                      cr: 1/8
+                      decimal_cr: 0.125
+                      description:
+                      - Flumph
+                      environment:
+                      - underdark
+                      flags: []
+                      id: M41
+                      is_alive: true
+                      is_hidden: 0
+                      location: *id016
+                      page: 135
+                      size: small
+                      size_integer: 2
+                      source: mm
+                      type: aberration
+                    - &id050 !!python/object:dungeon.monster.Monster
+                      alignment: lg
+                      can_contain: false
+                      container_open: false
+                      contents: []
+                      cr: 1/8
+                      decimal_cr: 0.125
+                      description:
+                      - Flumph
+                      environment:
+                      - underdark
+                      flags: []
+                      id: M42
+                      is_alive: true
+                      is_hidden: 0
+                      location: *id016
+                      page: 135
+                      size: small
+                      size_integer: 2
+                      source: mm
+                      type: aberration
+                    - &id088 !!python/object:dungeon.thing.Thing
+                      break_dc: 0
+                      can_contain: false
+                      container_open: false
+                      contents: []
+                      description:
+                      - Altar
+                      flags: []
+                      has_inspected: false
+                      has_lock: false
+                      has_trap: false
+                      id: T86
+                      is_breakable: false
+                      is_broken: false
+                      is_hidden: 0
+                      is_inspectable: true
+                      is_locked: false
+                      is_portable: false
+                      location: *id016
+                      lock_key: null
+                      lock_pick_dc: 0
+                      trap: null
+                      trap_found: false
+                    - &id089 !!python/object:dungeon.thing.Thing
+                      break_dc: 0
+                      can_contain: false
+                      container_open: false
+                      contents: []
+                      description:
+                      - Gold locket with a painted portrait inside (25GP) sitting
+                        on Altar
+                      flags: []
+                      has_inspected: false
+                      has_lock: false
+                      has_trap: false
+                      id: T87
+                      is_breakable: false
+                      is_broken: false
+                      is_hidden: 0
+                      is_inspectable: true
+                      is_locked: false
+                      is_portable: true
+                      location: *id016
+                      lock_key: null
+                      lock_pick_dc: 0
+                      trap: null
+                      trap_found: false
+                    - &id090 !!python/object:dungeon.thing.Thing
+                      break_dc: 0
+                      can_contain: false
+                      container_open: false
+                      contents: []
+                      description:
+                      - Pair of engraved bone dice (25GP) sitting on Altar
+                      flags: []
+                      has_inspected: false
+                      has_lock: false
+                      has_trap: false
+                      id: T88
+                      is_breakable: false
+                      is_broken: false
+                      is_hidden: 0
+                      is_inspectable: true
+                      is_locked: false
+                      is_portable: true
+                      location: *id016
+                      lock_key: null
+                      lock_pick_dc: 0
+                      trap: null
+                      trap_found: false
+                    - &id091 !!python/object:dungeon.thing.Thing
+                      break_dc: 0
+                      can_contain: false
+                      container_open: false
+                      contents: []
+                      description:
+                      - Free standing candles, unscented
+                      flags: []
+                      has_inspected: false
+                      has_lock: false
+                      has_trap: false
+                      id: T89
+                      is_breakable: false
+                      is_broken: false
+                      is_hidden: 0
+                      is_inspectable: true
+                      is_locked: false
+                      is_portable: true
+                      location: *id016
+                      lock_key: null
+                      lock_pick_dc: 0
+                      trap: null
+                      trap_found: false
+                    - &id092 !!python/object:dungeon.thing.Thing
+                      break_dc: 0
+                      can_contain: false
+                      container_open: false
+                      contents: []
+                      description:
+                      - Free standing candles, unscented
+                      flags: []
+                      has_inspected: false
+                      has_lock: false
+                      has_trap: false
+                      id: T90
+                      is_breakable: false
+                      is_broken: false
+                      is_hidden: 0
+                      is_inspectable: true
+                      is_locked: false
+                      is_portable: true
+                      location: *id016
+                      lock_key: null
+                      lock_pick_dc: 0
+                      trap: null
+                      trap_found: false
+                    - &id093 !!python/object:dungeon.thing.Thing
+                      break_dc: 0
+                      can_contain: false
+                      container_open: false
+                      contents: []
+                      description:
+                      - Free standing candles, unscented
+                      flags: []
+                      has_inspected: false
+                      has_lock: false
+                      has_trap: false
+                      id: T91
+                      is_breakable: false
+                      is_broken: false
+                      is_hidden: 0
+                      is_inspectable: true
+                      is_locked: false
+                      is_portable: true
+                      location: *id016
+                      lock_key: null
+                      lock_pick_dc: 0
+                      trap: null
+                      trap_found: false
+                    - &id094 !!python/object:dungeon.thing.Thing
+                      break_dc: 0
+                      can_contain: false
+                      container_open: false
+                      contents: []
+                      description:
+                      - Free standing candles, unscented
+                      flags: []
+                      has_inspected: false
+                      has_lock: false
+                      has_trap: false
+                      id: T92
+                      is_breakable: false
+                      is_broken: false
+                      is_hidden: 0
+                      is_inspectable: true
+                      is_locked: false
+                      is_portable: true
+                      location: *id016
+                      lock_key: null
+                      lock_pick_dc: 0
+                      trap: null
+                      trap_found: false
+                    description:
+                    - Chapel where the lair's inhabitants worship
+                    flags:
+                    - OBJECT
+                    has_inspected: false
+                    has_trap: false
+                    id: R5
+                    is_corridor: false
+                    is_hidden: 0
+                    is_inspectable: true
+                    location: null
+                    size: large
+                    size_integer: 48
+                    trap: null
+                    trap_found: false
+                    visited: false
+                  - *id013
+                  stuck_dc: 0
+                  stuck_found: false
+                  trap: null
+                  trap_found: false
+                  visited: false
+                - &id038 !!python/object:dungeon.door.Door
+                  break_dc: 0
+                  description:
+                  - The door which was here is now missing
+                  flags: []
+                  has_inspected: false
+                  has_lock: false
+                  has_trap: false
+                  id: D16
+                  is_breakable: false
+                  is_broken: false
+                  is_hidden: 0
+                  is_inspectable: true
+                  is_locked: false
+                  is_open: true
+                  is_passage: true
+                  is_stuck: false
+                  location: &id046 !!python/object:dungeon.room.Room
+                    can_contain: true
+                    container_open: true
+                    contents:
+                    - *id038
+                    - &id039 !!python/object:dungeon.door.Door
+                      break_dc: 15
+                      description:
+                      - A sturdy, well-made wooden door
+                      flags:
+                      - LOCKED
+                      - TRAP
+                      has_inspected: false
+                      has_lock: true
+                      has_trap: false
+                      id: D20
+                      is_breakable: false
+                      is_broken: false
+                      is_hidden: 0
+                      is_inspectable: true
+                      is_locked: true
+                      is_open: false
+                      is_passage: false
+                      is_stuck: false
+                      location: &id044 !!python/object:dungeon.room.Room
+                        can_contain: true
+                        container_open: true
+                        contents:
+                        - *id039
+                        - &id043 !!python/object:dungeon.door.Door
+                          break_dc: 0
+                          description:
+                          - The opening is an archway
+                          flags: []
+                          has_inspected: false
+                          has_lock: false
+                          has_trap: false
+                          id: D37
+                          is_breakable: false
+                          is_broken: false
+                          is_hidden: 0
+                          is_inspectable: true
+                          is_locked: false
+                          is_open: true
+                          is_passage: true
+                          is_stuck: false
+                          location: &id042 !!python/object:dungeon.room.Room
+                            can_contain: true
+                            container_open: true
+                            contents:
+                            - *id002
+                            - &id040 !!python/object:dungeon.door.Door
+                              break_dc: 0
+                              description:
+                              - The opening is a rough hole through which you can
+                                barely pass
+                              flags: []
+                              has_inspected: false
+                              has_lock: false
+                              has_trap: false
+                              id: D30
+                              is_breakable: false
+                              is_broken: false
+                              is_hidden: 0
+                              is_inspectable: true
+                              is_locked: false
+                              is_open: true
+                              is_passage: true
+                              is_stuck: false
+                              location: &id041 !!python/object:dungeon.room.Room
+                                can_contain: true
+                                container_open: true
+                                contents:
+                                - *id040
+                                - &id053 !!python/object:dungeon.monster.Monster
+                                  alignment: nn
+                                  can_contain: false
+                                  container_open: false
+                                  contents: []
+                                  cr: 1/4
+                                  decimal_cr: 0.25
+                                  description:
+                                  - Swarm of Rats
+                                  environment:
+                                  - urban
+                                  - swamp
+                                  - underdark
+                                  flags: []
+                                  id: M46
+                                  is_alive: true
+                                  is_hidden: 0
+                                  location: *id041
+                                  page: 339
+                                  size: medium
+                                  size_integer: 4
+                                  source: mm
+                                  type: beast
+                                - &id065 !!python/object:dungeon.thing.Thing
+                                  break_dc: 0
+                                  can_contain: true
+                                  container_open: false
+                                  contents: []
+                                  description:
+                                  - Crate of supplies
+                                  - 'Label on side reads: gelatanous cube jelly packs'
+                                  flags:
+                                  - TREASURE
+                                  has_inspected: false
+                                  has_lock: false
+                                  has_trap: false
+                                  id: T60
+                                  is_breakable: false
+                                  is_broken: false
+                                  is_hidden: 0
+                                  is_inspectable: true
+                                  is_locked: false
+                                  is_portable: false
+                                  location: *id041
+                                  lock_key: null
+                                  lock_pick_dc: 0
+                                  trap: null
+                                  trap_found: false
+                                - &id066 !!python/object:dungeon.thing.Thing
+                                  break_dc: 0
+                                  can_contain: true
+                                  container_open: false
+                                  contents: []
+                                  description:
+                                  - Crate of supplies
+                                  - 'Label on side reads: this side up'
+                                  flags:
+                                  - TREASURE
+                                  has_inspected: false
+                                  has_lock: false
+                                  has_trap: false
+                                  id: T61
+                                  is_breakable: false
+                                  is_broken: false
+                                  is_hidden: 0
+                                  is_inspectable: true
+                                  is_locked: false
+                                  is_portable: false
+                                  location: *id041
+                                  lock_key: null
+                                  lock_pick_dc: 0
+                                  trap: null
+                                  trap_found: false
+                                - &id067 !!python/object:dungeon.thing.Thing
+                                  break_dc: 0
+                                  can_contain: true
+                                  container_open: false
+                                  contents: []
+                                  description:
+                                  - Crate of supplies
+                                  - 'Label on side reads: gelatanous cube jelly packs'
+                                  flags:
+                                  - TREASURE
+                                  has_inspected: false
+                                  has_lock: false
+                                  has_trap: false
+                                  id: T62
+                                  is_breakable: false
+                                  is_broken: false
+                                  is_hidden: 0
+                                  is_inspectable: true
+                                  is_locked: false
+                                  is_portable: false
+                                  location: *id041
+                                  lock_key: null
+                                  lock_pick_dc: 0
+                                  trap: null
+                                  trap_found: false
+                                description:
+                                - Storage, mostly non-perishable goods
+                                flags:
+                                - OBJECT
+                                has_inspected: false
+                                has_trap: false
+                                id: R31
+                                is_corridor: false
+                                is_hidden: 0
+                                is_inspectable: true
+                                location: null
+                                size: large
+                                size_integer: 48
+                                trap: null
+                                trap_found: false
+                                visited: false
+                              lock_key: null
+                              lock_pick_dc: 0
+                              sides:
+                              - *id042
+                              - *id041
+                              stuck_dc: 0
+                              stuck_found: false
+                              trap: null
+                              trap_found: false
+                              visited: false
+                            - *id043
+                            description:
+                            - The corridor branches into 3 routes, including the one
+                              you came from
+                            flags: []
+                            has_inspected: false
+                            has_trap: false
+                            id: R2
+                            is_corridor: true
+                            is_hidden: 0
+                            is_inspectable: true
+                            location: null
+                            size: null
+                            size_integer: -1
+                            trap: null
+                            trap_found: false
+                            visited: false
+                          lock_key: null
+                          lock_pick_dc: 0
+                          sides:
+                          - *id044
+                          - *id042
+                          stuck_dc: 0
+                          stuck_found: false
+                          trap: null
+                          trap_found: false
+                          visited: false
+                        - &id068 !!python/object:dungeon.thing.Thing
+                          break_dc: 0
+                          can_contain: true
+                          container_open: false
+                          contents: []
+                          description:
+                          - Crate of supplies
+                          - 'Label on side reads: hard tack mix'
+                          flags:
+                          - TREASURE
+                          has_inspected: false
+                          has_lock: false
+                          has_trap: false
+                          id: T65
+                          is_breakable: false
+                          is_broken: false
+                          is_hidden: 0
+                          is_inspectable: true
+                          is_locked: false
+                          is_portable: false
+                          location: *id044
+                          lock_key: null
+                          lock_pick_dc: 0
+                          trap: null
+                          trap_found: false
+                        - &id069 !!python/object:dungeon.thing.Thing
+                          break_dc: 0
+                          can_contain: true
+                          container_open: false
+                          contents: []
+                          description:
+                          - Crate of supplies
+                          - 'Label on side reads: gelatanous cube jelly packs'
+                          flags:
+                          - TREASURE
+                          has_inspected: false
+                          has_lock: false
+                          has_trap: false
+                          id: T66
+                          is_breakable: false
+                          is_broken: false
+                          is_hidden: 0
+                          is_inspectable: true
+                          is_locked: false
+                          is_portable: false
+                          location: *id044
+                          lock_key: null
+                          lock_pick_dc: 0
+                          trap: null
+                          trap_found: false
+                        - &id070 !!python/object:dungeon.thing.Thing
+                          break_dc: 0
+                          can_contain: true
+                          container_open: false
+                          contents: []
+                          description:
+                          - Crate of supplies
+                          - 'Label on side reads: kobold chow'
+                          flags:
+                          - TREASURE
+                          has_inspected: false
+                          has_lock: false
+                          has_trap: false
+                          id: T67
+                          is_breakable: false
+                          is_broken: false
+                          is_hidden: 0
+                          is_inspectable: true
+                          is_locked: false
+                          is_portable: false
+                          location: *id044
+                          lock_key: null
+                          lock_pick_dc: 0
+                          trap: null
+                          trap_found: false
+                        - &id071 !!python/object:dungeon.thing.Thing
+                          break_dc: 0
+                          can_contain: true
+                          container_open: false
+                          contents: []
+                          description:
+                          - Crate of supplies
+                          - 'Label on side reads: this side up'
+                          flags:
+                          - TREASURE
+                          has_inspected: false
+                          has_lock: false
+                          has_trap: false
+                          id: T68
+                          is_breakable: false
+                          is_broken: false
+                          is_hidden: 0
+                          is_inspectable: true
+                          is_locked: false
+                          is_portable: false
+                          location: *id044
+                          lock_key: null
+                          lock_pick_dc: 0
+                          trap: null
+                          trap_found: false
+                        description:
+                        - Storage, mostly non-perishable goods
+                        flags:
+                        - OBJECT
+                        has_inspected: false
+                        has_trap: false
+                        id: R21
+                        is_corridor: false
+                        is_hidden: 0
+                        is_inspectable: true
+                        location: null
+                        size: small
+                        size_integer: 24
+                        trap: null
+                        trap_found: false
+                        visited: false
+                      lock_key: *id045
+                      lock_pick_dc: 11
+                      sides:
+                      - *id046
+                      - *id044
+                      stuck_dc: 0
+                      stuck_found: false
+                      trap: null
+                      trap_found: false
+                      visited: false
+                    description:
+                    - The floor of the corridor is littered with losing lottery tickets
+                    flags: []
+                    has_inspected: false
+                    has_trap: false
+                    id: R17
+                    is_corridor: true
+                    is_hidden: 0
+                    is_inspectable: true
+                    location: null
+                    size: null
+                    size_integer: -1
+                    trap: null
+                    trap_found: false
+                    visited: false
+                  lock_key: null
+                  lock_pick_dc: 0
+                  sides:
+                  - *id013
+                  - *id046
+                  stuck_dc: 0
+                  stuck_found: false
+                  trap: null
+                  trap_found: false
+                  visited: false
+                - &id054 !!python/object:dungeon.monster.Monster
+                  alignment: ne
+                  can_contain: false
+                  container_open: false
+                  contents: []
+                  cr: 1/4
+                  decimal_cr: 0.25
+                  description:
+                  - Zombie
+                  environment:
+                  - urban
+                  - jungle
+                  - underdark
+                  flags: []
+                  id: M47
+                  is_alive: true
+                  is_hidden: 0
+                  location: *id013
+                  page: 316
+                  size: medium
+                  size_integer: 4
+                  source: mm
+                  type: undead
+                - &id055 !!python/object:dungeon.monster.Monster
+                  alignment: ne
+                  can_contain: false
+                  container_open: false
+                  contents: []
+                  cr: 1/4
+                  decimal_cr: 0.25
+                  description:
+                  - Zombie
+                  environment:
+                  - urban
+                  - jungle
+                  - underdark
+                  flags: []
+                  id: M48
+                  is_alive: true
+                  is_hidden: 0
+                  location: *id013
+                  page: 316
+                  size: medium
+                  size_integer: 4
+                  source: mm
+                  type: undead
+                - *id047
+                description:
+                - Audience chamber, used to receive guests
+                flags: []
+                has_inspected: false
+                has_trap: false
+                id: R6
+                is_corridor: false
+                is_hidden: 0
+                is_inspectable: true
+                location: null
+                size: large
+                size_integer: 48
+                trap: null
+                trap_found: false
+                visited: false
+            lock_pick_dc: 7
+            sides:
+            - *id007
+            - *id048
+            stuck_dc: 0
+            stuck_found: false
+            trap: null
+            trap_found: false
+            visited: false
+          description:
+          - The corridor branches into 4 routes, including the one you came from
+          flags: []
+          has_inspected: false
+          has_trap: false
+          id: R8
+          is_corridor: true
+          is_hidden: 0
+          is_inspectable: true
+          location: null
+          size: null
+          size_integer: -1
+          trap: null
+          trap_found: false
+          visited: false
+        lock_key: null
+        lock_pick_dc: 0
+        sides:
+        - *id004
+        - *id007
+        stuck_dc: 0
+        stuck_found: false
+        trap: null
+        trap_found: false
+        visited: false
+      description:
+      - The corridor branches into 3 routes, including the one you came from
+      flags: []
+      has_inspected: false
+      has_trap: false
+      id: R3
+      is_corridor: true
+      is_hidden: 0
+      is_inspectable: true
+      location: null
+      size: null
+      size_integer: -1
+      trap: null
+      trap_found: false
+      visited: false
+    lock_key: null
+    lock_pick_dc: 0
+    sides:
+    - *id042
+    - *id004
+    stuck_dc: 0
+    stuck_found: false
+    trap: null
+    trap_found: false
+    visited: false
+  D10: *id023
+  D13: *id019
+  D16: *id038
+  D18: *id020
+  D20: *id039
+  D22: *id026
+  D23: *id003
+  D25: *id009
+  D27: *id028
+  D30: *id040
+  D32: *id017
+  D34: *id035
+  D35: *id032
+  D36: *id036
+  D37: *id043
+  D38: *id011
+  D39: *id012
+  D4: *id015
+  D7: *id006
+  I94: *id001
+  K58: *id047
+  K59: *id033
+  K63: *id030
+  K64: *id037
+  K69: *id045
+  K93: *id014
+  M41: *id049
+  M42: *id050
+  M43: *id051
+  M44: *id052
+  M45: *id027
+  M46: *id053
+  M47: *id054
+  M48: *id055
+  M50: &id056 !!python/object:dungeon.monster.Monster
+    alignment: ne
+    can_contain: true
+    container_open: false
+    contents:
+    - &id063 !!python/object:dungeon.thing.Thing
+      break_dc: 0
+      can_contain: false
+      container_open: false
+      contents: []
+      description:
+      - 22sp
+      flags: []
+      has_inspected: false
+      has_lock: false
+      has_trap: false
+      id: T56
+      is_breakable: false
+      is_broken: false
+      is_hidden: 0
+      is_inspectable: true
+      is_locked: false
+      is_portable: true
+      location: *id056
+      lock_key: null
+      lock_pick_dc: 0
+      trap: null
+      trap_found: false
+    cr: 1/4
+    decimal_cr: 0.25
+    description:
+    - Drow
+    environment:
+    - underdark
+    flags:
+    - TREASURE
+    id: M50
+    is_alive: true
+    is_hidden: 0
+    location: &id057 !!python/object:dungeon.wandering_monsters.WanderingMonsters
+      can_contain: true
+      container_open: false
+      contents:
+      - *id056
+      - &id058 !!python/object:dungeon.monster.Monster
+        alignment: nn
+        can_contain: false
+        container_open: false
+        contents: []
+        cr: 1/8
+        decimal_cr: 0.125
+        description:
+        - Stirge
+        environment:
+        - desert
+        - urban
+        - mountain
+        - grassland
+        - coastal
+        - jungle
+        - forest
+        - swamp
+        - hill
+        - underdark
+        flags: []
+        id: M51
+        is_alive: true
+        is_hidden: 0
+        location: *id057
+        page: 284
+        size: tiny
+        size_integer: 1
+        source: mm
+        type: beast
+      - &id059 !!python/object:dungeon.monster.Monster
+        alignment: nn
+        can_contain: false
+        container_open: false
+        contents: []
+        cr: '0'
+        decimal_cr: 0
+        description:
+        - Weasel
+        environment:
+        - grassland
+        - jungle
+        - hill
+        - plains
+        - marsh
+        - forest
+        - underwater
+        - arctic
+        - aquatic
+        - desert
+        - urban
+        - any
+        - costal
+        - coastal
+        - swamp
+        - badlands
+        - mountain
+        - underdark
+        flags: []
+        id: M52
+        is_alive: true
+        is_hidden: 0
+        location: *id057
+        page: 340
+        size: tiny
+        size_integer: 1
+        source: mm
+        type: beast
+      - &id060 !!python/object:dungeon.monster.Monster
+        alignment: nn
+        can_contain: false
+        container_open: false
+        contents: []
+        cr: 1/4
+        decimal_cr: 0.25
+        description:
+        - Giant Lizard
+        environment:
+        - underdark
+        - swamp
+        - coastal
+        - desert
+        - forest
+        - jungle
+        flags: []
+        id: M53
+        is_alive: true
+        is_hidden: 0
+        location: *id057
+        page: 326
+        size: large
+        size_integer: 8
+        source: mm
+        type: beast
+      - &id061 !!python/object:dungeon.monster.Monster
+        alignment: nn
+        can_contain: false
+        container_open: false
+        contents: []
+        cr: 1/2
+        decimal_cr: 0.5
+        description:
+        - Gray Ooze
+        environment:
+        - underdark
+        flags: []
+        id: M54
+        is_alive: true
+        is_hidden: 0
+        location: *id057
+        page: 243
+        size: medium
+        size_integer: 4
+        source: mm
+        type: ooze
+      - &id062 !!python/object:dungeon.monster.Monster
+        alignment: ne
+        can_contain: false
+        container_open: false
+        contents: []
+        cr: 1/4
+        decimal_cr: 0.25
+        description:
+        - Zombie
+        environment:
+        - urban
+        - jungle
+        - underdark
+        flags: []
+        id: M55
+        is_alive: true
+        is_hidden: 0
+        location: *id057
+        page: 316
+        size: medium
+        size_integer: 4
+        source: mm
+        type: undead
+      description:
+      - Wayward monsters
+      flags: []
+      id: W49
+      is_hidden: 0
+      location: null
+    page: 128
+    size: medium
+    size_integer: 4
+    source: mm
+    type: humanoid
+  M51: *id058
+  M52: *id059
+  M53: *id060
+  M54: *id061
+  M55: *id062
+  R11: *id025
+  R12: *id024
+  R14: *id034
+  R15: *id022
+  R17: *id046
+  R19: *id021
+  R2: *id042
+  R21: *id044
+  R24: *id005
+  R26: *id010
+  R28: *id031
+  R29: *id029
+  R3: *id004
+  R31: *id041
+  R33: *id018
+  R40: *id048
+  R5: *id016
+  R6: *id013
+  R8: *id007
+  R9: *id008
+  T56: *id063
+  T57: *id064
+  T60: *id065
+  T61: *id066
+  T62: *id067
+  T65: *id068
+  T66: *id069
+  T67: *id070
+  T68: *id071
+  T70: *id072
+  T71: *id073
+  T72: *id074
+  T73: *id075
+  T74: *id076
+  T75: *id077
+  T76: *id078
+  T77: *id079
+  T78: *id080
+  T79: *id081
+  T80: *id082
+  T81: *id083
+  T82: *id084
+  T83: *id085
+  T84: *id086
+  T85: *id087
+  T86: *id088
+  T87: *id089
+  T88: *id090
+  T89: *id091
+  T90: *id092
+  T91: *id093
+  T92: *id094
+  W49: *id057
+parameters:
+  environments:
+  - underdark
+  wandering_monsters:
+    count: 6
+    percent_chance: 3
+player_data: {}
+prefixes:
+  Door: D
+  Inventory: I
+  Key: K
+  Monster: M
+  Room: R
+  Thing: T
+  WanderingMonsters: W
+start_room: *id031
+state:
+  current_room: *id031
+  current_time: 3
+  next_wandering_monster: 35
+version: 1
+wm: *id057
