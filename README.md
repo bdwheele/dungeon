@@ -101,7 +101,7 @@ Buttons will only appear if they're appropriate
 * 🛌 - rest in room.  This is a 4-hour rest.  If wandering monsters come through during the rest, a dialog (should) appear letting them know the rest was unsuccessful.
 
 ### Details pane
-This pane is the current room and it's contents
+This pane is the current room and its contents
 
 ### Exits pane
 This pane lists the doors that are attached to the current room.  Checkmarks appear if the door has been used previously
