@@ -323,12 +323,57 @@ room_kind:
   - - 1
     - description:
         - Armory stocked with weapons and armor
+      flags:
+        OBJECT:
+          count: 1d6-1
+          percent: 90
+          description:
+            - Uselessly deteriorated {catalog.armor} 
+        OBJECT:
+          percent: 1
+          description:
+            - "{catalog.armor}, in good condition"
+        OBJECT:
+          count: 2d6-2
+          description:
+            - Uselessly deteriorated {catalog.weapon}
+        OBJECT:
+          percent: 1
+          description:
+            - "{catalog.weapon}, in good condition"
+
+
   - - 1
     - description:
         - Audience chamber, used to receive guests
+      flags:
+        - OBJECT:
+            description:
+              - Embroidered banner hanging on the wall
+              - Based on their design, they must have been constructed by preteens
+            count: 1d4+3
+
+
   - - 1
     - description:
         - Banquet room for important celebrations
+      flags:
+        OBJECT:
+          description:
+            - Long banquet table
+          is_portable: no
+        OBJECT:
+          count: 1d6+5
+          description:
+            - Dining chair
+          can_contain: yes
+          flags:
+            - TREASURE:
+                is_hidden: 5
+                percent: 2
+                type: i
+                cr: 3
+
   - - 1
     - description:
         - Barracks where the lair's defenders are quartered
@@ -339,6 +384,17 @@ room_kind:
             count: 1d3+2
             description:
               - Lumpy cot with rough blankets
+            can_contain: yes
+            is_portable: no
+            flags:
+              - TREASURE:
+                  percent: 5
+                  is_hidden: 14
+                  type: i
+                  cr: 3
+              - MONSTER:
+                  percent: 1
+                  name: Skeleton
   - - 1
     - description:
         - Bedroom, for use by leaders
@@ -347,13 +403,10 @@ room_kind:
             name: bed
         - CATALOG:
             name: wardrobe
-        - OBJECT:
-            description:
-              - Full-length mirror
-
-        - OBJECT:
-            description:
-              - Comfy Chair
+        - CATALOG:
+            name: full_length_mirror
+        - CATALOG:
+            name: comfy_chair
   - - 1
     - description:
         - Chapel where the lair's inhabitants worship
@@ -368,6 +421,7 @@ room_kind:
               - "{treasure.ART_25} sitting on Altar"
         - OBJECT:
             count: 1d6+2
+            is_portable: no
             description:
               - Free standing candles, unscented
   - - 1
@@ -379,9 +433,10 @@ room_kind:
               - A well in the middle of the room
               - "{dressing.water}"
             is_portable: no
+            can_contain: no
         - OBJECT:
             description:
-              - A Bucket with a length of rope
+              - A Bucket with a short length of rope
   - - 2
     - description:
         - Guardroom for defense of the lair
@@ -399,7 +454,7 @@ room_kind:
         - OBJECT:
             count: 1d6+1
             description:
-              - Kennel
+              - Cage
             can_contain: yes
             is_portable: no
             flags:
@@ -407,9 +462,15 @@ room_kind:
                   description:
                     - "{treasure.GEM_10}"
                   percent: 10
+                  is_hidden: 5
               - OBJECT:
                   description:
-                    - Little bits of "beast chow" scattered throughout
+                    - Bits of "beast chow"
+                  percent: 30
+              - CATALOG:
+                  name: bones
+                  percent: 40
+
   - - 1
     - description:
         - Kitchen for for food storage and preparation
@@ -424,6 +485,13 @@ room_kind:
         - OBJECT:
             description:
               - Prep table
+            is_portable: no
+            can_contain: yes
+            flags:
+            - OBJECT:
+                percent: 90
+                description:
+                  - Food prep tools
   - - 2
     - description:
         - Storage, mostly non-perishable goods
@@ -441,18 +509,96 @@ room_kind:
                   percent: 3
                   type: h
                   cr: 3
+
+
   - - 1
     - description:
         - Throne room where the lair's leaders hold court
+      flags:
+        - OBJECT:
+            is_portable: no
+            description:
+              - A lavish throne on a dais in disrepair
+              - Made from {catalog.throne_materials}
+      
   - - 1
     - description:
         - Torture chamber
+      flags:
+        - OBJECT:
+            count: 1d6+2
+            is_portable: no
+            description:
+              - A torture device in non-working order
+        - CATALOG:
+            name: bones
+        - OBJECT:
+            percent: 1
+            description:
+              - A pile of large bones
+              - [15, "{treasure.ART_25}"]
+        - OBJECT:
+            percent: 50
+            description:
+              - A genuine iron maiden
+              - Someone has dented it from the inside
+            is_portable: no
+            can_contain: yes
+        - OBJECT:
+            percent: 30
+            description:
+              - Jacuzzi filled with blood
+            is_portable: no
+            can_contain: yes
+        - OBJECT:
+            description:
+              - Pile of fingernails and/or claws
+            percent: 90
+
+
   - - 1
     - description:
         - Training and exercise room
+      flags:
+        - OBJECT:
+            percent: 90
+            description:
+              - A motivational poster showing a sweaty, muscular kobold flexing its big, toned muscles and smiling with its brilliantly white teeth
+        - OBJECT: 
+            percent: 90
+            description:
+              - "A motivational poster: Drink milk for strong bones, spikes, and fangs!"
+        - OBJECT:
+            percent: 30
+            description:
+              - Deodorant and jock straps available for public use.
+        - CATALOG:
+            name: full_length_mirror  
+
+
   - - 1
     - description:
         - Trophy room or museum
+      flags:
+        - OBJECT:
+            description:
+              - A ridiculously ornate yellow trophy bearing the inscription “Robot Reliability Travelling Trophy”
+        - OBJECT:
+            description:
+              - A taxidermied bat that appears to have been killed with a flyswatter
+        - OBJECT:
+            count: 1d3
+            description:
+              - Cup-like award with "Most improved odor"
+            can_contain: yes
+            flags:
+              - TREASURE:
+                  is_hidden: 18
+                  percent: 5
+                  type: i
+                  cr: 0
+
+
   - - 1
     - description:
         - Latrine or bath
@@ -513,4 +659,11 @@ room_kind:
             description: 
               - "{catalog.artisans_tools}"
   
-  
+  - - 1
+    - description:
+        - A library with many books, but most of them are no longer readable
+      flags:
+        - OBJECT:
+            count: 1d8+1
+            description:
+              - "{catalog.book_titles}"

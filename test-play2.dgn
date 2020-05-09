@@ -11,7 +11,7 @@ inventory: &id001 !!python/object:dungeon.inventory.Inventory
     is_hidden: 0
     is_portable: true
     location: *id001
-  - &id083 !!python/object:dungeon.thing.Thing
+  - &id082 !!python/object:dungeon.thing.Thing
     break_dc: 0
     can_contain: false
     container_open: false
@@ -80,13 +80,82 @@ inventory: &id001 !!python/object:dungeon.inventory.Inventory
     lock_pick_dc: 0
     trap: null
     trap_found: false
+  - &id098 !!python/object:dungeon.thing.Thing
+    break_dc: 0
+    can_contain: false
+    container_open: false
+    contents: []
+    description:
+    - Silver ewer (25GP) sitting on Altar
+    flags: []
+    has_lock: false
+    has_trap: false
+    id: T67
+    inspect_count: 0
+    is_breakable: false
+    is_broken: false
+    is_hidden: 0
+    is_inspectable: true
+    is_locked: false
+    is_portable: true
+    location: *id001
+    lock_key: null
+    lock_pick_dc: 0
+    trap: null
+    trap_found: false
+  - &id099 !!python/object:dungeon.thing.Thing
+    break_dc: 0
+    can_contain: false
+    container_open: false
+    contents: []
+    description:
+    - Embroidered silk handkerchief (25GP) sitting on Altar
+    flags: []
+    has_lock: false
+    has_trap: false
+    id: T68
+    inspect_count: 0
+    is_breakable: false
+    is_broken: false
+    is_hidden: 0
+    is_inspectable: true
+    is_locked: false
+    is_portable: true
+    location: *id001
+    lock_key: null
+    lock_pick_dc: 0
+    trap: null
+    trap_found: false
+  - &id100 !!python/object:dungeon.thing.Thing
+    break_dc: 0
+    can_contain: false
+    container_open: false
+    contents: []
+    description:
+    - Black velvet mask stitched with silver thread (25GP) sitting on Altar
+    flags: []
+    has_lock: false
+    has_trap: false
+    id: T69
+    inspect_count: 0
+    is_breakable: false
+    is_broken: false
+    is_hidden: 0
+    is_inspectable: true
+    is_locked: false
+    is_portable: true
+    location: *id001
+    lock_key: null
+    lock_pick_dc: 0
+    trap: null
+    trap_found: false
   description:
   - Player inventory
   flags: []
   id: I129
   is_hidden: 0
   location: null
-max_object_id: 132
+max_object_id: 133
 objects:
   D1: &id002 !!python/object:dungeon.door.Door
     break_dc: 0
@@ -245,9 +314,9 @@ objects:
             is_hidden: 0
             is_inspectable: true
             is_locked: false
-            is_open: false
+            is_open: true
             is_passage: false
-            is_stuck: true
+            is_stuck: false
             location: &id008 !!python/object:dungeon.room.Room
               can_contain: true
               container_open: true
@@ -271,76 +340,6 @@ objects:
                 is_inspectable: true
                 is_locked: false
                 is_portable: false
-                location: *id008
-                lock_key: null
-                lock_pick_dc: 0
-                trap: null
-                trap_found: false
-              - &id098 !!python/object:dungeon.thing.Thing
-                break_dc: 0
-                can_contain: false
-                container_open: false
-                contents: []
-                description:
-                - Silver ewer (25GP) sitting on Altar
-                flags: []
-                has_lock: false
-                has_trap: false
-                id: T67
-                inspect_count: 0
-                is_breakable: false
-                is_broken: false
-                is_hidden: 0
-                is_inspectable: true
-                is_locked: false
-                is_portable: true
-                location: *id008
-                lock_key: null
-                lock_pick_dc: 0
-                trap: null
-                trap_found: false
-              - &id099 !!python/object:dungeon.thing.Thing
-                break_dc: 0
-                can_contain: false
-                container_open: false
-                contents: []
-                description:
-                - Embroidered silk handkerchief (25GP) sitting on Altar
-                flags: []
-                has_lock: false
-                has_trap: false
-                id: T68
-                inspect_count: 0
-                is_breakable: false
-                is_broken: false
-                is_hidden: 0
-                is_inspectable: true
-                is_locked: false
-                is_portable: true
-                location: *id008
-                lock_key: null
-                lock_pick_dc: 0
-                trap: null
-                trap_found: false
-              - &id100 !!python/object:dungeon.thing.Thing
-                break_dc: 0
-                can_contain: false
-                container_open: false
-                contents: []
-                description:
-                - Black velvet mask stitched with silver thread (25GP) sitting on
-                  Altar
-                flags: []
-                has_lock: false
-                has_trap: false
-                id: T69
-                inspect_count: 0
-                is_breakable: false
-                is_broken: false
-                is_hidden: 0
-                is_inspectable: true
-                is_locked: false
-                is_portable: true
                 location: *id008
                 lock_key: null
                 lock_pick_dc: 0
@@ -453,40 +452,18 @@ objects:
               size_integer: 24
               trap: null
               trap_found: false
-              visited: false
+              visited: true
             lock_key: null
             lock_pick_dc: 0
             sides:
             - *id009
             - *id008
             stuck_dc: 3
-            stuck_found: false
+            stuck_found: true
             trap: null
             trap_found: false
-            visited: false
+            visited: true
           - *id010
-          - &id044 !!python/object:dungeon.monster.Monster
-            alignment: ne
-            can_contain: false
-            container_open: false
-            contents: []
-            cr: 1/2
-            decimal_cr: 0.5
-            description:
-            - Magma Mephit
-            environment:
-            - underdark
-            flags: []
-            id: M42
-            is_alive: true
-            is_hidden: 0
-            location: *id009
-            page: 216
-            size: small
-            size_integer: 2
-            source: mm
-            type: elemental
-            xp: 100
           - &id105 !!python/object:dungeon.thing.Thing
             break_dc: 0
             can_contain: false
@@ -522,6 +499,29 @@ objects:
             has_lock: false
             has_trap: false
             id: T75
+            inspect_count: 0
+            is_breakable: false
+            is_broken: false
+            is_hidden: 0
+            is_inspectable: true
+            is_locked: false
+            is_portable: true
+            location: *id009
+            lock_key: null
+            lock_pick_dc: 0
+            trap: null
+            trap_found: false
+          - &id086 !!python/object:dungeon.thing.Thing
+            break_dc: 0
+            can_contain: true
+            container_open: false
+            contents: []
+            description:
+            - The corpse of Magma Mephit (M42)
+            flags: []
+            has_lock: false
+            has_trap: false
+            id: T133
             inspect_count: 0
             is_breakable: false
             is_broken: false
@@ -1008,9 +1008,9 @@ objects:
             is_hidden: 0
             is_inspectable: true
             is_locked: false
-            is_open: false
+            is_open: true
             is_passage: false
-            is_stuck: true
+            is_stuck: false
             location: &id024 !!python/object:dungeon.room.Room
               can_contain: true
               container_open: true
@@ -1030,17 +1030,17 @@ objects:
               size_integer: -1
               trap: null
               trap_found: false
-              visited: false
+              visited: true
             lock_key: null
             lock_pick_dc: 0
             sides:
             - *id022
             - *id024
             stuck_dc: 5
-            stuck_found: false
+            stuck_found: true
             trap: null
             trap_found: false
-            visited: false
+            visited: true
           - &id042 !!python/object:dungeon.door.Door
             break_dc: 0
             description:
@@ -1335,7 +1335,7 @@ objects:
                             lock_pick_dc: 0
                             trap: null
                             trap_found: false
-                          - &id086 !!python/object:dungeon.thing.Thing
+                          - &id085 !!python/object:dungeon.thing.Thing
                             break_dc: 0
                             can_contain: true
                             container_open: false
@@ -1734,7 +1734,7 @@ objects:
                         trap: null
                         trap_found: false
                         visited: true
-                      - &id072 !!python/object:dungeon.thing.Thing
+                      - &id071 !!python/object:dungeon.thing.Thing
                         break_dc: 0
                         can_contain: false
                         container_open: false
@@ -1759,7 +1759,7 @@ objects:
                         lock_pick_dc: 0
                         trap: null
                         trap_found: false
-                      - &id073 !!python/object:dungeon.thing.Thing
+                      - &id072 !!python/object:dungeon.thing.Thing
                         break_dc: 0
                         can_contain: false
                         container_open: false
@@ -1784,7 +1784,7 @@ objects:
                         lock_pick_dc: 0
                         trap: null
                         trap_found: false
-                      - &id074 !!python/object:dungeon.thing.Thing
+                      - &id073 !!python/object:dungeon.thing.Thing
                         break_dc: 0
                         can_contain: false
                         container_open: false
@@ -1809,7 +1809,7 @@ objects:
                         lock_pick_dc: 0
                         trap: null
                         trap_found: false
-                      - &id075 !!python/object:dungeon.thing.Thing
+                      - &id074 !!python/object:dungeon.thing.Thing
                         break_dc: 0
                         can_contain: false
                         container_open: false
@@ -1834,7 +1834,7 @@ objects:
                         lock_pick_dc: 0
                         trap: null
                         trap_found: false
-                      - &id076 !!python/object:dungeon.thing.Thing
+                      - &id075 !!python/object:dungeon.thing.Thing
                         break_dc: 0
                         can_contain: false
                         container_open: false
@@ -1859,7 +1859,7 @@ objects:
                         lock_pick_dc: 0
                         trap: null
                         trap_found: false
-                      - &id077 !!python/object:dungeon.thing.Thing
+                      - &id076 !!python/object:dungeon.thing.Thing
                         break_dc: 0
                         can_contain: false
                         container_open: false
@@ -1884,7 +1884,7 @@ objects:
                         lock_pick_dc: 0
                         trap: null
                         trap_found: false
-                      - &id078 !!python/object:dungeon.thing.Thing
+                      - &id077 !!python/object:dungeon.thing.Thing
                         break_dc: 0
                         can_contain: false
                         container_open: false
@@ -1981,7 +1981,7 @@ objects:
                           container_open: true
                           contents:
                           - *id035
-                          - &id057 !!python/object:dungeon.thing.Thing
+                          - &id056 !!python/object:dungeon.thing.Thing
                             break_dc: 0
                             can_contain: true
                             container_open: false
@@ -2005,7 +2005,7 @@ objects:
                             lock_pick_dc: 0
                             trap: null
                             trap_found: false
-                          - &id058 !!python/object:dungeon.thing.Thing
+                          - &id057 !!python/object:dungeon.thing.Thing
                             break_dc: 0
                             can_contain: false
                             container_open: false
@@ -2028,7 +2028,7 @@ objects:
                             lock_pick_dc: 0
                             trap: null
                             trap_found: false
-                          - &id059 !!python/object:dungeon.thing.Thing
+                          - &id058 !!python/object:dungeon.thing.Thing
                             break_dc: 0
                             can_contain: false
                             container_open: false
@@ -2051,7 +2051,7 @@ objects:
                             lock_pick_dc: 0
                             trap: null
                             trap_found: false
-                          - &id060 !!python/object:dungeon.thing.Thing
+                          - &id059 !!python/object:dungeon.thing.Thing
                             break_dc: 0
                             can_contain: false
                             container_open: false
@@ -2074,7 +2074,7 @@ objects:
                             lock_pick_dc: 0
                             trap: null
                             trap_found: false
-                          - &id061 !!python/object:dungeon.thing.Thing
+                          - &id060 !!python/object:dungeon.thing.Thing
                             break_dc: 0
                             can_contain: false
                             container_open: false
@@ -2159,7 +2159,7 @@ objects:
                           size_integer: -1
                           trap: null
                           trap_found: false
-                          visited: false
+                          visited: true
                         lock_key: null
                         lock_pick_dc: 0
                         sides:
@@ -2169,8 +2169,8 @@ objects:
                         stuck_found: false
                         trap: null
                         trap_found: false
-                        visited: false
-                      - &id062 !!python/object:dungeon.thing.Thing
+                        visited: true
+                      - &id061 !!python/object:dungeon.thing.Thing
                         break_dc: 0
                         can_contain: true
                         container_open: false
@@ -2194,7 +2194,7 @@ objects:
                         lock_pick_dc: 0
                         trap: null
                         trap_found: false
-                      - &id063 !!python/object:dungeon.thing.Thing
+                      - &id062 !!python/object:dungeon.thing.Thing
                         break_dc: 0
                         can_contain: true
                         container_open: false
@@ -2218,7 +2218,7 @@ objects:
                         lock_pick_dc: 0
                         trap: null
                         trap_found: false
-                      - &id064 !!python/object:dungeon.thing.Thing
+                      - &id063 !!python/object:dungeon.thing.Thing
                         break_dc: 0
                         can_contain: true
                         container_open: false
@@ -2242,7 +2242,7 @@ objects:
                         lock_pick_dc: 0
                         trap: null
                         trap_found: false
-                      - &id065 !!python/object:dungeon.thing.Thing
+                      - &id064 !!python/object:dungeon.thing.Thing
                         break_dc: 0
                         can_contain: true
                         container_open: true
@@ -2266,7 +2266,7 @@ objects:
                         lock_pick_dc: 0
                         trap: null
                         trap_found: false
-                      - &id066 !!python/object:dungeon.thing.Thing
+                      - &id065 !!python/object:dungeon.thing.Thing
                         break_dc: 0
                         can_contain: true
                         container_open: false
@@ -2290,7 +2290,7 @@ objects:
                         lock_pick_dc: 0
                         trap: null
                         trap_found: false
-                      - &id067 !!python/object:dungeon.thing.Thing
+                      - &id066 !!python/object:dungeon.thing.Thing
                         break_dc: 0
                         can_contain: true
                         container_open: false
@@ -2314,7 +2314,7 @@ objects:
                         lock_pick_dc: 0
                         trap: null
                         trap_found: false
-                      - &id068 !!python/object:dungeon.thing.Thing
+                      - &id067 !!python/object:dungeon.thing.Thing
                         break_dc: 0
                         can_contain: true
                         container_open: false
@@ -2338,7 +2338,7 @@ objects:
                         lock_pick_dc: 0
                         trap: null
                         trap_found: false
-                      - &id069 !!python/object:dungeon.thing.Thing
+                      - &id068 !!python/object:dungeon.thing.Thing
                         break_dc: 0
                         can_contain: true
                         container_open: false
@@ -2362,7 +2362,7 @@ objects:
                         lock_pick_dc: 0
                         trap: null
                         trap_found: false
-                      - &id070 !!python/object:dungeon.thing.Thing
+                      - &id069 !!python/object:dungeon.thing.Thing
                         break_dc: 0
                         can_contain: true
                         container_open: false
@@ -2386,7 +2386,7 @@ objects:
                         lock_pick_dc: 0
                         trap: null
                         trap_found: false
-                      - &id071 !!python/object:dungeon.thing.Thing
+                      - &id070 !!python/object:dungeon.thing.Thing
                         break_dc: 0
                         can_contain: true
                         container_open: false
@@ -2410,7 +2410,7 @@ objects:
                         lock_pick_dc: 0
                         trap: null
                         trap_found: false
-                      - &id084 !!python/object:dungeon.thing.Thing
+                      - &id083 !!python/object:dungeon.thing.Thing
                         break_dc: 0
                         can_contain: true
                         container_open: false
@@ -2433,7 +2433,7 @@ objects:
                         lock_pick_dc: 0
                         trap: null
                         trap_found: false
-                      - &id085 !!python/object:dungeon.thing.Thing
+                      - &id084 !!python/object:dungeon.thing.Thing
                         break_dc: 0
                         can_contain: true
                         container_open: false
@@ -2483,7 +2483,7 @@ objects:
                     trap_found: false
                     visited: true
                   - *id040
-                  - &id079 !!python/object:dungeon.thing.Thing
+                  - &id078 !!python/object:dungeon.thing.Thing
                     break_dc: 0
                     can_contain: true
                     container_open: false
@@ -2508,7 +2508,7 @@ objects:
                     lock_pick_dc: 0
                     trap: null
                     trap_found: false
-                  - &id080 !!python/object:dungeon.thing.Thing
+                  - &id079 !!python/object:dungeon.thing.Thing
                     break_dc: 0
                     can_contain: true
                     container_open: true
@@ -2533,7 +2533,7 @@ objects:
                     lock_pick_dc: 0
                     trap: null
                     trap_found: false
-                  - &id081 !!python/object:dungeon.thing.Thing
+                  - &id080 !!python/object:dungeon.thing.Thing
                     break_dc: 0
                     can_contain: true
                     container_open: false
@@ -2558,7 +2558,7 @@ objects:
                     lock_pick_dc: 0
                     trap: null
                     trap_found: false
-                  - &id082 !!python/object:dungeon.thing.Thing
+                  - &id081 !!python/object:dungeon.thing.Thing
                     break_dc: 0
                     can_contain: true
                     container_open: false
@@ -2610,7 +2610,7 @@ objects:
                 trap_found: false
                 visited: true
               - *id042
-              - &id045 !!python/object:dungeon.monster.Monster
+              - &id044 !!python/object:dungeon.monster.Monster
                 alignment: lg
                 can_contain: false
                 container_open: false
@@ -2632,7 +2632,7 @@ objects:
                 source: mm
                 type: aberration
                 xp: 25
-              - &id046 !!python/object:dungeon.monster.Monster
+              - &id045 !!python/object:dungeon.monster.Monster
                 alignment: lg
                 can_contain: false
                 container_open: false
@@ -2654,7 +2654,7 @@ objects:
                 source: mm
                 type: aberration
                 xp: 25
-              - &id047 !!python/object:dungeon.monster.Monster
+              - &id046 !!python/object:dungeon.monster.Monster
                 alignment: lg
                 can_contain: false
                 container_open: false
@@ -2776,7 +2776,7 @@ objects:
                 lock_pick_dc: 0
                 trap: null
                 trap_found: false
-              - &id055 !!python/object:dungeon.thing.Thing
+              - &id054 !!python/object:dungeon.thing.Thing
                 break_dc: 0
                 can_contain: true
                 container_open: false
@@ -2801,7 +2801,7 @@ objects:
                 lock_pick_dc: 0
                 trap: null
                 trap_found: false
-              - &id056 !!python/object:dungeon.thing.Thing
+              - &id055 !!python/object:dungeon.thing.Thing
                 break_dc: 0
                 can_contain: true
                 container_open: false
@@ -2921,7 +2921,28 @@ objects:
   K84: *id005
   M40: *id030
   M41: *id032
-  M42: *id044
+  M42: !!python/object:dungeon.monster.Monster
+    alignment: ne
+    can_contain: false
+    container_open: false
+    contents: []
+    cr: 1/2
+    decimal_cr: 0.5
+    description:
+    - Magma Mephit
+    environment:
+    - underdark
+    flags: []
+    id: M42
+    is_alive: true
+    is_hidden: 0
+    location: null
+    page: 216
+    size: small
+    size_integer: 2
+    source: mm
+    type: elemental
+    xp: 100
   M43: !!python/object:dungeon.monster.Monster
     alignment: ce
     can_contain: false
@@ -2966,9 +2987,9 @@ objects:
     source: mm
     type: fiend
     xp: 25
-  M45: *id045
-  M46: *id046
-  M47: *id047
+  M45: *id044
+  M46: *id045
+  M47: *id046
   M48: !!python/object:dungeon.monster.Monster
     alignment: nn
     can_contain: false
@@ -2991,7 +3012,7 @@ objects:
     source: mm
     type: monstrosity
     xp: 100
-  M50: &id048 !!python/object:dungeon.monster.Monster
+  M50: &id047 !!python/object:dungeon.monster.Monster
     alignment: nn
     can_contain: false
     container_open: false
@@ -3010,12 +3031,12 @@ objects:
     id: M50
     is_alive: true
     is_hidden: 0
-    location: &id049 !!python/object:dungeon.wandering_monsters.WanderingMonsters
+    location: &id048 !!python/object:dungeon.wandering_monsters.WanderingMonsters
       can_contain: true
       container_open: false
       contents:
-      - *id048
-      - &id050 !!python/object:dungeon.monster.Monster
+      - *id047
+      - &id049 !!python/object:dungeon.monster.Monster
         alignment: ce
         can_contain: false
         container_open: false
@@ -3030,14 +3051,14 @@ objects:
         id: M51
         is_alive: true
         is_hidden: 0
-        location: *id049
+        location: *id048
         page: 60
         size: small
         size_integer: 2
         source: mm
         type: fiend
         xp: 25
-      - &id051 !!python/object:dungeon.monster.Monster
+      - &id050 !!python/object:dungeon.monster.Monster
         alignment: ln
         can_contain: false
         container_open: false
@@ -3052,14 +3073,14 @@ objects:
         id: M52
         is_alive: true
         is_hidden: 0
-        location: *id049
+        location: *id048
         page: 232
         size: medium
         size_integer: 4
         source: mm
         type: plant
         xp: 100
-      - &id052 !!python/object:dungeon.monster.Monster
+      - &id051 !!python/object:dungeon.monster.Monster
         alignment: ce
         can_contain: false
         container_open: false
@@ -3074,14 +3095,14 @@ objects:
         id: M53
         is_alive: true
         is_hidden: 0
-        location: *id049
+        location: *id048
         page: 57
         size: small
         size_integer: 2
         source: mm
         type: fiend
         xp: 50
-      - &id053 !!python/object:dungeon.monster.Monster
+      - &id052 !!python/object:dungeon.monster.Monster
         alignment: le
         can_contain: false
         container_open: false
@@ -3097,14 +3118,14 @@ objects:
         id: M54
         is_alive: true
         is_hidden: 0
-        location: *id049
+        location: *id048
         page: 272
         size: medium
         size_integer: 4
         source: mm
         type: undead
         xp: 50
-      - &id054 !!python/object:dungeon.monster.Monster
+      - &id053 !!python/object:dungeon.monster.Monster
         alignment: nn
         can_contain: false
         container_open: false
@@ -3125,7 +3146,7 @@ objects:
         id: M55
         is_alive: true
         is_hidden: 0
-        location: *id049
+        location: *id048
         page: 327
         size: medium
         size_integer: 4
@@ -3144,11 +3165,11 @@ objects:
     source: mm
     type: beast
     xp: 50
-  M51: *id050
-  M52: *id051
-  M53: *id052
-  M54: *id053
-  M55: *id054
+  M51: *id049
+  M52: *id050
+  M53: *id051
+  M54: *id052
+  M55: *id053
   R11: *id037
   R13: *id036
   R15: *id020
@@ -3169,38 +3190,39 @@ objects:
   R6: *id028
   R8: *id013
   R9: *id014
-  T100: *id055
-  T101: *id056
-  T102: *id057
-  T103: *id058
-  T104: *id059
-  T105: *id060
-  T106: *id061
-  T107: *id062
-  T108: *id063
-  T109: *id064
-  T110: *id065
-  T111: *id066
-  T112: *id067
-  T113: *id068
-  T114: *id069
-  T115: *id070
-  T116: *id071
-  T117: *id072
-  T118: *id073
-  T119: *id074
-  T120: *id075
-  T121: *id076
-  T122: *id077
-  T123: *id078
-  T124: *id079
-  T125: *id080
-  T126: *id081
-  T127: *id082
-  T128: *id083
-  T130: *id084
-  T131: *id085
-  T132: *id086
+  T100: *id054
+  T101: *id055
+  T102: *id056
+  T103: *id057
+  T104: *id058
+  T105: *id059
+  T106: *id060
+  T107: *id061
+  T108: *id062
+  T109: *id063
+  T110: *id064
+  T111: *id065
+  T112: *id066
+  T113: *id067
+  T114: *id068
+  T115: *id069
+  T116: *id070
+  T117: *id071
+  T118: *id072
+  T119: *id073
+  T120: *id074
+  T121: *id075
+  T122: *id076
+  T123: *id077
+  T124: *id078
+  T125: *id079
+  T126: *id080
+  T127: *id081
+  T128: *id082
+  T130: *id083
+  T131: *id084
+  T132: *id085
+  T133: *id086
   T56: *id087
   T57: *id088
   T58: *id089
@@ -3244,7 +3266,7 @@ objects:
   T97: *id127
   T98: *id128
   T99: *id129
-  W49: *id049
+  W49: *id048
 parameters:
   environments:
   - underdark
@@ -3263,9 +3285,9 @@ prefixes:
   WanderingMonsters: W
 start_room: *id036
 state:
-  current_room: *id009
-  current_time: 70
+  current_room: *id024
+  current_time: 81
   next_wandering_monster: 93
-  xp_earned: 150
+  xp_earned: 250
 version: 1
-wm: *id049
+wm: *id048

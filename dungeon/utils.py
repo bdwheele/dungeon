@@ -110,8 +110,12 @@ def template(string, values):
 def get_template_vars(string):
     """get the variables needed to complete the template"""
     var_re = re.compile(r"\{(.+?)\}")
-    return list(set(var_re.findall(string)))
-
+    try:
+        return list(set(var_re.findall(string)))
+    except Exception as e:
+        print(f"Bad string: '{string}'")
+        raise e
+    
 def is_template(string):
     """return whether or not the string is a template"""
     return len(get_template_vars(string)) != 0

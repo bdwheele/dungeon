@@ -116,6 +116,7 @@ def process_flags(obj, dungeon, monster_store, tables):
                     name = flag.args['name']
                 new_obj = Thing()
                 new_obj.merge_attrs(tables.get_table(group, name))
+                new_obj.merge_attrs(flag.args)
                 new_objects.append(new_obj)
                 obj.store(new_obj)
             elif flag.name == 'MONSTER':

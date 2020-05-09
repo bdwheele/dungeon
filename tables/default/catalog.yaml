@@ -42,6 +42,23 @@ wooden_chair:
     - A wooden chair
   is_portable: yes
 
+comfy_chair:
+  description:
+    - A comfortable chair covered in {catalog.clothing_colors} {catalog.clothing_material}
+  is_portable: no
+  can_contain: yes
+  flags:
+    - TREASURE:
+        percent: 5
+        is_hidden: 6
+        type: i
+        cr: 3
+
+full_length_mirror:
+  description:
+    - Free standing full-length mirror
+    - "{catalog.mirror_trick}"
+  is_portable: no
 
 fireplace:
   description:
@@ -54,6 +71,7 @@ fireplace:
         name: Swarm of Bats
     - OBJECT:
         percent: 4
+        is_hidden: 10
         description:
           - "{treasure.GEM_50}"
 
@@ -82,6 +100,16 @@ wardrobe:
         percent: 5
         name: Swarm of Insects
 
+
+bones:
+  description:
+    - The bones of several(?) small animals
+
+
+
+#
+# Misc descriptive things
+#
 artisans_tools:
   - Alchemist's supplies  
   - Brewer's supplies 
@@ -100,6 +128,15 @@ artisans_tools:
   - Tinker's tools
   - Weaver's tools
   - Woodcarver's tools
+
+
+fancy_clothes:
+  - A {catalog.clothing_colors} hat with a jaunty feather
+  - Velveteen coat with tails
+  - A surprisingly convincing leopard costume
+  - A {catalog.clothing_colors} {catalog.clothing_material} dress
+  - A Russian codpiece with all the trimmings
+  - Italian Loafers
 
 clothing_colors:
   - red
@@ -120,11 +157,41 @@ clothing_material:
   - leather
   - dragon hide
 
+mirror_trick:
+  - [70, The image is normal]
+  - [10, The reflection is upside down]
+  - [10, You appear taller in the mirror]
+  - [10, The mirror shows a monster behind you]
 
-fancy_clothes:
-  - A {catalog.clothing_colors} hat with a jaunty feather
-  - Velveteen coat with tails
-  - A surprisingly convincing leopard costume
-  - A {catalog.clothing_colors} {catalog.clothing_material} dress
-  - A Russian codpiece with all the trimmings
-  - Italian Loafers
+
+weapon:
+  - shortsword
+  - axe
+  - longsword
+  - battle axe
+  - dagger
+  - long knife
+  - spiked club
+
+armor:
+  - leather armor
+  - hide armor
+  - chain shirt
+  - ring mail
+
+book_titles:
+  - Larson’s Calculus of a Single Variable, AP Edition
+  - “Amish Vampires in Space”
+  - “Dragonology” (this copy is scorched to almost illegibility)
+  - “Horned Justice,” autographed by the authors
+  - A full collection of Shakespeare, but is appears to be the original manuscripts and also in a different language
+  - A children’s book depicting a spider spinning webs in the shapes of houses and then devouring the inhabitants
+  - A diary. A wooden stake has been stuck through it, and a note urges others to not read it
+
+throne_materials:
+  - Obsidian
+  - Humanoid bones
+  - Ice
+  - Plants
+  - Fingernails!
+  - Hardback editions of “Horned Justice,” a popular Western novel
